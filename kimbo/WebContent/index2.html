@@ -3,6 +3,7 @@
 	<head>
 	<meta charset="UTF-8" http-equiv="refresh" content="5; url='main/NewFile.html'">
 	<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<title>Index</title>
 	<style>
 		* {margin:0px; padding:0px;}
@@ -11,10 +12,10 @@
 			 position:relative;
 		}
 		#img {background:white url(img/main2.jpg) no-repeat 50%;height:800px;
-			  background-size:500px 500px; opacity:0.5;
+			  background-size:500px 500px; opacity:0;
 		}
 		#txt {font-size:5em; font-family: 'Indie Flower', cursive;
-			  position:absolute;top:60%; opacity:0.5;margin:auto;
+			  position:absolute;top:60%; opacity:0;margin:auto;
 		}
 		
 		/*	320 ~ 600px*/
@@ -34,8 +35,8 @@
 	</style>
 	<script>
 		$(function() {
-			$("#img").animate({opacity:"0"}, 1000);
-			$("#txt").delay(1000).animate({opacity:"0"}, 1000);
+			$("#img").animate({opacity:"1"}, 1000);
+			$("#txt").delay(1000).animate({opacity:"1"}, 1000);
 			$("#img").delay(1000).animate({opacity:"0"}, 1000);
 			$("#txt").animate({opacity:"0"}, 1000);
 		});
