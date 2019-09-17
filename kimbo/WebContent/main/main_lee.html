@@ -8,19 +8,22 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 	$(function(){
-		$("#header_center1").on({mouseenter:function(){
-			$("#header_center1").hide("fast");
-			$("#header_center2").show("slow");
+		$("#center").on({mouseenter:function(){
+			$("#header_center1").fadeToggle(100);
+			$("#header_center2").fadeIn(1000);
 		}});
 	});
 	$(function(){
 		$("#center").on({mouseleave:function(){
-			$("#header_center1").css("display","block");
-			$("#header_center2").css("display","none");
-			console.log("2");
-		}})
-	});
-
+			$("#header_center1").fadeIn(1000);
+			$("#header_center2").fadeOut(500);
+			console.log("12223");
+			console.log("12223");
+			
+		}});
+	});   
+	
+  
 
 </script>
 </head>
@@ -28,7 +31,7 @@
 	<header>
 	<div id="header_left"><a href="#">Good.D<br/>TATTOO</a></div>
 	<div id="center">
-	<div id="header_center1">&equiv;</div>
+	<div id="header_center1"><a href="#">&equiv;</a></div>
 	
 	<div id="header_center2">
 		<a href="#">Search</a>
