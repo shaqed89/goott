@@ -1,5 +1,8 @@
 @charset "UTF-8";
 section{width:100%; height:800px; background-color:green;}
 
-#slide{width:600px; height:400px; background-color:blue; margin:0 auto;}
+#slide{width:600px; height:400px; background-color:blue; margin:0 auto; overflow:hidden;}
+#slide>ul{width:2400px;}
+#slide>ul>img{width:600px; height:400px;}
+
 #top5{width:1000px; height:400px; background-color:yellow; margin:0 auto;}
