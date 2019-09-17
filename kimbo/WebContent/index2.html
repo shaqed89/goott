@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8" http-equiv="refresh" content="5; url='main/NewFile.html'">
+	<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
+	<title>Index</title>
+	<style>
+		* {margin:0px; padding:0px;}
+		body{background:black;}
+		#gg {width:100%;height:800px;background:white;margin-top:130px;
+			 position:relative;
+		}
+		#img {background:white url(img/main2.jpg) no-repeat 50%;height:800px;
+			  background-size:500px 500px; opacity:0.5;
+		}
+		#txt {font-size:5em; font-family: 'Indie Flower', cursive;
+			  position:absolute;top:60%; opacity:0.5;margin:auto;
+		}
+		
+		/*	320 ~ 600px*/
+		@media all and (min-width:320px) and (max-width:600px) {
+			#txt {left:150px;}
+		}
+		
+		/*	601 ~ 800px*/
+		@media all and (min-width:601px) and (max-width:1200px) {
+			#txt {left:300px;}
+		}
+		
+		/*	801px ~ */
+		@media all and (min-width:1201px) {
+			#txt {left:700px;}
+		}
+	</style>
+	<script>
+		$(function() {
+			$("#img").animate({opacity:"0"}, 1000);
+			$("#txt").delay(1000).animate({opacity:"0"}, 1000);
+			$("#img").delay(1000).animate({opacity:"0"}, 1000);
+			$("#txt").animate({opacity:"0"}, 1000);
+		});
+	</script>
+	</head>
+	<body>
+		<div id="gg">
+			<div id="img"></div>
+			<div id="txt">Express Yourself</div>
+		</div>
+	</body>
+</html>
