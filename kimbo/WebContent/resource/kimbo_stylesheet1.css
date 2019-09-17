@@ -6,7 +6,7 @@ ul, li{list-style-type:none;}
 
 a:link{color:white;text-decoration:none} /* 링크 걸어져 있을떄*/
 a:visited{color:#fff;text-decoration:none} /* 방문했을때 */
-a:hover{color:gray;text-decoration:none;font-weight:bold;} /* 마우스 오버 했을떄 */
+a:hover{color:gray;text-decoration:none;} /* 마우스 오버 했을떄 */
 a:active{color:gray} /* 마우스 눌렀을때 */
 
 header{font-size:3em; font-family: 'Indie Flower', cursive;width:100%;height:130px;
@@ -15,13 +15,13 @@ header div{float:left;}
 #header_left{width:200px;height:130px}
 #center{width:800px;height:130px;}
 
-#header_center1{color:#fff;position:relative;
-				left:400px;top:50px;}
+#header_center1{width:600px;color:#fff;position:absolute;text-align:center;
+				left:450px;top:50px;}
 
 
 #header_center2{width:600px;height:50px;display:none;position:relative;
 				font-size:30px;left:100px;top:50px;margin:0 auto;text-align:center;}
-#header_center2 a{margin:0 10px}
+#header_center2 a{margin:0 10px;width:20%;top:50px;}
 
 #header_right{width:200px;height:130px;position:relative;left:0;}
 #header_right a{font-size:20px;}
