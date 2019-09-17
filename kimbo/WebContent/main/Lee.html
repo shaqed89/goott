@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../resource/kimbo_stylesheet1.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("#header_center1").on({mouseenter:function(){
+			$("#header_center1").hide("fast");
+			$("#header_center2").show("slow");
+		}});
+	});
+	$(function(){
+		$("#center").on({mouseleave:function(){
+			$("#header_center1").css("display","block");
+			$("#header_center2").css("display","none");
+		}})
+	});
+
+
+</script>
+</head>
+<body>
+	<header>
+	<div id="header_left"><a href="#">Good.D<br/>TATTOO</a></div>
+	<div id="center">
+	<div id="header_center1">&equiv;</div>
+	
+	<div id="header_center2">
+		<a href="#">Search</a>
+		<a href="#">Tattooist</a>
+		<a href="#">Notice</a>
+		<a href="#">F&Q</a>
+		<a href="#">Review</a>
+	</div>
+	</div>
+	<div id="header_right">
+		<ul>
+			<li><a href="#">Login</a></li>
+			<li><a href="#">Join</a></li>
+			<li><a href="#">My</a></li>
+		</ul>
+	</div>
+	</header>
+</body>
+</html>
