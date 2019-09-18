@@ -18,7 +18,13 @@ $(function(){
 				"<img src='../img/tattooist"+(i+1)+".jpg' class='rounded-circle'/>" +
 				"</li>";
 	}
-	
 	$("#main_top5").html(top5_list);
+	
+	//top5 이벤트
+	$("#main_top5>li").hover(function(){
+		$(this).css("background-color","green");
+	},function(){
+		$(this).css("background-color","yellow");
+	});
 	
 });
