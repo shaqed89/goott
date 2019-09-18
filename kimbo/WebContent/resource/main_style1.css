@@ -1,8 +1,13 @@
 @charset "UTF-8";
-section{width:100%; height:800px; background-color:green;}
+section{width:100%; height:800px;}
 
-#slide{width:600px; height:400px; background-color:blue; margin:0 auto; overflow:hidden;}
-#slide>ul{width:2400px;}
-#slide>ul>img{width:600px; height:400px;}
+#main_slide_view{width:600px; height:400px; 
+			margin:10px auto; overflow:hidden;}
+#main_slide_img{width:2400px; height:400px; float:left;}
+#main_slide_img img{width:600px; height:400px;}
 
-#top5{width:1000px; height:400px; background-color:yellow; margin:0 auto;}
+.bx-wrapper{border:0}
+
+#main_top5{width:1000px; height:350px; 
+		   background-color:yellow; 
+		   margin:0 auto;}
