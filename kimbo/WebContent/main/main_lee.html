@@ -7,7 +7,9 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+
 <link rel="stylesheet" href="../resource/leee_stylesheet1.css" type="text/css">
+<link rel="stylesheet" href="../resource/header1_style.css" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
@@ -15,68 +17,90 @@
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
 <script>
+	/*메뉴바 이벤트 */
 	$(function(){
 		$("#header_center1 a").on({mouseenter:function(){
-			$("#header_center1").fadeToggle(100);
-			$("#header_center2").fadeIn(1000);
+			$("#header_center1").fadeOut(100);
+			$("#header_center2").fadeIn(1500);
 		}});
 	});
 	$(function(){
 		$("#center").on({mouseleave:function(){
-			$("#header_center1").fadeIn(1000);
-			$("#header_center2").fadeOut(500);
+			$("#header_center1").toggle(500);
+			$("#header_center2").fadeToggle(200);
 					
 		}});
 	});   
-
+	$(function(){
+		$("#lgn").click(function(){
+			alert("로그인 되었습니다.");	
+		});
+	});
+	$(function(){
+		$("#signup").click(function(){
+			alert("회원가입");	
+		});
+	});
+	
+	
 </script>
 </head>
 <body>
 	<header>
-	<div id="header_left"><a href="#">Good.D<br/>TATTOO</a></div>
-	<div id="center">
-	<div id="header_center1"><a href="#">&equiv;</a></div>
-	
-	<div id="header_center2">
-		<a href="#">Search</a>
-		<a href="#">Tattooist</a>
-		<a href="#">Notice</a>
-		<a href="#">F&Q</a>
-		<a href="#">Review</a>
-	</div>
-	</div>
+		<div id="header_left"><a href="#">Good.D<br/>TATTOO</a></div>
+			<div id="center">
+			<div id="header_center1"><a href="#">&equiv;</a></div>
+			
+			<div id="header_center2">
+				<a href="#">Search</a>
+				<a href="#">Tattooist</a>
+				<a href="#">Notice</a>
+				<a href="#">F&Q</a>
+				<a href="#">Review</a>
+			</div>
+			</div>
 	<div id="header_right">
 		<ul>
+			<!-- 로그인 클릭시 다이얼로그 생성 -->
 			<li data-toggle="modal" data-target="#myModal"><a href="#">Login</a></li>
-			<li><a href="#">Join</a></li>
+			<li data-toggle="modal" data-target="#joinModal"><a href="#">Join</a></li>
 			<li><a href="#">My</a></li>
 		</ul>
 	</div>
-
 </header>
+<!-- 로그인 다이얼로그 -->
 <div id="myModal" class="modal" >
 	<div id="log">LOGIN</div>
-		<form action="#" method="post" name="frm" id="frm">
-			<div class="form-group">
-				<label>ID</label>
-				<input type="text" name="userid" id="userid" class="form-control" placeholder="아이디를 입력하세요.">
-			</div><br/>	
-			<div class="form-group">
-				<label>Password</label>
-				<input type="password" name="userpwd" id="userpwd" class="form-control" placeholder="비밀번호를 입력하세요.">
-			</div>
-			<div id="rmb">
-				<input type="checkbox" id="chk">
-				<div><h6>Remember me?</h6></div>
-				<h6><a href="#" >Forgot password?</a></h6>
-			</div>
-			<input type="submit" value="Login" id="lgn" class="btn btn-block btn-danger"/>
-			<div id="bdr">
-				<h2>Not a member yet</h2>
-				<input type="submit" value="SIGN UP" id="signup" class="btn btn-block btn-primary">
-				<input type="submit" value="CANCLE" id="cancle" class="btn btn-block btn-danger">
-			</div>
-		</form>
-	</div>
+	<form action="#" method="post" name="frm" id="frm">
+		<div class="form-group">
+			<label>ID</label>
+			<input type="text" name="userid" id="userid" class="form-control" placeholder="아이디를 입력하세요.">
+		</div><br/>	
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" name="userpwd" id="userpwd" class="form-control" placeholder="비밀번호를 입력하세요.">
+		</div>
+		<div id="rmb">
+			<input type="checkbox" id="chk">
+			<div><h6>Remember me?</h6></div>
+			<h6><a href="#" >Forgot password?</a></h6>
+		</div>
+		<input type="submit" value="Login" id="lgn" class="btn btn-block btn-danger" onclick="alert"/>
+		<div id="bdr">
+			<h2>Not a member yet</h2>
+			<input type="submit" value="SIGN UP" id="signup" class="btn btn-block btn-primary">
+			<input type="submit" value="CANCLE" id="cancle" class="btn btn-block btn-danger">
+		</div>
+	</form>
+</div>
+<div id="joinModal" class="modal" >
+	<div id="join">회원가입(작가)</div>
+	<form>
+		<div id="txt">
+			<label>아이디</label>
+			<input type="text" style="">
+		</div>
+	</form>
+</div>
 </body>
 </html>
