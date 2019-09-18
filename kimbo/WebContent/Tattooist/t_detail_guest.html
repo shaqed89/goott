@@ -5,16 +5,15 @@
 	<title>Insert title here</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="../resource/kimbo_stylesheet1.css" type="text/css" />
 	<!-- Header-->
 	<link rel="stylesheet" href="../resource/header_style.css" type="text/css" />
 	<script src="../resource/header.js"></script>
 	<style>
-		* {color:white;}
-		#ttop {float:left;width:100%;border:2px solid red;}
+		* {color:white;font-family: 'Gaegu', cursive;}
+		#ttop {float:left;width:100%;border:2px solid red;z-index:1;margin-top:20px;}
 		#top {clear:left;width:1140px;height:400px;margin:50px auto;border:2px solid orange;}
 		#prof {width:300px; height:400px; border:2px solid yellow; border-radius:50px;
-			   float:left;background:url(../img/t1.jpg) no-repeat; background-size:100%;
+			   float:left;background:url(../img/tattooist/t1.jpg) no-repeat; background-size:100%;
 		}
 		#explain {width:800px; height:400px; border: 2px solid green;float:left;margin-left:30px;}
 		#text {height:270px;line-height:250%;text-align:center;font-size:1.5em;border:2px solid blue;}
@@ -25,29 +24,37 @@
 		#btn1, #btn2 {float:left;width:300px;height:80px;
 					  border-radius:15px;font-size:2em;text-align:center;line-height:80px;
 		}
+		
+		#img{clear:left;width:1200px;border:5px solid pink;margin:0px auto;z-index:1}
+		#img>img{width:230px;margin:5px;height:230px;}
+		
+		#noticeDiv{width:400px; height:400px; border:1px solid gray;
+				   position:absolute; left:900px; top:700px;}
 	</style>
 	<script>
-		$(function() {
-			//이미지 추가
-			for(var i='a';i<='z';i++) {
-				$()
+		function setImage(){
+			var imgTag ="";
+			for(i=1; i<=15; i++){
+				imgTag += "<img src='../img/tattooist/t1_"+i+".jpg' onclick='location.href=\"#\"'/>";			
+				
 			}
-		});
+			document.getElementById("img").innerHTML = imgTag;
+		}
 	</script>
 	</head>
-	<body>
+	<body onload="setImage();">
 		<header>
 			<div id="header_left"><a href="#">Good.D<br/>TATTOO</a></div>
 			<div id="center">
-			<div id="header_center1">&equiv;</div>
-			
-			<div id="header_center2">
-				<a href="#">Search</a>
-				<a href="#">Tattooist</a>
-				<a href="#">Notice</a>
-				<a href="#">FAQ</a>
-				<a href="#">Review</a>
-			</div>
+				<div id="header_center1">&equiv;</div>
+				
+				<div id="header_center2">
+					<a href="#">Search</a>
+					<a href="#">Tattooist</a>
+					<a href="#">Notice</a>
+					<a href="#">FAQ</a>
+					<a href="#">Review</a>
+				</div>
 			</div>
 			<div id="header_right">
 				<ul>
@@ -69,7 +76,7 @@
 					</div>
 					<div id="bbottom">
 						<div id="bottom">
-							<div id="btn1">문의하기</div>
+							<div id="btn1" onclick="">문의하기</div>
 							<div id="btn2">스케쥴 확인</div>
 						</div>
 					</div>
@@ -77,8 +84,20 @@
 			</div>
 		</div>
 		
-		<div id="img">
-			
+		<div id="img"></div>
+		
+		<div id="noticeDiv">
+			<div>
+				<div id="title" onmousedown="noticeMoveStart()">★ 상담 시작하기 ★</div>
+				<div onclick="noticeClose()">&times;</div>
+			</div>
+			<div id="content">
+				<div>① 작가 오픈카톡 링크 복사<br/>https://open.kakao.com/~</div>
+				<div>② 상담 시작하기 버튼 클릭</div>
+			</div>
+			<div>
+			</div>
 		</div>
+		
 	</body>
 </html>
