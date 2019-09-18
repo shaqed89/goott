@@ -15,8 +15,9 @@ header div{float:left;}
 #header_left{width:200px;height:130px}
 #center{width:800px;height:130px;}
 
-#header_center1{color:#fff;position:relative;
-				left:400px;top:50px;}
+#header_center1{width:600px;color:#fff;position:absolute;
+				left:400px;top:50px;text-align:center;}
+#header_center1 a{left:450px;}
 
 
 #header_center2{width:600px;height:50px;display:none;position:relative;
