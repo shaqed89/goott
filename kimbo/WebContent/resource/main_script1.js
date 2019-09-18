@@ -1,7 +1,5 @@
-/**
- * 
- */
 $(function(){
+	//메인페이지 시작시 이미지 슬라이드
 	$("#main_slide_img").bxSlider({
 		mode : 'fade',
 		slideWidth : 600,
@@ -12,5 +10,15 @@ $(function(){
 		infiniteloop : true
 	});
 	
-	$("#main_slide_img").removeClass("bx-wrapper");
+	//top5
+	var top5_list="";
+	
+	for(i=0; i<5; i++){
+		top5_list+="<li id='tatooist_list"+(i+1)+"'>" +
+				"<img src='../img/tattooist"+(i+1)+".jpg' class='rounded-circle'/>" +
+				"</li>";
+	}
+	
+	$("#main_top5").html(top5_list);
+	
 });
