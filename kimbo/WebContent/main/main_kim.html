@@ -3,21 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <title>Good.D Tattoo</title>
+<link rel="stylesheet" href="../resource/jquery-ui.min.css" type="text/css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
+<script src="../resource/main_script1.js"></script>
+
+<!-- bxslider -->
+<script src="../plugin/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../plugin/jquery.bxslider.css" type="text/css"/>
 <!-- bootstrap -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!-- bxslider -->
-<script src="../pulgin/jquery.bxslider.js"></script>
-<link rel="stylesheet" href="../pulgin/jquery.bxslider.css" type="text/css"/>
+
+<!-- Font -->
+
+<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
 
 <!-- Header-->
-<link rel="stylesheet" href="../resource/header_style.css" type="text/css" />
+<link rel="stylesheet" href="../resource/header1_style.css" type="text/css" />
 <script src="../resource/header.js"></script>
 <!-- Section-->
-<script src="../resource/main_script1.js"></script>
+<script src="../resource/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="../resource/main_style1.css" type="text/css" />
+<!-- footer -->
+<link rel="stylesheet" href="../resource/footer.css" type="text/css" />
+<script src="../resource/footer.js"></script>
 
 </head>
 <body>
@@ -45,16 +54,26 @@
 	<section>
 		<div id="main_slide_view">
 			<ul id="main_slide_img">
-				<li><img src="../img/main_slide1.jpg"></li>
-				<li><img src="../img/main_slide2.jpg"></li>
-				<li><img src="../img/main_slide3.jpg"></li>
-				<li><img src="../img/main_slide4.jpg"></li>
-				<li><img src="../img/main_slide5.jpg"></li>
-				<li><img src="../img/main_slide6.jpg"></li>
+				<li><img src="../img/main_kim/main_slide1.jpg"></li>
+				<li><img src="../img/main_kim/main_slide2.jpg"></li>
+				<li><img src="../img/main_kim/main_slide3.jpg"></li>
+				<li><img src="../img/main_kim/main_slide4.jpg"></li>
+				<li><img src="../img/main_kim/main_slide5.jpg"></li>
+				<li><img src="../img/main_kim/main_slide6.jpg"></li>
 			</ul>
 		</div>
-		<div id="main_top5_title"></div>
+		<div id="main_top5_title">
+			<label>Top5</label>
+		</div>
 		<ul id="main_top5"></ul>
+		<!-- 작가클릭시 슬라이드 다이얼로그 -->
+		<div id="tattooist_slide" title="slide">
+			<ul id="slide">
+				<li><img src='../img/main_kim/tattooist1_slide1.jpg'/></li>
+				<li><img src='../img/main_kim/tattooist1_slide2.jpg'/></li>
+				<li><img src='../img/main_kim/tattooist1_slide3.jpg'/></li>
+			</ul>
+		</div>
 	</section>
 	<footer>
 	</footer>
