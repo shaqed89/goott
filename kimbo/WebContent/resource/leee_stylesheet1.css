@@ -53,10 +53,7 @@ form{width:0;}
 #loc{margin:40px 0 0 15px;width:130px;} 
 
 #wrt #gender1, #wrt #gender2{height:15px;width:15px;}
-
-
 #prf{margin:;position:absolute;top:790px;left:215px;}
-
 #tpfh{float:left;width:200px;height:700px;}
 #wndqhr{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
 #wndqhr2{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
@@ -81,5 +78,9 @@ form{width:0;}
 #wndqhr3{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
 #wndqhr4{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
 #st2{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
+
+
+
+
 
 footer{font-size:2em; font-family: 'Gaegu', cursive;}
