@@ -52,7 +52,7 @@ $(function(){
 	$("#main_top5>li").click(function(){
 		var idx = $("#main_top5>li").index(this);
 		var dialog_title = "Tattooist"+(idx+1);
-		$(".ui-dialog-title").text(dialog_title);
+		$(".ui-dialog-titlebar").text(dialog_title);
 		var add_slide = "";
 		
 		for(i=0; i<3; i++){
@@ -74,12 +74,13 @@ $(function(){
 		draggable : false,
 		modal : true,
 		buttons : {more : function(){
-			
-		}},
-		
-		close: function() {
+			$("#tattooist_slide").dialog("close");
 			bx.destroySlider();
-		}
+		}, close : function(){
+			$("#tattooist_slide").dialog("close");
+			bx.destroySlider();
+		}}
+		
 	});
 	
 	//슬라이더 옵션
@@ -93,6 +94,13 @@ $(function(){
 		adaptiveHeght: true, 
 		startSlide : 0,
 		touchEnabled : false
+	});
+	
+	//다이얼로그 버트 이벤트
+	$(".ui-dialog .ui-dialog-buttonpane button").hover(function(){
+		$(this).css("font-weight","bold");
+	},function(){
+		$(this).css("font-weight","normal");
 	});
 	
 });
