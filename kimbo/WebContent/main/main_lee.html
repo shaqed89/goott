@@ -52,12 +52,12 @@
 	});
 	
 	$(function() {
-		$("#wndqhr").click(function() {
+		$("#st").click(function() {
 			alert("Good.D Tattoo에 오신걸 환영합니다!");
 		});
 	});
 	$(function() {
-		$("#wndqhr1").click(function() {
+		$("#st2").click(function() {
 			alert("Good.D Tattoo에 오신걸 환영합니다!");
 		});
 	});
@@ -169,7 +169,7 @@
 					<a href="#" id="sign2" class="btn btn-primary" data-toggle="modal" data-target="#joinModal">가입하기</a>
 					
 			</div>
-			<div id="close"><input type="submit" value="닫기" id="cancle" class="btn btn-block btn-danger"></div>
+			<div id="close"><input type="submit" value="닫기" id="cancle2" class="btn btn-block btn-danger"></div>
 		</div>
 		
 	</div>
@@ -178,13 +178,13 @@
 	<div id="joinModal" class="modal">
 		<div id="mb">
 		<div id="join">회원가입(작가)</div>
-			<form action="#" method="post" name="frm" id="frm">
+			<form action="#" method="post" name="frm" id="frm2">
 				<div id="txt">
 					<label>아이디</label> <label>비밀번호</label> <label>비밀번호 확인</label> <label>이름</label>
 					<label>휴대폰 번호</label> <label>인증번호</label> <label>생년월일</label> <label>카카오톡ID</label>
 					<label>지역</label> <label>성별</label> <label>프로필 사진</label>
 					
-					<input type="submit" value="Good.D Tattoo 시작하기" id="wndqhr"
+					<input type="submit" value="Good.D Tattoo 시작하기" id="st"
 						class="btn btn-block btn-info">
 					
 				</div>
@@ -267,7 +267,7 @@
 			<div id="tpfh" class="form-group">
 				<input type="button" value="중복확인" id="wndqhr"
 					class="btn btn-block btn-info"> <input type="button"
-					value="인증번호전송" id="wndqhr" class="btn btn-block btn-info">
+					value="인증번호전송" id="wndqhr2" class="btn btn-block btn-info">
 					<input type="submit" value="닫기" id="joinClose" class="btn btn-block btn-danger">
 			</div>
 			<div id="prf" class="form-group"><input type="file" name="filename"></div>
@@ -279,14 +279,14 @@
 	<div id="expertModal" class="modal">
 		<div id="mb2">
 		<div id="join">회원가입(손님)</div>
-		<form action="#" method="post" name="frm" id="frm">
+		<form action="#" method="post" name="frm" id="frm3">
 		<div id="txt">
 			<label>아이디</label> <label>비밀번호</label> <label>비밀번호 확인</label> <label>이름</label>
 			<label>휴대폰 번호</label> <label>인증번호</label> <label>생년월일</label> <label>지역</label>
 			<label>성별</label> <input type="submit" value="Good.D Tattoo 시작하기"
-				id="wndqhr1" class="btn btn-block btn-info">
+				id="st2" class="btn btn-block btn-info">
 		</div>
-		<div id="wrt" class="form-group">
+		<div id="wrt2" class="form-group">
 			<input type="text" placeholder="8~13글자의 영문,숫자,특수문자 조합"> <input
 				type="password" placeholder="6글자 이상의 영문, 숫자, 특수문자 조합"> <input
 				type="text" placeholder="비밀번호 확인"> <input type="text"
@@ -358,19 +358,24 @@
 					</optgroup>
 				</select>
 			</br>
-			<input type="radio" id="gender1" name="gender1" onclick="doOpenCheck(this)">남성<input type="radio"
-				id="gender2" name="gender2" onclick="doOpenCheck(this)">여성
-	
+			<input type="radio" id="normal_gender" name="normal_gender" onclick="doOpenCheck(this)">남성<input type="radio"
+				id="normal_gender2" name="normal_gender2" onclick="doOpenCheck(this)">여성
 		</div>
-
 		<div id="tpfh" class="form-group">
-			<input type="button" value="중복확인" id="wndqhr"
+			<input type="button" value="중복확인" id="wndqhr3"
 				class="btn btn-block btn-info"> <input type="button"
-				value="인증번호전송" id="wndqhr" class="btn btn-block btn-info">
+				value="인증번호전송" id="wndqhr4" class="btn btn-block btn-info">
 			<input type="submit" value="닫기" id="expertClose" class="btn btn-block btn-danger">
 		</div>
 		</form>
 		</div>
 	</div>
+<div>
+	
+
+
+
+
+</div>
 </body>
 </html>

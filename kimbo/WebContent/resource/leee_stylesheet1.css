@@ -16,6 +16,7 @@
 #bdr h2{text-align:center;margin:20px auto;font-size:30px;font-weight:bold;}
 #signup{margin:10px 0 0 50px;width:300px;text-align:center;font-weight:bold;font-family:none;}
 #cancle{margin:30px 0 0 140px;width:120px;text-align:center;font-weight:bold;font-family:none;}
+#cancle2{margin:30px 0 0 140px;width:120px;text-align:center;font-weight:bold;font-family:none;}
 
 /* 회원가입 유형선택 */
 #choiceModal #choiceClose{margin:0;paddin:0;width:10px;height:50px;color:black;}
@@ -50,12 +51,16 @@
 #wrt form select{margin:50px 20px 0 20px;}
 form{width:0;}
 #loc{margin:40px 0 0 15px;width:130px;} 
-#wrt #gender1,#wrt #gender2{height:15px;width:15px;}
+
+#wrt #gender1, #wrt #gender2{height:15px;width:15px;}
+
 
 #prf{margin:;position:absolute;top:790px;left:215px;}
 
 #tpfh{float:left;width:200px;height:700px;}
 #wndqhr{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
+#wndqhr2{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
+#st{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
 #tpfh{float:left;width:200px;height:700px;}
 #joinClose{position:absolute;width:100px;margin:180px 0 0 -300px;}
 
@@ -67,8 +72,14 @@ form{width:0;}
 #wndqhr1{width:100px;height:30px;font-size:13px;margin:20px 50px 200px 10px;font-famlily:}
 #loc2{margin:40px 0 0 15px;width:130px;}
 #expertClose{position:absolute;width:100px;margin:60px 0 0 -290px;}
-
-
-
+#wrt2{float:left;width:550px;height:650px;color:#fff;font-family: 'Gaegu', cursive;}
+#wrt2 input:focus{outline:none;}
+#wrt2 input{border:0px;border-bottom:1px solid #fff;width:500px;height:20px;background:none;
+			margin:43px 20px 0 20px;color:#fff;font-weight:bold;font-size:20px;}
+#wrt2 form select{margin:50px 20px 0 20px;}
+#wrt2 #normal_gender, #wrt2 #normal_gender2{height:15px;width:15px;}
+#wndqhr3{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
+#wndqhr4{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
+#st2{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
 
 footer{font-size:2em; font-family: 'Gaegu', cursive;}
