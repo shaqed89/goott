@@ -8,114 +8,369 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 
-<link rel="stylesheet" href="../resource/leee_stylesheet1.css" type="text/css">
-<link rel="stylesheet" href="../resource/header1_style.css" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="../resource/leee_stylesheet1.css"
+	type="text/css">
+<link rel="stylesheet" href="../resource/header1_style.css"
+	type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap"
+	rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
 <script>
 	/*메뉴바 이벤트 */
-	$(function(){
-		$("#header_center1 a").on({mouseenter:function(){
-			$("#header_center1").fadeOut(100);
-			$("#header_center2").fadeIn(1500);
-		}});
-	});
-	$(function(){
-		$("#center").on({mouseleave:function(){
-			$("#header_center1").toggle(500);
-			$("#header_center2").fadeToggle(200);
-					
-		}});
-	});   
-	$(function(){
-		$("#lgn").click(function(){
-			alert("로그인 되었습니다.");	
+	$(function() {
+		$("#header_center1 a").on({
+			mouseenter : function() {
+				$("#header_center1").fadeOut(100);
+				$("#header_center2").fadeIn(1500);
+			}
 		});
 	});
-	$(function(){
-		$("#signup").click(function(){
-			alert("회원가입");	
+	$(function() {
+		$("#header_center2").on({
+			mouseleave : function() {
+				$("#header_center1").toggle(500);
+				$("#header_center2").fadeToggle(200);
+
+			}
 		});
 	});
+	$(function() {
+		$("#lgn").click(function() {
+			alert("로그인 되었습니다.");
+		});
+	});
+	$(function() {
+		$("#signup").click(function() {
+			alert("회원가입");
+		});
+	});
+	
+	$(function() {
+		$("#wndqhr").click(function() {
+			alert("Good.D Tattoo에 오신걸 환영합니다!");
+		});
+	});
+	$(function() {
+		$("#wndqhr1").click(function() {
+			alert("Good.D Tattoo에 오신걸 환영합니다!");
+		});
+	});
+		
+	$(function() {
+		$("#sign1").click(function() {
+			$("#choiceModal").css("display", "none");
+		});
+	});
+	$(function() {
+		$("#sign2").click(function() {
+			$("#choiceModal").css("display", "none");
+		});
+	});
+	
+	function doOpenCheck(chk){
+	    var obj = document.getElementsByName("aaa");
+	    for(var i=0; i<obj.length; i++){
+	        if(obj[i] != chk){
+	            obj[i].checked = false;
+	        }
+	    }
+	}
+
+	
+	
 	
 	
 </script>
 </head>
 <body>
 	<header>
-		<div id="header_left"><a href="#">Good.D<br/>TATTOO</a></div>
-			<div id="center">
-			<div id="header_center1"><a href="#">&equiv;</a></div>
-			
+		<div id="header_left">
+			<a href="#">Good.D<br />TATTOO
+			</a>
+		</div>
+		<div id="center">
+			<div id="header_center1">
+				<a href="#">&equiv;</a>
+			</div>
+
 			<div id="header_center2">
-				<a href="#">Search</a>
-				<a href="#">Tattooist</a>
-				<a href="#">Notice</a>
-				<a href="#">F&Q</a>
-				<a href="#">Review</a>
+				<a href="#">Search</a> <a href="#">Tattooist</a> <a href="#">Notice</a>
+				<a href="#">F&Q</a> <a href="#">Review</a>
 			</div>
+		</div>
+		<div id="header_right">
+			<ul>
+				<!-- 로그인 클릭시 다이얼로그 생성 -->
+				<li data-toggle="modal" data-target="#myModal"><a href="#">Login</a></li>
+				<li data-toggle="modal" data-target="#choiceModal"><a href="#">Join</a></li>
+				<li><a href="#">My</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<!-- 로그인 다이얼로그 -->
+	<div id="myModal" class="modal">
+		<div id="ma">
+		<div id="log">LOGIN</div>
+		<form action="#" method="post" name="frm" id="frm">
+			<div class="form-group">
+				<label>ID</label> <input type="text" name="userid" id="userid"
+					class="form-control" placeholder="아이디를 입력하세요.">
 			</div>
-	<div id="header_right">
-		<ul>
-			<!-- 로그인 클릭시 다이얼로그 생성 -->
-			<li data-toggle="modal" data-target='#myModal'><a href="#">Login</a></li>
-			<li data-toggle="modal" data-target="#joinModal"><a href="#">Join</a></li>
-			<li><a href="#">My</a></li>
-		</ul>
+			<br/>
+			<div class="form-group">
+				<label>Password</label> <input type="password" name="userpwd"
+					id="userpwd" class="form-control" placeholder="비밀번호를 입력하세요.">
+			</div>
+			<div id="rmb">
+				<input type="checkbox" id="chk">
+				<div>
+					<h6>Remember me?</h6>
+				</div>
+				<h6>
+					<a href="#">Forgot password?</a>
+				</h6>
+			</div>
+			<input type="submit" value="Login" id="lgn"
+				class="btn btn-block btn-secondary" onclick="alert" />
+			<div id="bdr">
+				<h2>Not a member yet</h2>
+				<input type="submit" value="SIGN UP" id="signup"
+					class="btn btn-block btn-primary"> <input type="submit"
+					value="CANCLE" id="cancle" class="btn btn-block btn-danger">
+			</div>
+		</form>
+		</div>
 	</div>
-</header>
-<!-- 로그인 다이얼로그 -->
-<div id="myModal" class="modal" >
-	<div id="log">LOGIN</div>
-	<form action="#" method="post" name="frm" id="frm">
-		<div class="form-group">
-			<label>ID</label>
-			<input type="text" name="userid" id="userid" class="form-control" placeholder="아이디를 입력하세요.">
-		</div><br/>	
-		<div class="form-group">
-			<label>Password</label>
-			<input type="password" name="userpwd" id="userpwd" class="form-control" placeholder="비밀번호를 입력하세요.">
+	<!--회원가입 유형선택 -->
+	<form action="#" method="post">
+	<div id="choiceModal" class="modal">
+	
+		<div class="card" id="guest">
+			<img class="card-img-top" src="../img/imggett3.jpg" alt="Card image">
+				<div class="card-body">
+					<h4 class="card-title">일반회원</h4>
+					<p class="card-text">나의 개성을 표현해보세요!</p>
+					<a href="#" id="sign1" class="btn btn-primary" data-toggle="modal"
+						data-target="#expertModal">가입하기</a>
+				</div>
+			</div>
+			<div class="card" id="expert">
+				<img class="card-img-top" src="../img/t6.jpg" alt="Card image">
+				<div class="card-body">
+					<h4 class="card-title">작가회원</h4>
+					<p class="card-text">자신의 실력을 발휘해보세요!</p>
+					<a href="#" id="sign2" class="btn btn-primary" data-toggle="modal" data-target="#joinModal">가입하기</a>
+					
+			</div>
+			<div id="close"><input type="submit" value="닫기" id="cancle" class="btn btn-block btn-danger"></div>
 		</div>
-		<div id="rmb">
-			<input type="checkbox" id="chk">
-			<div><h6>Remember me?</h6></div>
-			<h6><a href="#" >Forgot password?</a></h6>
-		</div>
-		<input type="submit" value="Login" id="lgn" class="btn btn-block btn-danger" onclick="alert"/>
-		<div id="bdr">
-			<h2>Not a member yet</h2>
-			<input type="submit" value="SIGN UP" id="signup" class="btn btn-block btn-primary">
-			<input type="submit" value="CANCLE" id="cancle" class="btn btn-block btn-danger">
-		</div>
+		
+	</div>
 	</form>
-</div>
-<div id="joinModal" class="modal" >
-	<div id="log">LOGIN</div>
-	<form action="#" method="post" name="frm" id="frm">
-		<div class="form-group">
-			<label>ID</label>
-			<input type="text" name="userid" id="userid" class="form-control" placeholder="아이디를 입력하세요.">
-		</div><br/>	
-		<div class="form-group">
-			<label>Password</label>
-			<input type="password" name="userpwd" id="userpwd" class="form-control" placeholder="비밀번호를 입력하세요.">
+	<!-- 회원가입 작가용 툴 -->
+	<div id="joinModal" class="modal">
+		<div id="mb">
+		<div id="join">회원가입(작가)</div>
+			<form action="#" method="post" name="frm" id="frm">
+				<div id="txt">
+					<label>아이디</label> <label>비밀번호</label> <label>비밀번호 확인</label> <label>이름</label>
+					<label>휴대폰 번호</label> <label>인증번호</label> <label>생년월일</label> <label>카카오톡ID</label>
+					<label>지역</label> <label>성별</label> <label>프로필 사진</label>
+					
+					<input type="submit" value="Good.D Tattoo 시작하기" id="wndqhr"
+						class="btn btn-block btn-info">
+					
+				</div>
+				
+			<div id="wrt" class="form-group">
+				<input type="text" placeholder="8~13글자의 영문,숫자,특수문자 조합" > <input
+					type="password" placeholder="6글자 이상의 영문, 숫자, 특수문자 조합"> <input
+					type="text" placeholder="비밀번호 확인"> <input type="text"
+					placeholder="이름"> <input type="text" placeholder="'-'를 제외하고 입력">
+				<input type="text" placeholder="인증번호 입력"> <input type="text"
+					placeholder="주민등록번호 앞 6자리 숫자"> <input type="text" placeholder="카카오톡ID">
+					<select name="cars" class="custom-select" id="loc">
+						<option selected>=지역선택=</option>
+						<optgroup label="서울시">
+							<option value="volvo">강남구</option>
+							<option value="fiat">강북구</option>
+							<option value="audi">강서구</option>
+							<option value="audi">강동구</option>
+							<option value="audi">중구</option>
+							<option value="audi">도봉구</option>
+							<option value="audi">노원구</option>
+							<option value="audi">은평구</option>
+							<option value="audi">서대문구</option>
+							<option value="audi">종로구</option>
+							<option value="audi">성북구</option>
+							<option value="audi">동대문구</option>
+							<option value="audi">중랑구</option>
+							<option value="audi">광진구</option>
+							<option value="audi">용산구</option>
+							<option value="audi">마포구</option>
+							<option value="audi">양천구</option>
+							<option value="audi">구로구</option>
+							<option value="audi">영등포구</option>
+							<option value="audi">금천구</option>
+							<option value="audi">관악구</option>
+							<option value="audi">동작구</option>
+							<option value="audi">서초구</option>
+							<option value="audi">송파구</option>
+							<option value="audi">성동구</option>
+							<option value="audi">송파구</option>
+						</optgroup>
+						<optgroup label="경기도">
+							<option value="audi">인천광역시</option>
+							<option value="audi">연천구</option>
+							<option value="audi">포천시</option>
+							<option value="audi">동두천시</option>
+							<option value="audi">파주시</option>
+							<option value="audi">양주시</option>
+							<option value="audi">가평군</option>
+							<option value="audi">김포시</option>
+							<option value="audi">고양시</option>
+							<option value="audi">구리시</option>
+							<option value="audi">남양주시</option>
+							<option value="audi">양평군</option>
+							<option value="audi">하남시</option>
+							<option value="audi">부천시</option>
+							<option value="audi">광명시</option>
+							<option value="audi">과천시</option>
+							<option value="audi">성남시</option>
+							<option value="audi">광주시</option>
+							<option value="audi">의왕시</option>
+							<option value="audi">안양시</option>
+							<option value="audi">시흥시</option>
+							<option value="audi">군포시</option>
+							<option value="audi">안산시</option>
+							<option value="audi">여주시</option>
+							<option value="audi">용인시</option>
+							<option value="audi">수원시</option>
+							<option value="audi">화성시</option>
+							<option value="audi">평택시</option>
+							<option value="audi">안성시</option>
+							<option value="audi">이천시</option>
+						</optgroup>
+					</select>
+				</br>
+				<input type="checkbox" id="gender1">남성<input type="checkbox"
+					id="gender2">여성
+					
+			</div>
+			<div id="tpfh" class="form-group">
+				<input type="button" value="중복확인" id="wndqhr"
+					class="btn btn-block btn-info"> <input type="button"
+					value="인증번호전송" id="wndqhr" class="btn btn-block btn-info">
+					<input type="submit" value="닫기" id="joinClose" class="btn btn-block btn-danger">
+			</div>
+			<div id="prf" class="form-group"><input type="file" name="filename"></div>
+			
+		</form>
+	</div>
+	</div>
+	<!-- 회원가입 손님 -->
+	<div id="expertModal" class="modal">
+		<div id="mb2">
+		<div id="join">회원가입(손님)</div>
+		<form action="#" method="post" name="frm" id="frm">
+		<div id="txt">
+			<label>아이디</label> <label>비밀번호</label> <label>비밀번호 확인</label> <label>이름</label>
+			<label>휴대폰 번호</label> <label>인증번호</label> <label>생년월일</label> <label>지역</label>
+			<label>성별</label> <input type="submit" value="Good.D Tattoo 시작하기"
+				id="wndqhr1" class="btn btn-block btn-info">
 		</div>
-		<div id="rmb">
-			<input type="checkbox" id="chk">
-			<div><h6>Remember me?</h6></div>
-			<h6><a href="#">Forgot password??</a></h6>
+		<div id="wrt" class="form-group">
+			<input type="text" placeholder="8~13글자의 영문,숫자,특수문자 조합"> <input
+				type="password" placeholder="6글자 이상의 영문, 숫자, 특수문자 조합"> <input
+				type="text" placeholder="비밀번호 확인"> <input type="text"
+				placeholder="이름"> <input type="text" placeholder="'-'를 제외하고 입력">
+			<input type="text" placeholder="인증번호 입력"> <input type="text"
+				placeholder="주민등록번호 앞 6자리 숫자">
+			
+				<select name="cars" class="custom-select" id="loc2">
+					<option selected>=지역선택=</option>
+					<optgroup label="서울시">
+						<option value="volvo">강남구</option>
+						<option value="fiat">강북구</option>
+						<option value="audi">강서구</option>
+						<option value="audi">강동구</option>
+						<option value="audi">중구</option>
+						<option value="audi">도봉구</option>
+						<option value="audi">노원구</option>
+						<option value="audi">은평구</option>
+						<option value="audi">서대문구</option>
+						<option value="audi">종로구</option>
+						<option value="audi">성북구</option>
+						<option value="audi">동대문구</option>
+						<option value="audi">중랑구</option>
+						<option value="audi">광진구</option>
+						<option value="audi">용산구</option>
+						<option value="audi">마포구</option>
+						<option value="audi">양천구</option>
+						<option value="audi">구로구</option>
+						<option value="audi">영등포구</option>
+						<option value="audi">금천구</option>
+						<option value="audi">관악구</option>
+						<option value="audi">동작구</option>
+						<option value="audi">서초구</option>
+						<option value="audi">송파구</option>
+						<option value="audi">성동구</option>
+						<option value="audi">송파구</option>
+					</optgroup>
+					<optgroup label="경기도">
+						<option value="audi">인천광역시</option>
+						<option value="audi">연천구</option>
+						<option value="audi">포천시</option>
+						<option value="audi">동두천시</option>
+						<option value="audi">파주시</option>
+						<option value="audi">양주시</option>
+						<option value="audi">가평군</option>
+						<option value="audi">김포시</option>
+						<option value="audi">고양시</option>
+						<option value="audi">구리시</option>
+						<option value="audi">남양주시</option>
+						<option value="audi">양평군</option>
+						<option value="audi">하남시</option>
+						<option value="audi">부천시</option>
+						<option value="audi">광명시</option>
+						<option value="audi">과천시</option>
+						<option value="audi">성남시</option>
+						<option value="audi">광주시</option>
+						<option value="audi">의왕시</option>
+						<option value="audi">안양시</option>
+						<option value="audi">시흥시</option>
+						<option value="audi">군포시</option>
+						<option value="audi">안산시</option>
+						<option value="audi">여주시</option>
+						<option value="audi">용인시</option>
+						<option value="audi">수원시</option>
+						<option value="audi">화성시</option>
+						<option value="audi">평택시</option>
+						<option value="audi">안성시</option>
+						<option value="audi">이천시</option>
+					</optgroup>
+				</select>
+			</br>
+			<input type="radio" id="gender1" name="gender1" onclick="doOpenCheck(this)">남성<input type="radio"
+				id="gender2" name="gender2" onclick="doOpenCheck(this)">여성
+	
 		</div>
-		<input type="submit" value="Login" id="lgn" class="btn btn-block btn-danger" onclick="alert"/>
-		<div id="bdr">
-			<h2>Not a member yet</h2>
-			<input type="submit" value="SIGN UP" id="signup" class="btn btn-block btn-primary">
-			<input type="submit" value="CANCLE" id="cancle" class="btn btn-block btn-danger">
+
+		<div id="tpfh" class="form-group">
+			<input type="button" value="중복확인" id="wndqhr"
+				class="btn btn-block btn-info"> <input type="button"
+				value="인증번호전송" id="wndqhr" class="btn btn-block btn-info">
+			<input type="submit" value="닫기" id="expertClose" class="btn btn-block btn-danger">
 		</div>
-	</form>
-</div>
+		</form>
+		</div>
+	</div>
 </body>
 </html>
