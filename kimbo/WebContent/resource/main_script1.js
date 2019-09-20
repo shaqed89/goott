@@ -1,14 +1,14 @@
 
 $(function(){
 	//메인페이지 시작시 이미지 슬라이드
-	$("#main_slide_img").bxSlider({
+	var main_slide = $("#main_slide_img").bxSlider({
 		mode : 'fade',
 		slideWidth : 600,
-		slideHeight : 400,
 		auto : true,
 		speed : 4000,
+		controls : false,
 		randomStart : true,
-		infiniteloop : true
+		infiniteLoop : true,
 	});
 	
 	//top5
@@ -46,58 +46,53 @@ $(function(){
 		$(this).children("img").css("display","block");
 	});
 	
-	//다이얼로그 슬라이드
-	$("#slide").bxSlider({
-		mode : 'horizontal',
-		slideWidth : 1000,
-		slideWidth : 800,
-		speed : 2000,
-		auto : false,
-		infiniteloop : true,
-		adaptiveHeght: false, 
-	});
 	
+	var bx=null;
 	//작가 사진 클릭시 슬라이드 다이얼로그 실행
 	$("#main_top5>li").click(function(){
-		var idx = $(this).index();
+		var idx = $("#main_top5>li").index(this);
+		var dialog_title = "Tattooist"+(idx+1);
+		$(".ui-dialog-title").text(dialog_title);
 		var add_slide = "";
 		
-		/*$("#slide").html("<li><img src='"+slide_img[idx*3]+"'/></li>"+
-				"<li><img src='"+slide_img[idx*3+1]+"'/></li>"+
-				"<li><img src='"+slide_img[idx*3+2]+"'/></li>")
-		*/
-		
-		for(i=0; i<5; i++){
-			if(i==0){$("#slide>li").first().children("img").attr("src",slide_img[idx*3+2])}
-			else if(i==4){$("#slide>li").last().children("img").attr("src",slide_img[idx*3])}
-			else{
-			$("#slide>li").eq(i+1).children("img").attr("src",slide_img[idx*3+i])}
+		for(i=0; i<3; i++){
+			add_slide += "<li style='text-align:center'><img src='"+slide_img[idx*3+i]+"'/></li>"
 		}
+		//슬라이더 이미지 추가
+		$("#slide").html(add_slide);
 		
+		//다이얼로그 생성
 		$("#tattooist_slide").dialog("open");
-
+		bx.reloadSlider();
 	});
-	
 	
 	//다이얼로그 옵션
 	$("#tattooist_slide").dialog({
 		autoOpen : false,//실행시 자동열림 설정 및 해제
-		width: 1000,
-		height: 800,
+		width: 900,
 		resizable : false,
 		draggable : false,
 		modal : true,
-
 		buttons : {more : function(){
 			
 		}},
 		
 		close: function() {
-			$("#slide").html("");
+			bx.destroySlider();
 		}
-		
 	});
 	
-
+	//슬라이더 옵션
+	bx = $("#slide").bxSlider({
+		mode : 'horizontal',
+		slideWidth : 900,
+		speed : 2000,
+		auto : false,
+		infiniteLoop : false,
+		hideControlOnEnd : true,
+		adaptiveHeght: true, 
+		startSlide : 0,
+		touchEnabled : false
+	});
 	
 });
