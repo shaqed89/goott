@@ -11,15 +11,23 @@ a:active{color:gray} /* 마우스 눌렀을때 */
 
 header{font-size:3em; font-family: 'Indie Flower', cursive;width:100%;height:130px;
 		border-bottom:1px solid lightblue}
-header div{float:left;}	
+header div{float:left;}
 #header_left{width:200px;height:130px;}
 #center{width:800px;height:130px;}
 
 
+<<<<<<< HEAD
+#header_center1{width:400px;color:#fff;position:relative;text-align:center;
+				left:225px;top:50px;transition: all 350ms ease-in-out 0s;}
+
+
+
+=======
 #header_center1{width:800px; height:50px;color:#fff;position:absolute; text-align:center;
 				top:50px;transition: all 350ms ease-in-out 0s;
 				}
 				
+>>>>>>> 076dd3d61e082a36a45838f40c96b5ff9803c256
 #header_center2{width:600px;height:50px;display:none;position:relative;
 				font-size:30px;left:100px;top:50px;margin:0 auto;text-align:center;}
 
