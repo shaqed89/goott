@@ -25,13 +25,17 @@
 			top:150px;left:700px;text-align:center;}
 #choiceModal input{color:black;width:150px;height:50px;font-family:바탕체;
 					margin:180px 50px auto;}
+					
 #choiceModal label{color:#fff;margin:30px 0 0 0;font-family: 'Indie Flower', cursive;font-size:20px;}
 #guest{width:250px;height:400px;border-right:1px solid gray;position:absolute;
 		}
 #expert{float:right;width:250px;height:400px;}
 
 #close{width:500p;height:50px;margin:10px -252px 0;padding:10px 0 10px;}
-#close input{margin:0 0 0 175px;padding:0;height:30px;}
+#close input{margin:0 0 0 175px;padding:0;height:30px; font-family: 'Gaegu', cursive;}
+
+#sign1, #sign2{width:100px;}
+
 /*작가*/
 #mb{height:987px;}
 #joinModal{width:1000px;height:1000px;color:#fff;position:absolute;
@@ -78,9 +82,3 @@ form{width:0;}
 #wndqhr3{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
 #wndqhr4{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
 #st2{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
-
-
-
-
-
-footer{font-size:2em; font-family: 'Gaegu', cursive;}

@@ -1,5 +1,7 @@
 
 $(function(){
+	$("#main_page").carousel({interval: false});
+	
 	//메인페이지 시작시 이미지 슬라이드
 	var main_slide = $("#main_slide_img").bxSlider({
 		mode : 'fade',
