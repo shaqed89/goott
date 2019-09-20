@@ -1,0 +1,50 @@
+@charset "UTF-8";
+body{
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#545454+0,545454+40,000000+100 */
+background: #545454; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, #545454 0%, #545454 40%, #000000 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, #545454 0%,#545454 40%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, #545454 0%,#545454 40%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+section{width:100%; height:800px;}
+#main1{width:100%; height:800px;}
+#main_slide_view{width:600px; height:400px; margin:10px auto; overflow:hidden;
+				 }
+
+#main_slide_img{width:2400px; height:400px; float:left;}
+#main_slide_img img{width:600px; height:400px;}
+
+#main_slide_view>.bx-wrapper{border:0}
+
+#main_top5_title{width:100%; height:30px;}
+#main_top5_title>label{font-family: 'Indie Flower', cursive; color:#fff;
+					   font-size:30px; position:relative; left:50px;}
+
+#main_top5{width:1000px; height:350px;
+		   margin:5px auto;}
+		   
+#main_top5 li{width:180px; height:330px; margin:0 10px; float:left;
+				  border:5px double #888;}
+				  
+#main_top5 li>img{width:100%; height:100%;}
+
+#tattooist_slide{font-family: 'Indie Flower', cursive;}
+
+.ui-widget-overlay {
+    background: #000000;
+    opacity: 0.5;}
+    
+.ui-widget-header{border:none; font-family: 'Indie Flower', cursive; font-size:30px;}
+.ui-dialog .ui-dialog-titlebar {text-align:center; padding:0;}
+
+.ui-widget-content{background-color:#333;}
+
+#slide>li img{width:800px; height:600px;}
+
+.ui-dialog .ui-dialog-buttonpane button {
+    margin: 10px 5px; padding: 5px 30px; border-radius: 3px; background-color: darkgray;
+    font-family: 'Indie Flower', cursive; font-size:20px;}
+    
+.carousel-control-next-icon, .carousel-control-prev-icon {width: 40px; height: 40px;}
+.carousel-control-next, .carousel-control-prev {width:5%;}

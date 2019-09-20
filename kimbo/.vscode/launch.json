@@ -1,0 +1,56 @@
+// Use IntelliSense to learn about possible attributes.
+// Hover to view descriptions of existing attributes.
+// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome 127.0.0.1",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9237,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:50398/p/kimbo/WebContent/index.html?_cmAuth\u003dllgccmthtu"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (1)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9202,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:50398/p/kimbo/WebContent/main/Lee.html?_cmAuth\u003dllgccmthtu"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (2)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9238,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:50398/p/kimbo/WebContent/main/main-jinsu.html?_cmAuth\u003dllgccmthtu"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (3)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9227,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:50398/p/kimbo/WebContent/main/main-jinsu1.html?_cmAuth\u003dllgccmthtu"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (4)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9234,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:50398/p/kimbo/WebContent/Search_jinsu.html?_cmAuth\u003dllgccmthtu"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (5)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9267,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:50398/p/kimbo/WebContent/search/Search_jinsu.html?_cmAuth\u003dllgccmthtu"
+    }
+  ]
+}
