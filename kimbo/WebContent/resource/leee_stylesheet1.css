@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/*로그인 */
 #myModal{width:440px;height:700px;color:#fff;position:absolute;margin:150px 0 100px 730px;background-image:url(../img/18.jpg);font-family:바탕체;font-weight:bold;}
 #log{width:400px;height:100px;text-align:center;margin:20px auto;font-size:50px;}
 .form-group label{width:400px;font-size:20px;margin:0 20px 10px;}
@@ -15,17 +16,46 @@
 #signup{margin:10px 0 0 50px;width:300px;text-align:center;font-weight:bold;font-family:none;}
 #cancle{margin:30px 0 0 140px;width:120px;text-align:center;font-weight:bold;font-family:none;}
 
-#joinModal{width}
+/* 회원가입 유형선택 */
+#choiceModal{width:500px;height:400px;background:#fff;font-family: 'Gaegu', cursive;
+			top:150px;left:700px;text-align:center;}
+#choiceModal input{color:black;width:150px;height:50px;font-family:바탕체;
+					margin:180px 50px auto;}
+#choiceModal label{color:#fff;margin:30px 0 0 0;font-family: 'Indie Flower', cursive;font-size:20px;}
+#guest{width:250px;height:400px;border-right:1px solid gray;position:absolute;
+		}
+#expert{float:right;width:250px;height:400px;}
 
+/*작가*/
+#joinModal{width:1000px;height:1000px;color:#fff;position:absolute;
+         border:1px solid gray;margin:50px 0 100px 460px;background-image:url(../img/rose.jpg);
+         }
+#join{width:1000px;height:80px;border-bottom:1px solid #fff;text-align:center;font-size:40px;
+     margin:10px 0 0 0;font-family: 'Gaegu', cursive;}
 
+#txt{float:left;width:200px;height:810px;color:#fff;}
 
+#txt label{margin:40px 0 0 80px;height:20px;font-family: 'Gaegu', cursive;font-size:20px;}
+#txt input{width:300px;height:50px;margin:100px 0 0 350px;}
+#wrt{float:left;width:550px;height:650px;color:#fff;font-family: 'Gaegu', cursive;}
+#wrt input:focus{outline:none;}
+#wrt input{border:0px;border-bottom:1px solid #fff;width:500px;height:20px;background:none;
+			margin:43px 20px 0 20px;color:#fff;font-weight:bold;font-size:20px;}
+#wrt form select{margin:50px 20px 0 20px;}
+form{width:180px;margin:-10px 0 0 0;}
+#wrt #gender1,#wrt #gender2{height:15px;width:15px;}
 
+#prf{margin:-100px 0 100px 20px;position:relative;}
 
+#tpfh{float:left;width:200px;height:700px;}
+#wndqhr{width:100px;height:30px;font-size:13px;margin:30px 50px 300px 10px;font-famlily:}
+#tpfh{float:left;width:200px;height:700px;}
+#wndqhr{width:100px;height:30px;font-size:13px;margin:30px 50px 300px 10px;font-famlily:}
 
-
-
-
-
-
+/*일반회원*/
+#expertModal{width:1000px;height:910px;color:#fff;position:absolute;
+         border:1px solid gray;margin:50px 0 100px 460px;background-image:url(../img/rose.jpg);
+         }
+#wndqhr1{width:100px;height:30px;font-size:13px;margin:20px 50px 200px 10px;font-famlily:}
 
 footer{font-size:2em; font-family: 'Gaegu', cursive;}
