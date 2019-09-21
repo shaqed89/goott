@@ -5,12 +5,16 @@
 <title>Good.D Tattoo</title>
 <link rel="stylesheet" href="../plugin/jquery-ui.min.css" type="text/css"/>
 <link rel="stylesheet" href="../plugin/jquery.bxslider.css" type="text/css"/>
+<link rel="stylesheet" href="../plugin/fullcalendar.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../plugin/jquery.bxslider.js"></script>
 <script src="../plugin/jquery-ui.min.js"></script>
+<script src="../plugin/jquery.bxslider.js"></script>
+<script src="../plugin/jquery.min.js"></script>
+<script src="../plugin/moment.min.js"></script>
+<script src="../plugin/fullcalendar.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <!-- Header-->
@@ -317,29 +321,147 @@
 	</div>
 	<div id="my_page_content">
 		<div id="my_cal">
+			<div id="my_calendar"></div>
 		</div>
 		<hr/>
-		<div id="my_like">
-			<div class="card">
-				<div class="card-header"><a href="#memo1" data-toggle="collapse" data-parent="#acc">더 브라위너, 스코틀랜드전 '데블 오브 더 매치'…1골3도움</a></div>
-				<div id="memo1" class="collapse">잉글랜드 프리미어리그 도움 선두를 달리고 있는 케빈 더 브라위너가 조국 벨기에 대표팀에서도 1골 3도움을 뽑아냈다. 어시스트 해트트릭을 기록했다.</div>
-				
-				<div class="card-header"><a href="#memo2" data-toggle="collapse" data-parent="#acc">'퍼거슨-무리뉴의 1순위' 바란, 지단 설득에 레알 선택</a></div>
-				<div id="memo2" class="collapse show">라파엘 바란(26)이 지네딘 지단 감독의 설득으로 맨체스터 유나이티드의 제안을 뿌리쳤던 사연이 뒤늦게 밝혀졌다</div>
+		<div id="my_like_post">
+			<div id="my_like">
+				<div class="card">
+					<div class="card-header">
+						<h2>내 관심도안</h2>
+						<a href="#like_list" data-toggle="collapse" data-parent="#my_like">▼</a>
+						</div>
+					<div id="like_list" class="collapse">
+					<table class="table">
+						<thead>
+						<tr class="table-secondary">
+							<td>IMAGE</td>
+							<td>TITLE</td>
+							<td>TATTOOIST</td>
+							<td>DATE</td>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td><img src="../img/Lettering26.jpg"></td>
+							<td>lettring</td>
+							<td>tatooist1</td>
+							<td>2018-10-21</td>
+						</tr>
+						<tr>
+							<td><img src="../img/lettering26.jpg"></td>
+							<td>lettring</td>
+							<td>tatooist1</td>
+							<td>2018-10-21</td>
+						</tr>
+						<tr>
+							<td><img src="../img/lettering26.jpg"></td>
+							<td>lettring</td>
+							<td>tatooist1</td>
+							<td>2018-10-21</td>
+						</tr>
+						<tr>
+							<td><img src="../img/lettering26.jpg"></td>
+							<td>lettring</td>
+							<td>tatooist1</td>
+							<td>2018-10-21</td>
+						</tr>
+						<tr>
+							<td><img src="../img/lettering26.jpg"></td>
+							<td>lettring</td>
+							<td>tatooist1</td>
+							<td>2018-10-21</td>
+						</tr>
+						</tbody>
+						<tfoot>
+						<tr>
+							<td colspan="4">
+								<ul class="pagination pagination-sm">
+									<li class="page-item disabled"><a href="#" class="page-link">prev</a></li>
+									<li class="page-item"><a href="#" class="page-link">1</a></li>
+									<li class="page-item"><a href="#" class="page-link">2</a></li>
+									<li class="page-item active"><a href="#" class="page-link">3</a></li>
+									<li class="page-item"><a href="#" class="page-link">4</a></li>
+									<li class="page-item"><a href="#" class="page-link">5</a></li>
+									<li class="page-item"><a href="#" class="page-link">next</a></li>
+								</ul>
+							</td>
+						</tr>
+						</tfoot>
+					</table>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div id="my_post">
-			<div class="card">
-				<div class="card-header"><a href="#memo1" data-toggle="collapse" data-parent="#acc">더 브라위너, 스코틀랜드전 '데블 오브 더 매치'…1골3도움</a></div>
-				<div id="memo1" class="collapse">잉글랜드 프리미어리그 도움 선두를 달리고 있는 케빈 더 브라위너가 조국 벨기에 대표팀에서도 1골 3도움을 뽑아냈다. 어시스트 해트트릭을 기록했다.</div>
-				
-				<div class="card-header"><a href="#memo2" data-toggle="collapse" data-parent="#acc">'퍼거슨-무리뉴의 1순위' 바란, 지단 설득에 레알 선택</a></div>
-				<div id="memo2" class="collapse show">라파엘 바란(26)이 지네딘 지단 감독의 설득으로 맨체스터 유나이티드의 제안을 뿌리쳤던 사연이 뒤늦게 밝혀졌다</div>
+			<br/>
+	 		<div id="my_post">
+				<div class="card">
+					<div class="card-header">
+						<h2>내 게시물 관리</h2>
+						<a href="#post_list1" data-toggle="collapse" data-parent="#my_post">▼</a>
+						</div>
+					<div id="post_list1" class="collapse">
+						<table class="table">
+							<thead>
+							<tr class="table-secondary">
+								<td>NO</td>
+								<td>TITLE</td>
+								<td>NAME</td>
+								<td>DATE</td>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>1</td>
+								<td>후기 남겨요~~</td>
+								<td>guest1</td>
+								<td>2018-12-19</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>후기 남겨요~~</td>
+								<td>guest1</td>
+								<td>2018-12-19</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>후기 남겨요~~</td>
+								<td>guest1</td>
+								<td>2018-12-19</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>후기 남겨요~~</td>
+								<td>guest1</td>
+								<td>2018-12-19</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>후기 남겨요~~</td>
+								<td>guest1</td>
+								<td>2018-12-19</td>
+							</tr>
+							</tbody>
+							<tfoot>
+							<tr>
+								<td colspan="4">
+									<ul class="pagination pagination-sm">
+										<li class="page-item disabled"><a href="#" class="page-link">prev</a></li>
+										<li class="page-item"><a href="#" class="page-link">1</a></li>
+										<li class="page-item"><a href="#" class="page-link">2</a></li>
+										<li class="page-item active"><a href="#" class="page-link">3</a></li>
+										<li class="page-item"><a href="#" class="page-link">4</a></li>
+										<li class="page-item"><a href="#" class="page-link">5</a></li>
+										<li class="page-item"><a href="#" class="page-link">next</a></li>
+									</ul>
+								</td>
+							</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	</section>
-	<footer>
-	</footer>
 </body>
 </html>
