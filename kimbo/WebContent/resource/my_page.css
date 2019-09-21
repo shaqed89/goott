@@ -4,6 +4,7 @@ section>div{float:left;}
 
 #my_page_side{width:200px; height:100%; border-right:1px solid gray;}
 #title{width:400px; height:100px; color:white; font-family: 'Indie Flower', cursive; font-size:40px; padding:10px 30px;}
+#side_menu{color:white; font-family: 'Gaegu', cursive; font-size:20px;}
 
 #my_page_content{width:1000px; height:100%;}
 #my_cal{width:760px; height:400px; border:1px solid red; margin: 10px auto;}
