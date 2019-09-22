@@ -88,7 +88,7 @@
 	}
 	#div2, #div2 {clear:left;width:700px; height:100px;} #d1, #d2 {width:300px;height:30px;float:left;}
 	#insert label {font-size:2em;
-	.file {float:left;margin:5px auto;width:228px; height:230px;}
+	.file {float:left;margin:5px;width:228px; height:230px;}
 	
 	</style>
 	<script>
