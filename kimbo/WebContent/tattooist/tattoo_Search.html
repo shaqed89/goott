@@ -90,11 +90,20 @@
 			margin: 0 auto;
 			width: 1120px;
 		}
+		
+		#arrimg>div{
+			width:200px; 
+			height:250px; 
+			margin:10px; 
+			float:left;
+			color:#fff;
+			font-szie:20px;
+			text-align:center;
+		}
 
 		#arrimg img {
 			width: 200px;
 			height: 200px;
-			margin: 10px;
 		}
 		hr{
 			height: 1px;
@@ -119,10 +128,13 @@
 	$(function(){
 		var arr = ['t1_1.jpg','t1_2.jpg','t1_3.jpg','t1_4.jpg','t1_5.jpg','t1_6.jpg','t1_7.jpg','t1_8.jpg'
 					,'t1_9.jpg','t1_10.jpg','t1_11.jpg','t1_12.jpg','t1_13.jpg','t1_14.jpg','t1_15.jpg'];
+		var name_arr = ['tattooist1','tattooist2','tattooist3','tattooist4','tattooist5',
+						'tattooist1','tattooist2','tattooist3','tattooist4','tattooist5',
+						'tattooist1','tattooist2','tattooist3','tattooist4','tattooist5',];
 		var list = "";
 			for(j=0; j<3; j++){
 				for (i = 0; i < arr.length; i++) {
-					list += "<a href='#'><img src='../img/tattooist/"+arr[i]+"'></a>";
+					list += "<div><a href='#'><img src='../img/tattooist/"+arr[i]+"'></a><br/>"+name_arr[i]+"</div>";
 				}
 				$("#arrimg").html(list);
 			}
