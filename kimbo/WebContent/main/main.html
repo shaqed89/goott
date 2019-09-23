@@ -33,7 +33,7 @@
 <body>
 	<header>
 		<div id="header_left">
-			<a href="http://localhost:9090/kimbo/main/main.htm">Good.D<br />TATTOO
+			<a href="http://localhost:9090/kimbo/main/main.html">Good.D<br />TATTOO
 			</a>
 		</div>
 		<div id="center">
@@ -42,8 +42,8 @@
 			</div>
 
 			<div id="header_center2">
-				<a href="http://localhost:9090/kimbo/search/Search_jinsu.html">Search</a>
-				<a href="http://localhost:9090/kimbo/tattooist/tattoo_Search.html">Tattooist</a>
+				<a href="http://localhost:9090/kimbo/search/serch-jinsu.html">Search</a>
+				<a href="http://localhost:9090/kimbo/Tattooist/tattoo_search1.html">Tattooist</a>
 				<a href="http://localhost:9090/kimbo/notice/lee_notice.html">Notice</a>
 				<a href="http://localhost:9090/kimbo/faq/lee_faq.html">F&Q</a>
 				<a href="http://localhost:9090/kimbo/review/lee_review.html">Review</a>
@@ -58,11 +58,13 @@
 			</ul>
 		</div>
 	</header>
+
 	<!-- 로그인 다이얼로그 -->
-	<div id="myModal" class="modal">
+
+<div id="myModal" class="modal">
 		<div id="ma">
 		<div id="log">LOGIN</div>
-		<form action="#" method="post" name="frm" id="frm">
+		<form>
 			<div class="form-group">
 				<label>ID</label> <input type="text" name="userid" id="userid"
 					class="form-control" placeholder="아이디를 입력하세요.">
@@ -82,11 +84,11 @@
 				</h6>
 			</div>
 			<input type="submit" value="Login" id="lgn"
-				class="btn btn-block btn-secondary" onclick="alert" />
+				class="btn btn-block btn-secondary" onclick="regChk()" />
 			<div id="bdr">
 				<h2>Not a member yet</h2>
 				<input type="submit" value="SIGN UP" id="signup"
-					class="btn btn-block btn-primary"> <input type="submit"
+					class="btn btn-block btn-primary" data-toggle="modal" data-target="#choiceModal"> <input type="submit"
 					value="CANCLE" id="cancle" class="btn btn-block btn-danger">
 			</div>
 		</form>
@@ -134,12 +136,12 @@
 				</div>
 				
 			<div id="wrt" class="form-group">
-				<input type="text" placeholder="8~13글자의 영문,숫자,특수문자 조합" > <input
-					type="password" placeholder="6글자 이상의 영문, 숫자, 특수문자 조합"> <input
-					type="text" placeholder="비밀번호 확인"> <input type="text"
-					placeholder="이름"> <input type="text" placeholder="'-'를 제외하고 입력">
-				<input type="text" placeholder="인증번호 입력"> <input type="text"
-					placeholder="주민등록번호 앞 6자리 숫자"> <input type="text" placeholder="카카오톡ID">
+				<input type="text" placeholder="8~13글자의 영문,숫자,특수문자 조합" id="uid" >
+				<input type="password" placeholder="6글자 이상의 영문, 숫자, 특수문자 조합">
+				<input type="text" placeholder="비밀번호 확인"> <input type="text"placeholder="이름">
+				<input type="text" placeholder="'-'를 제외하고 입력">
+				<input type="text" placeholder="인증번호 입력"> <input type="text" placeholder="주민등록번호 앞 6자리 숫자">
+				<input type="text" placeholder="카카오톡ID">
 					<select name="cars" class="custom-select" id="loc">
 						<option selected>=지역선택=</option>
 						<optgroup label="서울시">
@@ -314,6 +316,11 @@
 		</form>
 		</div>
 	</div>
+<script src="../plugin/bootstrap-validate.js"></script>
+<script>
+	/* bootstrapValidate('#userid','min:5:다섯 글자 이상 입력해주세요.')	 */
+	/* bootstrapValidate('#userpwd','min:5:Enter at least 5 character!') */
+</script>
 <section>
 	<div id="main_page" class="carousel slide">
 		<div id="main_page_slide" class="carousel-inner">
