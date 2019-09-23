@@ -1,13 +1,19 @@
+
 @charset "UTF-8";
 section{width:100%; font-family: 'Gaegu', cursive;}
 section>div{float:left;}
 
 #my_page_side{width:200px; height:100%;}
-#title{width:400px; height:100px; color:white; font-family: 'Indie Flower', cursive; font-size:40px; padding:10px 30px;}
+#my_title{width:200px; height:100px; color:white; font-family: 'Indie Flower', cursive; font-size:40px; padding:10px 30px;}
 #side_menu{color:white; font-family: 'Gaegu', cursive; font-size:20px;}
+#side_menu li{width:200px; float:left;}
+
+.nav-link{padding:0;}
 
 #my_page_content{width:1000px; height:100%;}
-#my_cal{width:800px; height:800px; border:1px solid red; margin: 10px auto;}
+#my_cal{width:800px; margin: 10px auto;}
+
+#my_cal button{width:100px; height:30px; margin:10px;}
 
 hr{background-color:#fff;}
 
