@@ -58,7 +58,7 @@ $(function(){
 		var add_slide = "";
 		
 		for(i=0; i<3; i++){
-			add_slide += "<li style='text-align:center'><img src='"+slide_img[idx*3+i]+"'/></li>"
+			add_slide += "<li style='text-align:center'><a href='http://localhost:9090/kimbo/tattooist/t_detail_guest.html'><img src='"+slide_img[idx*3+i]+"'/></a></li>"
 		}
 		//슬라이더 이미지 추가
 		$("#slide").html(add_slide);

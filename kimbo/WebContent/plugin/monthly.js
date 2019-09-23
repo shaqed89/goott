@@ -2,7 +2,7 @@
 Monthly 2.2.2 by Kevin Thornbloom is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 */
 
-(function ($) {
+$(function () {
 	"use strict";
 	$.fn.extend({
 		monthly: function(customOptions) {
@@ -499,4 +499,4 @@ Monthly 2.2.2 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 
 	}
 	});
-}(jQuery));
+});
