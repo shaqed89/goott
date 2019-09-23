@@ -117,11 +117,12 @@
 //		console.log(list);
 //		arrimg();
 	$(function(){
-		var arr = ['main_slide1.jpg','main_slide2.jpg','main_slide3.jpg','main_slide4.jpg','main_slide5.jpg','main_slide6.jpg'];
+		var arr = ['t1_1.jpg','t1_2.jpg','t1_3.jpg','t1_4.jpg','t1_5.jpg','t1_6.jpg','t1_7.jpg','t1_8.jpg'
+					,'t1_9.jpg','t1_10.jpg','t1_11.jpg','t1_12.jpg','t1_13.jpg','t1_14.jpg','t1_15.jpg'];
 		var list = "";
 			for(j=0; j<3; j++){
 				for (i = 0; i < arr.length; i++) {
-					list += "<a href='#'><img src='../img/main_kim/"+arr[i]+"'></a>";
+					list += "<a href='#'><img src='../img/tattooist/"+arr[i]+"'></a>";
 				}
 				$("#arrimg").html(list);
 			}
@@ -212,131 +213,9 @@
 			</div>
 		</div>
 	</div>
-	<!-- 장르 -->
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<h2>Genre</h2>
-				<div class="btn-group-toggle" data-toggle="buttons">
-					<label class="btn btn-primary">
-						<input type="radio"> Oldschool
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> Irezumi
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> Black&Gray
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> Chicano
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> Tribal
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> NewsSchool
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> Lettering
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> Coverup
-					</label>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 주제 -->
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<h2>Subject</h2>
-				<div class="btn-group-toggle" data-toggle="buttons">
-					<label class="btn btn-primary">
-						<input type="radio"> 전체
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> Flower
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> snake
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> Dragon
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> Tiger
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> whale
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> Mandala
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> Orientalpainting
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> mini
-					</label>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 부위 -->
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<h2>part</h2>
-				<div class="btn-group-toggle" data-toggle="buttons">
-					<label class="btn btn-primary">
-						<input type="radio"> 전체
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> 등
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> 가슴
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> 팔
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> 다리
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> 쇄골
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> 옆구리
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> 손등
-					</label>
-					<label class="btn btn-primary">
-						<input type="radio"> 발등
-					</label>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 가격 -->
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<h2>price</h2>
-				<div class="form-group">
-					<div class="la"><label for="email">최저가 :</label></div>
-					<input type="text" class="form-control" id="min">
-					<div class="la"><label for="email"> ~ 최고가 :</label></div>
-					<input type="text" class="form-control" id="max">
-				</div>
-			</div>
-		</div>
-	</div>
 	<hr/>
 	<div id="arrimg" >
-
+		
 	</div>
 </body>
 
