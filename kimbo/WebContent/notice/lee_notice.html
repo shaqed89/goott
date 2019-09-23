@@ -23,7 +23,7 @@
    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
    crossorigin="anonymous"></script>
 <script>
-$(function(){
+/* $(function(){
 	$("#subShow").on({click:function(){
 		$("#noticeShow").show("fast");
 	}});
@@ -42,7 +42,7 @@ $(function(){
 	$("#noticeShow2").on({mouseleave:function(){
 		$("#noticeShow2").hide("fast");
 	}});
-}); 
+});  */
 </script>
 </head>
 <body>
@@ -81,12 +81,14 @@ $(function(){
 	</div>
 	<div class="row" id="noticeMenu2">
 	   <div class="col-sm-2">공지</div>
-	   <div class="col-sm-6"><a href="#" id="subShow">추석연휴 영업시간 안내</a></div>
+	   <div class="col-sm-6">
+	   		<a href="#" id="subShow" data-toggle="collapse" data-target="#noticeShow">추석연휴 영업시간 안내</a>
+	   </div>
 	   <span class="badge badge-pill badge-info">New</span>
 	   <div class="col-sm-2" id="WD">Good.D<br/>Tattoo</div>
 	   <div class="col-sm-2" id="WD">2019-9-20<br/>15:33:22</div>
 	   <!--눌렀을때 나오는 내용-->
-	   <div id="noticeShow">
+	   <div id="noticeShow" class="collapse hidden">
 	   		<div class="col-sm-2">Good.D<br/>Tattoo</div>
 	   		<div class="col-sm-6">연휴기간에는 영업을 하지 않습니다.</br>감사합니다.</div>
 	   	    <div class="col-sm-4" id="WD">Express Your self</div>
@@ -94,11 +96,13 @@ $(function(){
 	</div>
 	<div class="row" id="noticeMenu3">
 	   <div class="col-sm-2">공지</div>
-	   <div class="col-sm-6"><a href="#" id="subShow2">사이트 점검에 따른 이용중지 안내</a></div>	
+	   <div class="col-sm-6">
+	   		<a href="#" id="subShow2" data-toggle="collapse" data-target="#noticeShow2">사이트 점검에 따른 이용중지 안내</a>
+	   </div>	
 	   <div class="col-sm-2" id="WD">Good.D<br/>Tattoo</div>
 	   <div class="col-sm-2" id="WD">2019-9-20<br/>15:33:22</div>
 	   <!--눌렀을때 나오는 내용-->
-	   <div id="noticeShow2">
+	   <div id="noticeShow2" class="collapse hidden">
 	   		<div class="col-sm-2">Good.D<br/>Tattoo</div>
 	   		<div class="col-sm-6">안녕하세요. Good.D Tattoo입니다.</br>최근 이용자의 폭주로 01:00 부터 약 1시간 가량 서버 안정화 작업을 진행할 예정입니다.</br>감사합니다.</div>
 	   	    <div class="col-sm-4" id="WD">Express Your self</div>

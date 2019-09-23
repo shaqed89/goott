@@ -35,13 +35,13 @@ span{position:absolute;left:800px;top:417px;}
 
 /*공지사항 눌렀을때 내용*/
 /*1*/
-#noticeShow{height:300px;display:none;border:1px solid yellow;
-         background-image:url(../img/roserose.jpg);}
+#noticeShow{height:300px;border:1px solid yellow;
+         background-image:url(../img/.jpg);}
 #noticeShow div{margin:80px 0 0 0;float:left;}
 
 /*2*/
-#noticeShow2{height:300px;display:none;border:1px solid yellow;
-         background-image:url(../img/roserose.jpg);}
+#noticeShow2{height:300px;border:1px solid yellow;
+         background-image:url(../img/.jpg);}
 #noticeShow2 div{margin:80px 0 0 0;float:left;}
 
 #noticeShow #WD, #WD2{margin:120px 0 0 0;}
