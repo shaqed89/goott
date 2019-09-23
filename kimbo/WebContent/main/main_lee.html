@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -21,6 +22,8 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
+
+
 <script>
 	/*메뉴바 이벤트 */
 	$(function() {
@@ -40,14 +43,14 @@
 			}
 		});
 	});
-	$(function() {
+/* 	$(function() {
 		$("#lgn").click(function() {
 			alert("로그인 되었습니다.");
 		});
-	});
+	}); */
 	$(function() {
 		$("#signup").click(function() {
-			alert("회원가입");
+			$("#myModal").css("display","none");
 		});
 	});
 	
@@ -72,19 +75,12 @@
 			$("#choiceModal").css("display", "none");
 		});
 	});
-	
-	function doOpenCheck(chk){
-	    var obj = document.getElementsByName("aaa");
-	    for(var i=0; i<obj.length; i++){
-	        if(obj[i] != chk){
-	            obj[i].checked = false;
-	        }
-	    }
+	function regChk(){
+		var txt = document.getElementById("txt").value;
+		var reg = /css/i;
+		reg = /^[A-Za-z]{1}\w{7,14}$/;
+		alert(reg.test(document.getElementById("userid").value));
 	}
-
-	
-	
-	
 	
 </script>
 </head>
@@ -115,10 +111,11 @@
 	</header>
 
 	<!-- 로그인 다이얼로그 -->
-	<div id="myModal" class="modal">
+
+<div id="myModal" class="modal">
 		<div id="ma">
 		<div id="log">LOGIN</div>
-		<form action="#" method="post" name="frm" id="frm">
+		<form>
 			<div class="form-group">
 				<label>ID</label> <input type="text" name="userid" id="userid"
 					class="form-control" placeholder="아이디를 입력하세요.">
@@ -138,11 +135,11 @@
 				</h6>
 			</div>
 			<input type="submit" value="Login" id="lgn"
-				class="btn btn-block btn-secondary" onclick="alert" />
+				class="btn btn-block btn-secondary" onclick="regChk()" />
 			<div id="bdr">
 				<h2>Not a member yet</h2>
 				<input type="submit" value="SIGN UP" id="signup"
-					class="btn btn-block btn-primary"> <input type="submit"
+					class="btn btn-block btn-primary" data-toggle="modal" data-target="#choiceModal"> <input type="submit"
 					value="CANCLE" id="cancle" class="btn btn-block btn-danger">
 			</div>
 		</form>
@@ -190,12 +187,12 @@
 				</div>
 				
 			<div id="wrt" class="form-group">
-				<input type="text" placeholder="8~13글자의 영문,숫자,특수문자 조합" > <input
-					type="password" placeholder="6글자 이상의 영문, 숫자, 특수문자 조합"> <input
-					type="text" placeholder="비밀번호 확인"> <input type="text"
-					placeholder="이름"> <input type="text" placeholder="'-'를 제외하고 입력">
-				<input type="text" placeholder="인증번호 입력"> <input type="text"
-					placeholder="주민등록번호 앞 6자리 숫자"> <input type="text" placeholder="카카오톡ID">
+				<input type="text" placeholder="8~13글자의 영문,숫자,특수문자 조합" id="uid" >
+				<input type="password" placeholder="6글자 이상의 영문, 숫자, 특수문자 조합">
+				<input type="text" placeholder="비밀번호 확인"> <input type="text"placeholder="이름">
+				<input type="text" placeholder="'-'를 제외하고 입력">
+				<input type="text" placeholder="인증번호 입력"> <input type="text" placeholder="주민등록번호 앞 6자리 숫자">
+				<input type="text" placeholder="카카오톡ID">
 					<select name="cars" class="custom-select" id="loc">
 						<option selected>=지역선택=</option>
 						<optgroup label="서울시">
@@ -370,9 +367,10 @@
 		</form>
 		</div>
 	</div>
-	
-	
-
-
+<script src="../plugin/bootstrap-validate.js"></script>
+<script>
+	/* bootstrapValidate('#userid','min:5:다섯 글자 이상 입력해주세요.')	 */
+	/* bootstrapValidate('#userpwd','min:5:Enter at least 5 character!') */
+</script>
 </body>
 </html>

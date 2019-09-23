@@ -3,6 +3,7 @@
 #myModal{width:440px;height:700px;color:#fff;margin:150px 0 100px 730px;background-image:url(../img/18.jpg);font-family:바탕체;font-weight:bold;}
 #log{width:400px;height:100px;text-align:center;margin:0 auto;font-size:50px;}
 .form-group label{width:400px;font-size:20px;margin:0 20px 10px;}
+.form-group input{position:relative;}
 #ma{height:700px;}
 #userid{height:40px;width:400px;margin:0 20px -20px;}
 #userpwd{height:40px;width:400px;margin:0 20px 40px;}
