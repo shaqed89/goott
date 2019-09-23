@@ -1,6 +1,13 @@
 @charset "UTF-8";
 *{margin:0;padding:0}
-body{background:black;width:1200px;height:1000px;margin:0 auto}
+body{width:1200px;height:1000px;margin:0 auto;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#545454+0,545454+40,000000+100 */
+	background: #545454; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #545454 0%, #545454 40%, #000000 100%); /* FF3.6-15 */
+	background: -webkit-radial-gradient(center, ellipse cover, #545454 0%,#545454 40%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at center, #545454 0%,#545454 40%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
 ul, li{list-style-type:none;}
 
 

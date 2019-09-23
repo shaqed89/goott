@@ -4,4 +4,6 @@ $(function(){
 		  xmlUrl : '../plugin/kimbo_events.xml',
 		  eventList : true,
 		});
+
+	
 });
