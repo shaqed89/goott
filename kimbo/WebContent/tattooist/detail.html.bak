@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="../plugin/jquery-ui.min.css" type="text/css"/>
+	<link rel="stylesheet" href="../plugin/jquery.bxslider.css" type="text/css"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<!-- Header-->
+	<link rel="stylesheet" href="../resource/header.css" type="text/css" />
+	<script src="../resource/header.js"></script>
+	<script>
+		//$(function() {
+		//	var slide_img=['../img/main_kim/tattooist1_slide1.jpg',
+		//		   '../img/main_kim/tattooist1_slide2.jpg',
+		//		   '../img/main_kim/tattooist1_slide3.jpg'];
+
+		//});
+	</script>
+	<style>
+		#ttop {float:left;width:100%;border:2px solid red;margin-top:20px;}
+		#top {clear:left;width:1140px;height:400px;margin:0px auto;border:2px solid orange;}
+		#imgSlide {width:600px; height:400px; border:2px solid yellow;
+			   float:left;
+		}
+		#exp {width:400px;height:400px;border:2px solid green;float:left;margin-left:135px;}
+		#price {width:400px;height:100px;background-color:lightyellow;z-index:5;}
+		#exp img {width:400px;height:340px;z-index:10;margin-top:-40px;}
+		#review-list {border:2px solid blue;}
+	</style>
+ </head>
+ <body>
+	<header>
+			<div id="header_left"><a href="#">Good.D<br/>TATTOO</a></div>
+			<div id="center">
+				<div id="header_center1">&equiv;</div>
+				
+				<div id="header_center2">
+					<a href="#">Search</a>
+					<a href="#">Tattooist</a>
+					<a href="#">Notice</a>
+					<a href="#">FAQ</a>
+					<a href="#">Review</a>
+				</div>
+			</div>
+			<div id="header_right">
+				<ul>
+					<li><a href="#">Login</a></li>
+					<li><a href="#">Join</a></li>
+					<li><a href="#">My</a></li>
+				</ul>
+			</div>
+		</header>
+
+		<!--<div id="tattooist_slide" title="slide">
+			<ul id="slide">
+			</ul>
+		</div>-->
+		<div id="ttop">
+			<div id="top">
+				<div id="imgSlide"></div>
+				<div id="exp">
+					<div id="price">
+						<div style="float:left;">10%</div>
+						<div style="float:right;">180,000<span>¿ø</span></div>
+					</div>
+					<div><img src="../img/bubble.png"/></div>
+				</div>
+			</div>
+		</div>
+		<a href="#"><img src="../img/event.png" style="width:100%;margin:50px 0px;"/></a>
+		
+		<div>
+			<img src="../img/Orientalpainting10.jpg" style="margin:10px 60px;"/>
+			<img src="../img/Orientalpainting18.jpg" style="margin:10px 280px;"/>
+		</div>
+
+		<div id="review">
+			<div id="my_list">
+				<div class="card">
+					<div class="card-header">
+						<h2>ÀüÃ¼ ¸®ºä</h2>
+						<a href="#review_list" data-toggle="collapse" data-parent="#my_list">¡å</a>
+						</div>
+					<div id="review_list" class="collapse">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+ </body>
+</html>

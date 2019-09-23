@@ -1,0 +1,47 @@
+@charset "UTF-8";
+.container{font-family: 'Gaegu', cursive;font-size:20px;}
+/*헤더부분 notice / notice|공지사항  */
+div h1{margin:20px 0 0 488px;color:#fff;}
+div h4{margin:50px 0 60px 0;padding:0 0 20px 0;color:#fff;
+      border-bottom:1px solid gray;}
+
+/*공지사항 폼*/
+#noticeMenuMain div, 
+#noticeMenu2 div, #noticeMenu3 div, 
+#noticeMenu4 div, #noticeMenu5 div
+{color:#fff;width:100%;margin:auto;}      
+
+#noticeMenuMain{font-size:25px;color:#fff;
+            width:100%;margin:auto;}
+
+
+#noticeMenu2{border-top:1px solid gray;
+          border-bottom:1px solid gray;
+          width:1110px;color:#fff;
+          width:100%;
+          margin:auto;}
+#noticeMenu3, #noticeMenu4, #noticeMenu5{border-bottom:1px solid gray;
+                              color:#fff;
+                              width:100%;
+                              margin:auto;}
+#noticeMenuMain #WD, 
+#noticeMenu2 #WD, #noticeMenu3 #WD, 
+#noticeMenu4 #WD, #noticeMenu5 #WD{text-align:center;font-family: 'Indie Flower', cursive;}
+span{position:absolute;left:800px;top:417px;}
+
+/*페이지 넘김 폼*/
+#pg ul{margin-left:43%;margin-top:30px;}
+#pg a:visited{color:black;}
+
+/*공지사항 눌렀을때 내용*/
+/*1*/
+#noticeShow{height:300px;display:none;border:1px solid yellow;
+         background-image:url(../img/roserose.jpg);}
+#noticeShow div{margin:80px 0 0 0;float:left;}
+
+/*2*/
+#noticeShow2{height:300px;display:none;border:1px solid yellow;
+         background-image:url(../img/roserose.jpg);}
+#noticeShow2 div{margin:80px 0 0 0;float:left;}
+
+#noticeShow #WD, #WD2{margin:120px 0 0 0;}
