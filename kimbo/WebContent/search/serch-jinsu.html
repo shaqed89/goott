@@ -130,7 +130,7 @@
 				}
 				$("#arrimg").html(list);
 			}
-				$("#btnse").click(function() {
+			$("#btnse").click(function() {
 
 
 			$('input[name="ra1"]:checked').each(function() {
@@ -138,8 +138,12 @@
 				var test = $(this).val();
 
 				console.log(test);
-
+				
 			});
+
+
+
+
 			$('input[name="ra2"]:checked').each(function() {
 
 				var test = $(this).val();
@@ -150,9 +154,7 @@
 			$('input[name="ra3"]:checked').each(function() {
 
 				var test = $(this).val();
-
 				console.log(test);
-
 			});
 			$('input[name="ra4"]:checked').each(function() {
 
@@ -176,8 +178,17 @@
 
 			});
 			
-		});
+			});
+			$(".class>input").click(function() {
+
+				$("#chveiw").val();
+
+
+			});
 	});
+	var inputValue = $("input[name='ra1']:checked").val();
+     console.log(inputValue);
+
 	</script>
 </head>
 
@@ -335,6 +346,8 @@
 						<input type="radio" name="ra3" value="mini"> mini
 					</label>
 				</div>
+
+
 			</div>
 		</div>
 	</div>
