@@ -49,17 +49,14 @@
 			});
 	</script>
 	<style>
-		#ttop {float:left;width:100%;border:2px solid red;margin-top:20px;}
-		#top {clear:left;width:1140px;height:400px;margin:0px auto;border:2px solid orange;}
-		#imgSlide {width:600px; height:400px; border:2px solid yellow;
+		#ttop {float:left;width:100%;margin-top:20px;}
+		#top {clear:left;width:1140px;height:400px;margin:0px auto;}
+		#imgSlide {width:600px; height:400px;
 			   float:left;overflow:hidden;
 		}
-		#exp {width:400px;height:400px;border:2px solid green;float:left;margin-left:135px;}
+		#exp {width:400px;height:400px;float:left;margin-left:135px;}
 		#price {width:400px;height:100px;background-color:lightyellow;z-index:5;}
 		#exp img {width:400px;height:340px;z-index:10;margin-top:-40px;}
-		#review-list {border:2px solid blue;}
-		
-		
 		
 		#imgView{width:600px;overflow:hidden;}
 		#imgList{width:1200px;position:relative;}
@@ -138,11 +135,11 @@
 		<<a href="#"><img src="../img/event.png" style="width:100%;margin:50px 0px;"/></a>
 		
 		<div>
-			<img src="../img/Orientalpainting10.jpg" style="width:100%;"/>
-			<img src="../img/Orientalpainting18.jpg" style="width:100%;"/>
+			<div><img src="../img/Orientalpainting10.jpg" style="width:80%;margin-left:120px;"/></div>
+			<div><img src="../img/Orientalpainting18.jpg" style="width:80%;margin-left:120px;margin-top:40px;"/></div>
 		</div>
 
-		<div id="container">
+		<div id="container" style="margin:40px auto;">
 			<div id="acc">
 				<div class="card">
 					<div class="card-header">전체 리뷰<a href="#memo1" data-toggle="collapse" data-parent="#acc" style="color:black;float:right;">▼</a></div>
@@ -234,7 +231,7 @@
 									<th>등록버튼</th>
 								</tr>
 								<tr>
-									<td align="center"><select name="food">
+									<td align="center"><select name="star">
 											 <option value="not">==별점선택==</option>
 											 <option value="s1">1</option>
 											 <option value="s2">2</option>
