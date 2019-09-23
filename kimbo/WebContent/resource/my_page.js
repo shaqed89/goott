@@ -23,7 +23,7 @@ $(function(){
 	});
 	
 	//시간 설정
-	var time_str = "<option>--:--</option>";
+	var time_str = "<option>--------</option>";
 	for(i=0; i<12; i++){
 		time_str += "<option>"+(i+1)+":00</option>"
 	}
@@ -53,11 +53,39 @@ $(function(){
 						+ " , "
 						+ $("#schedule_color").val();
 			console.log(data);
+			
+			$("#schedule_name").val("");
+			$("#schedule_start_date").val("");
+			$("#schedule_end_date").val("");
+			$("#schedule_start_AMPM").val("AM");
+			$("#schedule_start_time").val("--------");
+			$("#schedule_end_AMPM").val("AM");
+			$("#schedule_end_time").val("--------");
+			$("#schedule_color").val("red");
 
+			$("#add_dialog").dialog("close");
 		}, 초기화 : function(){
-
+			$("#schedule_name").val("");
+			$("#schedule_start_date").val("");
+			$("#schedule_end_date").val("");
+			$("#schedule_start_AMPM").val("AM");
+			$("#schedule_start_time").val("--------");
+			$("#schedule_end_AMPM").val("AM");
+			$("#schedule_end_time").val("--------");
+			$("#schedule_color").val("red");
+			
+			
 		}, 닫기 : function(){
-
+			
+			$("#schedule_name").val("");
+			$("#schedule_start_date").val("");
+			$("#schedule_end_date").val("");
+			$("#schedule_start_AMPM").val("");
+			$("#schedule_start_time").val("");
+			$("#schedule_end_AMPM").val("");
+			$("#schedule_end_time").val("");
+			$("#schedule_color").val();
+			
 			$("#add_dialog").dialog("close");
 		}}
 	});

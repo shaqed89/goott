@@ -1,8 +1,8 @@
 /**
  * 
  */
-	/*메뉴바 이벤트 */
 	$(function() {
+		/*메뉴바 이벤트 */
 		$("#header_center1 a").on({
 			mouseenter : function() {
 				$("#header_center1").fadeOut(100);
