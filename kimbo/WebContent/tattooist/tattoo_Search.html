@@ -97,10 +97,15 @@
 			margin:10px; 
 			float:left;
 			color:#fff;
-			font-szie:20px;
+			font-size:20px;
 			text-align:center;
 		}
-
+		#arrimg>div>p{
+			width:200px; 		
+			color: darkgray;
+			font-size:10px;
+			text-align:center;
+		}
 		#arrimg img {
 			width: 200px;
 			height: 200px;
@@ -131,10 +136,12 @@
 		var name_arr = ['tattooist1','tattooist2','tattooist3','tattooist4','tattooist5',
 						'tattooist1','tattooist2','tattooist3','tattooist4','tattooist5',
 						'tattooist1','tattooist2','tattooist3','tattooist4','tattooist5',];
+		var tag= ['#홍대 #이레즈미','#홍대 #뉴스쿨','#마포전지역 #모든장르','#커버업','#뉴스쿨 #올드스쿨','#강남','#할인 이벤트중',
+				'#블랙앤그레이','#송파구 전지역','#연습 #미친가격','#레터링 #미니타투','#소통','#타투 #치카노','#커플타투','#긴팔 #반팔 #긴다'];
 		var list = "";
 			for(j=0; j<3; j++){
 				for (i = 0; i < arr.length; i++) {
-					list += "<div><a href='#'><img src='../img/tattooist/"+arr[i]+"'></a><br/>"+name_arr[i]+"</div>";
+					list += "<div><a href='#'><img src='../img/tattooist/"+arr[i]+"'></a>"+name_arr[i]+"<br/><p>"+tag[i]+"</p></div>";
 				}
 				$("#arrimg").html(list);
 			}
@@ -143,6 +150,7 @@
 </head>
 
 <body>
+	
 	<header>
 		<div id="header_left"><a href="#">Good.D<br />TATTOO</a></div>
 		<div id="center">
@@ -229,6 +237,7 @@
 	<div id="arrimg" >
 		
 	</div>
+	
 </body>
 
 </html>
