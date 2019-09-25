@@ -1,1 +1,9 @@
 @charset "UTF-8";
+.jumbotron{margin-bottom:0; padding:0;}
+.container{width:1200px; max-width:1200px;}
+
+header{height:130px;}
+header .container{height:100%;}
+section{height:807px; background-color:red;}
+footer{height:120px;}
+footer .container{height:100%; background-color:green;}
