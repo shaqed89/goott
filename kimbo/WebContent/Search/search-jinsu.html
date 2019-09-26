@@ -24,22 +24,24 @@
 	crossorigin="anonymous"></script>
 	<style>
 		#title {
-			color: white;
+			color: black;
 			margin-top: 30px;
 			margin-left: 20px;
 		}
 
 		#search {
+			border: 1px solid gray;
 			margin: 30px auto;
 			height: 40px;
-			width: 400px;
+			width: 402px;
 
 		}
 
 		#textse {
+			color: black;
 			font-size: 16px;
 			height: 40px;
-			width: 320px;
+			width: 350px;
 			padding: 10px;
 			border: 0;
 			outline: none;
@@ -59,7 +61,7 @@
 			width: 150px;
 			text-align: center;
 			float: left;
-			color: antiquewhite;
+			color: black;
 		}
 
 		.form-group {
@@ -90,16 +92,29 @@
 			width: 70px;
 			margin-right: 20px;
 		}
+		.la>label{color:black;}
 
+		.arr{
+			width:200px; 
+			height:250px; 
+			margin:10px; 
+			color:black;
+			font-size:20px;
+			text-align:center;
+			border-radius: 10px;
+			border: 1px solid black;
+			float:left;
+		}
+		
 		#arrimg {
 			margin: 0 auto;
 			width: 1120px;
 		}
-
+		
 		#arrimg img {
-			width: 200px;
+			width: 198.5px;
 			height: 200px;
-			margin: 10px;
+			border-radius: 10px 10px 0 0;
 		}
 		hr{
 			height: 1px;
@@ -107,26 +122,12 @@
 		}
 	</style>
 	<script>
-// 		let arrimg = () => {
-//			let arr = ['main_slide1.jpg','main_slide2.jpg','main_slide3.jpg','main_slide4.jpg','main_slide5.jpg','main_slide6.jpg'];
-//			let url = [];
-//			let list = "";
-//			for (let i = 0; i < arr.length; i++) {
-//				list += "<a href='#'><img src='../img/"+arr[i]+"'></a>";
-//			}
-//			console.log(document.getElementById('textse'));
-//			console.log(list);
-//				// document.querySelector('#arrimg').innerHTML = list;
-//				
-//		};
-//		console.log(list);
-//		arrimg();
 	$(function(){
 		var arr = ['main_slide1.jpg','main_slide2.jpg','main_slide3.jpg','main_slide4.jpg','main_slide5.jpg','main_slide6.jpg'];
 		var list = "";
 			for(j=0; j<3; j++){
 				for (i = 0; i < arr.length; i++) {
-					list += "<a href='#'><img src='../img/main_kim/"+arr[i]+"'></a>";
+					list += "<div class='arr'><a href='#'><img src='../img/main_kim/"+arr[i]+"'></a>dsfd</div>";
 				}
 				$("#arrimg").html(list);
 			}
@@ -279,7 +280,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<h2>Genre</h2>
+				<h2>장르</h2>
 				<div class="btn-group-toggle" data-toggle="buttons">
 					<label class="btn btn-primary">
 						<input type="radio" name="ra2" value="전체"> 전체
@@ -316,7 +317,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<h2>Subject</h2>
+				<h2>주제</h2>
 				<div class="btn-group-toggle" data-toggle="buttons">
 					<label class="btn btn-primary">
 						<input type="radio" name="ra3" value="전체"> 전체
@@ -355,7 +356,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<h2>part</h2>
+				<h2>부위</h2>
 				<div class="btn-group-toggle" data-toggle="buttons">
 					<label class="btn btn-primary">
 						<input type="radio" name="ra4" value="전체"> 전체
@@ -392,7 +393,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<h2>price</h2>
+				<h2>가격</h2>
 				<div class="form-group">
 					<div class="la"><label for="email">최저가 :</label></div>
 					<input type="text" class="form-control" id="min" name="pr" placeholder="0" value="0">
