@@ -1,9 +1,17 @@
 @charset "UTF-8";
+*{margin:0; padding:0;}
+ul, li{list-style-type:none; float:left;}
+
 .jumbotron{margin-bottom:0; padding:0;}
-.container{width:1200px; max-width:1200px;}
+.container{width:1200px; max-width:1200px; padding:0;}
 
 header{height:130px;}
 header .container{height:100%;}
+header .container div{float:left; height:100%;}
+
+
+
 section{height:807px; background-color:red;}
+
 footer{height:120px;}
 footer .container{height:100%; background-color:green;}
