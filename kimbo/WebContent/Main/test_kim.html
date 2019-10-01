@@ -12,12 +12,14 @@
 <script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../plugin/jquery.bxslider.js"></script>
 <script src="../plugin/jquery-ui.min.js"></script>
+<script src="../plugin/jquery.backstretch.min.js"></script>
 <script src="https:/stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="../resource/kimbo.css" type="text/css"/>
 <script src="../resource/kimbo.js"></script>
 </head>
 <body>
+
 <header class="jumbotron jumbotron-fluid">
 	<div class="container">
 		<div id="header_left" style="width:200px">
@@ -25,16 +27,16 @@
 			</a>
 		</div>
 		<div id="header_center" style="width:800px">
-			<nav id="header_menu1" style="width:100%">
-				<a href="#">&equiv;</a>
-			</nav>
-
-	 		<nav id="header_menu2">
+			<nav id="header_menu1" style="width:800px">
 				<a href="../search/search-jinsu.html">Search</a>
 				<a href="../Tattooist/tattoo_search1.html">Tattooist</a>
 				<a href="../notice/lee_notice.html">Notice</a>
 				<a href="../faq/lee_faq.html">F&Q</a>
 				<a href="../review/lee_review.html">Review</a>
+			</nav>
+
+	 		<nav id="header_menu2" style="width:800px">
+				<a href="#">&equiv;</a>
 			</nav> 
 		</div>
 		<div id="header_right" style="width:200px">
@@ -47,8 +49,33 @@
 		</div>
 	</div>
 </header>
+
 <section class="container">
+	<div id="main_page" class="carousel slide">
+		<div id="main_page_slide" class="carousel-inner">
+			<div id="main1"class="carousel-item active">
+				<div id="main_top5_title">
+					<label>Top5</label>
+				</div>
+				<ul id="main_top5"></ul>
+			</div>
+			<div id="main2"class="carousel-item">
+			</div>
+			<div id="main3"class="carousel-item">
+			</div>
+			<!-- 아이콘 -->
+			<ul class="carousel-indicators">
+				<li data-target="#main_page" data-slide-to='0' class='active'></li>
+				<li data-target="#main_page" data-slide-to='1'></li>
+				<li data-target="#main_page" data-slide-to='2'></li>
+			</ul>
+			<!-- 좌우버튼 -->
+			<a href="#main_page" class="carousel-control-prev" data-slide="prev" style="width:50px"><span class="carousel-control-prev-icon"></span></a>
+			<a href="#main_page" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>		
+		</div>
+	</div>
 </section>
+
 <footer class="jumbotron jumbotron-fluid">
 	<div class="container">
 	</div>
