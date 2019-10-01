@@ -6,8 +6,8 @@
 		<name>Another Event</name>
 		<startdate>2019-09-05</startdate>
 		<enddate></enddate>
-		
-		
+		<starttime></starttime>
+		<endtime></endtime>
 		<color>#28cbff</color>
 		<url></url>
 	</event>

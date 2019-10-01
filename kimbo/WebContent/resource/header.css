@@ -2,7 +2,6 @@
 *{margin:0;padding:0}
 
 body{width:1200px;height:1000px;margin:0 auto;
-background-color:black;
 background-image:
 radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
 radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
@@ -15,15 +14,15 @@ background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 ul, li{list-style-type:none;}
 
 
-a:link{color:white;text-decoration:none} /* 링크 걸어져 있을떄*/
-a:visited{color:#fff;text-decoration:none} /* 방문했을때 */
+a:link{color:#000; text-decoration:none} /* 링크 걸어져 있을떄*/
+a:visited{color:#000; text-decoration:none} /* 방문했을때 */
 a:hover{color:gray;text-decoration:none;} /* 마우스 오버 했을떄 */
 a:active{color:gray} /* 마우스 눌렀을때 */
 
-header{font-family: 'Indie Flower', cursive;width:100%;height:130px;
-		border-bottom:1px solid lightblue}
+header{font-family: 'Indie Flower', cursive; width:100%; height:130px;
+		border-bottom:1px solid lightblue;}
 header div{float:left;}
-#header_left{width:200px;height:130px;}
+#header_left{width:200px;height:130px;font-size:40px;}
 #center{width:800px;height:130px;}
 
 
@@ -31,7 +30,7 @@ header div{float:left;}
 				left:225px;top:50px;transition: all 350ms ease-in-out 0s;}
  */
 #header_center1{width:800px; height:50px;color:#fff;position:absolute; text-align:center;
-				top:50px;transition: all 350ms ease-in-out 0s;
+				top:50px;transition: all 350ms ease-in-out 0s; font-size:40px;
 				}
 				
 #header_center2{width:600px;height:50px;display:none;position:relative;

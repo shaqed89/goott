@@ -1,8 +1,8 @@
 /**
  * 
  */
-	/*메뉴바 이벤트 */
 	$(function() {
+		/*메뉴바 이벤트 */
 		$("#header_center1 a").on({
 			mouseenter : function() {
 				$("#header_center1").fadeOut(100);
@@ -19,14 +19,14 @@
 		});
 	});
 	
-	$(function() {
+/*	$(function() {
 		$("#lgn").click(function() {
 			alert("로그인 되었습니다.");
 		});
-	});
+	});*/
 	$(function() {
 		$("#signup").click(function() {
-			alert("회원가입");
+			$("#myModal").css("display","none");
 		});
 	});
 	
@@ -52,13 +52,11 @@
 		});
 	});
 	
-	function doOpenCheck(chk){
-	    var obj = document.getElementsByName("aaa");
-	    for(var i=0; i<obj.length; i++){
-	        if(obj[i] != chk){
-	            obj[i].checked = false;
-	        }
-	    }
+	function regChk(){
+		var txt = document.getElementById("txt").value;
+		var reg = /css/i;
+		reg = /^[A-Za-z]{1}\w{7,14}$/;
+		alert(reg.test(document.getElementById("userid").value));
 	}
 
 	

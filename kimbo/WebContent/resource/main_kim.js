@@ -76,6 +76,7 @@ $(function(){
 		draggable : false,
 		modal : true,
 		buttons : {more : function(){
+			location.href ="http://localhost:9090/kimbo/Tattooist/t_detail_guest1.html"
 			$("#tattooist_slide").dialog("close");
 			bx.destroySlider();
 		}, close : function(){

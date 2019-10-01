@@ -1,26 +1,32 @@
+
 @charset "UTF-8";
 section{width:100%; font-family: 'Gaegu', cursive;}
 section>div{float:left;}
 
 #my_page_side{width:200px; height:100%;}
-#title{width:400px; height:100px; color:white; font-family: 'Indie Flower', cursive; font-size:40px; padding:10px 30px;}
+#my_title{width:200px; height:100px; font-family: 'Indie Flower', cursive; font-size:40px; padding:10px 30px;}
 #side_menu{color:white; font-family: 'Gaegu', cursive; font-size:20px;}
+#side_menu li{width:200px; float:left;}
+
+.nav-link{padding:0;}
 
 #my_page_content{width:1000px; height:100%;}
-#my_cal{width:800px; height:800px; border:1px solid red; margin: 10px auto;}
+#my_cal{width:800px; margin: 10px auto;}
+
+#my_cal button{width:100px; height:30px; margin:10px;}
 
 hr{background-color:#fff;}
 
 #my_like_post{width:900px; margin:0 auto; padding-bottom:20px;}
 
-.card{border:0; border-radius:0; background-color:#0000; color:#fff;}
+.card{border:0; border-radius:0; background-color:#0000;}
 
 
 .card-header{width:900px; height:70px; border-bottom:1px solid #fff;}
 .card-header>h2{width:800px; height:50px; float:left;}
 .card-header>a{width:100px; height:50px; font-size:20px;}
 
-.table{text-align:center; color:#fff;}
+.table{text-align:center;}
 
 .table thead{font-weight:bold; font-size:20px;}
 .thead_width{width:200px}

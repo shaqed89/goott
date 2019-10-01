@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,11 +42,6 @@
 			}
 		});
 	});
-	/* 	$(function() {
-	 $("#lgn").click(function() {
-	 alert("로그인 되었습니다.");
-	 });
-	 }); */
 	$(function() {
 		$("#signup").click(function() {
 			$("#myModal").css("display", "none");
@@ -73,15 +69,35 @@
 			$("#choiceModal").css("display", "none");
 		});
 	});
+ 	$(function() {
+		$("#sig").click(function() {
+			$("#myModal").css("display", "none");
+		});
+	});  
 
-	//8~15 글자사이, [영어(대소문자), 숫자 , 특수 문자(_만 허용)] =\w 랑 같음, 첫번째 글자는 반드시 영문자
+	
+$(function(){
+		$("#lgn").click(function(){
+			if($("#userid").val() == ""){
+				alert("아이디를 입력하세요!!");
+				return false;//다음꺼 실행 안가게 해줌.
+			}
+			if($("#userid").val().length<=7){
+				alert("아이디는 8~15글자 사이여야 합니다.");
+				return false;
+			}
+			//비밀번호
+			if($("#userpwd").val() == ""){
+				alert("비밀번호를 입력하세요!!");
+				return false;
+			}
+			if($("#userpwd").val().length<=7){
+				alert("비밀번호는 8~15글자 사이여야 합니다.");
+				return false;
+			}
 
-	function regChk() {
-		var txt = document.getElementById("txt").value;
-		var reg = /css/i;
-		reg = /^[A-Za-z]{1}\w{7,14}$/;
-		alert(reg.test(document.getElementById("userid").value));
-	}
+		});
+});
 </script>
 </head>
 <body>
@@ -105,6 +121,7 @@
 				<!-- 로그인 클릭시 다이얼로그 생성 -->
 				<li data-toggle="modal" data-target="#myModal"><a href="#">Login</a></li>
 				<li data-toggle="modal" data-target="#choiceModal"><a href="#">Join</a></li>
+				
 				<li><a href="#">My</a></li>
 			</ul>
 		</div>
@@ -112,44 +129,41 @@
 
 	<!-- 로그인 다이얼로그 -->
 	<div class="container">
-
 		<!-- The Modal -->
 		<div class="modal" id="myModal">
 			<div class="modal-dialog">
 				<div class="modal-content">
-
 					<!-- Modal Header -->
 					<div class="modal-header">
-						<h4 class="modal-title">LOGIN</h4>
+						<h4 class="modal-title" id="mh">LOGIN</h4>
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
-
 					<!-- Modal body -->
 					<div class="modal-body">
 						<label>ID</label> <input type="text" name="userid" id="userid"
-							class="form-control" placeholder="아이디를 입력하세요.">
-
+							class="form-control" placeholder="아이디를 입력하세요." maxlength="15">
 						<div class="form-group">
 							<label>Password</label> <input type="password" name="userpwd"
-								id="userpwd" class="form-control" placeholder="비밀번호를 입력하세요.">
+								id="userpwd" class="form-control" placeholder="비밀번호를 입력하세요. "maxlength="15">
 						</div>
 						<div id="rmb">
 							<div id="checkb">
 							<input type="checkbox" id="chk" name="check" value="check">
 								<h6>Remember me?</h6>
 							</div>
-							
 						</div>
 					</div>
 					<!-- Modal footer -->
+					
 					<div class="modal-footer">
 						<div id="lglg">
-						<input type="submit" value="Login" id="lgn"
-							class="btn btn-block btn-danger" onclick="regChk()"/>
+						<input type="submit" value="Login" id="lgn" name="lng"
+							class="btn btn-block btn-danger"/>
 						</div>
 						<h4>NOT A MEMBER YET?</h4>
 							<div id=sign>
-								<a href="#"><input type="submit" id="sig" value="SIGN UP" class="btn btn-block btn-primary"/></a>
+								<a href="#"><input type="submit" id="sig" name="sig" value="SIGN UP" class="btn btn-block btn-primary"
+											data-toggle="modal" data-target="#choiceModal"/></a>
 							</div>
 					</div>
 				</div>
@@ -161,9 +175,9 @@
 
 
 	<!--회원가입 유형선택 -->
+<div class="container">
 	<form action="#" method="post">
 		<div id="choiceModal" class="modal">
-
 			<div class="card" id="guest">
 				<img class="card-img-top" src="../img/imggett3.jpg" alt="Card image">
 				<div class="card-body">
@@ -381,7 +395,7 @@
 				</div>
 				<div id="tpfh" class="form-group">
 					<input type="button" value="중복확인" id="wndqhr3"
-						class="btn btn-block btn-info"> <input type="button"
+						class="btn btn-block btn-info">  <input type="button"
 						value="인증번호전송" id="wndqhr4" class="btn btn-block btn-info">
 					<input type="submit" value="닫기" id="expertClose"
 						class="btn btn-block btn-danger">
@@ -389,6 +403,7 @@
 			</form>
 		</div>
 	</div>
+</div>
 	<script src="../plugin/bootstrap-validate.js"></script>
 	<script>
 		/* bootstrapValidate('#userid','min:5:다섯 글자 이상 입력해주세요.')	 */

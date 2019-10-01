@@ -67,6 +67,22 @@
       "port": 9247,
       "webRoot": "${workspaceFolder}",
       "url": "http://127.0.0.1:50398/p/kimbo/WebContent/search/serch-jinsu.html?_cmAuth\u003dllgccmthtu"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (8)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9249,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:50398/p/kimbo/WebContent/main/main.html?_cmAuth\u003dllgccmthtu"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (9)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9259,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:50398/p/kimbo/WebContent/Tattooist/tattoo_Search.html?_cmAuth\u003dllgccmthtu"
     }
   ]
 }
