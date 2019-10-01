@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+   href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+   crossorigin="anonymous">
+<link rel="stylesheet" href="../resource/main_lee.css"
+   type="text/css">
+<link rel="stylesheet" href="../resource/header.css"
+   type="text/css">
+<link rel="stylesheet" href="../resource/lee_review.css"
+   type="text/css">
+<link
+   href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap"
+   rel="stylesheet">
+<script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+   src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+   crossorigin="anonymous"></script>
+<script>
+/* $(function(){
+	$("#subShow").on({click:function(){
+	
+		$("#noticeShow").show("fast");
+	}});
+});
+$(function(){
+	$("#noticeShow").on({mouseleave:function(){
+		$("#noticeShow").hide("fast");
+	
+	}});
+}); 
+$(function(){
+	$("#subShow2").on({click:function(){
+		$("#noticeShow2").show("fast");
+	}});
+});
+$(function(){
+	$("#noticeShow2").on({mouseleave:function(){
+		$("#noticeShow2").hide("fast");
+	}});
+});  */
+</script>
+</head>
+<body>
+<header>
+   <div id="header_left">
+      <a href="#">Good.D<br />TATTOO
+      </a>
+   </div>
+   <div id="center">
+      <div id="header_center1">
+         <a href="#">&equiv;</a>
+      </div>
+      <div id="header_center2">
+         <a href="#">Search</a> <a href="#">Tattooist</a> <a href="#">Notice</a>
+         <a href="#">F&Q</a> <a href="#">Review</a>
+      </div>
+   </div>
+   <div id="header_right">
+      <ul>
+         <!-- 로그인 클릭시 다이얼로그 생성 -->
+         <li data-toggle="modal" data-target="#myModal"><a href="#">Login</a></li>
+         <li data-toggle="modal" data-target="#choiceModal"><a href="#">Join</a></li>
+         <li><a href="#">My</a></li>
+      </ul>
+   </div>
+</header>
+<!-- 공지사항 폼 -->
+<div class="container">
+	<h1>REVIEW</h1>
+	<h4>REVIEW | 후기</h4>
+	<div class="row" id="noticeMenuMain">
+	   <div class="col-sm-2">NO</div>
+	   <div class="col-sm-6">TITLE</div>
+	   <div class="col-sm-2" id="WD">WRITER</div>
+	   <div class="col-sm-2" id="WD">DATE</div>
+	</div>
+	<div class="row" id="noticeMenu2">
+	   <div class="col-sm-2">REVIEW</div>
+	   <div class="col-sm-6">
+		   <a href="#" id="subShow">너무 만족해요!</a>
+	   </div>
+	   <span class="badge badge-pill badge-danger" id="n1">New</span>
+	   <div class="col-sm-2" id="WD">Good.D<br/>Tattoo</div>
+	   <div class="col-sm-2" id="WD">2019-9-20<br/>10:11:33</div>
+	   <!--눌렀을때 나오는 내용-->
+	   <div id="noticeShow">
+	   		<div class="col-sm-1">Good.D<br/>Tattoo</div>
+	   		<div class="col-sm-3"><img src="../img/rv1.png" id="pic1"></div>
+	   		<div class="col-sm-5">너무 예뻐요. 만족!</div>
+	   	    <div class="col-sm-2" id="WD">Express Your self</div>
+	   </div>
+	</div>
+	<div class="row" id="noticeMenu3">
+	   <div class="col-sm-2">REVIEW</div>
+	   <div class="col-sm-6">
+	   		<a href="#" id="subShow2">정말 잘합니다!</a>
+	   </div>	
+	   <div class="col-sm-2" id="WD">Good.D<br/>Tattoo</div>
+	   <div class="col-sm-2" id="WD">2019-7-30<br/>11:51:12</div>
+	   <!--눌렀을때 나오는 내용-->
+	   <div id="noticeShow2">
+	   		<div class="col-sm-1">Good.D<br/>Tattoo</div>
+	   		<div class="col-sm-3"><img src="../img/rv2.jpg" id="pic1"></div>
+	   		<div class="col-sm-5">다음번 또 방문예정!다음번 또 방문예정!다음번 또 방문예정!다음번 또 방문예정!다음번 또 방문예정!다음번 또 방문예정!다음번 또 방문예정!다음번 또 방문예정!다음번 또 방문예정!다음번 또 방문예정!다음번 또 방문예정!다음번 또 방문예정!다음번 또 방문예정!다음번 또 방문예정!</div>
+	   	    <div class="col-sm-2" id="WD">Express Your self</div>
+	   </div>
+	</div>
+<!-- 페이지 넘김 -->
+	<div id="pg">
+		<ul class="pagination pagination-sm">
+		  <li class="page-item"><a class="page-link" href="#">&LT;</a></li>
+		  <li class="page-item"><a class="page-link" href="#">1</a></li>
+		  <li class="page-item"><a class="page-link" href="#">2</a></li>
+		  <li class="page-item"><a class="page-link" href="#">3</a></li>
+		  <li class="page-item"><a class="page-link" href="#">&GT;</a></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
