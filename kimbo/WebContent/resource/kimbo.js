@@ -14,7 +14,6 @@ $(function(){
   	});*/
 	
 	
-	
 	$("#header_menu2").css("top","0px");
 	$("#header_menu1").css("opacity","0");
 	
@@ -39,4 +38,12 @@ $(function(){
 				"</li>";
 	}
 	$("#main_top5").html(top5_list);
+	
+	$("#main2_content>div").on({/*이벤트*/mouseenter:function(){// 마우스 오버
+		$(this).children().attr("src","../img/Irezumi9.jpg").css("opacity","1");
+		$("#main2_a").css("opacity","0");
+	},/*이벤트*/mouseleave:function(){ // 마우스 아웃
+		$(this).children().attr("src","../img/Irezumi31.jpg").css("opacity","0.5");
+		$(".main2_text").css("opacity","1");
+	}});
 });

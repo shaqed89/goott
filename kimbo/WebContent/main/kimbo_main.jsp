@@ -1,4 +1,5 @@
-<<<<<<< HEAD:kimbo/WebContent/Main/test_kim.html
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,10 +19,12 @@
 
 <link rel="stylesheet" href="../resource/kimbo.css" type="text/css"/>
 <script src="../resource/kimbo.js"></script>
+
 </head>
 <body>
-
-<section class="container">
+<!-- Header Include -->
+<jsp:include page="../Inc/kimbo_header.jsp"></jsp:include>
+<div id="content" class="container">
 	<div id="main_page" class="carousel slide">
 		<div id="main_page_slide" class="carousel-inner">
 			<div id="main1"class="carousel-item active">
@@ -67,92 +70,8 @@
 			<a href="#main_page" class="carousel-control-next" data-slide="next" style="width:50px"><span class="carousel-control-next-icon"></span></a>		
 		</div>
 	</div>
-</section>
-
+</div>
+<!-- footer Include -->
+<jsp:include page="../Inc/kimbo_footer.jsp"></jsp:include>
 </body>
-=======
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Good.D Tattoo</title>
-
-<link rel="stylesheet" href="../plugin/jquery-ui.min.css" type="text/css"/>
-<link rel="stylesheet" href="../plugin/jquery.bxslider.css" type="text/css"/>
-<link rel="stylesheet" href="https:/stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic+Coding&display=swap" rel="stylesheet">
-
-<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../plugin/jquery.bxslider.js"></script>
-<script src="../plugin/jquery-ui.min.js"></script>
-<script src="../plugin/jquery.backstretch.min.js"></script>
-<script src="https:/stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-<link rel="stylesheet" href="../resource/kimbo.css" type="text/css"/>
-<script src="../resource/kimbo.js"></script>
-</head>
-<body>
-
-<header class="jumbotron jumbotron-fluid">
-	<div class="container">
-		<div id="header_left" style="width:200px">
-			<a href="../main/main.html">Good.D<br />TATTOO
-			</a>
-		</div>
-		<div id="header_center" style="width:800px">
-			<nav id="header_menu1" style="width:800px">
-				<a href="../search/search-jinsu.html">Search</a>
-				<a href="../Tattooist/tattoo_search1.html">Tattooist</a>
-				<a href="../notice/lee_notice.html">Notice</a>
-				<a href="../faq/lee_faq.html">F&Q</a>
-				<a href="../review/lee_review.html">Review</a>
-			</nav>
-
-	 		<nav id="header_menu2" style="width:800px">
-				<a href="#">&equiv;</a>
-			</nav> 
-		</div>
-		<div id="header_right" style="width:200px">
-			<nav style="width:90%">
-				<!-- 로그인 클릭시 다이얼로그 생성 -->
-				<a href="#">Login</a>
-				<a href="#">Join</a>
-				<a href="../my_page/my_page.html">My</a>
-			</nav>
-		</div>
-	</div>
-</header>
-
-<section class="container">
-	<div id="main_page" class="carousel slide">
-		<div id="main_page_slide" class="carousel-inner">
-			<div id="main1"class="carousel-item active">
-				<div id="main_top5_title">
-					<label>Top5</label>
-				</div>
-				<ul id="main_top5"></ul>
-			</div>
-			<div id="main2"class="carousel-item">
-			</div>
-			<div id="main3"class="carousel-item">
-			</div>
-			<!-- 아이콘 -->
-			<ul class="carousel-indicators">
-				<li data-target="#main_page" data-slide-to='0' class='active'></li>
-				<li data-target="#main_page" data-slide-to='1'></li>
-				<li data-target="#main_page" data-slide-to='2'></li>
-			</ul>
-			<!-- 좌우버튼 -->
-			<a href="#main_page" class="carousel-control-prev" data-slide="prev" style="width:50px"><span class="carousel-control-prev-icon"></span></a>
-			<a href="#main_page" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>		
-		</div>
-	</div>
-</section>
-
-<footer class="jumbotron jumbotron-fluid">
-	<div class="container">
-	</div>
-</footer>
-</body>
->>>>>>> f7ead94c3098cdeeec55a980976e3025fb801f68:kimbo/WebContent/main/test_kim.html
 </html>
