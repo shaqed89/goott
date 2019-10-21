@@ -35,7 +35,16 @@
 #sign1, #sign2{width:100px;}
 
 /*작가*/
-#mb{height:987px;}
+.container{margin:0 auto;}
+.container h3{text-align:center;}
+
+#idSize>input:first-child{width:395px;float:left;}
+#idChk{width:100px;}
+#telSize>input:first-child{width:395px;float:left;}
+#telChk{width:100px;}
+#checkNum{width:150px;}
+#loc{width:150px;}
+/* #mb{height:987px;}
 #joinModal{width:1000px;height:1000px;color:#fff;position:absolute;
          border:1px solid gray;margin:50px 0 100px 460px;background-image:url(../img/roser.jpg);
          }
@@ -61,7 +70,7 @@ form{width:0;}
 #wndqhr2{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
 #st{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
 #tpfh{float:left;width:200px;height:700px;}
-#joinClose{position:absolute;width:100px;margin:180px 0 0 -300px;}
+#joinClose{position:absolute;width:100px;margin:180px 0 0 -300px;} */ */
 
 /*일반회원*/
 #mb2{height:888px;}
