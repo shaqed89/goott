@@ -9,6 +9,7 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 
+<script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
 <link rel="stylesheet" href="../resource/main_lee.css"
 	type="text/css">
 <link rel="stylesheet" href="../resource/header.css"
@@ -184,7 +185,7 @@
 <form method="post" action="a.register.php" onsubmit="return checks()">
     <table>
         <tr>
-            <td>아이디(E-Mail)</td>
+            <td>아이디</td>
             <td>
                 <input type="text" size=25 id="email" name="email" value="" maxlength="25">
                 <input type="button" id="checkid" value="중복체크" onclick="idch()">
@@ -257,7 +258,12 @@
     </table>
 </fom>
 </div>
-
+ <script>
+            bootstrapValidate('#email', 'min:5:아이디는 최소 5글자 이상이 필요합니다!|max:12:아이디는 최대 10글자까지 가능합니다! ');
+			bootstrapValidate('#password', 'regex:^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$:비밀번호는 최소 8글자가 필요하며, 특수문자, 숫자, 영어알파벳 각각 하나이상이 필요합니다!|max:16:비밀번호는 최대 16글자까지 가능합니다! ');
+			bootstrapValidate('#password_check', 'matches:#password:비밀번호가 다릅니다.');
+			bootstrapValidate('#userNM', 'required:이름을 입력해주십시오');
+        </script>
 	
 </body>
 </html>
