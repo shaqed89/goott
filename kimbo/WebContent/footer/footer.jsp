@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
 <style>
 #footer{width:1200px;height:130px;font-size:small;background:#191919;margin:0 auto;padding-right:10px;}
 li{list-style-type:none;color:gray;}
@@ -49,8 +43,8 @@ a:hover, a:link{color:#fff;}
 		}});
 	});
 </script>
-</head>
-<body>
+
+
 <div id="footer">
 	<div id="ftLeft">
 		<ul>
@@ -88,5 +82,3 @@ a:hover, a:link{color:#fff;}
 		</div>
 	</div>
 </div>
-</body>
-</html>

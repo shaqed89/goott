@@ -2,14 +2,15 @@
     pageEncoding="UTF-8"%>
 
 <style>
-#footer{width:1200px;height:130px;font-size:small;background:#191919;margin:0 auto;padding-right:10px;}
-li{list-style-type:none;color:gray;}
-li a{text-decoration:none;color:gray;}
-a{text-decoration:none;color:#fff;}
+#footer{width:1200px;height:130px;font-size:small;background:#191919;margin:0 auto;
+		padding-right:10px;}
+#ftLeft>ul>li{list-style-type:none;color:gray;}
+#ftLeft>ul>li a{text-decoration:none;color:gray;}
+#footer>a{text-decoration:none;color:#fff;}
 #ft3, #ft4{border:1px solid lightgray;}
 #ftLeft{width:600px;height:130px;}
 #ftLeft>ul>li>a{margin:0 10px 0 0;line-height:70px}
-a:hover, a:link{color:#fff;}
+#footer>a:hover, #footer>a:link{color:#fff;}
 #ftLeft>ul>li{font-size:11.5px;float:left;position:relative;margin:0 5px 0 0;}
 #ftRight{width:600px;}
 
@@ -53,7 +54,7 @@ a:hover, a:link{color:#fff;}
 				<a href="#" id="ft3">통신판매사업자정보확인</a>
 				<a href="#" id="ft4">에스크로서비스 가입확인</a>
 				<br/>
-				<li>(주)구트타투 |</li>
+				<li style="clear:left">(주)구트타투 |</li>
 				<li> 대표 : 김형재 |</li>
 				<li> 서울시 구로구 구로동 구트타투빌딩 | </li>
 				<li> TEL 02.123.1234 |</li>
@@ -77,7 +78,7 @@ a:hover, a:link{color:#fff;}
 			<a href="#"><img src="../footer/ytube2.png" id="ytube2"></a>
 		</div>
 		<div id="gtHome">
-			<a href="#">Good.D TATTOO</a><br/>
+			<a href="<%=request.getContextPath()%>/main/main.do">Good.D TATTOO</a><br/>
 		</div>
 	</div>
 </div>

@@ -20,7 +20,7 @@ a:hover{color:gray;text-decoration:none;} /* 마우스 오버 했을떄 */
 a:active{color:gray} /* 마우스 눌렀을때 */
 
 header{font-family: 'Indie Flower', cursive; width:100%; height:130px;
-		border-bottom:1px solid lightblue;}
+		border-bottom:1px solid gray;}
 header div{float:left;}
 #header_left{width:200px;height:130px;font-size:40px;}
 #center{width:800px;height:130px;}
