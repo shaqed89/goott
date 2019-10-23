@@ -73,7 +73,7 @@ $(function(){
 			<ul>
 				<!-- 로그인 클릭시 다이얼로그 생성 -->
 				<li data-toggle="modal" data-target="#myModal"><a href="#">Login</a></li>
-				<li data-toggle="modal" data-target="#choiceModal"><a href="#">Join</a></li>
+				<li data-toggle="modal" data-target="#choiceModal"><a href="<%=request.getContextPath()%>/register/signup.do">Join</a></li>
 				<li><a href="#">My</a></li>
 			</ul>
 		</div>
