@@ -18,8 +18,8 @@
 	#lb{font-size: 10px; text-align: center;}
 	#sign_choice{margin: 0 auto; width: 900px;	}
 	#ch_normal,#ch_tattooist{margin-top: 100px; height: 200px; width: 450px;	float: left;
-				border-left: 1px solid gray; border-bottom: 1px solid gray;	border-right: 1px solid gray;}
-	#ch_normal{border-top: 3px solid blue;}
+				border-bottom: 1px solid gray;}
+	#ch_normal{border-top: 3px solid blue;border-right: 1px solid gray; }
 	#ch_tattooist{border-top: 3px solid green;}
 	#normal_left,#tattooist_left{color: gray;text-align: left; margin: 80px auto;height: 100px; float: left; width: 348px;}
 	#normal_right,#tattooist_right{margin: 80px auto; float: left; width: 100px;}
@@ -35,13 +35,13 @@ $(function(){
 	/* 일반회원가입 */
 	$("#sign_normal").click(function(){
 		if(confirm("일반회원으로 가입하시겠습니까?")){
-			location.href="/kimbo/register/normal_form.do?role=normal";
+			location.href="/kimbo/register/normal_form.do?";
 		}
 	});
 	/* 작가회원가입 */
 	$("#sign_tattooist").click(function(){
 		if(confirm("타투이스트회원으로 가입하시겠습니까?")){
-			location.href="/kimbo/register/tattooist_form.do?role=tattooist";
+			location.href="/kimbo/register/tattooist_form.do?";
 		}
 	});
 });
