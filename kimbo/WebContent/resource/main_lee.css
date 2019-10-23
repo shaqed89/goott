@@ -12,9 +12,10 @@
     width:460px;}
 #lglg{height:150px;}
 .modal-footer h4{position:absolute;
-				left:120px;top:350px;}
+				left:120px;bottom:75px;}
 #sig{margin:50px 0 0 -8px;
     width: 460px;}
+#tex{width:440px;margin:0 auto;}
     
 /* 회원가입 유형선택 */
 #choiceModal #choiceClose{margin:0;paddin:0;width:10px;height:50px;color:black;}
