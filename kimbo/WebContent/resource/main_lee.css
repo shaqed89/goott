@@ -1,24 +1,21 @@
 @charset "UTF-8";
 /*로그인 */
-#myModal{width:440px;height:700px;color:#fff;margin:150px 0 100px 730px;background-image:url(../img/18.jpg);font-family:바탕체;font-weight:bold;}
-#log{width:400px;height:100px;text-align:center;margin:0 auto;font-size:50px;}
-.form-group label{width:400px;font-size:20px;margin:0 20px 10px;}
-.form-group input{position:relative;}
-#ma{height:700px;}
-#userid{height:40px;width:400px;margin:0 20px -20px;}
-#userpwd{height:40px;width:400px;margin:0 20px 40px;}
+#mh{margin:0 0 0 42%;}
+#checkb{height:50px;width:100%;}
+#sign{width:100%;height:50px;}
 #chk{float:left;position:absolute;left:30px;margin:5px;}
 #rmb{width:440px;text-align:center;font-weight:bold;font-family:none;}
-#rmb div{float:left;width:130px;position:relative;margin:0 50px auto;}
-#rmb a{width:100px;color:#fff;}
-
-#lgn{width:400px;height:50px;margin:30px 20px auto;font-weight:bold;font-size:20px;font-family:none;}
-#bdr{width:400px;height:200px;margin:20px 20px;border-top:1px solid black;}
-#bdr h2{text-align:center;margin:20px auto;font-size:30px;font-weight:bold;}
-#signup{margin:10px 0 0 50px;width:300px;text-align:center;font-weight:bold;font-family:none;}
-#cancle{margin:30px 0 0 140px;width:120px;text-align:center;font-weight:bold;font-family:none;}
-#cancle2{margin:30px 0 0 140px;width:120px;text-align:center;font-weight:bold;font-family:none;}
-
+#rmb #checkb{float:left;width:200px;text-align:center;top:10px;height:20px;}
+#rmb a{width:100px;color:black;}
+#rmb h6{color:black;float:left;margin:0 40px auto;}
+#lgn{float:left;position: absolute;
+    width:460px;}
+#lglg{height:150px;}
+.modal-footer h4{position:absolute;
+				left:120px;top:350px;}
+#sig{margin:50px 0 0 -8px;
+    width: 460px;}
+    
 /* 회원가입 유형선택 */
 #choiceModal #choiceClose{margin:0;paddin:0;width:10px;height:50px;color:black;}
 
@@ -38,7 +35,16 @@
 #sign1, #sign2{width:100px;}
 
 /*작가*/
-#mb{height:987px;}
+.container{margin:0 auto;}
+.container h3{text-align:center;}
+
+#idSize>input:first-child{width:395px;float:left;}
+#idChk{width:100px;}
+#telSize>input:first-child{width:395px;float:left;}
+#telChk{width:100px;}
+#checkNum{width:150px;}
+#loc{width:150px;}
+/* #mb{height:987px;}
 #joinModal{width:1000px;height:1000px;color:#fff;position:absolute;
          border:1px solid gray;margin:50px 0 100px 460px;background-image:url(../img/roser.jpg);
          }
@@ -64,7 +70,7 @@ form{width:0;}
 #wndqhr2{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
 #st{width:100px;height:30px;font-size:13px;margin:30px 50px 290px 10px;}
 #tpfh{float:left;width:200px;height:700px;}
-#joinClose{position:absolute;width:100px;margin:180px 0 0 -300px;}
+#joinClose{position:absolute;width:100px;margin:180px 0 0 -300px;} */ */
 
 /*일반회원*/
 #mb2{height:888px;}

@@ -33,7 +33,7 @@ header div{float:left;}
 				top:50px;transition: all 350ms ease-in-out 0s; font-size:40px;
 				}
 				
-#header_center2{width:600px;height:50px;display:none;position:relative;
+#header_center2{width:600px;height:50px;position:relative;color:black;
 				font-size:30px;left:100px;top:50px;margin:0 auto;text-align:center;}
 
 #header_center2 a{margin:0px 10px;width:20%;transform:scale(3.0);}
