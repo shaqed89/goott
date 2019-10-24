@@ -1,6 +1,8 @@
 @charset "UTF-8";
 body{color:black;}
-.container{font-family: 'Gaegu', cursive;font-size:20px;color:black;}
+
+.container{font-family: 'Gaegu', cursive;font-size:20px;color:black;
+		   width:1200px; max-width:1200px; padding:0; position:realative; }
 /*헤더부분 notice / notice|공지사항  */
 div h1{margin:20px 0 0 488px;}
 div h4{margin:50px 0 60px 0;padding:0 0 20px 0;color:black;;
@@ -33,17 +35,18 @@ span{position:absolute;left:800px;top:417px;}
 
 /*공지사항 눌렀을때 내용*/
 
-#content{box-sizing:border-box;}
-#content>div>ul>li:first-of-type{padding-left:80px;}
-#content>div>ul>li{float:left;width:11%;}
-#content>div>ul>li:nth-child(4n+1){width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-#content>div>ul>li:nth-child(4n+4){padding-left:20px;}
-#content>div>ul>li:nth-child(4n+5){padding-left:50px;}
-#title{height:30px;font-weight:bold;}
+#notice{box-sizing:border-box;}
+#notice>div>ul>li:first-of-type{padding-left:80px;}
+#notice>div>ul>li{float:left;width:11%;}
+#notice>div>ul>li:nth-child(4n+1){width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#notice>div>ul>li:nth-child(4n+4){padding-left:20px;}
+#notice>div>ul>li:nth-child(4n+5){padding-left:50px;}
+#title{font-weight:bold;}
+
 
 #title>ul>li:nth-child(2){padding-left:80px;}
 #title>ul>li:nth-child(3){padding-left:80px;}
-#title>ul>li:nth-child(4){padding-left:80px;}
 
-#s{position:absolute;left:895px;font-size:15px;top:25px;}
+
+#s{position:absolute;left:905px;font-size:15px;top:25px;}
 #ss{position:absolute;left:1060px;font-size:15px;top:25px;}

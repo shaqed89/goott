@@ -67,49 +67,28 @@
 </script>
 </head>
 <body>
-	<header>
-		<div id="header_left">
-			<a href="#">Good.D<br />TATTOO
-			</a>
-		</div>
-		<div id="center">
-			<div id="header_center2">
-				<a href="#">Search</a> <a href="#">Tattooist</a> <a href="#">Notice</a>
-				<a href="#">F&Q</a> <a href="#">Review</a>
-			</div>
-		</div>
-		<div id="header_right">
-			<ul>
-				<!-- 로그인 클릭시 다이얼로그 생성 -->
-				<li data-toggle="modal" data-target="#myModal"><a href="#">Login</a></li>
-				<li data-toggle="modal" data-target="#choiceModal"><a href="#">Join</a></li>
-				<li><a href="#">My</a></li>
-			</ul>
-		</div>
-	</header>
 	<!-- 공지사항 폼 -->
-	<div id="content">
+	<div id="notice" class="container">
 		<h4>Notice | 공지사항</h4>
 		<div id="title">
-			<ul>
+			<ul style="padding-bottom: 30px">
 				<li>TITLE</li>
 				<li>WRITER</li>
 				<li>WRITEDATE</li>
 			</ul>
 		</div>
 		<div class="accordion" id="accordionExample">
-			<div class="card">
+			<div class="card" style="clear:left">
 				<div class="card-header" id="headingOne">
 					<h2 class="mb-0">
 						<button class="btn btn-link" type="button" data-toggle="collapse"
 							data-target="#collapseOne" aria-expanded="true"
 							aria-controls="collapseOne">추석 연휴 영업안내</button>
-						
 					</h2>
 					<h5 id="s">Good.D TATTOO</h5>
 					<h5 id="ss">2019-10-23</h5>
 				</div>
-				<div id="collapseOne" class="collapse show"
+				<div id="collapseOne" class="collapse"
 					aria-labelledby="headingOne" data-parent="#accordionExample">
 					<div class="card-body">추석날 정상 영업합니다.</div>
 				</div>
@@ -127,7 +106,9 @@
 				</div>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
 					data-parent="#accordionExample">
-					<div class="card-body">Good Tattoo가 시즌 off를 맞이하여 선착순 할인 행사를 진행합니다.</div>
+					<div class="card-body">
+						<img src="../img/18.jpg">Good Tattoo가 시즌 off를 맞이하여 선착순 할인 행사를 진행합니다.
+					</div>
 				</div>
 			</div>
 			
@@ -155,14 +136,14 @@
 						<button class="btn btn-link collapsed" type="button"
 							data-toggle="collapse" data-target="#collapseFour"
 							aria-expanded="false" aria-controls="collapseFour">
-							구트타투 여름 워크샾 안내</button>
+							구트타투 여름 워크샵 안내</button>
 					</h2>
 					<h5 id="s">Good.D TATTOO</h5>
 					<h5 id="ss">2019-10-23</h5>
 				</div>
 				<div id="collapseFour" class="collapse"
 					aria-labelledby="headingFour" data-parent="#accordionExample">
-					<div class="card-body">일정 : 2019-08-1 ~ 2019-8-7일 워크샾으로 인해 영업하지 않습니다. 자세한 사항은 담당 타투이스트 작가와 상담하세요.</div>
+					<div class="card-body">일정 : 2019-08-1 ~ 2019-8-7일 워크샵으로 인해 영업하지 않습니다. 자세한 사항은 담당 타투이스트 작가와 상담하세요.</div>
 				</div>
 			</div>
 			<!--  -->
