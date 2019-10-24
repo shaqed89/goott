@@ -70,14 +70,61 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 
 	@Override
 	public void login(RegisterVO vo) {
-		// TODO Auto-generated method stub
+		try {
+			dbConn();
+			
+			String sql = "select username, userid from bro_register " 
+						+"where userid=? and userpwd=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getUserId());
+			pstmt.setString(2, vo.getUserPwd());
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				vo.setUserName(rs.getString(1));
+				vo.setUserId(rs.getString(2));
+			}
+			
+		}catch(Exception e) {
+			System.out.println("로그인 에러..." + e.getMessage());
+		}finally {
+			dbClose();
+		}
 
 	}
 
 	@Override
 	public void getRegister(RegisterVO vo) {
-		// TODO Auto-generated method stub
-
+		try {
+			dbConn();
+			
+			String sql = "select username, tel, gender, addr, email, to_char(birthday, 'YYYY-MM-DD'), kakao, profile "
+					   + "from bro_register where userid=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getUserId());
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo.setUserName(rs.getString(1));
+				vo.setTel(rs.getString(2));
+				vo.setGender(rs.getString(3));
+				vo.setAddr(rs.getString(4));
+				vo.setEmail(rs.getString(5));
+				vo.setBirthDay(rs.getString(6));
+				vo.setKakao(rs.getString(7));
+				vo.setProfile(rs.getString(8));
+			}
+			
+//			System.out.println(vo.getUserName());
+//			System.out.println(vo.getEmail());
+			
+		}catch(Exception e) {
+			System.out.println("회원선택 에러..."+e.getMessage());
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
 	}
 
 	@Override

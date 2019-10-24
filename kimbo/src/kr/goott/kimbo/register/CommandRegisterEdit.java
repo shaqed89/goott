@@ -1,4 +1,4 @@
-package kr.goott.kimbo.home;
+package kr.goott.kimbo.register;
 
 import java.io.IOException;
 
@@ -8,13 +8,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.goott.kimbo.controller.CommandService;
 
-public class CommandMain implements CommandService {
+public class CommandRegisterEdit implements CommandService {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// 회원정보수정
+		RegisterVO vo = new RegisterVO();
+		vo.setUserId((String)request.getSession().getAttribute("userId"));
 		
-		return "kimbo_main.jsp";
+		RegisterDAO dao	= new RegisterDAO();
+		dao.getRegister(vo);
+		
+		request.setAttribute("vo", vo);
+
+		return "register_edit.jsp";
 	}
 
 }

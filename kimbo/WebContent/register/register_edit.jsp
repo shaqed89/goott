@@ -96,21 +96,21 @@
 <script>
 	function checks(){
 		//아이디 공백확인
-		if($("#t_userId").val() == ""){
+		if($("#e_userId").val() == ""){
 	        alert("아이디를 입력 바랍니다.");
-	        $("#t_userId").focus();
+	        $("#e_userId").focus();
 	        return false;
 	      }
 		//아이디 중복검사 완료확인
 		if($("#idChkResult").val()!="Y"){
 			alert("아이디 중복검사를 실행하세요.");
-	        $("#t_userId").focus();
+	        $("#e_userId").focus();
 	        return false;
 		}
 			
 		//비밀번호 공백 확인 
-		if($("#t_userPwd").val() == ""){ 
-			alert("패스워드 입력바람"); $("#t_userPwd").focus(); 
+		if($("#e_userPwd").val() == ""){ 
+			alert("패스워드 입력바람"); $("#e_userPwd").focus(); 
 			return false; 
 		}  
 		//비밀번호 확인란 공백 확인 
@@ -119,7 +119,7 @@
 			return false; 
 		} 
 		//비밀번호 서로확인 
-		if($("#t_userPwd").val() != $("#userPwdCheck").val()){
+		if($("#e_userPwd").val() != $("#userPwdCheck").val()){
 			alert("비밀번호가 다릅니다."); 
 			$("#userPwdCheck").val(""); 
 			return false; 
@@ -171,13 +171,13 @@
 		//아이디 중복검사
 		$("#idCheck").click(function(){
 			
-			if($("#t_userId").val() == ""){
+			if($("#e_userId").val() == ""){
 		        alert("아이디를 입력 바랍니다.");
-		        $("#t_userId").focus();
+		        $("#e_userId").focus();
 		        return false;
 		      }
 			
-			var userId = $("#t_userId").val();
+			var userId = $("#e_userId").val();
 			console.log(userId);
 			$.ajax({
 				url : "<%=request.getContextPath() %>/register/idCheck_Ok.do",
@@ -205,7 +205,7 @@
 		
 		 
 		//중복검사완료 해제
-		$("#t_userId").keyup(function(){
+		$("#e_userId").keyup(function(){
 			$("#idChkResult").val("N");
 			console.log("idChkResult="+$("#idChkResult").val());
 		});
@@ -263,20 +263,19 @@
 </header>
 <section class="container">
 	<div style="text-align:center">
-	<h2>작가회원 가입</h2>
-	<form method="post" id="tattooist_frm" action="<%= request.getContextPath()%>/register/tattooist_Ok.do" onsubmit="return checks()" enctype="multipart/form-data">
-	    <table style="">
+	<h2>회원정보수정</h2>
+	<form method="post" id="edit_frm" action="<%= request.getContextPath()%>/register/RegisterEditOk.do" onsubmit="return checks()" enctype="multipart/form-data">
+	    <table style="margin: 0 auto">
 	        <tr>
 	            <td>아이디</td>
 	            <td>
-	                <input type="text" size=25 id="t_userId" name="userId" maxlength="15" placeholder="8~15자 까지 가능">
-	                <input type="button" id="idCheck" value="중복체크">
-	                <input type="hidden" name="idChkResult" id="idChkResult" value="N"/>
+	                <input type="text" size=37 id="e_userId" name="userId" value="${vo.userId }" readonly="readonly">
+	                <input type="hidden" name="idChkResult" id="idChkResult" value="Y"/>
 	            </td>
 	        </tr>
 	        <tr>
 	            <td>비밀번호</td>
-	            <td><input type="password" size=37 name="userPwd" id="t_userPwd" placeholder="8~15자 까지 가능"></td>
+	            <td><input type="password" size=37 name="userPwd" id="e_userPwd" placeholder="8~15자 까지 가능"></td>
 	        </tr>
 	        <tr>
 	            <td>비밀번호 확인</td>
@@ -284,32 +283,34 @@
 	        </tr>
 	        <tr>
 	            <td style='width:100px'>이름</td>
-	            <td><input type="text" size=37 name="userName" id="userName" placeholder="ex) 홍길동"></td>
+	            <td><input type="text" size=37 name="userName" id="userName" value="${vo.userName}" readonly="readonly"></td>
 	        </tr>
 	        <tr>
 	            <td>휴대폰번호</td>
 	            <td>
 	            	<select name="t1" id="t1">
-	            		<option value="010">010</option>
-	            		<option value="011">011</option>
-	            		<option value="016">016</option>
-	            		<option value="018">018</option>
-	            		<option value="019">019</option>
+	            		<option value="010" <c:if test="${vo.birthMonth==i}">selected</c:if>>010</option>
+	            		<option value="011" <c:if test="${vo.birthMonth==i}">selected</c:if>>011</option>
+	            		<option value="016" <c:if test="${vo.birthMonth==i}">selected</c:if>>016</option>
+	            		<option value="018" <c:if test="${vo.birthMonth==i}">selected</c:if>>018</option>
+	            		<option value="019" <c:if test="${vo.birthMonth==i}">selected</c:if>>019</option>
 	            	</select> -
-					<input type="text" name="t2" id="t2" maxlength="4" placeholder="0000"/> -
-					<input type="text" name="t3" id="t3" maxlength="4" placeholder="0000"/></td>
+					<input type="text" name="t2" id="t2" maxlength="4" value="${vo.t2}"/> -
+					<input type="text" name="t3" id="t3" maxlength="4" value="${vo.t3}"/></td>
 	        </tr>
 	        <tr>
 	        	<td>주소</td>
 	        	<td>
-	        		<select name="sido" id="sido"></select>
-					<select name="gungu" id="gungu"></select>
+	        		<select name="sido" id="sido">
+	        		</select>
+					<select name="gungu" id="gungu">
+					</select>
 				</td>
 	        </tr>
 	        <tr>
 	        	<td>이메일</td>
 	        	<td>
-	        		<input type="text" name="emailId" id="emailId" placeholder="email아이디"/> @
+	        		<input type="text" name="emailId" id="emailId" value="${vo.emailId}"/> @
 					<select name="emailDomain" id="emailDomain">				
 						<option value="naver.com">naver.com</option>
 						<option value="hanmail.net">hanmail.net</option>
@@ -320,48 +321,50 @@
 	        </tr>
 	        <tr>
 	            <td>생년월일</td>
-	            <td><input type="text" name="birthYear" id="birthYear" maxlength="4" placeholder="ex)1993"/>년
+	            <td><input type="text" name="birthYear" id="birthYear" maxlength="4" value="${vo.birthYear}"/>년
 					<select name="birthMonth" id="birthMonth">
-						<%
-							for(int i=1; i<=12; i++){
-								%>
-									<option value="<% if(i<10){out.print("0"+i);}else{out.print(i);}%>">
-									<%= i %></option>
-								<%
-							}
-						%>
+						<c:forEach var="i" begin="1" end="12">
+						<c:if test="${i<10}">
+							<option value="0${i}" <c:if test="${vo.birthMonth==i}">selected</c:if>>${i}</option>
+						</c:if>
+						<c:if test="${i>10}">
+							<option value="${i }" <c:if test="${vo.birthMonth==i }">selected</c:if>>${i }</option>
+						</c:if>
+					</c:forEach>
 					</select>월
 					<select name="birthDate" id="birthDate"	>
-						<%
-							for(int d=1; d<=31; d++){
-								%>
-								<option value="<%if(d<10){out.print("0"+d);}else{out.print(d);} %>">
-								<%=d %></option>
-								<%
-							}
-						%>
+						<c:forEach var="i" begin="1" end="31">
+						<c:if test="${i<10}">
+							<option value="0${i}" <c:if test="${vo.birthDate==i}">selected</c:if>>${i}</option>
+						</c:if>
+						<c:if test="${i>=10}">
+							<option value="${i}" <c:if test="${vo.birthDate==i}">selected</c:if>>${i}</option>
+						</c:if>
+					</c:forEach>
 					</select>일</td>
 	        </tr>
 	        <tr>
 	            <td>성별</td>
 	            <td>
-	            	<div id="xx"><input type="radio" size=50 name="gender" id="gender_m" value="m" checked="checked"> 남</div>
-	            	<div id="yy"><input type="radio" size=50 name="gender" id="gender_f" value="f"> 여</div>
+	            	<div id="xx"><input type="radio" size=50 name="gender" id="gender_m" value="m" <c:if test="${vo.gender=='m'}"> checked</c:if>/> 남</div>
+	            	<div id="yy"><input type="radio" size=50 name="gender" id="gender_f" value="f" <c:if test="${vo.gender=='f'}"> checked</c:if>/> 여</div>
 	            </td>
 	        </tr>
+	        <c:if test="${vo.kakao!=null }">
 	         <tr>
 	            <td>카카오톡</td>
-	            <td><input type="text" size=37 name="kakao" id="kakao" placeholder="오픈카톡 아이디"></td>
+	            <td><input type="text" size=37 name="kakao" id="kakao" value="${vo.kakao }"></td>
 	        </tr>
 	        <tr>
 	            <td>프로필 사진</td>
 	            <td><input type="file" size=37 name="profile" id="profile"></td>
 	        </tr>
+	        </c:if>
 	        <tfoot>
 		        <tr>
 		            <td colspan='2' align='center'>
-		            	<input type="reset" value="다시쓰기">
-		            	<input type="submit" value="회원가입">
+		            	<input type="submit" value="수정">
+		            	<input type="button" value="탈퇴">
 		            	<input type="hidden" id="role" name="role" value="작가"/>
 		            </td>
 		        </tr>

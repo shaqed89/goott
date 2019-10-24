@@ -18,12 +18,9 @@
 	*{margin:0; padding:0;}
 	ul, li{list-style-type:none;}
 	
-	
-	
 	.container{width:1200px; max-width:1200px; padding:0; position:realative; }
 	
-	
-	#slide{width:100%; height:800px; background-color:lightgray;}
+	#slide{width:100%; height:800px; background-color:lightgray; margin:10px 0;}
 	#top5{width:100%; height:400px;}
 	#top5>h1{text-align:center;}
 	#main_top5{width:1180px; height:320px; margin:10px; padding:10px 40px;}
@@ -37,6 +34,7 @@
 	#main_top_tattoo li>a img{width:100%; height:100%;}
 </style>
 <script>
+console.log(${userId});
 //top5
 $(function(){
 	var top5_list="";
@@ -84,7 +82,7 @@ $(function(){
 	</div>
 </div>
 <footer>
-<jsp:include page="../Inc/kimbo_footer.jsp"></jsp:include>
+	<jsp:include page="../Inc/kimbo_footer.jsp"></jsp:include>
 </footer>
 </body>
 </html>

@@ -71,6 +71,7 @@ public class ControllerAction extends HttpServlet {
 		String key = uri.substring(contextPath.length());
 		
 		CommandService service = map.get(key);
+//		System.out.println("Controller="+key);
 		String viewFile = service.execute(request, response);
 		
 		//Controller에서 view 페이지로 이동
