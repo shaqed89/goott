@@ -4,120 +4,185 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"
-   href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-   crossorigin="anonymous">
-<link rel="stylesheet" href="../resource/main_lee.css"
-   type="text/css">
-<link rel="stylesheet" href="../resource/header.css"
-   type="text/css">
-<link rel="stylesheet" href="../resource/lee_notice.css"
-   type="text/css">
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="../resource/main_lee.css" type="text/css">
+<link rel="stylesheet" href="../resource/header.css" type="text/css">
+<link rel="stylesheet" href="../resource/lee_notice.css" type="text/css">
 <link
-   href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap"
-   rel="stylesheet">
+	href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap"
+	rel="stylesheet">
 <script
-   src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
-   src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-   crossorigin="anonymous"></script>
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
 <script>
-/* $(function(){
-	$("#subShow").on({click:function(){
-		$("#noticeShow").show("fast");
-	}});
-});
-$(function(){
-	$("#noticeShow").on({mouseleave:function(){
-		$("#noticeShow").hide("fast");
-	}});
-}); 
-$(function(){
-	$("#subShow2").on({click:function(){
-		$("#noticeShow2").show("fast");
-	}});
-});
-$(function(){
-	$("#noticeShow2").on({mouseleave:function(){
-		$("#noticeShow2").hide("fast");
-	}});
-});  */
+	$(function() {
+		$("#lst2>ul>li:nth-child(2)").on({
+			click : function() {
+				var subContent = $("#subContent");
+				if (subContent.css("display") === "block")
+					subContent.css("display", "none");
+				else if (subContent.css("display") === "none")
+					subContent.css("display", "block");
+			}
+		});
+	});
+	$(function() {
+		$("#lst3>ul>li:nth-child(2)").on({
+			click : function() {
+				var subContent2 = $("#subContent2");
+				if (subContent2.css("display") === "block")
+					subContent2.css("display", "none");
+				else if (subContent2.css("display") === "none")
+					subContent2.css("display", "block");
+			}
+		});
+	});
+	$(function() {
+		$("#lst4>ul>li:nth-child(2)").on({
+			click : function() {
+				var subContent3 = $("#subContent3");
+				if (subContent3.css("display") === "block")
+					subContent3.css("display", "none");
+				else if (subContent3.css("display") === "none")
+					subContent3.css("display", "block");
+			}
+		});
+	});
+	$(function() {
+		$("#lst5>ul>li:nth-child(2)").on({
+			click : function() {
+				var subContent4 = $("#subContent4");
+				if (subContent4.css("display") === "block")
+					subContent4.css("display", "none");
+				else if (subContent4.css("display") === "none")
+					subContent4.css("display", "block");
+			}
+		});
+	});
 </script>
 </head>
 <body>
-<header>
-   <div id="header_left">
-      <a href="#">Good.D<br />TATTOO
-      </a>
-   </div>
-   <div id="center">
-      <div id="header_center1">
-         <a href="#">&equiv;</a>
-      </div>
-      <div id="header_center2">
-         <a href="#">Search</a> <a href="#">Tattooist</a> <a href="#">Notice</a>
-         <a href="#">F&Q</a> <a href="#">Review</a>
-      </div>
-   </div>
-   <div id="header_right">
-      <ul>
-         <!-- 로그인 클릭시 다이얼로그 생성 -->
-         <li data-toggle="modal" data-target="#myModal"><a href="#">Login</a></li>
-         <li data-toggle="modal" data-target="#choiceModal"><a href="#">Join</a></li>
-         <li><a href="#">My</a></li>
-      </ul>
-   </div>
-</header>
-<!-- 공지사항 폼 -->
-<div class="container">
-	<h1>Notice</h1>
-	<h4>Notice | 공지사항</h4>
-	<div class="row" id="noticeMenuMain">
-	   <div class="col-sm-2">NO</div>
-	   <div class="col-sm-6">TITLE</div>
-	   <div class="col-sm-2" id="WD">WRITER</div>
-	   <div class="col-sm-2" id="WD">DATE</div>
+	<header>
+		<div id="header_left">
+			<a href="#">Good.D<br />TATTOO
+			</a>
+		</div>
+		<div id="center">
+			<div id="header_center2">
+				<a href="#">Search</a> <a href="#">Tattooist</a> <a href="#">Notice</a>
+				<a href="#">F&Q</a> <a href="#">Review</a>
+			</div>
+		</div>
+		<div id="header_right">
+			<ul>
+				<!-- 로그인 클릭시 다이얼로그 생성 -->
+				<li data-toggle="modal" data-target="#myModal"><a href="#">Login</a></li>
+				<li data-toggle="modal" data-target="#choiceModal"><a href="#">Join</a></li>
+				<li><a href="#">My</a></li>
+			</ul>
+		</div>
+	</header>
+	<!-- 공지사항 폼 -->
+	<div id="content">
+		<h4>Notice | 공지사항</h4>
+		<div id="title">
+			<ul>
+				<li>TITLE</li>
+				<li>WRITER</li>
+				<li>WRITEDATE</li>
+			</ul>
+		</div>
+		<div class="accordion" id="accordionExample">
+			<div class="card">
+				<div class="card-header" id="headingOne">
+					<h2 class="mb-0">
+						<button class="btn btn-link" type="button" data-toggle="collapse"
+							data-target="#collapseOne" aria-expanded="true"
+							aria-controls="collapseOne">추석 연휴 영업안내</button>
+						
+					</h2>
+					<h5 id="s">Good.D TATTOO</h5>
+					<h5 id="ss">2019-10-23</h5>
+				</div>
+				<div id="collapseOne" class="collapse show"
+					aria-labelledby="headingOne" data-parent="#accordionExample">
+					<div class="card-body">추석날 정상 영업합니다.</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" id="headingTwo">
+					<h2 class="mb-0">
+						<button class="btn btn-link collapsed" type="button"
+							data-toggle="collapse" data-target="#collapseTwo"
+							aria-expanded="false" aria-controls="collapseTwo">
+							2019년 OFF시즌 할인특가</button>
+					</h2>
+					<h5 id="s">Good.D TATTOO</h5>
+					<h5 id="ss">2019-10-23</h5>
+				</div>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordionExample">
+					<div class="card-body">Good Tattoo가 시즌 off를 맞이하여 선착순 할인 행사를 진행합니다.</div>
+				</div>
+			</div>
+			
+			<!--  -->
+			<div class="card">
+				<div class="card-header" id="headingThree">
+					<h2 class="mb-0">
+						<button class="btn btn-link collapsed" type="button"
+							data-toggle="collapse" data-target="#collapseThree"
+							aria-expanded="false" aria-controls="collapseThree">
+							사은품 프로모션 안내</button>
+					</h2>
+					<h5 id="s">Good.D TATTOO</h5>
+					<h5 id="ss">2019-10-23</h5>
+				</div>
+				<div id="collapseThree" class="collapse"
+					aria-labelledby="headingThree" data-parent="#accordionExample">
+					<div class="card-body">안녕하세요. 구트타투입니다.^^<br/>2019-10-23 부터 일주일간 상품을 구매하신분에 한하여 작은 선물을 드립니다!</div>
+				</div>
+			</div>
+			<!--  -->
+			<div class="card">
+				<div class="card-header" id="headingFour">
+					<h2 class="mb-0">
+						<button class="btn btn-link collapsed" type="button"
+							data-toggle="collapse" data-target="#collapseFour"
+							aria-expanded="false" aria-controls="collapseFour">
+							구트타투 여름 워크샾 안내</button>
+					</h2>
+					<h5 id="s">Good.D TATTOO</h5>
+					<h5 id="ss">2019-10-23</h5>
+				</div>
+				<div id="collapseFour" class="collapse"
+					aria-labelledby="headingFour" data-parent="#accordionExample">
+					<div class="card-body">일정 : 2019-08-1 ~ 2019-8-7일 워크샾으로 인해 영업하지 않습니다. 자세한 사항은 담당 타투이스트 작가와 상담하세요.</div>
+				</div>
+			</div>
+			<!--  -->
+			<div class="card">
+				<div class="card-header" id="headingFive">
+					<h2 class="mb-0">
+						<button class="btn btn-link collapsed" type="button"
+							data-toggle="collapse" data-target="#collapseFive"
+							aria-expanded="false" aria-controls="collapseFive">
+							으으으으으으으응</button>
+					</h2>
+					<h5 id="s">Good.D TATTOO</h5>
+					<h5 id="ss">2019-10-23</h5>
+				</div>
+				<div id="collapseFive" class="collapse"
+					aria-labelledby="headingFive" data-parent="#accordionExample">
+					<div class="card-body">안녕하세요. 구트타투입니다.^^<br/>2019-10-23 부터 일주일간 상품을 구매하신분에 한하여 작은 선물을 드립니다!</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="row" id="noticeMenu2">
-	   <div class="col-sm-2">공지</div>
-	   <div class="col-sm-6">
-	   		<a href="#" id="subShow" data-toggle="collapse" data-target="#noticeShow">추석연휴 영업시간 안내</a>
-	   </div>
-	   <span class="badge badge-pill badge-info">New</span>
-	   <div class="col-sm-2" id="WD">Good.D<br/>Tattoo</div>
-	   <div class="col-sm-2" id="WD">2019-9-20<br/>15:33:22</div>
-	   <!--눌렀을때 나오는 내용-->
-	   <div id="noticeShow" class="collapse hidden">
-	   		<div class="col-sm-2">Good.D<br/>Tattoo</div>
-	   		<div class="col-sm-6">연휴기간에는 영업을 하지 않습니다.</br>감사합니다.</div>
-	   	    <div class="col-sm-4" id="WD">Express Your self</div>
-	   </div>
-	</div>
-	<div class="row" id="noticeMenu3">
-	   <div class="col-sm-2">공지</div>
-	   <div class="col-sm-6">
-	   		<a href="#" id="subShow2" data-toggle="collapse" data-target="#noticeShow2">사이트 점검에 따른 이용중지 안내</a>
-	   </div>	
-	   <div class="col-sm-2" id="WD">Good.D<br/>Tattoo</div>
-	   <div class="col-sm-2" id="WD">2019-9-20<br/>15:33:22</div>
-	   <!--눌렀을때 나오는 내용-->
-	   <div id="noticeShow2" class="collapse hidden">
-	   		<div class="col-sm-2">Good.D<br/>Tattoo</div>
-	   		<div class="col-sm-6">안녕하세요. Good.D Tattoo입니다.</br>최근 이용자의 폭주로 01:00 부터 약 1시간 가량 서버 안정화 작업을 진행할 예정입니다.</br>감사합니다.</div>
-	   	    <div class="col-sm-4" id="WD">Express Your self</div>
-	   </div>
-	</div>
-<!-- 페이지 넘김 -->
-	<div id="pg">
-		<ul class="pagination pagination-sm">
-		  <li class="page-item"><a class="page-link" href="#">&LT;</a></li>
-		  <li class="page-item"><a class="page-link" href="#">1</a></li>
-		  <li class="page-item"><a class="page-link" href="#">2</a></li>
-		  <li class="page-item"><a class="page-link" href="#">3</a></li>
-		  <li class="page-item"><a class="page-link" href="#">&GT;</a></li>
-		</ul>
-	</div>
-</div>
 </body>
 </html>

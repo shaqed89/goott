@@ -1,29 +1,27 @@
 @charset "UTF-8";
-.container{font-family: 'Gaegu', cursive;font-size:20px;}
+body{color:black;}
+.container{font-family: 'Gaegu', cursive;font-size:20px;color:black;}
 /*헤더부분 notice / notice|공지사항  */
-div h1{margin:20px 0 0 488px;color:#fff;}
-div h4{margin:50px 0 60px 0;padding:0 0 20px 0;color:#fff;
+div h1{margin:20px 0 0 488px;}
+div h4{margin:50px 0 60px 0;padding:0 0 20px 0;color:black;;
       border-bottom:1px solid gray;}
 
 /*공지사항 폼*/
 #noticeMenuMain div, 
 #noticeMenu2 div, #noticeMenu3 div, 
 #noticeMenu4 div, #noticeMenu5 div
-{color:#fff;width:100%;margin:auto;}      
+{width:100%;margin:auto;}      
 
-#noticeMenuMain{font-size:25px;color:#fff;
+#noticeMenuMain{font-size:25px;
             width:100%;margin:auto;}
 
 
 #noticeMenu2{border-top:1px solid gray;
           border-bottom:1px solid gray;
-          width:1110px;color:#fff;
+          width:1110px;
           width:100%;
           margin:auto;}
-#noticeMenu3, #noticeMenu4, #noticeMenu5{border-bottom:1px solid gray;
-                              color:#fff;
-                              width:100%;
-                              margin:auto;}
+#noticeMenu3, #noticeMenu4, #noticeMenu5{border-bottom:1px solid gray;width:100%;margin:auto;}
 #noticeMenuMain #WD, 
 #noticeMenu2 #WD, #noticeMenu3 #WD, 
 #noticeMenu4 #WD, #noticeMenu5 #WD{text-align:center;font-family: 'Indie Flower', cursive;}
@@ -34,14 +32,18 @@ span{position:absolute;left:800px;top:417px;}
 #pg a:visited{color:black;}
 
 /*공지사항 눌렀을때 내용*/
-/*1*/
-#noticeShow{height:300px;border:1px solid yellow;
-         background-image:url(../img/.jpg);}
-#noticeShow div{margin:80px 0 0 0;float:left;}
 
-/*2*/
-#noticeShow2{height:300px;border:1px solid yellow;
-         background-image:url(../img/.jpg);}
-#noticeShow2 div{margin:80px 0 0 0;float:left;}
+#content{box-sizing:border-box;}
+#content>div>ul>li:first-of-type{padding-left:80px;}
+#content>div>ul>li{float:left;width:11%;}
+#content>div>ul>li:nth-child(4n+1){width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#content>div>ul>li:nth-child(4n+4){padding-left:20px;}
+#content>div>ul>li:nth-child(4n+5){padding-left:50px;}
+#title{height:30px;font-weight:bold;}
 
-#noticeShow #WD, #WD2{margin:120px 0 0 0;}
+#title>ul>li:nth-child(2){padding-left:80px;}
+#title>ul>li:nth-child(3){padding-left:80px;}
+#title>ul>li:nth-child(4){padding-left:80px;}
+
+#s{position:absolute;left:895px;font-size:15px;top:25px;}
+#ss{position:absolute;left:1060px;font-size:15px;top:25px;}
