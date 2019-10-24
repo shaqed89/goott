@@ -34,7 +34,6 @@
 	#main_top_tattoo li>a img{width:100%; height:100%;}
 </style>
 <script>
-console.log(${userId});
 //top5
 $(function(){
 	var top5_list="";
@@ -60,6 +59,7 @@ $(function(){
 	$("#main_top_tattoo").html(top_tattoo_list);
 	
 });
+
 </script>
 </head>
 <body>

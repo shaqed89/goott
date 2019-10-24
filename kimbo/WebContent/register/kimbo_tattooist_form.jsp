@@ -265,7 +265,7 @@
 	<div style="text-align:center">
 	<h2>작가회원 가입</h2>
 	<form method="post" id="tattooist_frm" action="<%= request.getContextPath()%>/register/tattooist_Ok.do" onsubmit="return checks()" enctype="multipart/form-data">
-	    <table style="">
+	    <table style="margin:0 auto">
 	        <tr>
 	            <td>아이디</td>
 	            <td>
