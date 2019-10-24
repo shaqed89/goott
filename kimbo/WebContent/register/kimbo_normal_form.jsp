@@ -7,33 +7,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Good.D Tattoo</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
+	
+<link rel="stylesheet"	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"	crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../resource/main_lee.css" type="text/css">
+<link rel="stylesheet" href="../resource/header.css" type="text/css">
 
-<link rel="stylesheet" href="../resource/main_lee.css"
-	type="text/css">
-<link rel="stylesheet" href="../resource/header.css"
-	type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap"
-	rel="stylesheet">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-	crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 <style>
 	body {    
     font-family: 나눔바른고딕, NanumBarunGothic, 맑은고딕, "Malgun Gothic", 돋움, Dotum, "Apple SD Gothic Neo", sans-serif;
     font-size: 12px; color: rgb(33, 33, 33);
 	}
-	.container{
-		width: 900px;
-		margin: 0 auto;
-	}
+	.container{width:1200px; max-width:1200px; padding:0; position:realative; }
+	footer{clear:left;}
+	
 	form{text-align:center;}
 	table {
 	    width: 600px;
@@ -247,6 +237,9 @@
 </script>
 </head>
 <body>
+<header class="container">
+	<jsp:include page="../Inc/kimbo_header.jsp"></jsp:include>
+</header>
 <div class="container">
 <h2>일반회원 가입</h2>
 <form method="post" id="normal_frm" action="<%= request.getContextPath()%>/register/normal_Ok.do" onsubmit="return checks()">
@@ -346,5 +339,8 @@
     </table>
 </form>
 </div>
+<footer>
+	<jsp:include page="../Inc/kimbo_footer.jsp"></jsp:include>
+</footer>
 </body>
 </html>
