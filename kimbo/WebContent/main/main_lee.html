@@ -54,7 +54,7 @@
 			$("#myModal").css("display", "none");
 		});
 	});  
-
+	
 	
 $(function(){
 		$("#lgn").click(function(){
@@ -75,7 +75,16 @@ $(function(){
 				alert("비밀번호는 8~15글자 사이여야 합니다.");
 				return false;
 			}
-
+			if ($("#uname").val()==($("#pwd").val())) {
+			      alert("비밀번호가 ID와 똑같으면 안!대!");
+			      $("#pwd").val("");
+			      $("#pwd").focus();
+			      return false;
+			    }
+	 		if($("#uname").val().(ch >= '0' && ch <=1 '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z'){
+				alert("아이디는 영문 대소문자, 숫자만 입력가능합니다.")
+				return false;
+			} 
 		});
 });
 </script>
@@ -145,10 +154,10 @@ $(function(){
 							class="btn btn-block btn-danger"/>
 						</div>
 						<h4>아직 회원이 아니신가요?</h4>
-							<div id=sign>
-								<a href="#"><input type="submit" id="sig" name="sig" value="회원가입" class="btn btn-block btn-primary"
-											data-toggle="modal" data-target="#choiceModal"/></a>
-							</div>
+						<div id=sign>
+							<a href="#"><input type="submit" id="sig" name="sig" value="회원가입" class="btn btn-block btn-primary"
+										data-toggle="modal" data-target="#choiceModal"/></a>
+						</div>
 					</div>
 				</div>
 			</div>

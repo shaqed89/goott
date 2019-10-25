@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,9 +69,9 @@
 </script>
 </head>
 <body>
-	<!-- 공지사항 폼 -->
+<!-- F&Q -->
 	<div id="notice" class="container">
-		<h4>Notice | 공지사항</h4>
+		<h4>F&Q | 자주묻는질문</h4>
 		<div id="title">
 			<ul style="padding-bottom: 30px">
 				<li>TITLE</li>
@@ -83,14 +85,14 @@
 					<h2 class="mb-0">
 						<button class="btn btn-link" type="button" data-toggle="collapse"
 							data-target="#collapseOne" aria-expanded="true"
-							aria-controls="collapseOne">추석 연휴 영업안내</button>
+							aria-controls="collapseOne">결제방법</button>
 					</h2>
 					<h5 id="s">Good.D TATTOO</h5>
 					<h5 id="ss">2019-10-23</h5>
 				</div>
 				<div id="collapseOne" class="collapse"
 					aria-labelledby="headingOne" data-parent="#accordionExample">
-					<div class="card-body">추석날 정상 영업합니다.</div>
+					<div class="card-body">현금결제만 가능합니다.</div>
 				</div>
 			</div>
 			<!--  -->
@@ -184,5 +186,7 @@
 			</table>
 		</footer>
 	</div>
+</body>
+</html>
 </body>
 </html>

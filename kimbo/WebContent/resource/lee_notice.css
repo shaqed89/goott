@@ -12,17 +12,16 @@ div h4{margin:50px 0 60px 0;padding:0 0 20px 0;color:black;;
 #noticeMenuMain div, 
 #noticeMenu2 div, #noticeMenu3 div, 
 #noticeMenu4 div, #noticeMenu5 div
-{width:100%;margin:auto;}      
+{width:100%;float:left;}      
 
 #noticeMenuMain{font-size:25px;
             width:100%;margin:auto;}
-
+#noticeShow{width:100%;float:left;}
 
 #noticeMenu2{border-top:1px solid gray;
           border-bottom:1px solid gray;
-          width:1110px;
           width:100%;
-          margin:auto;}
+          margin:auto;float:left;border-top:1px solid gray;line-height:30px;line-height:30px;}
 #noticeMenu3, #noticeMenu4, #noticeMenu5{border-bottom:1px solid gray;width:100%;margin:auto;}
 #noticeMenuMain #WD, 
 #noticeMenu2 #WD, #noticeMenu3 #WD, 
@@ -50,3 +49,7 @@ span{position:absolute;left:800px;top:417px;}
 
 #s{position:absolute;left:905px;font-size:15px;top:25px;}
 #ss{position:absolute;left:1060px;font-size:15px;top:25px;}
+
+/* footer */
+#noticeFooter{left:40%;top:15px;position:relative;}
+
