@@ -96,14 +96,14 @@
 <script>
 	function checks(){
 		//아이디 공백확인
-		if($("#userId").val() == ""){
+		if($("#n_userId").val() == ""){
 	        alert("아이디를 입력 바랍니다.");
-	        $("#userid").focus();
+	        $("#n_userId").focus();
 	        return false;
 	      }
 		//비밀번호 공백 확인 
-		if($("#userPwd").val() == ""){ 
-			alert("패스워드 입력바람"); $("#userPwd").focus(); 
+		if($("#n_userPwd").val() == ""){ 
+			alert("패스워드 입력바람"); $("#n_userPwd").focus(); 
 			return false; 
 		}  
 		//비밀번호 확인란 공백 확인 
@@ -112,7 +112,7 @@
 			return false; 
 		} 
 		//비밀번호 서로확인 
-		if($("#userPwd").val() != $("#userPwdCheck").val()){
+		if($("#n_userPwd").val() != $("#userPwdCheck").val()){
 			alert("비밀번호가 다릅니다."); 
 			$("#userPwdCheck").val(""); 
 			return false; 
@@ -150,30 +150,30 @@
 	$(function() {
 		//아이디 중복검사
 		$("#idCheck").click(function(){
-			if($("#userId").val() == ""){
+			if($("#n_userId").val() == ""){
 		        alert("아이디를 입력 바랍니다.");
-		        $("#userid").focus();
+		        $("#n_userId").focus();
 		        return false;
 		      }
 			
-			var userId = $("#userId").val();
-			console.log(userId);
+			var n_userId = $("#n_userId").val();
+			console.log(n_userId);
 			$.ajax({
 				url : "<%=request.getContextPath() %>/register/idCheck_Ok.do",
-				data : "userId="+userId,
+				data : "n_userId="+n_userId,
 				success: function(result){
 					console.log(result);
 					if(eval(result)){
 						alert("사용 불가능한 아이디입니다.");
-						console.log("userId="+userId+", idChkResult="+$("#idChkResult").val());
+						console.log("n_userId="+n_userId+", idChkResult="+$("#idChkResult").val());
 					}else{
 						/* alert("사용 가능한 아이디입니다."); */
-						if(confirm("사용가능한아이디 입니다.\n"+userId+" 를 사용하시겠습니까?")){
+						if(confirm("사용가능한아이디 입니다.\n"+n_userId+" 를 사용하시겠습니까?")){
 							$("#idChkResult").val("Y");
-							console.log("userId="+userId+", idChkResult="+$("#idChkResult").val());
+							console.log("n_userId="+n_userId+", idChkResult="+$("#idChkResult").val());
 						}else{
 							$("#idChkResult").val("N");
-							console.log("userId="+userId+", idChkResult="+$("#idChkResult").val());
+							console.log("n_userId="+n_userId+", idChkResult="+$("#idChkResult").val());
 
 						}
 						
@@ -184,7 +184,7 @@
 		
 		 
 		//중복검사완료 해제
-		$("#userId").keyup(function(){
+		$("#n_userId").keyup(function(){
 			$("#idChkResult").val("N");
 			console.log("idChkResult="+$("#idChkResult").val());
 		});
@@ -240,105 +240,107 @@
 <header class="container">
 	<jsp:include page="../Inc/kimbo_header.jsp"></jsp:include>
 </header>
-<div class="container">
-<h2>일반회원 가입</h2>
-<form method="post" id="normal_frm" action="<%= request.getContextPath()%>/register/normal_Ok.do" onsubmit="return checks()">
-    <table>
-        <tr>
-            <td>아이디</td>
-            <td>
-                <input type="text" size=25 id="userId" name="userId" value="" maxlength="15" placeholder="8~15자 까지 가능">
-                <input type="button" id="idCheck" value="중복체크">
-                <input type="hidden" name="idChkResult" id="idChkResult" value="N"/>
-            </td>
-        </tr>
-        <tr>
-            <td>비밀번호</td>
-            <td><input type="password" size=37 name="userPwd" id="userPwd" placeholder="8~15자 까지 가능"></td>
-        </tr>
-        <tr>
-            <td>비밀번호 확인</td>
-            <td><input type="password" size=37 name="userPwdCheck" id="userPwdCheck" placeholder="8~15자 까지 가능"></td>
-        </tr>
-        <tr>
-            <td style='width:100px'>이름</td>
-            <td><input type="text" size=37 name="userName" id="userName" placeholder="ex) 홍길동"></td>
-        </tr>
-        <tr>
-            <td>휴대폰번호</td>
-            <td>
-            	<select name="t1" id="t1">
-            		<option>010</option>
-            		<option>011</option>
-            		<option>016</option>
-            		<option>018</option>
-            		<option>019</option>
-            	</select> -
-				<input type="text" name="t2" id="t2" maxlength="4" placeholder="0000"/> -
-				<input type="text" name="t3" id="t3" maxlength="4" placeholder="0000"/></td>
-        </tr>
-        <tr>
-        	<td>주소</td>
-        	<td>
-        		<select name="sido" id="sido"></select>
-				<select name="gungu" id="gungu"></select>
-			</td>
-        </tr>
-        <tr>
-        	<td>이메일</td>
-        	<td>
-        		<input type="text" name="emailId" id="emailId" placeholder="email아이디"/> @
-				<select name="emailDomain" id="emailDomain">				
-					<option>naver.com</option>
-					<option>hanmail.net</option>
-					<option>daum.net</option>
-					<option>gamil.com</option>
-				</select>
-			</td>
-        </tr>
-        <tr>
-            <td>생년월일</td>
-            <td><input type="text" name="birthYear" id="birthYear" maxlength="4" placeholder="ex)1993"/>년
-				<select name="birthMonth" id="birthMonth">
-					<%
-						for(int i=1; i<=12; i++){
-							%>
-								<option value="<% if(i<10){out.print("0"+i);}else{out.print(i);}%>">
-								<%= i %></option>
-							<%
-						}
-					%>
-				</select>월
-				<select name="birthDate" id="birthDate"	>
-					<%
-						for(int d=1; d<=31; d++){
-							%>
-							<option value="<%if(d<10){out.print("0"+d);}else{out.print(d);} %>">
-							<%=d %></option>
-							<%
-						}
-					%>
-				</select>일</td>
-        </tr>
-        <tr>
-            <td>성별</td>
-            <td>
-            	<div id="xx"><input type="radio" size=50 name="gender" id="gender_m" value="m" checked="checked"> 남</div>
-            	<div id="yy"><input type="radio" size=50 name="gender" id="gender_f" value="f"> 여</div>
-            </td>
-        </tr>
-        <tfoot>
+<section class="container">
+	<div style="text-align:center">
+	<h2>일반회원 가입</h2>
+	<form method="post" id="normal_frm" action="<%= request.getContextPath()%>/register/normal_Ok.do" onsubmit="return checks()">
+	    <table style="margin:0 auto">
 	        <tr>
-	            <td colspan='2' align='center'>
-	            	<input type="reset" value="다시쓰기">
-	            	<input type="submit" value="회원가입">
-	            	<input type="hidden" id="role" name="role" value="일반"/>
+	            <td>아이디</td>
+	            <td>
+	                <input type="text" size=25 id="n_userId" name="userId" value="" maxlength="15" placeholder="8~15자 까지 가능">
+	                <input type="button" id="idCheck" value="중복체크">
+	                <input type="hidden" name="idChkResult" id="idChkResult" value="N"/>
 	            </td>
 	        </tr>
-        </tfoot>
-    </table>
-</form>
-</div>
+	        <tr>
+	            <td>비밀번호</td>
+	            <td><input type="password" size=37 name="userPwd" id="n_userPwd" placeholder="8~15자 까지 가능"></td>
+	        </tr>
+	        <tr>
+	            <td>비밀번호 확인</td>
+	            <td><input type="password" size=37 name="userPwdCheck" id="userPwdCheck" placeholder="8~15자 까지 가능"></td>
+	        </tr>
+	        <tr>
+	            <td style='width:100px'>이름</td>
+	            <td><input type="text" size=37 name="userName" id="userName" placeholder="ex) 홍길동"></td>
+	        </tr>
+	        <tr>
+	            <td>휴대폰번호</td>
+	            <td>
+	            	<select name="t1" id="t1">
+	            		<option>010</option>
+	            		<option>011</option>
+	            		<option>016</option>
+	            		<option>018</option>
+	            		<option>019</option>
+	            	</select> -
+					<input type="text" name="t2" id="t2" maxlength="4" placeholder="0000"/> -
+					<input type="text" name="t3" id="t3" maxlength="4" placeholder="0000"/></td>
+	        </tr>
+	        <tr>
+	        	<td>주소</td>
+	        	<td>
+	        		<select name="sido" id="sido"></select>
+					<select name="gungu" id="gungu"></select>
+				</td>
+	        </tr>
+	        <tr>
+	        	<td>이메일</td>
+	        	<td>
+	        		<input type="text" name="emailId" id="emailId" placeholder="email아이디"/> @
+					<select name="emailDomain" id="emailDomain">				
+						<option>naver.com</option>
+						<option>hanmail.net</option>
+						<option>daum.net</option>
+						<option>gamil.com</option>
+					</select>
+				</td>
+	        </tr>
+	        <tr>
+	            <td>생년월일</td>
+	            <td><input type="text" name="birthYear" id="birthYear" maxlength="4" placeholder="ex)1993"/>년
+					<select name="birthMonth" id="birthMonth">
+						<%
+							for(int i=1; i<=12; i++){
+								%>
+									<option value="<% if(i<10){out.print("0"+i);}else{out.print(i);}%>">
+									<%= i %></option>
+								<%
+							}
+						%>
+					</select>월
+					<select name="birthDate" id="birthDate"	>
+						<%
+							for(int d=1; d<=31; d++){
+								%>
+								<option value="<%if(d<10){out.print("0"+d);}else{out.print(d);} %>">
+								<%=d %></option>
+								<%
+							}
+						%>
+					</select>일</td>
+	        </tr>
+	        <tr>
+	            <td>성별</td>
+	            <td>
+	            	<div id="xx"><input type="radio" size=50 name="gender" id="gender_m" value="m" checked="checked"> 남</div>
+	            	<div id="yy"><input type="radio" size=50 name="gender" id="gender_f" value="f"> 여</div>
+	            </td>
+	        </tr>
+	        <tfoot>
+		        <tr>
+		            <td colspan='2' align='center'>
+		            	<input type="reset" value="다시쓰기">
+		            	<input type="submit" value="회원가입">
+		            	<input type="hidden" id="role" name="role" value="일반"/>
+		            </td>
+		        </tr>
+	        </tfoot>
+	    </table>
+	</form>
+	</div>
+</section>
 <footer>
 	<jsp:include page="../Inc/kimbo_footer.jsp"></jsp:include>
 </footer>

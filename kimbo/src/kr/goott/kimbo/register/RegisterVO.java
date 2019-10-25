@@ -33,6 +33,8 @@ public class RegisterVO {
 	
 	private String regDate;
 /////////////////////////////////////////////////////////////////
+	private int status;
+/////////////////////////////////////////////////////////////////
 
 	public int getNum() {
 		return num;
@@ -142,7 +144,7 @@ public class RegisterVO {
 	public void setAddr(String addr) {
 		this.addr = addr;
 		
-		String juso[]= tel.split(" ");
+		String juso[]= addr.split(" ");
 		sido = juso[0];
 		gungu = juso[1];
 	}
@@ -240,6 +242,14 @@ public class RegisterVO {
 
 	public void setRegDate(String regDate) {
 		this.regDate = regDate;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	
 	
