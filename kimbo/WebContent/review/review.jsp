@@ -142,7 +142,7 @@
 			</section>
 		</li>
 	</ul>
-	<footer>
+	<div>
 		&nbsp;
 			<table id="pageNxt">
 				<tr>
@@ -161,7 +161,7 @@
 				</tr>
 			</table>
 			<input type="button" class="btn btn-secondary" id="write" value="글쓰기">
-	</footer>
+	</div>
 </div>
 </body>
 </html>

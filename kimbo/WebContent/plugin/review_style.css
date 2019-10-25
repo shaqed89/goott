@@ -157,7 +157,8 @@ html[xmlns] .clearfix {
 
 /* page */
 .pagination {
-  display: inline-block;
+  display: inline-block;    position: relative;
+    bottom: 15px;
 }
 
 .pagination a {
@@ -165,6 +166,7 @@ html[xmlns] .clearfix {
   float: left;
   padding: 8px 16px;
   text-decoration: none;
+  
 }
 
 .pagination a.active {
@@ -174,4 +176,7 @@ html[xmlns] .clearfix {
 .pagination a:hover:not(.active) {background-color: #ddd;}
 
 #pageNxt{margin:0 auto;}
-#write{position: relative;float: right;bottom: 40px;}
+#write{position: relative;
+    float: right;
+    bottom: 50px;
+    right: 35px;}
