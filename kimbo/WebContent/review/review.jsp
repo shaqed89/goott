@@ -24,7 +24,8 @@
 		<h2 style="text-align:center;">Review</h2>
 	</header>
 	<ul id="products" class="clearfix list">
-		<li class="clearfix">
+		<li style="position:absolute;">1</li>
+		<li class="clearfix" id="reviewOne">
 			<section class="left">
 				<a href=""><img src="../img/Flower3.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
 				<h3>Flower | 등</h3>
@@ -32,12 +33,11 @@
 			</section>
 			<section class="right">
 				<span class="writer">작성자 : 이종한</span>
-				<span class="darkview">
-					<a href="#"><img src="images/add-to-cart-btn.png" alt="Add to Cart"></a>
-				</span>
+				<span class="hit">조회수 : 5 </span>
 			</section>
 		</li>
-		<li class="clearfix alt">
+		<li style="position:absolute; background:#d7dfe0">2</li>
+		<li class="clearfix alt" id="reviewTwo">
 			<section class="left">
 				<a href=""><img src="../img/Lettering8-1.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
 				<h3>Lettering | 팔</h3>
@@ -45,12 +45,11 @@
 			</section>
 			<section class="right">
 				<span class="writer">작성자 : 김형재</span>
-				<span class="darkview">
-					<a href="#"><img src="images/add-to-cart-btn.png" alt="Add to Cart"></a>
-				</span>
+				<span class="hit">조회수 : 5 </span>
 			</section>
 		</li>
-		<li class="clearfix third">
+		<li style="position:absolute;">3</li>
+		<li class="clearfix third" id="reviewThree">
 			<section class="left">
 				<a href=""><img src="../img/Mandala21.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
 				<h3>Mandala | 옆구리</h3>
@@ -58,25 +57,23 @@
 			</section>
 			<section class="right">
 				<span class="writer">작성자 : 김진수</span>
-				<span class="darkview">
-					<a href="#"><img src="images/add-to-cart-btn.png" alt="Add to Cart"></a>
-				</span>
+				<span class="hit">조회수 : 5 </span>
 			</section>
 		</li>
-		<li class="clearfix alt">
+		<li style="position:absolute; background:#d7dfe0">4</li>
+		<li class="clearfix alt" id="reviewFour">
 			<section class="left">
 				<a href=""><img src="../img/Mandala4.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
 				<h3>Mandala | 등</h3>
 				<span class="meta">너무 만족합니다.^^</span>
 			</section>
-			<section class="right">
+			<section class="right" >
 				<span class="writer">작성자 : 박해영</span>
-				<span class="darkview">
-					<a href="#"><img src="images/add-to-cart-btn.png" alt="Add to Cart"></a>
-				</span>
+				<span class="hit">조회수 : 5 </span>
 			</section>
 		</li>
-		<li class="clearfix">
+		<li style="position:absolute;">5</li>
+		<li class="clearfix" id="reviewFive">
 			<section class="left">
 				<a href=""><img src="../img/mini5.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
 				<h3>Mini | 목</h3>
@@ -84,12 +81,11 @@
 			</section>
 			<section class="right">
 				<span class="writer">작성자 : 김구용</span>
-				<span class="darkview">
-					<a href="#"><img src="images/add-to-cart-btn.png" alt="Add to Cart"></a>
-				</span>
+				<span class="hit">조회수 : 5 </span>
 			</section>
 		</li>
-		<li class="clearfix alt third">
+		<li style="position:absolute; background:#d7dfe0">6</li>
+		<li class="clearfix alt third" id="reviewSix">
 			<section class="left">
 				<a href=""><img src="../img/mini7.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
 				<h3>Mini | 손가락</h3>
@@ -97,12 +93,11 @@
 			</section>
 			<section class="right">
 				<span class="writer">작성자 : 최민성</span>
-				<span class="darkview">
-					<a href="#"><img src="images/add-to-cart-btn.png" alt="Add to Cart"></a>
-				</span>
+				<span class="hit">조회수 : 5 </span>
 			</section>
 		</li>
-		<li class="clearfix">
+		<li style="position:absolute;">7</li>
+		<li class="clearfix" id="reviewSeven">
 			<section class="left">
 				<a href=""><img src="../img/NewsSchool10.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
 				<h3>NewSchool | 팔</h3>
@@ -110,12 +105,11 @@
 			</section>
 			<section class="right">
 				<span class="writer">작성자 : 최민지</span>
-				<span class="darkview">
-					<a href="#"><img src="images/add-to-cart-btn.png" alt="Add to Cart"></a>
-				</span>
+				<span class="hit">조회수 : 5 </span>
 			</section>
 		</li>
-		<li class="clearfix alt">
+		<li style="position:absolute; background:#d7dfe0">8</li>
+		<li class="clearfix alt" id="reviewEight">
 			<section class="left">
 				<a href=""><img src="../img/NewsSchool16.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
 				<h3>NewSchool | 팔</h3>
@@ -123,12 +117,11 @@
 			</section>
 			<section class="right">
 				<span class="writer">작성자 : 정운하</span>
-				<span class="darkview">
-					<a href="#"><img src="images/add-to-cart-btn.png" alt="Add to Cart"></a>
-				</span>
+				<span class="hit">조회수 : 5 </span>
 			</section>
 		</li>
-		<li class="clearfix third">
+		<li style="position:absolute;">9</li>
+		<li class="clearfix third" id="reviewNine">
 			<section class="left">
 				<a href=""><img src="../img/snake6.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
 				<h3>Snake | 등</h3>
@@ -136,9 +129,7 @@
 			</section>
 			<section class="right">
 				<span class="writer">작성자 : 김동환</span>
-				<span class="darkview">
-					<a href="#"><img src="images/add-to-cart-btn.png" alt="Add to Cart"></a>
-				</span>
+				<span class="hit">조회수 : 5 </span>
 			</section>
 		</li>
 	</ul>

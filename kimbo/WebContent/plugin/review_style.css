@@ -58,6 +58,10 @@ h1 {
 	right: 0;
 }
 
+.hit{font-size:15px;
+    bottom: 20px;
+    position: relative;}
+
 /** list view **/
 ul.list {
 	list-style: none;
@@ -89,7 +93,7 @@ ul.list li section.right {
 	width: 250px;
 	text-align: right;
 }
-.darkview img{position:relative;top:50px;}
+
 
 ul.list li section.left img.thumb {
 	float: left;
@@ -120,10 +124,12 @@ ul.list li section.left span.meta {
 ul.list li section.right span.writer {
 	font-weight: bold;
 	display: block;
-	margin-bottom: 15px;
+	margin-bottom: px;
 	color: #ad3939;
 	font-size: 1.6em;
 	text-align: right;
+	top: 90px;
+    position: relative;
 }
 
 ul.list li section.right a.firstbtn {
