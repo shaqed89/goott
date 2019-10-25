@@ -41,13 +41,13 @@ $(function(){
 	/* 일반회원가입 */
 	$("#sign_normal").click(function(){
 		if(confirm("일반회원으로 가입하시겠습니까?")){
-			location.href="/kimbo/register/normal_form.do?";
+			location.href="<%=request.getContextPath()%>/register/normal_form.do";
 		}
 	});
 	/* 작가회원가입 */
 	$("#sign_tattooist").click(function(){
 		if(confirm("타투이스트회원으로 가입하시겠습니까?")){
-			location.href="/kimbo/register/tattooist_form.do?";
+			location.href="<%=request.getContextPath()%>/register/tattooist_form.do";
 		}
 	});
 });
@@ -55,7 +55,7 @@ $(function(){
 </head>
 <body>
 <header class="container">
-	<jsp:include page="../Inc/kimbo_header.jsp"></jsp:include>
+	<jsp:include page="../Inc/lee_header.jsp"></jsp:include>
 </header>
 	<div id="main" class="container">
 		<div id="title">회원가입</div>
@@ -88,7 +88,7 @@ $(function(){
 		
 	</div>
 <footer>
-	<jsp:include page="../Inc/kimbo_footer.jsp"></jsp:include>
+	<jsp:include page="../Inc/lee_footer.jsp"></jsp:include>
 </footer>
 </body>
 </html>

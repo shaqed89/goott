@@ -14,7 +14,7 @@ public class CommandNotice implements CommandService {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		return "notice.jsp";
+		return "lee_notice.jsp";
 	}
 
 }

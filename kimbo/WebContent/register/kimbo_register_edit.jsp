@@ -230,41 +230,81 @@
 			var area15 = ["거제시","김해시","마산시","밀양시","사천시","양산시","진주시","진해시","창원시","통영시","거창군","고성군","남해군","산청군","의령군","창녕군","하동군","함안군","함양군","합천군"];
 			var area16 = ["서귀포시","제주시","남제주군","북제주군"];
 	
-		 // 시/도 선택 박스 초기화
+		 // 시/도 정보 받아오기
 		$("select[name^=sido]").each(function() {
 			$selsido = $(this);
+			var s1;
 			$.each(eval(area0), function() {
-				$selsido.append("<option value='"+this+"'>"+this+"</option>");
+				s1="${vo.sido}";
+				/* console.log("this="+this+", sido="+s1); */
+				var tag = "<option value ='"+this+"'";
+	   			if(s1==this) tag += "selected";
+				tag += ">"+this+"</option>";
+			
+				$selsido.append(tag);
 			});
+			var area = "area"+$("option",$(this)).index($("option:selected",$(this))); // 선택지역의 구군 Array
+			var $gugun = $(this).next(); // 선택영역 군구 객체
+			
+			if(area == "area0")
+				$gugun.append("<option value=''>군/구 선택</option>");
+			else {
+				$.each(eval(area), function() {
+					var g1 = "${vo.gungu}";
+					var tag = "<option value ='"+this+"'";
+		   			if(g1==this) tag += "selected";
+					tag += ">"+this+"</option>";
+					
+					$gugun.append(tag);
+					});
+				}
 			$selsido.next().append("<option value=''>구/군 선택</option>");
 		});
 	
+		 
 		 // 시/도 선택시 구/군 설정
 		$("select[name^=sido]").change(function() {
 			var area = "area"+$("option",$(this)).index($("option:selected",$(this))); // 선택지역의 구군 Array
 			var $gugun = $(this).next(); // 선택영역 군구 객체
 			$("option",$gugun).remove(); // 구군 초기화
-	
+			console.log($(this));
 			if(area == "area0")
-				$gugun.append("<option value=''>구/군 선택</option>");
+				$gugun.append("<option value=''>군/구 선택</option>");
 			else {
 				$.each(eval(area), function() {
-					$gugun.append("<option value='"+this+"'>"+this+"</option>");
+						$gugun.append("<option value='"+this+"'>"+this+"</option>");
 					});
 				}
 			});
 		});
+		
+		//프로필사진 수정
+		$("#file").css("display", "none");
+		
+		$("#fileDel").click(function(){
+			$("#file").css("display", "block");
+			$("#fileList").html("");
+		});
+		
+		/*회원탈퇴 */
+		$("#reg_del").click(function(){
+			if(confirm("정말로 탈퇴하시겠습니까?")){
+				location.href="<%=request.getContextPath()%>/register/RegisterDelete.do";
+			}
+		});
+		
 	});
+	
 </script>
 </head>
 <body>
 <header class="container">
-	<jsp:include page="../Inc/kimbo_header.jsp"></jsp:include>
+	<jsp:include page="../Inc/lee_header.jsp"></jsp:include>
 </header>
 <section class="container">
 	<div style="text-align:center">
 	<h2>회원정보수정</h2>
-	<form method="post" id="edit_frm" action="<%= request.getContextPath()%>/register/RegisterEditOk.do" onsubmit="return checks()" enctype="multipart/form-data">
+	<form method="post" id="edit_frm" action="<%= request.getContextPath()%>/register/RegEditOk.do" onsubmit="return checks()" enctype="multipart/form-data">
 	    <table style="margin: 0 auto">
 	        <tr>
 	            <td>아이디</td>
@@ -289,11 +329,11 @@
 	            <td>휴대폰번호</td>
 	            <td>
 	            	<select name="t1" id="t1">
-	            		<option value="010" <c:if test="${vo.birthMonth==i}">selected</c:if>>010</option>
-	            		<option value="011" <c:if test="${vo.birthMonth==i}">selected</c:if>>011</option>
-	            		<option value="016" <c:if test="${vo.birthMonth==i}">selected</c:if>>016</option>
-	            		<option value="018" <c:if test="${vo.birthMonth==i}">selected</c:if>>018</option>
-	            		<option value="019" <c:if test="${vo.birthMonth==i}">selected</c:if>>019</option>
+	            		<option value="010" <c:if test="${vo.t1=='010'}">selected</c:if>>010</option>
+	            		<option value="011" <c:if test="${vo.t1=='011'}">selected</c:if>>011</option>
+	            		<option value="016" <c:if test="${vo.t1=='016'}">selected</c:if>>016</option>
+	            		<option value="018" <c:if test="${vo.t1=='018'}">selected</c:if>>018</option>
+	            		<option value="019" <c:if test="${vo.t1=='019'}">selected</c:if>>019</option>
 	            	</select> -
 					<input type="text" name="t2" id="t2" maxlength="4" value="${vo.t2}"/> -
 					<input type="text" name="t3" id="t3" maxlength="4" value="${vo.t3}"/></td>
@@ -357,15 +397,20 @@
 	        </tr>
 	        <tr>
 	            <td>프로필 사진</td>
-	            <td><input type="file" size=37 name="profile" id="profile"></td>
+	            <td> <span id="fileList">${vo.profile} <input type="button" id="fileDel" value="X"/></span><br/>
+					 <span id="file"><input type="file" name="profile" id="profile"/></span><br/>
+					 <input type="hidden" name="oldProfile" value="${vo.profile}"/>
+				</td>
 	        </tr>
 	        </c:if>
 	        <tfoot>
 		        <tr>
 		            <td colspan='2' align='center'>
 		            	<input type="submit" value="수정">
-		            	<input type="button" value="탈퇴">
-		            	<input type="hidden" id="role" name="role" value="작가"/>
+		            	<input type="button" value="탈퇴" id="reg_del">
+		            	<c:if test="${vo.role!=null }">
+		            	<input type="hidden" id="role" name="role" value="${vo.role }"/>
+		            	</c:if>
 		            </td>
 		        </tr>
 	        </tfoot>
@@ -374,7 +419,7 @@
 	</div>
 </section>
 <footer>
-	<jsp:include page="../Inc/kimbo_footer.jsp"></jsp:include>
+	<jsp:include page="../Inc/lee_footer.jsp"></jsp:include>
 </footer>
 </body>
 </html>

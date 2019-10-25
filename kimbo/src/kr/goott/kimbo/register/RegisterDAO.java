@@ -129,8 +129,64 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 
 	@Override
 	public int updateRecord(RegisterVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		int cnt=0;
+		try {
+			dbConn();
+			
+			String sql = "update bro_register set tel=?, addr=?, email=?, kakao=?, profile=? "
+					   + "where userid=? and userpwd=?";
+			
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, vo.getTel());
+			pstmt.setString(2, vo.getAddr());
+			pstmt.setString(3, vo.getEmail());
+			pstmt.setString(4, vo.getKakao());
+			pstmt.setString(5, vo.getProfile());
+			
+			pstmt.setString(6, vo.getUserId());
+			pstmt.setString(7, vo.getUserPwd());
+			
+//			System.out.println(vo.getTel());
+			
+			cnt = pstmt.executeUpdate();
+			
+		}catch (Exception e) {
+			System.out.println("회원정보 수정 에러..."+e.getMessage());
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
+		return cnt;
 	}
 
+	public void deleteRecord(RegisterVO vo) {
+		try {
+			System.out.println(vo.getUserId());
+			System.out.println(vo.getProfile());
+			
+			dbConn();
+			//파일명 알아내기
+			String sql = "select profile from bro_register where userid=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getUserId());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				vo.setProfile(rs.getString(1));
+			}
+			
+			//레코드 지우기
+			sql = "delete from bro_register where userId=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getUserId());
+			
+			vo.setStatus(pstmt.executeUpdate());
+		} catch (Exception e) {
+			System.out.println("자료실 글 삭제 에러..."+e.getMessage());
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+	}
 }

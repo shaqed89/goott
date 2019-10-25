@@ -91,7 +91,7 @@ $(function(){
 						<a href="<%=request.getContextPath()%>/register/logoutOk.do">Logout</a>
 					</li>
 					<li>
-						<a href="<%=request.getContextPath()%>/myPage/myPage.do">My</a>
+						<a href="<%=request.getContextPath()%>/myPage/myPage.do">MyPage</a>
 					</li>
 				</c:if>				
 			</ul>

@@ -13,6 +13,7 @@ public class CommandRegisterEdit implements CommandService {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		// 회원정보수정
 		RegisterVO vo = new RegisterVO();
 		vo.setUserId((String)request.getSession().getAttribute("userId"));
@@ -22,7 +23,7 @@ public class CommandRegisterEdit implements CommandService {
 		
 		request.setAttribute("vo", vo);
 
-		return "register_edit.jsp";
+		return "kimbo_register_edit.jsp";
 	}
 
 }

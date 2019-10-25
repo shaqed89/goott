@@ -14,7 +14,7 @@ public class CommandSearch implements CommandService {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		return "search.jsp";
+		return "park_search.jsp";
 	}
 
 }
