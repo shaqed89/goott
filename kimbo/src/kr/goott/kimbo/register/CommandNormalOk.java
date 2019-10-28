@@ -26,7 +26,7 @@ public class CommandNormalOk implements CommandService {
 		vo.setT2(request.getParameter("t2"));
 		vo.setT3(request.getParameter("t3"));
 		vo.setSido(request.getParameter("sido"));
-		vo.setGungu(request.getParameter("gungu"));
+		vo.setGugun(request.getParameter("gugun"));
 		vo.setEmailId(request.getParameter("emailId"));
 		vo.setEmailDomain(request.getParameter("emailDomain"));
 		vo.setBirthYear(request.getParameter("birthYear"));

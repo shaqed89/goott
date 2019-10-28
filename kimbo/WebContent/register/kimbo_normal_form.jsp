@@ -214,7 +214,7 @@
 			$.each(eval(area0), function() {
 				$selsido.append("<option value='"+this+"'>"+this+"</option>");
 			});
-			$selsido.next().append("<option value=''>군/구 선택</option>");
+			$selsido.next().append("<option value=''>구/군 선택</option>");
 		});
 	
 		 // 시/도 선택시 구/군 설정
@@ -224,7 +224,7 @@
 			$("option",$gugun).remove(); // 구군 초기화
 	
 			if(area == "area0")
-				$gugun.append("<option value=''>군/구 선택</option>");
+				$gugun.append("<option value=''>구/군 선택</option>");
 			else {
 				$.each(eval(area), function() {
 					$gugun.append("<option value='"+this+"'>"+this+"</option>");
@@ -282,7 +282,7 @@
 	        	<td>주소</td>
 	        	<td>
 	        		<select name="sido" id="sido"></select>
-					<select name="gungu" id="gungu"></select>
+					<select name="gugun" id="gugun"></select>
 				</td>
 	        </tr>
 	        <tr>

@@ -36,7 +36,7 @@ public class CommandRegisterEditOk implements CommandService {
 		vo.setT2(mr.getParameter("t2"));
 		vo.setT3(mr.getParameter("t3"));
 		vo.setSido(mr.getParameter("sido"));
-		vo.setGungu(mr.getParameter("gungu"));
+		vo.setGugun(mr.getParameter("gugun"));
 		vo.setEmailId(mr.getParameter("emailId"));
 		vo.setEmailDomain(mr.getParameter("emailDomain"));
 		vo.setBirthYear(mr.getParameter("birthYear"));

@@ -67,8 +67,11 @@ $(function(){
 		</div>
 		<div id="center">
 			<div id="header_center2">
-				<a href="<%=request.getContextPath()%>/tattoo/search.do">Search</a> <a href="<%=request.getContextPath()%>/tattoo/tattooist.do">Tattooist</a> <a href="<%=request.getContextPath()%>/board/notice.do">Notice</a>
-				<a href="<%=request.getContextPath()%>/board/faq.do">F&Q</a> <a href="<%=request.getContextPath()%>/board/review.do">Review</a>
+				<a href="<%=request.getContextPath()%>/search/searchList.do">Search</a>
+				<a href="<%=request.getContextPath()%>/tattooist/tattooistList.do">Tattooist</a>
+				<a href="<%=request.getContextPath()%>/notice/noticeList.do">Notice</a>
+				<a href="<%=request.getContextPath()%>/faq/faqList.do">F&Q</a>
+				<a href="<%=request.getContextPath()%>/review/reviewLsit.do">Review</a>
 			</div>
 		</div>
 		<div id="header_right">

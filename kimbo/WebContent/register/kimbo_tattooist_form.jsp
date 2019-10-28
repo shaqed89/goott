@@ -303,7 +303,7 @@
 	        	<td>주소</td>
 	        	<td>
 	        		<select name="sido" id="sido"></select>
-					<select name="gungu" id="gungu"></select>
+					<select name="gugun" id="gugun"></select>
 				</td>
 	        </tr>
 	        <tr>

@@ -247,10 +247,10 @@
 			var $gugun = $(this).next(); // 선택영역 군구 객체
 			
 			if(area == "area0")
-				$gugun.append("<option value=''>군/구 선택</option>");
+				$gugun.append("<option value=''>구/군 선택</option>");
 			else {
 				$.each(eval(area), function() {
-					var g1 = "${vo.gungu}";
+					var g1 = "${vo.gugun}";
 					var tag = "<option value ='"+this+"'";
 		   			if(g1==this) tag += "selected";
 					tag += ">"+this+"</option>";
@@ -269,7 +269,7 @@
 			$("option",$gugun).remove(); // 구군 초기화
 			console.log($(this));
 			if(area == "area0")
-				$gugun.append("<option value=''>군/구 선택</option>");
+				$gugun.append("<option value=''>구/군 선택</option>");
 			else {
 				$.each(eval(area), function() {
 						$gugun.append("<option value='"+this+"'>"+this+"</option>");
@@ -343,7 +343,7 @@
 	        	<td>
 	        		<select name="sido" id="sido">
 	        		</select>
-					<select name="gungu" id="gungu">
+					<select name="gugun" id="gugun">
 					</select>
 				</td>
 	        </tr>
