@@ -55,7 +55,7 @@ $(function(){
 </head>
 <body>
 <header class="container">
-	<jsp:include page="../Inc/lee_header.jsp"></jsp:include>
+	<jsp:include page="../inc/lee_header.jsp"></jsp:include>
 </header>
 	<div id="main" class="container">
 		<div id="title">회원가입</div>
@@ -88,7 +88,7 @@ $(function(){
 		
 	</div>
 <footer>
-	<jsp:include page="../Inc/lee_footer.jsp"></jsp:include>
+	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>
 </body>
 </html>

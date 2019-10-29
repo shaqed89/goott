@@ -22,7 +22,7 @@ public class CommandTattooistOk implements CommandService {
 		request.setCharacterEncoding("UTF-8");
 		RegisterVO vo = new RegisterVO();
 		
-		String path = request.getServletContext().getRealPath("/profile");
+		String path = request.getServletContext().getRealPath("/img/profile");
 
 		DefaultFileRenamePolicy pol = new DefaultFileRenamePolicy();
 		

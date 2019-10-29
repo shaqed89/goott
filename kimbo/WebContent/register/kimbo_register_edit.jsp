@@ -73,7 +73,7 @@
 	}
 	#t1{width:120px; height: 40px; border-radius: 3px;}
 	#t2, #t3{width:114px;}
-	#sido, #gungu{width: 191px; height: 40px; border-radius: 3px;}
+	#sido, #gugun{width: 191px; height: 40px; border-radius: 3px;}
 	#emailId{width:179px;}
 	#emailDomain{width:179px; height: 40px; border-radius: 3px;}
 	#birthYear{width:104px;}
@@ -299,7 +299,7 @@
 </head>
 <body>
 <header class="container">
-	<jsp:include page="../Inc/lee_header.jsp"></jsp:include>
+	<jsp:include page="../inc/lee_header.jsp"></jsp:include>
 </header>
 <section class="container">
 	<div style="text-align:center">
@@ -419,7 +419,7 @@
 	</div>
 </section>
 <footer>
-	<jsp:include page="../Inc/lee_footer.jsp"></jsp:include>
+	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>
 </body>
 </html>

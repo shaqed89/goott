@@ -66,16 +66,16 @@
 	</div>
 	<div id="ftRight">
 		<div id="face">
-			<a href="#"><img src="facebook2.png" id="face1"></a>
-			<a href="#"><img src="facebook.png" id="face2"></a>
+			<a href="#"><img src="../inc/facebook2.png" id="face1"></a>
+			<a href="#"><img src="../inc/facebook.png" id="face2"></a>
 		</div>
 		<div id="insta">
-			<a href="#"><img src="insta.png" id="insta1"></a>
-			<a href="#"><img src="insta2.png" id="insta2"></a>
+			<a href="#"><img src="../inc/insta.png" id="insta1"></a>
+			<a href="#"><img src="../inc/insta2.png" id="insta2"></a>
 		</div>
 			<div id="ytube">
-			<a href="#"><img src="ytube.png" id="ytube1"></a>
-			<a href="#"><img src="ytube2.png" id="ytube2"></a>
+			<a href="#"><img src="../inc/ytube.png" id="ytube1"></a>
+			<a href="#"><img src="../inc/ytube2.png" id="ytube2"></a>
 		</div>
 		<div id="gtHome">
 			<a href="<%=request.getContextPath()%>/main/main.do">Good.D TATTOO</a><br/>
