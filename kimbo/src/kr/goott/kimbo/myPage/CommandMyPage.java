@@ -14,7 +14,7 @@ public class CommandMyPage implements CommandService {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		return "/my_page/Kimbo_my_page.jsp";
+		return "/myPage/Kimbo_myPage.jsp";
 	}
 
 }

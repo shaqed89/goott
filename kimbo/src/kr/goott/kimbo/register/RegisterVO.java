@@ -14,7 +14,7 @@ public class RegisterVO {
 	private String tel;//전화번호를 합친 값
 	
 	private String sido;
-	private String gungu;
+	private String gugun;
 	private String addr;
 	
 	private String emailId;
@@ -129,16 +129,16 @@ public class RegisterVO {
 		this.sido = sido;
 	}
 
-	public String getGungu() {
-		return gungu;
+	public String getGugun() {
+		return gugun;
 	}
 
-	public void setGungu(String gungu) {
-		this.gungu = gungu;
+	public void setGugun(String gungu) {
+		this.gugun = gungu;
 	}
 
 	public String getAddr() {
-		return sido+" "+gungu;
+		return sido+" "+gugun;
 	}
 
 	public void setAddr(String addr) {
@@ -146,7 +146,7 @@ public class RegisterVO {
 		
 		String juso[]= addr.split(" ");
 		sido = juso[0];
-		gungu = juso[1];
+		gugun = juso[1];
 	}
 
 	public String getEmailId() {

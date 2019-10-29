@@ -14,7 +14,7 @@ public class CommandReview implements CommandService {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		return "review.jsp";
+		return "lee_review.jsp";
 	}
 
 }

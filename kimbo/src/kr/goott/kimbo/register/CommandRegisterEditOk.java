@@ -13,7 +13,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import kr.goott.kimbo.controller.CommandService;
 
-public class CommandTattooistOk implements CommandService {
+public class CommandRegisterEditOk implements CommandService {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
@@ -23,7 +23,6 @@ public class CommandTattooistOk implements CommandService {
 		RegisterVO vo = new RegisterVO();
 		
 		String path = request.getServletContext().getRealPath("/profile");
-
 		DefaultFileRenamePolicy pol = new DefaultFileRenamePolicy();
 		
 		MultipartRequest mr = new MultipartRequest(request, path, 1024*1024*1024, "UTF-8", pol);
@@ -44,33 +43,41 @@ public class CommandTattooistOk implements CommandService {
 		vo.setBirthMonth(mr.getParameter("birthMonth"));
 		vo.setBirthDate(mr.getParameter("birthDate"));
 		vo.setKakao(mr.getParameter("kakao"));
+		vo.setOldProfile(mr.getParameter("oldProfile"));
 		
 //		System.out.println(vo.getT1()+", "+vo.getT2()+", "+vo.getT3());
 		
 		//업로드한 파일명 얻어오기
-		Enumeration fileNames = mr.getFileNames();
-				
-		String oldFile = null;
-		String newFile = null;
-				
-		if(fileNames.hasMoreElements()) {
-			oldFile = (String)fileNames.nextElement(); //원래파일명
-			newFile = mr.getFilesystemName(oldFile);//변경파일명
-			vo.setProfile(newFile);
+		Enumeration enumList = mr.getFileNames();
+		if(enumList.hasMoreElements()) {
+			String fName = (String)enumList.nextElement();
+			String renameFile = mr.getFilesystemName(fName);
+			
+			vo.setProfile(renameFile);
 		}
 		
 		RegisterDAO dao = new RegisterDAO();
-		int cnt = dao.insertRecord(vo);
+		int cnt = dao.updateRecord(vo);
 		
-		//레코드 추가 실패시 업로드한 파일을 삭제해야 함.
-		if(cnt<=0) { //실패
-			File file = new File(path, vo.getProfile()); //파일삭제
-			file.delete();
+//		System.out.println(vo.getOldProfile());
+		
+		if(cnt<=0) { //레코드 수정실패
+			if(vo.getProfile()!=null) {
+				File file = new File(path, vo.getProfile());
+				file.delete();
+			}
+		}else { //레코드 수정
+			if(vo.getProfile()!=null) {
+				//파일이 새로 업로드 한 경우
+				File file = new File(path, vo.getOldProfile());
+				file.delete();
+			}
+			//
 		}
 		
 		request.setAttribute("cnt", cnt);
 		
-		return "tatooistFormOk.jsp";
+		return "registerEditOk.jsp";
 	}
 
 }

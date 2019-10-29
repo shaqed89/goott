@@ -1,8 +1,11 @@
 @charset "UTF-8";
 body{color:black;}
 
-.container{font-family: 'Gaegu', cursive;font-size:20px;color:black;
-		   width:1200px; max-width:1200px; padding:0; position:realative; }
+/* .container{font-family: 'Gaegu', cursive;font-size:20px;color:black;
+		   width:1200px; max-width:1200px; padding:0; position:realative; } */
+		   
+section{font-family: 'Gaegu', cursive;}		   
+		   
 /*헤더부분 notice / notice|공지사항  */
 div h1{margin:20px 0 0 488px;}
 div h4{margin:50px 0 60px 0;padding:0 0 20px 0;color:black;;

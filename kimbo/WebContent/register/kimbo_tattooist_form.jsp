@@ -259,7 +259,7 @@
 </head>
 <body>
 <header class="container">
-	<jsp:include page="../Inc/kimbo_header.jsp"></jsp:include>
+	<jsp:include page="../Inc/lee_header.jsp"></jsp:include>
 </header>
 <section class="container">
 	<div style="text-align:center">
@@ -303,7 +303,7 @@
 	        	<td>주소</td>
 	        	<td>
 	        		<select name="sido" id="sido"></select>
-					<select name="gungu" id="gungu"></select>
+					<select name="gugun" id="gugun"></select>
 				</td>
 	        </tr>
 	        <tr>
@@ -371,7 +371,7 @@
 	</div>
 </section>
 <footer>
-	<jsp:include page="../Inc/kimbo_footer.jsp"></jsp:include>
+	<jsp:include page="../Inc/lee_footer.jsp"></jsp:include>
 </footer>
 </body>
 </html>

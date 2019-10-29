@@ -14,7 +14,7 @@ public class CommandTattooist implements CommandService {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		return "tattooist.jsp";
+		return "park_tattooist.jsp";
 	}
 
 }

@@ -1,4 +1,4 @@
-package kr.goott.kimbo.board;
+package kr.goott.kimbo.tattooist;
 
 import java.io.IOException;
 
@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.goott.kimbo.controller.CommandService;
 
-public class CommandNotice implements CommandService {
+public class CommandTattooistEdit implements CommandService {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		return "lee_notice.jsp";
+		return null;
 	}
 
 }

@@ -17,13 +17,13 @@
 <script src="../plugin/jquery.backstretch.min.js"></script>
 <script src="https:/stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="../resource/kimbo.css" type="text/css"/>
-<script src="../resource/kimbo.js"></script>
+<link rel="stylesheet" href="../resource/lee.css" type="text/css"/>
+<script src="../resource/lee.js"></script>
 
 </head>
 <body>
 <!-- Header Include -->
-<jsp:include page="../Inc/kimbo_header.jsp"></jsp:include>
+<jsp:include page="../Inc/lee_header.jsp"></jsp:include>
 <div id="content" class="container">
 	<div id="main_page" class="carousel slide">
 		<div id="main_page_slide" class="carousel-inner">
@@ -72,6 +72,6 @@
 	</div>
 </div>
 <!-- footer Include -->
-<jsp:include page="../Inc/kimbo_footer.jsp"></jsp:include>
+<jsp:include page="../Inc/lee_footer.jsp"></jsp:include>
 </body>
 </html>
