@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,147 +12,84 @@
 <link rel="shortcut icon" href="http://vandelaydesign.com/favicon.ico">
 <link rel="icon" href="http://vandelaydesign.com/favicon.ico">
 <link rel="stylesheet" href="../plugin/review_style.css" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
 <script type="text/javascript" src="../plugin/review_script.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+<link
+	href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap"
+	rel="stylesheet">
+	
 <script>
-
+	$(function() {
+		$("#reply").click(function() {
+			$("#coment").css("display", "block")
+		});
+		
+		$("#review_write").click(function(){
+			location.href="<%=request.getContextPath()%>/review/reviewWrite.do";
+		});
+	});
 </script>
 </head>
+</head>
 <body>
-<div id="wrap">
-	<header>
-		<h2 style="text-align:center;">Review</h2>
-	</header>
-	<ul id="products" class="clearfix list">
-		<li style="position:absolute;">1</li>
-		<li class="clearfix" id="reviewOne">
-			<section class="left">
-				<a href=""><img src="../img/Flower3.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
-				<h3>Flower | 등</h3>
-				<span class="meta">너무 만족합니다.^^</span>
-			</section>
-			<section class="right">
-				<span class="writer">작성자 : 이종한</span>
-				<span class="hit">조회수 : 5 </span>
-			</section>
-		</li>
-		<li style="position:absolute; background:#d7dfe0">2</li>
-		<li class="clearfix alt" id="reviewTwo">
-			<section class="left">
-				<a href=""><img src="../img/Lettering8-1.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
-				<h3>Lettering | 팔</h3>
-				<span class="meta">너무 만족합니다.^^</span>
-			</section>
-			<section class="right">
-				<span class="writer">작성자 : 김형재</span>
-				<span class="hit">조회수 : 5 </span>
-			</section>
-		</li>
-		<li style="position:absolute;">3</li>
-		<li class="clearfix third" id="reviewThree">
-			<section class="left">
-				<a href=""><img src="../img/Mandala21.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
-				<h3>Mandala | 옆구리</h3>
-				<span class="meta">너무 만족합니다.^^</span>
-			</section>
-			<section class="right">
-				<span class="writer">작성자 : 김진수</span>
-				<span class="hit">조회수 : 5 </span>
-			</section>
-		</li>
-		<li style="position:absolute; background:#d7dfe0">4</li>
-		<li class="clearfix alt" id="reviewFour">
-			<section class="left">
-				<a href=""><img src="../img/Mandala4.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
-				<h3>Mandala | 등</h3>
-				<span class="meta">너무 만족합니다.^^</span>
-			</section>
-			<section class="right" >
-				<span class="writer">작성자 : 박해영</span>
-				<span class="hit">조회수 : 5 </span>
-			</section>
-		</li>
-		<li style="position:absolute;">5</li>
-		<li class="clearfix" id="reviewFive">
-			<section class="left">
-				<a href=""><img src="../img/mini5.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
-				<h3>Mini | 목</h3>
-				<span class="meta">너무 만족합니다.^^</span>
-			</section>
-			<section class="right">
-				<span class="writer">작성자 : 김구용</span>
-				<span class="hit">조회수 : 5 </span>
-			</section>
-		</li>
-		<li style="position:absolute; background:#d7dfe0">6</li>
-		<li class="clearfix alt third" id="reviewSix">
-			<section class="left">
-				<a href=""><img src="../img/mini7.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
-				<h3>Mini | 손가락</h3>
-				<span class="meta">너무 만족합니다.^^</span>
-			</section>
-			<section class="right">
-				<span class="writer">작성자 : 최민성</span>
-				<span class="hit">조회수 : 5 </span>
-			</section>
-		</li>
-		<li style="position:absolute;">7</li>
-		<li class="clearfix" id="reviewSeven">
-			<section class="left">
-				<a href=""><img src="../img/NewsSchool10.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
-				<h3>NewSchool | 팔</h3>
-				<span class="meta">너무 만족합니다.^^</span>
-			</section>
-			<section class="right">
-				<span class="writer">작성자 : 최민지</span>
-				<span class="hit">조회수 : 5 </span>
-			</section>
-		</li>
-		<li style="position:absolute; background:#d7dfe0">8</li>
-		<li class="clearfix alt" id="reviewEight">
-			<section class="left">
-				<a href=""><img src="../img/NewsSchool16.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
-				<h3>NewSchool | 팔</h3>
-				<span class="meta">너무 만족합니다.^^</span>
-			</section>
-			<section class="right">
-				<span class="writer">작성자 : 정운하</span>
-				<span class="hit">조회수 : 5 </span>
-			</section>
-		</li>
-		<li style="position:absolute;">9</li>
-		<li class="clearfix third" id="reviewNine">
-			<section class="left">
-				<a href=""><img src="../img/snake6.jpg" alt="default thumb" class="thumb" style="width:120px; height:120px"></a>
-				<h3>Snake | 등</h3>
-				<span class="meta">너무 만족합니다.^^</span>
-			</section>
-			<section class="right">
-				<span class="writer">작성자 : 김동환</span>
-				<span class="hit">조회수 : 5 </span>
-			</section>
-		</li>
-	</ul>
-	<div>
-		&nbsp;
-			<table id="pageNxt">
-				<tr>
-					<td colspan="6">
-						<div class="pagination">
-					    	<a href="#">&laquo;</a>
-							<a class="active" href="#">1</a>
-							<a href="#">2</a>
-							<a href="#">3</a>
-							<a href="#">4</a>
-							<a href="#">5</a>
-							<a href="#">6</a>
-							<a href="#">&raquo;</a>
-						</div>
-					</td>
-				</tr>
-			</table>
-			<input type="button" class="btn btn-secondary" id="write" value="글쓰기">
+	<div id="wrap">
+		<header>
+			<h2 style="text-align: center;">Review</h2>
+		</header>
+		<!--  -->
+		<div id="main">
+			<div id="reviewLeft" style="width:200px">
+				<div id="reviewImg">
+					<a href="">
+						<button class="uk-button uk-button-default"	id="imgBtn" uk-tooltip="title:<img src='../img/Flower3.jpg'>; pos:right" style="border:none;">
+							<img src="../img/Flower3.jpg" alt="default thumb" class="thumb">
+						</button>
+					</a>
+				</div>
+			</div>
+			<div id="reviewCenter" style="width:800px">
+					<ul>
+						<li class="uk-alert-primary" uk-alert>no.1</li>
+						<li class="uk-alert-primary" uk-alert>주제</li>
+						<li class="uk-alert-primary" uk-alert>장르</li>
+						<li class="uk-alert-primary" uk-alert>작업부위</li>
+					</ul>
+				<div id="centerContent">
+					<ul>
+						<li>
+							너무 잘해요.너무 잘해요.너무 잘해요.너무 잘해요.너무 잘해요.너무 잘해요.너무 잘해요.너무 잘해요.너무 잘해요.너무 잘해요.
+						</li>
+					</ul>
+				</div>
+				<div class="uk-animation-toggle" tabindex="0" id="reply">
+					<ul>
+						<li><button class="uk-button uk-button-default" type="button"
+							uk-toggle="target: #toggle-usage" style="border: none; background: #fff; color: blue;">
+							▼ 1개의 댓글이 있습니다.
+						</button></li>
+						<li><p id="toggle-usage">➴ 안녕하세요. GOOT.TATTOO입니다. 방문해주셔서 감사합니다.</p></li>
+					</ul>
+				</div>
+			</div>
+			<div id="reviewRight">
+				<ul>
+					<li>조회수 : 5</li>
+					<li>작성자 : 이종한</li>
+					<li>작가 : 홍길동</li>
+					<li>2019-10-29</li>
+				</ul>
+			</div>
+		</div>
+		<!--  -->
 	</div>
-</div>
 </body>
 </html>

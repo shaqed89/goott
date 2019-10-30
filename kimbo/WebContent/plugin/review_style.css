@@ -9,180 +9,84 @@ body {
 	font-family: Tahoma, Arial, sans-serif;
 	color: #333;
 	padding-bottom: 25px;
+	font-family: 'Gaegu', cursive;
 
 }
 
-img {
-	border: 0;
-}
 
-p {
-	font-size: 1.2em;
-	line-height: 1.3em;
-	margin-bottom: 10px;
-}
 
-h1 {
-	font-weight: normal;
-	font-size: 1.9em;
-	line-height: 2.0em;
-	color: #545454;
-	letter-spacing: -0.04em;
-}
+#wrap h3{margin-top:auto;}
 
-/** containers **/
+/** main **/
 #wrap {
 	width: 1200px;
 	margin: 0 auto;
-	background: #d7dfe0;
+	background: #f8f8f8;
 	border-radius: 7px;
 	margin-top: 55px;
-}
-
-#wrap header {
-	border-bottom: 1px solid #b6bdbe;
-	margin: 15px 22px;
-	margin-bottom: 35px;
-	padding-top: 20px;
-	position: relative;
-}
-
-#wrap footer {
-	border-top: 1px solid #b6bdbe;
-	padding-bottom: 40px;
-	margin: 15px 22px;
-}
-
-#wrap header .list-style-buttons {
-	position: absolute;
-	right: 0;
-}
-
-.hit{font-size:15px;
-    bottom: 20px;
-    position: relative;}
-
-/** list view **/
-ul.list {
-	list-style: none;
-	width: 100%;
-}
-
-ul.list li {
-	display: block;
-	background: #c9d0d1;
-	padding: 10px 15px;
-}
-
-ul.list li.alt {
-	background: #d7dfe0;
-}
-
-ul.list li section.left {
-	display: block;
-	float: left;
-	width: 350px;
-	position: relative;
-	padding-left: 20px;
-}
-
-ul.list li section.right {
-	display: block;
-	float: right;
-	margin-right: 10px;
-	width: 250px;
-	text-align: right;
+	
 }
 
 
-ul.list li section.left img.thumb {
-	float: left;
-	margin-right: 10px;
+#wrap header>h2{border-bottom:1px solid gray;}
+
+#main{width:1200px;
+	height:250px;
+	position:relative;
+	border:1px solid gray;
+	}
+#main>div{float:left;}	
+	
+#reviewLeft{
+	width:200px;
+	height:250px;
+	position:relative;
 }
-
-ul.list li section.left img.featured-banner {
-	position: absolute;
-	left: -18px;
-
+#reviewImg{
+	width:200px;
+	height:250px;
 }
-
-ul.list li section.left h3 {
-	font-family: "Trebuchet MS", Arial, sans-serif;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: #707375;
-	font-size: 1.4em;
-	line-height: 1.6em;
-}
-
-ul.list li section.left span.meta {
-	color: #93989b;
-	font-weight: normal;
-	font-size: 1.1em;
-}
-
-ul.list li section.right span.writer {
-	font-weight: bold;
-	display: block;
-	margin-bottom: px;
-	color: #ad3939;
-	font-size: 1.6em;
-	text-align: right;
-	top: 90px;
-    position: relative;
-}
-
-ul.list li section.right a.firstbtn {
-	margin-right: 7px;
-}
-
-#products img{border-radius:10px;}
+#reviewImg img{width:150px;
+			   height:150px;
+			   border-radius:10px;
+			   border:none;
+			   }
 
 
-/** clearfix **/
-.clearfix:after {
-	content: ".";
-	display: block;
-	clear: both;
-	visibility: hidden;
-	line-height: 0;
-	height: 0;
-}
+#imgBtn{margin-top:50px;
+		margin-left:10px;
+		
+		}
+#reviewCenter{position:relative;
+			  height:250px;}
 
-.clearfix {
-	display: inline-block;
-}
+#reviewCenter>ul>li{float:left;
+					font-size:1.5em;
+					width:20%;
+					margin-top:10px;
+					padding:0;
+					}
+li{list-style-type:none;}
+#centerContent{width:800px;
+			   height:150px;
+			   white-space:nowrap;
+			   overflow:hidden;
+			   text-overflow:ellipsis;
+			   margin-top: 40px;}
+#centerContent>ul>li{
+					white-space:nowrap;
+					overflow:hidden;
+					text-overflow:ellipsis;
+					font-size:2em;
+					margin-top:px;}
+#reply>ul>li>p{font-size:15px;margin-left:30px;}
+#reviewRight{width:160px;height:249px;text-align:center;border-left:1px solid gray;}
+#reviewRight>ul>li{font-size:2em;margin-top:25px;}
+.uk-animation-toggle{top:-10px;position:relative;}
+#reply p{margin-top:-5px}
 
-html[xmlns] .clearfix {
-	display: block;
-}
 
-* html .clearfix {
-	height: 1%;
-}
 
-/* page */
-.pagination {
-  display: inline-block;    position: relative;
-    bottom: 15px;
-}
 
-.pagination a {
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  
-}
 
-.pagination a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-.pagination a:hover:not(.active) {background-color: #ddd;}
 
-#pageNxt{margin:0 auto;}
-#write{position: relative;
-    float: right;
-    bottom: 50px;
-    right: 35px;}

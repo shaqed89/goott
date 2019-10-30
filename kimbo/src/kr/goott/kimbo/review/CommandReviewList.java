@@ -13,7 +13,7 @@ public class CommandReviewList implements CommandService {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		return "/review/lee_review.jsp";
 	}
 
