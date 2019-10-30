@@ -27,7 +27,7 @@
 #opt select{width:397px}
 </style>
 <body>
-	<form id="reviewWrite">
+	<form id="reviewWrite">	
 		<fieldset class="uk-fieldset">
     			<div class="uk-width-1-3 uk-card uk-card-default uk-card-body uk-card-small" id="title">글쓰기</div>
 					<div class="uk-margin" id="opt">

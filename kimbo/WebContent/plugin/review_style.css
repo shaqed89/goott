@@ -26,7 +26,7 @@ body {
 	margin-top: 55px;
 	
 }
-a:hover{text-decoration:none;color:bold}
+a:hover{text-decoration:none;font-weight:bold}
 
 .wrap header>h2{margin-bottom:50px;}
 
@@ -91,7 +91,7 @@ li{list-style-type:none;}
 					text-overflow:ellipsis;
 					font-size:2em;
 					margin-top:px;}
-.reply>ul>li>p{font-size:1.5em;padding-left:40px;}
+.reply>ul>li>p{font-size:1.5em;padding-left:40px;display:none;}
 
 .reviewRight{width: 190px;
     line-height: 50px;
