@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Good.D Tattoo</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
+<!-- Header-->
+<script src="../resource/header.js"></script>
+<link rel="stylesheet" href="../resource/header1_style.css" type="text/css" />
+<style>
+	#title{
+		color: white;
+		margin-top: 30px;
+		margin-left: 20px;
+		
+	}
+	
+	#content{
+		width: 1200px;
+	}
+	#content img{
+		width: 200px;
+		height: 200px;
+		opacity: 0.5;
+		
+	}
+	#content>div{
+		width: 200px;
+		height: 200px;
+		float: left;
+		margin: 50px;
+		border-radius: 20px;
+	}
+	.text{
+		position: relative;
+		top: -110px;
+		width: 100%;
+		font-family: 'Indie Flower', cursive;
+		font-size: 30px;
+		text-align: center;
+		height: 0px;
+	}
+	a{
+		width: 0;
+		
+	}
+</style>
+<script>
+	$(function(){
+		$("#ir").on({/*이벤트*/mouseenter:function(){// 마우스 오버
+			$("#ir>img").attr("src","../img/Irezumi9.jpg").css("opacity","1");
+			$("#a").css("opacity","0");
+		},/*이벤트*/mouseleave:function(){ // 마우스 아웃
+			$("#ir>img").attr("src","../img/Irezumi31.jpg").css("opacity","0.5");
+			$(".text").css("opacity","1");
+		}});
+
+		$("#bg").on({/*이벤트*/mouseenter:function(){// 마우스 오버
+			$("#bg>img").attr("src","../img/Black&Gray27.jpg").css("opacity","1");
+			$("#b").css("opacity","0");
+		},/*이벤트*/mouseleave:function(){ // 마우스 아웃
+			$("#bg>img").attr("src","../img/Black&Gray16.jpg").css("opacity","0.5");
+			$(".text").css("opacity","1");
+		}});
+
+		$("#ch").on({/*이벤트*/mouseenter:function(){// 마우스 오버
+			$("#ch>img").attr("src","../img/Chicano19.jpg").css("opacity","1");
+			$("#c").css("opacity","0");
+		},/*이벤트*/mouseleave:function(){ // 마우스 아웃
+			$("#ch>img").attr("src","../img/Chicano17.jpg").css("opacity","0.5");
+			$(".text").css("opacity","1");
+		}});
+
+		$("#tb").on({/*이벤트*/mouseenter:function(){// 마우스 오버
+			$("#tb>img").attr("src","../img/Tribal2.jpg").css("opacity","1");
+			$("#d").css("opacity","0");
+		},/*이벤트*/mouseleave:function(){ // 마우스 아웃
+			$("#tb>img").attr("src","../img/Tribal1.jpg").css("opacity","0.5");
+			$(".text").css("opacity","1");
+		}});
+
+		$("#ns").on({/*이벤트*/mouseenter:function(){// 마우스 오버
+			$("#ns>img").attr("src","../img/NewsSchool16.jpg").css("opacity","1");
+			$("#e").css("opacity","0");
+		},/*이벤트*/mouseleave:function(){ // 마우스 아웃
+			$("#ns>img").attr("src","../img/NewsSchool10.jpg").css("opacity","0.5");
+			$(".text").css("opacity","1");
+		}});
+
+		$("#os").on({/*이벤트*/mouseenter:function(){// 마우스 오버
+			$("#os>img").attr("src","../img/Oldschool25.jpg").css("opacity","1");
+			$("#f").css("opacity","0");
+		},/*이벤트*/mouseleave:function(){ // 마우스 아웃
+			$("#os>img").attr("src","../img/Oldschool24.jpg").css("opacity","0.5");
+			$(".text").css("opacity","1");
+		}});
+
+		$("#lt").on({/*이벤트*/mouseenter:function(){// 마우스 오버
+			$("#lt>img").attr("src","../img/Lettering8-1.jpg").css("opacity","1");
+			$("#g").css("opacity","0");
+		},/*이벤트*/mouseleave:function(){ // 마우스 아웃
+			$("#lt>img").attr("src","../img/Lettering26.jpg").css("opacity","0.5");
+			$(".text").css("opacity","1");
+		}});
+
+		$("#cu").on({/*이벤트*/mouseenter:function(){// 마우스 오버
+			$("#cu>img").attr("src","../img/Coverup23.jpg").css("opacity","1");
+			$("#h").css("opacity","0");
+		},/*이벤트*/mouseleave:function(){ // 마우스 아웃
+			$("#cu>img").attr("src","../img/Coverup21.jpg").css("opacity","0.5");
+			$(".text").css("opacity","1");
+		}});
+	});
+</script>
+</head>
+<body>
+	<header>
+	<div id="header_left"><a href="#">Good.D<br/>TATTOO</a></div>
+	<div id="center">
+	<div id="header_center1">&equiv;</div>
+	
+	<div id="header_center2">
+		<a href="#">Search</a>
+		<a href="#">Tattooist</a>
+		<a href="#">Notice</a>
+		<a href="#">F&Q</a>
+		<a href="#">Review</a>
+	</div>
+	</div>
+	<div id="header_right">
+		<ul>
+			<li><a href="#">Login</a></li>
+			<li><a href="#">Join</a></li>
+			<li><a href="#">My</a></li>
+		</ul>
+	</div>
+	</header>
+	<div id="title">
+		<label>장르별</label>
+		<div id="content">
+			<div><a href="#" id="ir"><img src="../img/Irezumi31.jpg"/><div class="text" id="a">Irezumi</div></a></div>
+			<div><a href="#" id="bg"><img src="../img/Black&Gray16.jpg"/><div class="text" id="b">Black&Gray</div></a></div>
+			<div><a href="#" id="ch"><img src="../img/Chicano17.jpg"/><div class="text" id="c">Chicano</div></a></div>
+			<div><a href="#" id="tb"><img src="../img/Tribal1.jpg"/><div class="text" id="d">Tribal</div></a></div>
+			<div><a href="#" id="ns"><img src="../img/NewsSchool10.jpg"/><div class="text" id="e">NewsSchool</div></a></div>
+			<div><a href="#" id="os"><img src="../img/Oldschool24.jpg"/><div class="text" id="f">Oldschool</div></a></div>
+			<div><a href="#" id="lt"><img src="../img/Lettering26.jpg"/><div class="text" id="g">Lettering</div></a></div>
+			<div><a href="#" id="cu"><img src="../img/Coverup21.jpg"/><div class="text" id="h">Coverup</div></a></div>
+		</div>
+	</div>
+</body>
+</html>

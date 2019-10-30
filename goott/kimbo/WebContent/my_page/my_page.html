@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Good.D Tattoo</title>
+<link rel="stylesheet" href="../plugin/jquery-ui.min.css" type="text/css"/>
+<link rel="stylesheet" href="../plugin/jquery.bxslider.css" type="text/css"/>
+<link rel="stylesheet" href="../plugin/monthly.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../plugin/jquery-ui.min.js"></script>
+<script src="../plugin/jquery.bxslider.js"></script>
+<script src="../plugin/monthly.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- Header-->
+<link rel="stylesheet" href="../resource/header.css" type="text/css" />
+<script src="../resource/header.js"></script>
+<link rel="stylesheet" href="../resource/main_lee.css" type="text/css">
+<!-- Section-->
+<link rel="stylesheet" href="../resource/my_page.css" type="text/css" />
+<script src="../resource/my_page.js"></script>
+
+<!-- footer -->
+<link rel="stylesheet" href="../resource/footer.css" type="text/css" />
+<script src="../resource/footer.js"></script>
+</head>
+<body>
+	<header>
+		<div id="header_left">
+			<a href="http://localhost:9090/kimbo/main/main.html">Good.D<br />TATTOO
+			</a>
+		</div>
+		<div id="center">
+			<div id="header_center1">
+				<a href="#">&equiv;</a>
+			</div>
+
+			<div id="header_center2">
+				<a href="#">Search</a> <a href="#">Tattooist</a> <a href="#">Notice</a>
+				<a href="#">F&Q</a> <a href="#">Review</a>
+			</div>
+		</div>
+		<div id="header_right">
+			<ul>
+				<!-- 로그인 클릭시 다이얼로그 생성 -->
+				<li data-toggle="modal" data-target="#myModal"><a href="#">Login</a></li>
+				<li data-toggle="modal" data-target="#choiceModal"><a href="#">Join</a></li>
+				<li><a href="#">My</a></li>
+			</ul>
+		</div>
+	</header>
+	<!-- 로그인 다이얼로그 -->
+	<div id="myModal" class="modal">
+		<div id="ma">
+		<div id="log">LOGIN</div>
+		<form action="#" method="post" name="frm" id="frm">
+			<div class="form-group">
+				<label>ID</label> <input type="text" name="userid" id="userid"
+					class="form-control" placeholder="아이디를 입력하세요.">
+			</div>
+			<br/>
+			<div class="form-group">
+				<label>Password</label> <input type="password" name="userpwd"
+					id="userpwd" class="form-control" placeholder="비밀번호를 입력하세요.">
+			</div>
+			<div id="rmb">
+				<input type="checkbox" id="chk">
+				<div>
+					<h6>Remember me?</h6>
+				</div>
+				<h6>
+					<a href="#">Forgot password?</a>
+				</h6>
+			</div>
+			<input type="submit" value="Login" id="lgn"
+				class="btn btn-block btn-secondary" onclick="alert" />
+			<div id="bdr">
+				<h2>Not a member yet</h2>
+				<input type="submit" value="SIGN UP" id="signup"
+					class="btn btn-block btn-primary"> <input type="submit"
+					value="CANCLE" id="cancle" class="btn btn-block btn-danger">
+			</div>
+		</form>
+		</div>
+	</div>
+	<!--회원가입 유형선택 -->
+	<form action="#" method="post">
+	<div id="choiceModal" class="modal">
+	
+		<div class="card" id="guest">
+			<img class="card-img-top" src="../img/imggett3.jpg" alt="Card image">
+				<div class="card-body">
+					<h4 class="card-title">일반회원</h4>
+					<p class="card-text">나의 개성을 표현해보세요!</p>
+					<a href="#" id="sign1" class="btn btn-primary" data-toggle="modal"
+						data-target="#expertModal">가입하기</a>
+				</div>
+			</div>
+			<div class="card" id="expert">
+				<img class="card-img-top" src="../img/t6.jpg" alt="Card image">
+				<div class="card-body">
+					<h4 class="card-title">작가회원</h4>
+					<p class="card-text">자신의 실력을 발휘해보세요!</p>
+					<a href="#" id="sign2" class="btn btn-primary" data-toggle="modal" data-target="#joinModal">가입하기</a>
+					
+			</div>
+			<div id="close"><input type="submit" value="닫기" id="cancle2" class="btn btn-block btn-danger"></div>
+		</div>
+	</div>
+	</form>
+	<!-- 회원가입 작가용 툴 -->
+	<div id="joinModal" class="modal">
+		<div id="mb">
+			<div id="join">회원가입(작가)</div>
+				<form action="#" method="post" name="frm" id="frm2">
+					<div id="txt">
+						<label>아이디</label> <label>비밀번호</label> <label>비밀번호 확인</label> <label>이름</label>
+						<label>휴대폰 번호</label> <label>인증번호</label> <label>생년월일</label> <label>카카오톡ID</label>
+						<label>지역</label> <label>성별</label> <label>프로필 사진</label>
+						
+						<input type="submit" value="Good.D Tattoo 시작하기" id="st"
+							class="btn btn-block btn-info">					
+					</div>	
+				<div id="wrt" class="form-group">
+					<input type="text" placeholder="8~13글자의 영문,숫자,특수문자 조합" > <input
+						type="password" placeholder="6글자 이상의 영문, 숫자, 특수문자 조합"> <input
+						type="text" placeholder="비밀번호 확인"> <input type="text"
+						placeholder="이름"> <input type="text" placeholder="'-'를 제외하고 입력">
+					<input type="text" placeholder="인증번호 입력"> <input type="text"
+						placeholder="주민등록번호 앞 6자리 숫자"> <input type="text" placeholder="카카오톡ID">
+						<select name="cars" class="custom-select" id="loc">
+							<option selected>=지역선택=</option>
+							<optgroup label="서울시">
+								<option value="volvo">강남구</option>
+								<option value="fiat">강북구</option>
+								<option value="audi">강서구</option>
+								<option value="audi">강동구</option>
+								<option value="audi">중구</option>
+								<option value="audi">도봉구</option>
+								<option value="audi">노원구</option>
+								<option value="audi">은평구</option>
+								<option value="audi">서대문구</option>
+								<option value="audi">종로구</option>
+								<option value="audi">성북구</option>
+								<option value="audi">동대문구</option>
+								<option value="audi">중랑구</option>
+								<option value="audi">광진구</option>
+								<option value="audi">용산구</option>
+								<option value="audi">마포구</option>
+								<option value="audi">양천구</option>
+								<option value="audi">구로구</option>
+								<option value="audi">영등포구</option>
+								<option value="audi">금천구</option>
+								<option value="audi">관악구</option>
+								<option value="audi">동작구</option>
+								<option value="audi">서초구</option>
+								<option value="audi">송파구</option>
+								<option value="audi">성동구</option>
+								<option value="audi">송파구</option>
+							</optgroup>
+							<optgroup label="경기도">
+								<option value="audi">인천광역시</option>
+								<option value="audi">연천구</option>
+								<option value="audi">포천시</option>
+								<option value="audi">동두천시</option>
+								<option value="audi">파주시</option>
+								<option value="audi">양주시</option>
+								<option value="audi">가평군</option>
+								<option value="audi">김포시</option>
+								<option value="audi">고양시</option>
+								<option value="audi">구리시</option>
+								<option value="audi">남양주시</option>
+								<option value="audi">양평군</option>
+								<option value="audi">하남시</option>
+								<option value="audi">부천시</option>
+								<option value="audi">광명시</option>
+								<option value="audi">과천시</option>
+								<option value="audi">성남시</option>
+								<option value="audi">광주시</option>
+								<option value="audi">의왕시</option>
+								<option value="audi">안양시</option>
+								<option value="audi">시흥시</option>
+								<option value="audi">군포시</option>
+								<option value="audi">안산시</option>
+								<option value="audi">여주시</option>
+								<option value="audi">용인시</option>
+								<option value="audi">수원시</option>
+								<option value="audi">화성시</option>
+								<option value="audi">평택시</option>
+								<option value="audi">안성시</option>
+								<option value="audi">이천시</option>
+							</optgroup>
+						</select>
+					<br/>
+					<input type="radio" id="gender1" name="gender">남성<input type="radio"
+						id="gender2" name="gender">여성
+						
+				</div>
+				<div id="tpfh" class="form-group">
+					<input type="button" value="중복확인" id="wndqhr"
+						class="btn btn-block btn-info"> <input type="button"
+						value="인증번호전송" id="wndqhr2" class="btn btn-block btn-info">
+						<input type="submit" value="닫기" id="joinClose" class="btn btn-block btn-danger">
+				</div>
+				<div id="prf" class="form-group"><input type="file" name="filename"></div>
+				
+			</form>
+		</div>
+	</div>
+	<!-- 회원가입 손님 -->
+	<div id="expertModal" class="modal">
+		<div id="mb2">
+		<div id="join">회원가입(손님)</div>
+		<form action="#" method="post" name="frm" id="frm3">
+		<div id="txt">
+			<label>아이디</label> <label>비밀번호</label> <label>비밀번호 확인</label> <label>이름</label>
+			<label>휴대폰 번호</label> <label>인증번호</label> <label>생년월일</label> <label>지역</label>
+			<label>성별</label> <input type="submit" value="Good.D Tattoo 시작하기"
+				id="st2" class="btn btn-block btn-info">
+		</div>
+		<div id="wrt2" class="form-group">
+			<input type="text" placeholder="8~13글자의 영문,숫자,특수문자 조합"> <input
+				type="password" placeholder="6글자 이상의 영문, 숫자, 특수문자 조합"> <input
+				type="text" placeholder="비밀번호 확인"> <input type="text"
+				placeholder="이름"> <input type="text" placeholder="'-'를 제외하고 입력">
+			<input type="text" placeholder="인증번호 입력"> <input type="text"
+				placeholder="주민등록번호 앞 6자리 숫자">
+			
+				<select name="cars" class="custom-select" id="loc2">
+					<option selected>=지역선택=</option>
+					<optgroup label="서울시">
+						<option value="volvo">강남구</option>
+						<option value="fiat">강북구</option>
+						<option value="audi">강서구</option>
+						<option value="audi">강동구</option>
+						<option value="audi">중구</option>
+						<option value="audi">도봉구</option>
+						<option value="audi">노원구</option>
+						<option value="audi">은평구</option>
+						<option value="audi">서대문구</option>
+						<option value="audi">종로구</option>
+						<option value="audi">성북구</option>
+						<option value="audi">동대문구</option>
+						<option value="audi">중랑구</option>
+						<option value="audi">광진구</option>
+						<option value="audi">용산구</option>
+						<option value="audi">마포구</option>
+						<option value="audi">양천구</option>
+						<option value="audi">구로구</option>
+						<option value="audi">영등포구</option>
+						<option value="audi">금천구</option>
+						<option value="audi">관악구</option>
+						<option value="audi">동작구</option>
+						<option value="audi">서초구</option>
+						<option value="audi">송파구</option>
+						<option value="audi">성동구</option>
+						<option value="audi">송파구</option>
+					</optgroup>
+					<optgroup label="경기도">
+						<option value="audi">인천광역시</option>
+						<option value="audi">연천구</option>
+						<option value="audi">포천시</option>
+						<option value="audi">동두천시</option>
+						<option value="audi">파주시</option>
+						<option value="audi">양주시</option>
+						<option value="audi">가평군</option>
+						<option value="audi">김포시</option>
+						<option value="audi">고양시</option>
+						<option value="audi">구리시</option>
+						<option value="audi">남양주시</option>
+						<option value="audi">양평군</option>
+						<option value="audi">하남시</option>
+						<option value="audi">부천시</option>
+						<option value="audi">광명시</option>
+						<option value="audi">과천시</option>
+						<option value="audi">성남시</option>
+						<option value="audi">광주시</option>
+						<option value="audi">의왕시</option>
+						<option value="audi">안양시</option>
+						<option value="audi">시흥시</option>
+						<option value="audi">군포시</option>
+						<option value="audi">안산시</option>
+						<option value="audi">여주시</option>
+						<option value="audi">용인시</option>
+						<option value="audi">수원시</option>
+						<option value="audi">화성시</option>
+						<option value="audi">평택시</option>
+						<option value="audi">안성시</option>
+						<option value="audi">이천시</option>
+					</optgroup>
+				</select>
+			<br/>
+			<input type="radio" id="normal_gender" name="normal_gender" onclick="doOpenCheck(this)">남성<input type="radio"
+				id="normal_gender2" name="normal_gender" onclick="doOpenCheck(this)">여성
+		</div>
+		<div id="tpfh" class="form-group">
+			<input type="button" value="중복확인" id="wndqhr3"
+				class="btn btn-block btn-info"> <input type="button"
+				value="인증번호전송" id="wndqhr4" class="btn btn-block btn-info">
+			<input type="submit" value="닫기" id="expertClose" class="btn btn-block btn-danger">
+		</div>
+		</form>
+		</div>
+	</div>
+	<section>
+	<div id="my_page_side">
+		<div id="my_title">My page</div>
+		<div id="side_menu">
+			<ul class="nav">
+				<li class="nav-item"><a href="#my_cal" class="nav-link"> 스케쥴</a></li>
+				<li class="nav-item"><a href="#my_like" class="nav-link"> 관심도안</a></li>
+				<li class="nav-item"><a href="#my_post" class="nav-link"> 게시물관리</a></li>
+				<li class="nav-item"><a href="#"> 개인정보수정</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="my_page_content">
+		<!-- 일정관리 -->
+		<div id="my_cal">
+			<!-- 달력 -->
+			<div id="my_calendar" class="monthly"></div>
+			<!-- 일정관리 버튼 -->
+			<div id="schedule_btn" style="text-align:right">
+				<button id="schedule_add" class="btn btn-secondary">일정등록</button>
+				<button id="schedule_edit" class="btn btn-secondary">일정수정</button>
+				<button id="schedule_del" class="btn btn-secondary">일정삭제</button>
+			</div>
+			<!-- 일정등록 다이얼로그 -->
+			<div id="add_dialog" title="일정등록">
+				<h2>일정을 등록하세요.</h2>
+				<label for="schedule_name">일정이름 :</label> <input type="text" id="schedule_name"/>
+				<label for="schedule_start_date">시작날짜 :</label> <input type="text" id="schedule_start_date"/>
+				<label for="schedule_end_date">종료날짜 :</label> <input type="text" id="schedule_end_date"/>
+				<label for="schedule_start_time">시작시간 :</label> 
+					<select id="schedule_start_AMPM">
+						<option>AM</option>
+						<option>PM</option>
+					</select>
+					<select id="schedule_start_time" style="width:147px">
+
+					</select>
+				<label for="schedule_end_time">종료시간 :</label>
+					<select id="schedule_end_AMPM">
+						<option>AM</option>
+						<option>PM</option>
+					</select>
+					<select id="schedule_end_time" style="width:147px">
+					</select>
+				<label for="schedule_color">색상선택 :</label>
+					<select id="schedule_color" style="width:199px;">
+						<option>red</option>
+						<option>blue</option>
+						<option>green</option>
+						<option>yellow</option>
+					</select>
+			</div>
+		</div>
+		<hr/>
+		<div id="my_like_post">
+			<!-- 관심도안 -->
+			<div id="my_like">
+				<div class="card">
+					<div class="card-header">
+						<h2>내 관심도안</h2>
+						<a href="#like_list" data-toggle="collapse" data-parent="#my_like">▼</a>
+						</div>
+					<div id="like_list" class="collapse">
+					<table class="table">
+						<thead>
+						<tr class="table-secondary">
+							<td style="width:200px">IMAGE</td>
+							<td>TITLE</td>
+							<td style="width:200px">TATTOOIST</td>
+							<td style="width:200px">DATE</td>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td><img src="../img/Lettering26.jpg"></td>
+							<td><a href="#">lettring</a></td>
+							<td><a href="#">tatooist1</a></td>
+							<td>2018-10-21</td>
+						</tr>
+						<tr>
+							<td><img src="../img/Lettering26.jpg"></td>
+							<td><a href="#">lettring</a></td>
+							<td><a href="#">tatooist1</a></td>
+							<td>2018-10-21</td>
+						</tr>
+						<tr>
+							<td><img src="../img/Lettering26.jpg"></td>
+							<td><a href="#">lettring</a></td>
+							<td><a href="#">tatooist1</a></td>
+							<td>2018-10-21</td>
+						</tr>
+						<tr>
+							<td><img src="../img/Lettering26.jpg"></td>
+							<td><a href="#">lettring</a></td>
+							<td><a href="#">tatooist1</a></td>
+							<td>2018-10-21</td>
+						</tr>
+						<tr>
+							<td><img src="../img/Lettering26.jpg"></td>
+							<td><a href="#">lettring</a></td>
+							<td><a href="#">tatooist1</a></td>
+							<td>2018-10-21</td>
+						</tr>
+						</tbody>
+						<tfoot>
+						<tr>
+							<td colspan="4">
+								<ul class="pagination pagination-sm">
+									<li class="page-item disabled"><a href="#" class="page-link">prev</a></li>
+									<li class="page-item"><a href="#" class="page-link">1</a></li>
+									<li class="page-item"><a href="#" class="page-link">2</a></li>
+									<li class="page-item active"><a href="#" class="page-link">3</a></li>
+									<li class="page-item"><a href="#" class="page-link">4</a></li>
+									<li class="page-item"><a href="#" class="page-link">5</a></li>
+									<li class="page-item"><a href="#" class="page-link">next</a></li>
+								</ul>
+							</td>
+						</tr>
+						</tfoot>
+					</table>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<!-- 내 게시물 관리 -->
+	 		<div id="my_post">
+				<div class="card">
+					<div class="card-header">
+						<h2>내 게시물 관리</h2>
+						<a href="#post_list" data-toggle="collapse" data-parent="#my_post">▼</a>
+						</div>
+					<div id="post_list" class="collapse">
+						<table class="table">
+							<thead>
+							<tr class="table-secondary">
+								<td style="width:100px">NO</td>
+								<td>TITLE</td>
+								<td style="width:200px">NAME</td>
+								<td style="width:200px">DATE</td>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>1</td>
+								<td><a href="#">후기 남겨요~~</a></td>
+								<td><a href="#">guest1</a></td>
+								<td>2018-12-19</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td><a href="#">후기 남겨요~~</a></td>
+								<td><a href="#">guest1</a></td>
+								<td>2018-12-19</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td><a href="#">후기 남겨요~~</a></td>
+								<td><a href="#">guest1</a></td>
+								<td>2018-12-19</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td><a href="#">후기 남겨요~~</a></td>
+								<td><a href="#">guest1</a></td>
+								<td>2018-12-19</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td><a href="#">후기 남겨요~~</a></td>
+								<td><a href="#">guest1</a></td>
+								<td>2018-12-19</td>
+							</tr>
+							</tbody>
+							<tfoot>
+							<tr>
+								<td colspan="4">
+									<ul class="pagination pagination-sm">
+										<li class="page-item disabled"><a href="#" class="page-link">prev</a></li>
+										<li class="page-item"><a href="#" class="page-link">1</a></li>
+										<li class="page-item"><a href="#" class="page-link">2</a></li>
+										<li class="page-item active"><a href="#" class="page-link">3</a></li>
+										<li class="page-item"><a href="#" class="page-link">4</a></li>
+										<li class="page-item"><a href="#" class="page-link">5</a></li>
+										<li class="page-item"><a href="#" class="page-link">next</a></li>
+									</ul>
+								</td>
+							</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<footer>k
+	</footer>
+</body>
+</html>
