@@ -21,6 +21,7 @@ public class CommandNoticeList implements CommandService {
 		
 		//뷰페이지로 가져갈 데이터
 		request.setAttribute("lst", lst);
+		
 		return "/notice/lee_notice.jsp";
 	}
 

@@ -1,27 +1,27 @@
-package kr.goott.kimbo.notice;
+package kr.goott.kimbo.faq;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import kr.goott.kimbo.home.DBConn;
 
-public class NoticeDAO extends DBConn implements NoticeInterface {
+public class FaqDAO extends DBConn implements FaqInterface {
 
 	@Override
-	public List<NoticeVO> getNotice() {
-		List<NoticeVO> lst = new ArrayList<NoticeVO>();
+	public List<FaqVO> getFaq() {
+		List<FaqVO> lst = new ArrayList<FaqVO>();
 		
 		try {
 			dbConn();
 			
 			String sql = "select a.num, a.title, a.content, b.username, to_char(a.writedate, 'YYYY-MM-DD') "
-				+ "from bro_notice a join bro_register b on a.userid = b.userid order by num desc";
+				+ "from bro_faq a join bro_register b on a.userid = b.userid order by num desc";
 			
 			pstmt = conn.prepareStatement(sql);
 			
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				NoticeVO vo = new NoticeVO();
+				FaqVO vo = new FaqVO();
 				
 				vo.setNum(rs.getInt(1));
 				vo.setTitle(rs.getString(2));
