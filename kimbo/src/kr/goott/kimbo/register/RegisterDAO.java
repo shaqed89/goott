@@ -39,7 +39,8 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 						+ "addr, email, gender, kakao, profile, birthday, regdate) "
 						+ "values(bro_sq.nextVal, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
 						+ "to_date(?,'YYYY-MM-DD'), sysdate)";
-			System.out.println(vo.getTel());
+			
+//			System.out.println(vo.getTel());
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getUserId());
@@ -183,7 +184,7 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 			
 			vo.setStatus(pstmt.executeUpdate());
 		} catch (Exception e) {
-			System.out.println("자료실 글 삭제 에러..."+e.getMessage());
+			System.out.println("회원탈퇴 에러..."+e.getMessage());
 			e.printStackTrace();
 		} finally {
 			dbClose();

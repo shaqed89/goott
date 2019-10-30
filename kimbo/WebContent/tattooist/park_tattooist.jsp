@@ -14,102 +14,37 @@
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <style>
-	.container{width:1200px; max-width:1200px; padding:0; position:realative; }
+	section{font-family: 'Gaegu', cursive;}
 	footer{clear:left;}
 	
-	#title {
-			color: black;
-			margin-top: 30px;
-			margin-left: 20px;
-		}
-		#search {
-			border: 1px solid gray;
-			margin: 30px auto;
-			height: 40px;
-			width: 402px;
-		}
-		#textse {
-			
-			/* background: black; */
-			color: black;
-			font-size: 16px;
-			height: 40px;
-			width: 350px;
-			padding: 10px;
-			border: 0;
-			outline: none;
-			float: left;
-		}
-		#btnse {
-			width: 50px;
-			height: 100%;
-			border: 0;
-			outline: none;
-			float: left;
-		}
-		h2 {
-			/* border: 1px solid darkgray; */
-			width: 150px;
-			text-align: center;
-			float: left;
-			color: black;
-		}
-		.form-group {
-			float: left;
-			color: black;
-			margin-top: 10px;
-			width: 800px;
-		}
-		#min,
-		#max {
-			float: left;
-			width: 150px;
-			margin-right: 10px;
-		}
-		.form-group label {
-			width: 100px;
-		}
-		.la {
-			float: left;
-			width: 70px;
-			margin-right: 20px;
-		}
-		#arrimg {
-			margin: 0 auto;
-			width: 1120px;
-		}		
-		.arr{
-			width:200px; 
-			height:250px; 
-			margin:10px; 
-			float:left;
-			color:black;
-			font-size:20px;
-			text-align:center;
-			border-radius: 10px;
-			border: 1px solid black;
-		}
-		#arrimg>div>p{
-			width:200px; 		
-			color: darkgray;
-			font-size:10px;
-			text-align:center;
-		}
-		#arrimg img {
-			width: 198.5px;
-			height: 200px;
-			border-radius: 10px 10px 0 0;
-			
-		}
-		hr{
-			height: 1px;
-			background-color: white;
-		}
+	#title {color: black; margin-top: 30px;	margin-left: 20px;}
+	#search {margin: 30px auto;	height: 40px; width: 450px;}
+	#textse {color: black; font-size: 16px;	height: 40px; width: 350px;	padding: 10px; margin-right: 5px;
+			border: 1px solid gray; border-radius: 3px; outline: none; float: left;}
+	h2 {width: 150px; text-align: center; float: left; color: black;}
+	.form-group {float: left; color: black;	margin-top: 10px; width: 800px;	}
+	#min, #max {float: left; width: 150px; margin-right: 10px; }
+	.form-group label {width: 100px;}
+	.ra {float: left; width: 70px; margin-right: 20px;}
+	#arrimg {margin: 0 auto; width: 1120px;}		
+	.arr{width:200px; height:250px;	margin:10px; float:left; color:black; font-size:20px;
+		text-align:center; border-radius: 10px;	border: 1px solid black;}
+	#arrimg>div>p{width:200px;	color: darkgray; font-size:10px; text-align:center;}
+	#arrimg img {width: 198.5px; height: 200px; border-radius: 10px 10px 0 0;}
+	hr{height: 1px; background-color: white;}
+	
+	
+	select{height: 40px; width:150px; vertical-align: middle; border-radius: 3px;}
+	.card{float: left; margin: 5px 10px;}	
+	.card-img-top{height: 200px;}
+	.card-body{padding: 0.25rem;}
+	
+	
 		
 </style>
 <script>
 $(function(){
-	var arr = ['t1_1.jpg','t1_2.jpg','t1_3.jpg','t1_4.jpg','t1_5.jpg','t1_6.jpg','t1_7.jpg','t1_8.jpg'
+/* 	var arr = ['t1_1.jpg','t1_2.jpg','t1_3.jpg','t1_4.jpg','t1_5.jpg','t1_6.jpg','t1_7.jpg','t1_8.jpg'
 				,'t1_9.jpg','t1_10.jpg','t1_11.jpg','t1_12.jpg','t1_13.jpg','t1_14.jpg','t1_15.jpg'];
 	var name_arr = ['tattooist1','tattooist2','tattooist3','tattooist4','tattooist5',
 					'tattooist1','tattooist2','tattooist3','tattooist4','tattooist5',
@@ -122,18 +57,7 @@ $(function(){
 				list += "<div class='arr'><a href='#'><img src='../img/tattooist/"+arr[i]+"'></a>"+name_arr[i]+"<br/><p>"+tag[i]+"</p></div>";
 			}
 			$("#arrimg").html(list);
-		} 
-	$("#btnse").click(function() {
-
-		$('input[name="ra"]:checked').each(function() {
-
-			var test = $(this).val();
-
-			console.log(test);
-
-		});
-
-	});
+		}  */
 	
 	/* 지역설정 */
 	var area0 = ["시/도 선택","서울특별시","인천광역시","대전광역시","광주광역시","대구광역시","울산광역시","부산광역시","경기도","강원도","충청북도","충청남도","전라북도","전라남도","경상북도","경상남도","제주도"];
@@ -190,7 +114,7 @@ $(function(){
 <body>
 	
 <header class="container">
-	<jsp:include page="../Inc/lee_header.jsp"></jsp:include>
+	<jsp:include page="../inc/lee_header.jsp"></jsp:include>
 </header>
 <section class="container">
 	<!-- <div id="title">
@@ -198,38 +122,40 @@ $(function(){
 	</div> -->
 	<form>
 		<div id="search">
-			<input id="textse" type="text" placeholder="Search..." />
-			<button id="btnse" name="btnse">검색</button>
+			<input type="text" id="textse" placeholder="Search..." />
+			<input type="submit" id="btnse" name="btnse" value="검색" class="btn btn-primary"/>
 		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<h2>지역</h2>
-					<input type="button" id="addr_all" name="addr_all" value="전체"/>
+					<input type="button" id="addr_all" name="addr_all" value="전체" class="btn btn-primary"/>
 					<select name="sido" id="sido"></select>
 					<select name="gugun" id="gugun"></select>
 				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
 				<div class="col">
 					<h2>정렬</h2>
-					<input type="button" id="sort_name" name="sort_name" value="이름순"/>
-					<input type="button" id="sort_fav" name="sort_fav" value="인기순"/>
-					<input type="button" id="sort_regdate" name="sort_regdate" value="등록일순"/>
-					<input type="button" id="sort_rev" name="sort_rev" value="리뷰가 많은 순"/>
+					<input type="button" id="sort_name" name="sort_name" value="이름 순" class="btn btn-primary"/>
+					<input type="button" id="sort_regdate" name="sort_regdate" value="등록일 순" class="btn btn-primary"/>
 				</div>
 			</div>
 		</div>
 	</form>
 	<hr/>
-	<div id="arrimg" >
-		
+	<div id="t_list">
+		<c:forEach var="v" items="${lst}">
+		<div class="card" style="width:180px">
+	  		<img class="card-img-top" src="<%=request.getContextPath()%>/img/profile/${v.profile}" alt="Card image">
+	  		<div class="card-body">
+	    		<a href="<%=request.getContextPath()%>/tattooist/tattooistView.do?userId=${v.userId}" class="card-title">${v.userId}</a>
+	    		<p class="card-text">${v.addr}</p>
+	  		</div>
+		</div>
+		</c:forEach>
 	</div>
 </section>
 <footer class="container" style="clear:left">
-	<jsp:include page="../Inc/lee_footer.jsp"></jsp:include>
+	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>	
 	
 </body>

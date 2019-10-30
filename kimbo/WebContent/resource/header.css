@@ -13,7 +13,7 @@ background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 
 ul, li{list-style-type:none;}
 
-.container{width:1200px; max-width:1200px; padding:0; position:realative; }
+.container{width:1200px; max-width:1200px; padding:0; position:relative; }
 
 a:link{color:#000; text-decoration:none} /* 링크 걸어져 있을떄*/
 a:visited{color:#000; text-decoration:none} /* 방문했을때 */

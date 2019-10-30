@@ -70,7 +70,7 @@
 </head>
 <body>
 <header class="container">
-	<jsp:include page="../Inc/lee_header.jsp"></jsp:include>
+	<jsp:include page="../inc/lee_header.jsp"></jsp:include>
 </header>
 <section class="container">
 	<!-- 공지사항 폼 -->
@@ -84,92 +84,23 @@
 			</ul>
 		</div>
 		<div class="accordion" id="accordionExample">
+			<c:forEach var="n" items="${lst}">
 			<div class="card" style="clear:left">
-				<div class="card-header" id="headingOne">
+				<div class="card-header" id="heading${n.num}">
 					<h2 class="mb-0">
 						<button class="btn btn-link" type="button" data-toggle="collapse"
-							data-target="#collapseOne" aria-expanded="true"
-							aria-controls="collapseOne">추석 연휴 영업안내</button>
+							data-target="#collapse${n.num}" aria-expanded="true"
+							aria-controls="collapse${n.num}">${n.title}</button>
 					</h2>
-					<h5 id="s">Good.D TATTOO</h5>
-					<h5 id="ss">2019-10-23</h5>
+					<h5 id="s">${n.userName}</h5>
+					<h5 id="ss">${n.writeDate}</h5>
 				</div>
-				<div id="collapseOne" class="collapse"
-					aria-labelledby="headingOne" data-parent="#accordionExample">
-					<div class="card-body">추석날 정상 영업합니다.</div>
+				<div id="collapse${n.num}" class="collapse"
+					aria-labelledby="heading${n.num}" data-parent="#accordionExample">
+					<div class="card-body">${n.content}</div>
 				</div>
 			</div>
-			<!--  -->
-			<div class="card">
-				<div class="card-header" id="headingTwo">
-					<h2 class="mb-0">
-						<button class="btn btn-link collapsed" type="button"
-							data-toggle="collapse" data-target="#collapseTwo"
-							aria-expanded="false" aria-controls="collapseTwo">
-							2019년 OFF시즌 할인특가</button>
-					</h2>
-					<h5 id="s">Good.D TATTOO</h5>
-					<h5 id="ss">2019-10-23</h5>
-				</div>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-					data-parent="#accordionExample">
-					<div class="card-body">
-						<img src="../img/18.jpg">Good Tattoo가 시즌 off를 맞이하여 선착순 할인 행사를 진행합니다.
-					</div>
-				</div>
-			</div>
-			
-			<!--  -->
-			<div class="card">
-				<div class="card-header" id="headingThree">
-					<h2 class="mb-0">
-						<button class="btn btn-link collapsed" type="button"
-							data-toggle="collapse" data-target="#collapseThree"
-							aria-expanded="false" aria-controls="collapseThree">
-							사은품 프로모션 안내</button>
-					</h2>
-					<h5 id="s">Good.D TATTOO</h5>
-					<h5 id="ss">2019-10-23</h5>
-				</div>
-				<div id="collapseThree" class="collapse"
-					aria-labelledby="headingThree" data-parent="#accordionExample">
-					<div class="card-body">안녕하세요. 구트타투입니다.^^<br/>2019-10-23 부터 일주일간 상품을 구매하신분에 한하여 작은 선물을 드립니다!</div>
-				</div>
-			</div>
-			<!--  -->
-			<div class="card">
-				<div class="card-header" id="headingFour">
-					<h2 class="mb-0">
-						<button class="btn btn-link collapsed" type="button"
-							data-toggle="collapse" data-target="#collapseFour"
-							aria-expanded="false" aria-controls="collapseFour">
-							구트타투 여름 워크샵 안내</button>
-					</h2>
-					<h5 id="s">Good.D TATTOO</h5>
-					<h5 id="ss">2019-10-23</h5>
-				</div>
-				<div id="collapseFour" class="collapse"
-					aria-labelledby="headingFour" data-parent="#accordionExample">
-					<div class="card-body">일정 : 2019-08-1 ~ 2019-8-7일 워크샵으로 인해 영업하지 않습니다. 자세한 사항은 담당 타투이스트 작가와 상담하세요.</div>
-				</div>
-			</div>
-			<!--  -->
-			<div class="card">
-				<div class="card-header" id="headingFive">
-					<h2 class="mb-0">
-						<button class="btn btn-link collapsed" type="button"
-							data-toggle="collapse" data-target="#collapseFive"
-							aria-expanded="false" aria-controls="collapseFive">
-							으으으으으으으응</button>
-					</h2>
-					<h5 id="s">Good.D TATTOO</h5>
-					<h5 id="ss">2019-10-23</h5>
-				</div>
-				<div id="collapseFive" class="collapse"
-					aria-labelledby="headingFive" data-parent="#accordionExample">
-					<div class="card-body">안녕하세요. 구트타투입니다.^^<br/>2019-10-23 부터 일주일간 상품을 구매하신분에 한하여 작은 선물을 드립니다!</div>
-				</div>
-			</div>
+			</c:forEach>
 		</div>
 		<!--  -->
 		<div id="noticeFooter">
@@ -192,7 +123,7 @@
 	</div>
 		</section>
 <footer>
-	<jsp:include page="../Inc/lee_footer.jsp"></jsp:include>
+	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>
 </body>
 </html>

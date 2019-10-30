@@ -24,7 +24,7 @@
 </head>
 <body>
 <header class="container">
-	<jsp:include page="../Inc/lee_header.jsp"></jsp:include>
+	<jsp:include page="../inc/lee_header.jsp"></jsp:include>
 </header>
 <section class="container">
 <div id="wrap">
@@ -170,10 +170,10 @@
 			</table>
 			<input type="button" class="btn btn-secondary" id="write" value="글쓰기">
 	</div>
+	</div>
 	</section>
 <footer>
-	<jsp:include page="../Inc/lee_footer.jsp"></jsp:include>
+	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>
-</div>
 </body>
 </html>

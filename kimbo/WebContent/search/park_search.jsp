@@ -197,7 +197,7 @@
 
 <body>
 <header class="container">
-	<jsp:include page="../Inc/lee_header.jsp"></jsp:include>
+	<jsp:include page="../inc/lee_header.jsp"></jsp:include>
 </header>
 <section class="container">
 	<div id="title">
@@ -394,7 +394,7 @@
 	</div>
 </section>
 <footer class="container" style="clear:left">
-	<jsp:include page="../Inc/lee_footer.jsp"></jsp:include>
+	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>
 </body>
 
