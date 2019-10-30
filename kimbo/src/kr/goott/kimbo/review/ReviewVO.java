@@ -7,8 +7,7 @@ public class ReviewVO {
 	private String part;
 	private String review_img;
 	private String content;
-	private String hit;
-	private String userId;
+	private String writerId;
 	private String tattooistId;
 	private String writeDate;
 	
@@ -48,17 +47,11 @@ public class ReviewVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getHit() {
-		return hit;
+	public String getWriterId() {
+		return writerId;
 	}
-	public void setHit(String hit) {
-		this.hit = hit;
-	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setWriterId(String writerId) {
+		this.writerId = writerId;
 	}
 	public String getTattooistId() {
 		return tattooistId;
