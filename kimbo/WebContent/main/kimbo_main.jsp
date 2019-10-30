@@ -37,7 +37,7 @@
 <script>
 //top5
 $(function(){
-	var top5_list="";
+/* 	var top5_list="";
 	var nameArr1=["tattooist1","tattooist2","tattooist3","tattooist4","tattooist5",];
 
 	for(i=0; i<nameArr1.length; i++){
@@ -45,7 +45,7 @@ $(function(){
 				   "<a href='#'><img src='../img/main_kim/"+nameArr1[i]+".jpg' class='rounded-circle'/>" +
 				   "</a><div>"+nameArr1[i]+"</div></li>";
 	}
-	$("#main_top5").html(top5_list);
+	$("#main_top5").html(top5_list); */
 	
 	
 	var top_tattoo_list="";
@@ -75,6 +75,11 @@ $(function(){
 	<div id="top5">
 		<h1>인기작가</h1>
 		<ul id="main_top5">
+		<c:forEach var="m" items="${top5_list}">
+			<li id="t_${m.num }" class='rounded-circle'>
+			   <a href='#'><img src='<%=request.getContextPath() %>/img/profile/${m.profile}' class='rounded-circle'/></a>
+			   <div>${m.userId }</div></li>
+		</c:forEach>
 		</ul>
 	</div>
 	<hr/>
