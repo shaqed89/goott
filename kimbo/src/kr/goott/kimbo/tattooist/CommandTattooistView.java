@@ -24,6 +24,9 @@ public class CommandTattooistView implements CommandService{
 		//dao.hitCount(vo.getNum());
 		request.setAttribute("vo", vo);
 		
+		List<TattooistVO> list = dao.tattooList(request.getParameter("userId"));
+		request.setAttribute("list", list);
+		
 		return "/tattooist/t_detail_tattooist.jsp";
 	}
 }

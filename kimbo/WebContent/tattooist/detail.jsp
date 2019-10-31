@@ -118,21 +118,8 @@
 		}
 	}
 
-	$(function() {
-		$("#bxSlide").bxSlider({
-			mode:"horizontal",
-			slideWidth:600,
-			slideHeight:400,
-			auto:true,
-			infiniteLoop: false,
-		    hideControlOnEnd: true,
-		    captions:true
-		});
-		
-		$("#top").css("width", $(".container").width());
-	});
-	
 	$(function(){
+		$("#top").css("width", $(".container").width());
 		$("#boardFrm").submit(function() {
 			//ajax로 댓글 DB에 저장하기
 			//                      form에 있는 데이터를 직렬화하는 기능이다.
@@ -193,13 +180,6 @@
 		});
 	}
 	
-</script>
-<script>
-	function delChk() {
-		if(confirm("자료실 글을 삭제하시겠습니까?")) {
-			location.href="/WebMVC/data/delete.do?num=${vo.num}"
-		}
-	}
 </script>
 </head>
 <body>

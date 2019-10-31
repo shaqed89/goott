@@ -16,7 +16,7 @@
 <title>Good.D Tattoo</title>
 <style>
 	*{margin: 0px;padding: 0px;font-family: 'Gaegu', cursive;color:black;}
-	
+	#con1{height:500px;}
 	footer{clear:left;}
 	
 	#ttop {float:left;width:100%;z-index:1;margin-top:20px;}
@@ -39,7 +39,7 @@
 	
 	#img{clear:left;width:1200px;margin:0px auto;}
 	#img>div{width:200px;margin:10px;height:250px;border-radius:10px;border:1px solid gray;overflow:hidden;font-size:20px;text-align:center;float:left;}
-	#img>div>img{position:relative;z-index:10;}
+	#img>div>img{position:relative;z-index:10;width:150px; height:150px;}
 	#img>div>a>img{position:relative;z-index:5;}
 	#img>div>p{
 		width:200px; 		
@@ -62,16 +62,8 @@
 	#insert {width:700px;height:800px;;background-color:white;border:4px solid white;margin:150px 0 100px 750px;}
 </style>
 <script>
-	var state=0;
-	function ChangeImage() {
-		if(state==0) {
-			document.img2.src="../img/heart.png";
-			state=1;
-		} else {
-			document.img2.src="../img/transHeart2.jpg";
-			state=0;
-		}
-	}
+	//var state=0;
+	
 	
 	function readURL(input) {
 		if (input.files && input.files[0]) {
@@ -130,15 +122,15 @@
 </script>
 </head>
 <body>
-	<div class="container">
+	<div class="container" id="con1">
 
 		<div id="ttop">
 			<div id="top">
 				<div id="prof"><img src="<%=request.getContextPath()%>/img/profile/${vo.profile}"/></div>
 				<div id="explain">
-					<div id="text">${vo.userId }<br/>
-									${vo.addr }<br/>
-									${vo.kakao }<br/>
+					<div id="text">아이디 : ${vo.userId }<br/>
+									활동지역 : ${vo.addr }<br/>
+									카카오톡 아이디 : ${vo.kakao }<br/>
 									참느라 고생하셨습니다 ~
 					</div>
 					<div id="bbottom">
@@ -158,23 +150,21 @@
 	<div class="container">
 		
 		<div id="img">
-			<div>         <!-- 세션에있는 id, 내가누른 작가id  -->
+			         <!-- 세션에있는 id, 내가누른 작가id  -->
 				<c:if test="${userId==vo.userId }">
-					<img style='margin-top:39px;' width='230px' height='230px' src='../img/pluss.jpg' data-toggle='modal' data-target='#insert'/>
+					<div>
+						<img style='margin-top:39px;' width='230px' height='230px' src='../img/pluss.jpg' data-toggle='modal' data-target='#insert'/>
+					</div>
 				</c:if>
-				<div>
-					<!-- <img name='img2' style='width:20px;height:20px;' src='../img/transHeart2.jpg' onclick='ChangeImage()'/> -->
-					<!-- <a href='detail.jsp' target='_blank'> -->
-					<!-- <img src='../img/tattooist/t1_"+"1"+".jpg'/></a>#장르 #주제 #부위<br/> -->
-					<%-- <p>조회수 : 9999</p>--%>
-					<c:forEach var="l" items="${list }">
-						<img name='img2' style='width:20px;height:20px;' src='../img/transHeart2.jpg' onclick='ChangeImage()'/>
-						<a href='detail.jsp' target='_blank'>
+				<c:forEach var="l" items="${list }">
+					<div>
+						<img id='${l.num }' style='width:20px;height:20px;' src='../img/transHeart2.jpg' onclick='ChangeImage()'/>
+						<a href='<%=request.getContextPath()%>/tattooist/detail.jsp?userId=${l.userId}&num=${l.num}' target='_blank'>
 						<img src='<%=request.getContextPath()%>/img/tattoo/${l.filename1}'/></a>#${l.genre} #${l.subject } #${l.part }<br/>
 						<p>조회수 : ${l.hit}</p>
-					</c:forEach>
-				</div>
-			</div>
+					</div>
+				</c:forEach>
+			
 		</div>
 		
 		<div id="insert" class="modal">
@@ -276,7 +266,7 @@
 		<div id="my_cal" class="modal">
 			<div class="modal-content" style="overflow: hidden; position: relative; width: 578px;">
             	<div class="shedule_form modal-body">
-					<div style="overflow: hidden; padding: 12px 15px;" class="site-background-color">
+					<%-- <div style="overflow: hidden; padding: 12px 15px;" class="site-background-color">
 						<div style="float: left; font-size: 18px; font-weight: bold; color: #fff; font-family: malgun gothic; ">일정</div>
                 	</div>
                 	
@@ -624,7 +614,7 @@
 							      </table>
     						</div>
                 		</div>
-                	</div>
+                	</div> --%>
             	</div>
           	</div>
 		</div>
