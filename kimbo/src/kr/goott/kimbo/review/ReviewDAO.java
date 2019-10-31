@@ -15,7 +15,7 @@ public class ReviewDAO extends DBConn implements Reviewinterface {
 		try {
 			dbConn();
 			
-			String sql = "select no, subject, genre, bodypart, image, content, writer, tattooist, to_char(regdate,'YYYY-MM-DD') from review";
+			String sql = "select no, subject, genre, bodypart, image, content, writer, tattooist, to_char(regdate,'YYYY-MM-DD') from review order by no desc";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
@@ -58,10 +58,7 @@ public class ReviewDAO extends DBConn implements Reviewinterface {
 			pstmt.setString(5, vo.getReview_img());
 			pstmt.setString(6, vo.getWriterId());
 			pstmt.setString(7, vo.getTattooistId());
-			
-			
-			
-			
+
 			result = pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();

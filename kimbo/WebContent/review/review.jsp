@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:if test="${userId==null ||userId=='' }">
+   <script>
+   	  alert("로그인이 필요합니다.");
+      history.back();
+   </script>
+</c:if>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -9,6 +15,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
 <link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../plugin/review_style.css" type="text/css">
+<link rel="icon" href="http://vandelaydesign.com/favicon.ico">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -23,6 +30,7 @@
 		}); 
 	});
 </script>
+
 </head>
 </head>
 <body>
@@ -30,15 +38,17 @@
 		<header>
 			<h2 style="text-align:center">Review</h2>
 		</header>
+		<div class="uk-card uk-card-default uk-card-body" style="z-index:100%" uk-sticky="bottom: #offset">
+			<input type="submit"  class="uk-button uk-button-primary" id="review_write" name="review_write" value="글쓰기" style="border-radius:8px;"/>
+		
+		</div>
 		<!--  -->
 		<c:forEach var='r' items="${lst}">
 		<div class="main">
 			<div class="reviewLeft" style="width:200px">
-				<div class="reviewImg">
-					<a href="">
-						<button class="uk-button uk-button-default" uk-tooltip="title:<img src='<%=request.getContextPath()%>/img/review/${r.review_img}'>; pos:right">
-							<img src="<%=request.getContextPath()%>/img/review/${r.review_img}" alt="default thumb" class="thumb"/>
-						</button>
+				<div class="reviewImg" uk-lightbox>
+					<a class="uk-button uk-button-default" href="<%=request.getContextPath()%>/img/review/${r.review_img}" data-caption="Image">
+						<img src="<%=request.getContextPath()%>/img/review/${r.review_img}" alt="default thumb" class="thumb"/>	
 					</a>
 				</div>
 			</div>
@@ -90,7 +100,7 @@
 		    <li><a href="#">10</a></li>
 		    <li><a href="#"><span uk-pagination-next></span></a></li>
 		</ul>
-		<input type="submit" class="uk-button uk-button-primary" id="review_write" name="review_write" value="글쓰기" style="border-radius:8px; float:right; margin-top:20px;"/>
+		<a class="uk-button uk-button-primary" href="#scrUp" id="scrDown" uk-scroll>Scroll up</a>
 	</div>
 </body>
 </html>

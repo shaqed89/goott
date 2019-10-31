@@ -27,10 +27,18 @@
 
 #fileSend{width:150px;text-align:center;float:right;position:relative;bottom:60px;}
 #title{text-align:center;padding-bottom:10px;font-family: 'Gaegu', cursive;font-weight:bold;font-size:1.5em}
-#content{height:500px;}
-#opt select{width:300px}
+
+#opt select{width:250px;float:left;}
 #write_btn{left:755px;position:relative}
-#writers{width:150px;float:right;}
+#uid{height:35px;
+    line-height:35px;
+    margin-bottom:5px;
+    }
+#tattooistid{width:150px;
+			 left:10px;
+			 position:relative;
+}
+.form-control{height:40px;}
 </style>
 <script>
 $(function() {
@@ -47,6 +55,9 @@ $(function() {
 		<fieldset class="uk-fieldset">
     			<div class="uk-width-1-3 uk-card uk-card-default uk-card-body uk-card-small" id="title">글쓰기</div>
 					<div class="uk-margin" id="opt">
+						<div id="uid" class="uk-label uk-label-warning"> 작성자 : ${userId}
+					    	<input type='hidden' id="r_userId" name="r_userId"/>
+					    </div>
 			            <select id="subject" name="subject" class="uk-select">
 			            	<option>주제선택</option>
 			                <option>Option 01</option>
@@ -64,23 +75,17 @@ $(function() {
 			                <option>Option 01</option>
 			                <option>Option 02</option>
 			                <option>Option 03</option>
-			            </select>
+			            </select>			     
+			  			<div>
+							<input type="text" id="tattooistid" name="tattooistid" class="form-control" placeholder="작가 아이디입력">
+						</div>
+			         
+ 
 		        	</div>
-		        	<div id="writers">
-			        	<div id="uid">
-				        	작성자 : ${userId}
-				        	<input type='hidden' id="r_userId" name="r_userId" value="${userId}"/>
-			        	</div>
-			        	<div id="tid">
-				        	작업자 : ${tattooistId}
-				        	<input type='hidden' id="r_ttId" name="r_ttId" value="${tattooistId}"/>
-		        		</div>
-		        	</div>
-		        
 			<div class="uk-margin">
 				<textarea name="content" id="content"></textarea>
 				<script>
-				CKEDITOR.replace("content");
+					CKEDITOR.replace("content");
 				</script>
 			</div>
 			<div class="uk-margin" uk-margin>
