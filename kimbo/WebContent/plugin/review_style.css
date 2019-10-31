@@ -15,10 +15,10 @@ body {
 
 
 
-#wrap h3{margin-top:auto;}
+.wrap h3{margin-top:auto;}
 
 /** main **/
-#wrap {
+.wrap {
 	width: 1200px;
 	margin: 0 auto;
 	background: #f8f8f8;
@@ -26,67 +26,90 @@ body {
 	margin-top: 55px;
 	
 }
+a:hover{text-decoration:none;font-weight:bold}
 
+.wrap header>h2{margin-bottom:50px;}
 
-#wrap header>h2{border-bottom:1px solid gray;}
-
-#main{width:1200px;
+.main{width:1200px;
 	height:250px;
 	position:relative;
 	border:1px solid gray;
 	}
-#main>div{float:left;}	
+.main>div{float:left;}	
 	
-#reviewLeft{
+.reviewLeft{
 	width:200px;
 	height:250px;
 	position:relative;
+	border:none;
 }
-#reviewImg{
+.reviewImg{
 	width:200px;
 	height:250px;
 }
-#reviewImg img{width:150px;
+
+uk-tooltip{padding-right:50px;}
+
+.reviewImg button{height:100%; border:none;}
+
+.reviewImg img{width:150px;
 			   height:150px;
 			   border-radius:10px;
 			   border:none;
 			   }
 
-
-#imgBtn{margin-top:50px;
-		margin-left:10px;
+.uk-button uk-button-default{margin-top:50px;	
+							 margin-left:10px;}
 		
-		}
-#reviewCenter{position:relative;
+.reviewCenter{position:relative;
 			  height:250px;}
-
-#reviewCenter>ul>li{float:left;
+.reviewCenter>ul{padding:0;
+				 bottom:30px;}
+.reviewCenter>ul>li{float:left;
 					font-size:1.5em;
 					width:20%;
-					margin-top:10px;
-					padding:0;
+					margin:0;
+					padding-bottom:10px;
+					border-radius:5px;
+					text-align:center;
 					}
+.reviewCenter>ul>li:nth-child(1){right:200px;width:20px;height:20px;}
+.reviewCenter>ul>li:nth-child(2){left:100px;}
+.reviewCenter>ul>li:nth-child(3){left:100px;}
+.reviewCenter>ul>li:nth-child(4){left:100px;}
 li{list-style-type:none;}
-#centerContent{width:800px;
+.centerContent{width:800px;
 			   height:150px;
 			   white-space:nowrap;
 			   overflow:hidden;
 			   text-overflow:ellipsis;
 			   margin-top: 40px;}
-#centerContent>ul>li{
+			   
+.centerContent>ul>li{
 					white-space:nowrap;
 					overflow:hidden;
 					text-overflow:ellipsis;
 					font-size:2em;
 					margin-top:px;}
-#reply>ul>li>p{font-size:15px;margin-left:30px;}
-#reviewRight{width:160px;height:249px;text-align:center;border-left:1px solid gray;}
-#reviewRight>ul>li{font-size:2em;margin-top:25px;}
+.reply>ul>li>p{font-size:1.5em;padding-left:40px;display:none;}
+
+.reviewRight{width: 190px;
+    line-height: 50px;
+    height: 249px;
+    text-align: center;
+    border-left: 1px solid gray;}
+    
+.uk-animation-toggle>ul{padding-left:0;}
+.uk-animation-toggle>ul>li>p{padding-left:40px;}
+.reviewRight>ul>li{font-size:2em;margin-top:25px;}
 .uk-animation-toggle{top:-10px;position:relative;}
-#reply p{margin-top:-5px}
+.reply p{margin-top:-5px}
+
+ol, ul{padding-left:0;}
 
 
-
-
+.uk-pagination{position: relative;
+               left: 35%;
+}
 
 

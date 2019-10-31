@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,15 +17,16 @@
 <style>
 	*{margin:0; padding:0;}
 	ul, li{list-style-type:none;}
-	
+	section{font-family: 'Gaegu', cursive;}
 	.container{width:1200px; max-width:1200px; padding:0; position:realative; }
 	
 	#slide{width:100%; height:800px; background-color:lightgray; margin:10px 0;}
 	#top5{width:100%; height:400px;}
 	#top5>h1{text-align:center;}
 	#main_top5{width:1180px; height:320px; margin:10px; padding:10px 40px;}
-	#main_top5 li{width: 180px; height: 300px; margin: 0 20px; float: left;}		  
-	#main_top5 li>a img{width:100%; height:100%;}
+	#main_top5 li{width: 180px; height: 330px; margin: 0 20px; float: left;}		  
+	#main_top5 li>a img{width:100%; height:300px;}
+	#main_top5 li>div{text-align:center; positoin:relative; height:30px; font-size:25px;}
 	
 	#top_tattoo{width:100%; height:800px;}
 	#top_tattoo>h1{text-align:center;}
@@ -36,15 +37,15 @@
 <script>
 //top5
 $(function(){
-	var top5_list="";
+/* 	var top5_list="";
 	var nameArr1=["tattooist1","tattooist2","tattooist3","tattooist4","tattooist5",];
 
 	for(i=0; i<nameArr1.length; i++){
-		top5_list+="<li id='tattooist"+(i+1)+"'  class='rounded-circle'>" +
-				   "<a href='#'><img src='../img/main_kim/tattooist"+(i+1)+".jpg' class='rounded-circle'/>" +
-				   "</a></li>";
+		top5_list+="<li id='"+nameArr1[i]+"'  class='rounded-circle'>" +
+				   "<a href='#'><img src='../img/main_kim/"+nameArr1[i]+".jpg' class='rounded-circle'/>" +
+				   "</a><div>"+nameArr1[i]+"</div></li>";
 	}
-	$("#main_top5").html(top5_list);
+	$("#main_top5").html(top5_list); */
 	
 	
 	var top_tattoo_list="";
@@ -66,6 +67,7 @@ $(function(){
 <header class="container">
 	<jsp:include page="../inc/lee_header.jsp"></jsp:include>
 </header>
+<section>
 <div class="container">
 	<div id="slide">
 	</div>
@@ -73,6 +75,11 @@ $(function(){
 	<div id="top5">
 		<h1>인기작가</h1>
 		<ul id="main_top5">
+		<c:forEach var="m" items="${top5_list}">
+			<li id="t_${m.num }" class='rounded-circle'>
+			   <a href='#'><img src='<%=request.getContextPath() %>/img/profile/${m.profile}' class='rounded-circle'/></a>
+			   <div>${m.userId }</div></li>
+		</c:forEach>
 		</ul>
 	</div>
 	<hr/>
@@ -81,6 +88,7 @@ $(function(){
 		<ul id="main_top_tattoo"></ul>
 	</div>
 </div>
+</section>
 <footer>
 	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>
