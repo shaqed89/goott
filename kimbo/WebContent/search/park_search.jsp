@@ -40,14 +40,14 @@
 	</style>
 	<script>
 	$(function(){
-		var arr = ['main_slide1.jpg','main_slide2.jpg','main_slide3.jpg','main_slide4.jpg'];
+		/* var arr = ['main_slide1.jpg','main_slide2.jpg','main_slide3.jpg','main_slide4.jpg'];
 		var list = "";
 			for(j=0; j<3; j++){
 				for (i = 0; i < arr.length; i++) {
 					list += "<div class='arr'><a href='#'><img src='../img/main_kim/"+arr[i]+"'></a>dsfd</div>";
 				}
 				$("#arrimg").html(list);
-			}
+			} */
 			$("#btnse").click(function() {
 
 
@@ -241,6 +241,10 @@
 	</form>
 	<hr/>
 	<div id="arrimg" >
+		<c:forEach var="t" items="${t_list}">
+			<div class='arr'><a href='#'>
+			<img src="<%=request.getContextPath()%>/img/tattoo/${t.filename1}"></a></div> 
+		</c:forEach>
 	</div>
 </section>
 <footer style="clear:left; background-color:#191919">

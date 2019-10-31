@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.goott.kimbo.controller.CommandService;
+import kr.goott.kimbo.tattooist.TattooistVO;
 
 public class CommandSearchList implements CommandService {
 
@@ -19,10 +20,12 @@ public class CommandSearchList implements CommandService {
 		List<SearchVO> g_list = dao.getGenreList();
 		List<SearchVO> s_list = dao.getSubjectList();
 		List<SearchVO> p_list = dao.getPartList();
+		List<TattooistVO> t_list = dao.getAllTattooList();
 		
 		request.setAttribute("g_list", g_list);
 		request.setAttribute("s_list", s_list);
 		request.setAttribute("p_list", p_list);
+		request.setAttribute("t_list", t_list);
 		
 		return "/search/park_search.jsp";
 	}

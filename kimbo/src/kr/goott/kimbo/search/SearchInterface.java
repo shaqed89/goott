@@ -2,6 +2,9 @@ package kr.goott.kimbo.search;
 
 import java.util.List;
 
+import kr.goott.kimbo.tattooist.TattooistVO;
+
+
 public interface SearchInterface {
 	//장르 불러오기
 	public List<SearchVO> getGenreList();
@@ -10,5 +13,5 @@ public interface SearchInterface {
 	//부위 불러오기
 	public List<SearchVO> getPartList();
 	//등록된 타투리스트 불러오기
-	public List<SearchVO> getAllTattooList();
+	public List<TattooistVO> getAllTattooList();
 }
