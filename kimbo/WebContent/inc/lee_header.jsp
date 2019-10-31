@@ -60,7 +60,7 @@ $(function(){
 	
 });
 </script>
-	<div>
+	<header class="container">
 		<div id="header_left">
 			<a href="<%=request.getContextPath()%>/main/main.do">Good.D<br />TATTO
 			</a>
@@ -99,7 +99,7 @@ $(function(){
 				</c:if>				
 			</ul>
 		</div>
-	</div>
+	</header>
 
 	<!-- 로그인 다이얼로그 -->
 	<div class="container">
@@ -144,9 +144,9 @@ $(function(){
 			</div>
 		</div>
 	</div>
-
+<!-- 
 	<script src="../plugin/bootstrap-validate.js"></script>
 	<script>
 		/* bootstrapValidate('#userid','min:5:다섯 글자 이상 입력해주세요.')	 */
 		/* bootstrapValidate('#userpwd','min:5:Enter at least 5 character!') */
-	</script>
+	</script> -->

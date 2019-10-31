@@ -28,7 +28,7 @@ public class MainDAO extends DBConn implements MainInterface {
 				
 				lst.add(vo);
 				
-				System.out.println(vo.getNum());
+//				System.out.println(vo.getNum());
 			}
 			
 

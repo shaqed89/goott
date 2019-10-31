@@ -38,7 +38,7 @@
 	.card-img-top{height: 200px;}
 	.card-body{padding: 0.25rem;}
 	
-	
+	footer{border-Top:1px solid gray;}
 		
 </style>
 <script>
@@ -76,35 +76,35 @@ $(function(){
 	var area14 = ["경산시","경주시","구미시","김천시","문경시","상주시","안동시","영주시","영천시","포항시","고령군","군위군","봉화군","성주군","영덕군","영양군","예천군","울릉군","울진군","의성군","청도군","청송군","칠곡군"];
 	var area15 = ["거제시","김해시","마산시","밀양시","사천시","양산시","진주시","진해시","창원시","통영시","거창군","고성군","남해군","산청군","의령군","창녕군","하동군","함안군","함양군","합천군"];
 	var area16 = ["서귀포시","제주시","남제주군","북제주군"];
-
- // 시/도 선택 박스 초기화
-
- $("select[name^=sido]").each(function() {
-  $selsido = $(this);
-  $.each(eval(area0), function() {
-   $selsido.append("<option value='"+this+"'>"+this+"</option>");
-  });
-  $selsido.next().append("<option value=''>구/군 선택</option>");
- });
-
- 
-
- // 시/도 선택시 구/군 설정
-
- $("select[name^=sido]").change(function() {
-  var area = "area"+$("option",$(this)).index($("option:selected",$(this))); // 선택지역의 구군 Array
-  var $gugun = $(this).next(); // 선택영역 군구 객체
-  $("option",$gugun).remove(); // 구군 초기화
-
-  if(area == "area0")
-   $gugun.append("<option value=''>구/군 선택</option>");
-  else {
-   $.each(eval(area), function() {
-    $gugun.append("<option value='"+this+"'>"+this+"</option>");
-   });
-  }
- });
-
+	
+	// 시/도 선택 박스 초기화
+	
+	$("select[name^=sido]").each(function() {
+	 $selsido = $(this);
+	 $.each(eval(area0), function() {
+	  $selsido.append("<option value='"+this+"'>"+this+"</option>");
+	 });
+	 $selsido.next().append("<option value=''>구/군 선택</option>");
+	});
+	
+	
+	
+	// 시/도 선택시 구/군 설정
+	
+	$("select[name^=sido]").change(function() {
+	 var area = "area"+$("option",$(this)).index($("option:selected",$(this))); // 선택지역의 구군 Array
+	 var $gugun = $(this).next(); // 선택영역 군구 객체
+	 $("option",$gugun).remove(); // 구군 초기화
+	
+	 if(area == "area0")
+	  $gugun.append("<option value=''>구/군 선택</option>");
+	 else {
+	  $.each(eval(area), function() {
+	   $gugun.append("<option value='"+this+"'>"+this+"</option>");
+	  });
+	 }
+	});
+	
 
 });
 </script>
@@ -112,13 +112,10 @@ $(function(){
 
 <body>
 	
-<header class="container">
+<header>
 	<jsp:include page="../inc/lee_header.jsp"></jsp:include>
 </header>
 <section class="container">
-	<!-- <div id="title">
-			<label>검색</label>
-	</div> -->
 	<form>
 		<div id="search">
 			<input type="text" id="textse" placeholder="Search..." />
@@ -153,7 +150,7 @@ $(function(){
 		</c:forEach>
 	</div>
 </section>
-<footer class="container" style="clear:left">
+<footer style="clear:left; background-color:#191919">
 	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>	
 	

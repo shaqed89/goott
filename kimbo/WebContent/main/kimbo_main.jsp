@@ -15,10 +15,7 @@
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <style>
-	*{margin:0; padding:0;}
-	ul, li{list-style-type:none;}
-	section{font-family: 'Gaegu', cursive;}
-	.container{width:1200px; max-width:1200px; padding:0; position:realative; }
+	section{font-family: 'Gaegu', cursive; clear:left;}
 	
 	#slide{width:100%; height:800px; background-color:lightgray; margin:10px 0;}
 	#top5{width:100%; height:400px;}
@@ -33,6 +30,8 @@
 	#main_top_tattoo{margin:10px 25px;}
 	#main_top_tattoo li{width:230px; height:230px; float:left;}
 	#main_top_tattoo li>a img{width:100%; height:100%;}
+
+	footer{border-Top:1px solid gray;}
 </style>
 <script>
 //top5
@@ -64,8 +63,8 @@ $(function(){
 </script>
 </head>
 <body>
-<header class="container">
-	<jsp:include page="../inc/lee_header.jsp"></jsp:include>
+<header>
+	<jsp:include page="../inc/lee_header.jsp"></jsp:include> 
 </header>
 <section>
 <div class="container">
@@ -89,7 +88,7 @@ $(function(){
 	</div>
 </div>
 </section>
-<footer>
+<footer style="clesr:left; background-color:#191919">
 	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>
 </body>

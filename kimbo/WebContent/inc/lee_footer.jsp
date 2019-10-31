@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <style>
-#footer{width:1200px;height:130px;font-size:small;background:#191919;margin:0 auto;
+#footer{font-size:small;background:#191919;margin:0 auto;
 		padding-right:10px;}
 #ftLeft>ul>li{list-style-type:none;color:gray;}
 #ftLeft>ul>li a{text-decoration:none;color:gray;}
@@ -45,7 +45,7 @@
 		}});
 	});
 </script>
-<div id="footer">
+<div id="footer" class="container">
 	<div id="ftLeft">
 		<ul>
 			<li>

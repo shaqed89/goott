@@ -36,8 +36,8 @@
 #sign1, #sign2{width:100px;}
 
 /*작가*/
-.container{margin:0 auto;}
-.container h3{text-align:center;}
+/* .container{margin:0 auto;}
+.container h3{text-align:center;} */
 
 #idSize>input:first-child{width:395px;float:left;}
 #idChk{width:100px;}
