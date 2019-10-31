@@ -254,6 +254,9 @@
 				}
 			});
 		});
+		
+		$("#tattooist_frm").submit(function() {alert(profile);});
+		
 	});
 </script>
 </head>

@@ -3,7 +3,7 @@
 <c:if test="${cnt>0 }">
 	<script>
 		alert("작품이 업로드 되었습니다~♥");
-		location.href="<%=request.getContextPath()%>/tattooist/tattooistView.do";
+		location.href="<%=request.getContextPath()%>/tattooist/tattooistView.do?userId=${vo.userId}&num=${vo.num}";
 	</script>
 </c:if>
 <c:if test="${cnt<=0 }">

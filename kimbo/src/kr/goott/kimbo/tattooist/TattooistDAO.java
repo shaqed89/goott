@@ -53,6 +53,37 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 		}catch(Exception e) {e.printStackTrace();}
 		finally {dbClose();}
 	}
+	
+	public List<TattooistVO> tattooList(String userId) {
+		List<TattooistVO> list = new ArrayList<TattooistVO>();
+		
+		try {
+			dbConn();
+			
+			String sql = "select userid, genre, subject, part, filename1, hit from bro_tattoo where userid=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				TattooistVO vo = new TattooistVO();
+				vo.setUserId(rs.getString(1));
+				//System.out.println(rs.getString(1));
+				String gr = rs.getString(2);
+				vo.setGenre(gr);
+				System.out.println(gr);
+				vo.setSubject(rs.getString(3));
+				vo.setPart(rs.getString(4));
+				vo.setFilename1(rs.getString(5));
+				vo.setHit(rs.getInt(6));
+				list.add(vo);
+			}
+		}catch(Exception e) {
+			System.out.println("타투 목록 선택 에러..."+e.getMessage());
+			e.printStackTrace();
+		}finally {dbClose();}
+		
+		return list;
+	}
 
 	@Override
 	public int insertData(TattooistVO vo) {
@@ -76,6 +107,8 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 			pstmt.setString(11, vo.getTitle());
 		
 			result=pstmt.executeUpdate();
+			System.out.println("filename1=" + vo.getFilename1());
+			System.out.println("insert result=" + result);
 		}
 		catch(Exception e) {e.printStackTrace();}
 		finally {dbClose();}

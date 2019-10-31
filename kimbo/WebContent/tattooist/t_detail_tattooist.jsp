@@ -100,6 +100,7 @@
 				alert("첨부파일을 선택하세요!!");
 				return false;
 			}
+			alert(file1);
 		});
 		
 		$("#date").datepicker();
@@ -165,17 +166,20 @@
 					<!-- <img name='img2' style='width:20px;height:20px;' src='../img/transHeart2.jpg' onclick='ChangeImage()'/> -->
 					<!-- <a href='detail.jsp' target='_blank'> -->
 					<!-- <img src='../img/tattooist/t1_"+"1"+".jpg'/></a>#장르 #주제 #부위<br/> -->
-					<%-- <p>조회수 : 9999</p>
-					<c:forEach var="v" items="${vo}">
-						
-					</c:forEach>--%>
+					<%-- <p>조회수 : 9999</p>--%>
+					<c:forEach var="l" items="${list }">
+						<img name='img2' style='width:20px;height:20px;' src='../img/transHeart2.jpg' onclick='ChangeImage()'/>
+						<a href='detail.jsp' target='_blank'>
+						<img src='<%=request.getContextPath()%>/img/tattoo/${l.filename1}'/></a>#${l.genre} #${l.subject } #${l.part }<br/>
+						<p>조회수 : ${l.hit}</p>
+					</c:forEach>
 				</div>
 			</div>
 		</div>
 		
 		<div id="insert" class="modal">
 			<div class="modal-dialog">
-				<form id="insertFrm" method="post" action="<%=request.getContextPath()%>/tattooist/tattooistWriteOk.do" enctype="multipart/form-data">
+				<form id="insertFrm" method="post" action="<%=request.getContextPath()%>/tattooist/tattooistWriteOk.do?userId=${vo.userId}&num=${vo.num}" enctype="multipart/form-data">
 					<div class="modal-content">
 						<h4 class="modal-title" id="title">★ 타투 등록하기 ★</h4>
 						<hr/>

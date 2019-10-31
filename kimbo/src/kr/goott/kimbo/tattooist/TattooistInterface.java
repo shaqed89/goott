@@ -8,6 +8,8 @@ public interface TattooistInterface {
 	//작가 정렬
 	//글내용보기
 	public void selectData(TattooistVO vo);
+	
+	public List<TattooistVO> tattooList(String userId);
 	//글등록
 	public int insertData(TattooistVO vo);
 	//글수정

@@ -32,14 +32,6 @@ public class TattooistVO {
 	///////////
 	private int cnt;
 	
-	public TattooistVO() {}
-	public TattooistVO(int num, String userid, String photo1, String filename1) {
-		this.num=num;
-		this.userId=userId;
-		this.photo1=photo1;
-		this.filename1=filename1;
-	}
-	
 	public int getNo() {
 		return no;
 	}

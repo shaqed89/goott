@@ -22,6 +22,9 @@ public class CommandTattooistList implements CommandService {
 		//뷰페이지로 가져갈 데이터
 		request.setAttribute("lst", lst);
 		
+		List<TattooistVO> list = dao.tattooList("userId");
+		request.setAttribute("list", list);
+		
 		return "/tattooist/park_tattooist.jsp";
 	}
 

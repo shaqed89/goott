@@ -3,6 +3,7 @@ package kr.goott.kimbo.tattooist;
 import java.io.File;
 import java.io.IOException;
 import java.util.Enumeration;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,14 +14,14 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import kr.goott.kimbo.controller.CommandService;
+import kr.goott.kimbo.register.RegisterVO;
 
 public class CommandTattooistWriteOk implements CommandService {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//파일을 업로드 하기 위해서는 request객체를 이용하여 MultipartRequest객체를 생성해야한다.
-		//C:\Users\goott7\Downloads\cos-20.08\src\com\oreilly\servlet 여기에 MultipartRequest.class있음
+		request.setCharacterEncoding("UTF-8");
 		//1. request객체      2. 업로드할 위치 폴더 : D:\git\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kimbo
 		String path=request.getServletContext().getRealPath("/img/tattoo"); //WebContent부터 시작한 폴더명
 		System.out.println("path=" + path);
@@ -49,10 +50,13 @@ public class CommandTattooistWriteOk implements CommandService {
 		Enumeration fileNames = mr.getFileNames();
 		String oldFile = null;
 		String newFile = null;
-		if(fileNames.hasMoreElements()) {
+		while(fileNames.hasMoreElements()) {
 			oldFile = (String)fileNames.nextElement();//원래파일명
-			newFile = mr.getFilesystemName(oldFile);//변경파일명
-			vo.setFilename1(newFile);
+			System.out.println("oldFile="+oldFile);
+			if(oldFile.equals("file1")) {
+				newFile = mr.getFilesystemName(oldFile);//변경파일명
+				vo.setFilename1(newFile);
+			}
 		}
 		vo.setIp(request.getRemoteAddr());
 		
@@ -67,6 +71,16 @@ public class CommandTattooistWriteOk implements CommandService {
 		}
 		
 		request.setAttribute("cnt", cnt);
+		int num=Integer.parseInt(request.getParameter("num"));
+		String userId = request.getParameter("userId");
+		System.out.println("num="+num + ", userid=" + userId);
+		vo.setNum(num);
+		vo.setUserId(userId);
+		request.setAttribute("vo", vo);
+		
+		List<TattooistVO> list = dao.tattooList("userId");
+		request.setAttribute("list", list);
+		
 		return "writeOk.jsp";
 	}
 
