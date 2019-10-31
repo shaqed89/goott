@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="../plugin/jquery.bxslider.css" type="text/css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
-<link type="text/css" rel="stylesheet" href="/kimbo/resource/schedule.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../plugin/jquery.bxslider.js"></script>
@@ -18,11 +17,14 @@
 <style>
 	*{margin: 0px;padding: 0px;font-family: 'Gaegu', cursive;color:black;}
 	
+	footer{clear:left;}
+	
 	#ttop {float:left;width:100%;z-index:1;margin-top:20px;}
 	#top {clear:left;width:1140px;height:400px;margin:50px auto;}
 	#prof {width:300px; height:400px; border:2px solid red; border-radius:50px;
-		   float:left;background:black url(../img/tattooist/t1.jpg) no-repeat; background-size:100%;
+		   float:left;background-size:100%;
 	}
+	#prof>img{width:298px; height:398px;border-radius:50px;}
 	#explain {width:800px; height:400px; float:left;margin-left:30px;}
 	#text {height:270px;line-height:270%;text-align:center;font-size:1.5em;border:2px solid red;}
 	#bbottom {width:100%;margin-top:40px;}
@@ -60,13 +62,6 @@
 	#insert {width:700px;height:800px;;background-color:white;border:4px solid white;margin:150px 0 100px 750px;}
 </style>
 <script>
-	function setImage(){
-		var tag= "#장르 #주제 #부위";
-		var imgTag = "";
-			imgTag += "<div><img name='img2' style='width:20px;height:20px;' src='../img/transHeart2.jpg' onclick='ChangeImage()'/><a href='detail.jsp' target='_blank'><img src='../img/tattooist/t1_"+"1"+".jpg'/></a>" + "조회수 : 9999" + "<br/><p>" + tag + "</p></div>";
-		document.getElementById("img").innerHTML = imgTag;
-	}
-	
 	var state=0;
 	function ChangeImage() {
 		if(state==0) {
@@ -76,14 +71,6 @@
 			document.img2.src="../img/transHeart2.jpg";
 			state=0;
 		}
-	}
-
-	function setImage(){
-		var tag= "#장르 #주제 #부위";
-		
-		var imgTag ="<div><img style='margin-top:39px;' width='230px' height='230px' src='../img/pluss.jpg' data-toggle='modal' data-target='#insert'/></div>";
-			imgTag += "<div><img name='img2' style='width:20px;height:20px;' src='../img/transHeart2.jpg' onclick='ChangeImage()'/><a href='detail.jsp' target='_blank'><img src='../img/tattooist/t1_"+"1"+".jpg'/></a>" + "조회수 : 9999" + "<br/><p>" + tag + "</p></div>";
-		document.getElementById("img").innerHTML = imgTag;
 	}
 	
 	function readURL(input) {
@@ -99,8 +86,20 @@
 	}
 	
 	$(function(){
-		$("#file1").change(function() {
-			readURL(this);
+		//$("#file1").change(function() {
+		//	readURL(this);
+		//});
+		
+		$("#insertFrm").submit(function() {
+			if($("#title1").val()=="") {
+				alert("제목을 입력하세요!!");
+				return false;
+			}
+			
+			if($("#file1").val()=="") {
+				alert("첨부파일을 선택하세요!!");
+				return false;
+			}
 		});
 		
 		$("#date").datepicker();
@@ -125,19 +124,20 @@
 		
 		$("#schedule_start_time").append(time_str);
 		$("#schedule_end_time").append(time_str);
+		//background:black url(../img/tattooist/t1.jpg) no-repeat;
 	});
 </script>
 </head>
-<body onload="setImage();">
+<body>
 	<div class="container">
 
 		<div id="ttop">
 			<div id="top">
-				<div id="prof"></div>
+				<div id="prof"><img src="<%=request.getContextPath()%>/img/profile/${vo.profile}"/></div>
 				<div id="explain">
-					<div id="text">안녕하세요 ~<br/>
-									손님이 원하는 스타일로<br/>
-									작업 해드립니다!<br/>
+					<div id="text">${vo.userId }<br/>
+									${vo.addr }<br/>
+									${vo.kakao }<br/>
 									참느라 고생하셨습니다 ~
 					</div>
 					<div id="bbottom">
@@ -156,55 +156,76 @@
 	
 	<div class="container">
 		
-		<div id="img"></div>
+		<div id="img">
+			<div>         <!-- 세션에있는 id, 내가누른 작가id  -->
+				<c:if test="${userId==vo.userId }">
+					<img style='margin-top:39px;' width='230px' height='230px' src='../img/pluss.jpg' data-toggle='modal' data-target='#insert'/>
+				</c:if>
+				<div>
+					<!-- <img name='img2' style='width:20px;height:20px;' src='../img/transHeart2.jpg' onclick='ChangeImage()'/> -->
+					<!-- <a href='detail.jsp' target='_blank'> -->
+					<!-- <img src='../img/tattooist/t1_"+"1"+".jpg'/></a>#장르 #주제 #부위<br/> -->
+					<%-- <p>조회수 : 9999</p>
+					<c:forEach var="v" items="${vo}">
+						
+					</c:forEach>--%>
+				</div>
+			</div>
+		</div>
 		
 		<div id="insert" class="modal">
 			<div class="modal-dialog">
-				<div class="modal-content">
-					<h4 class="modal-title" id="title">★ 타투 등록하기 ★</h4>
-					<hr/>
-					<div id="t" style="height:35px;line-height:30px;">
-						<label style="float:left;margin-right:10px;">제 목</label>
-						<input type="text" name="title1" id="title1" style="float:left;"/>
-					</div><hr/>
-					<div style="clear:left;height:35px;line-height:30px;">
-						<label style="float:left;margin-right:10px;">가 격</label>
-						<input type="text" name="pr" id="pr" style="float:left;"/>
-					</div><hr/>
-					<div id="div1" style="height:35px;line-height:30px;">
-						<div id="d1" style="width:240px;float:left;height:35px;">
-							<label style="float:left;margin-right:10px;">장 르</label>
-							<input type="text" name="gr" id="gr" style="float:left;"/>
+				<form id="insertFrm" method="post" action="<%=request.getContextPath()%>/tattooist/tattooistWriteOk.do" enctype="multipart/form-data">
+					<div class="modal-content">
+						<h4 class="modal-title" id="title">★ 타투 등록하기 ★</h4>
+						<hr/>
+						
+						<div id="t" style="height:35px;line-height:30px;">
+							<label style="float:left;margin-right:10px;">제 목</label>
+							<input type="text" name="title1" id="title1" style="float:left;"/>
+						</div><hr/>
+						<div style="clear:left;height:35px;line-height:30px;">
+							<label style="float:left;margin-right:10px;">가 격</label>
+							<input type="text" name="pr" id="pr" style="float:left;"/>
+						</div><hr/>
+						<div id="div1" style="height:35px;line-height:30px;">
+							<div id="d1" style="width:240px;float:left;height:35px;">
+								<label style="float:left;margin-right:10px;">장 르</label>
+								<input type="text" name="gr" id="gr" style="float:left;"/>
+							</div>
+							<div id="d2" style="width:240px;float:right;height:35px;">
+								<label style="float:left;margin-right:36px;">주 제</label>
+								<input type="text" name="sb" id="sb" style="float:left;"/>
+							</div>
+						</div><hr/>
+						<div id="div2" style="float:left;height:35px;line-height:30px;">
+							<div id="d1" style="float:left;width:240px;height:35px;">
+								<label style="float:left;margin-right:10px;">부 위</label>
+								<input type="text" name="pt" id="pt" style="float:left;"/>
+							</div>
+							<div id="d2" style="width:240px;float:right;height:35px;">
+								<label style="float:left;margin-right:10px;">소요시간</label>
+								<input type="text" name="tm" id="tm" style="float:left;"/>
+							</div>
+						</div><hr/>
+						<div>
+							<textarea rows="10" cols="60" placeholder="내용을 입력하세요..!"name="content" id="content"></textarea>
 						</div>
-						<div id="d2" style="width:240px;float:right;height:35px;">
-							<label style="float:left;margin-right:36px;">주 제</label>
-							<input type="text" name="sb" id="sb" style="float:left;"/>
+						<div class="file" style="border:1px solid red;">
+							<!-- <input type="file" id="file1" name='file1' style='display: none;'>
+							<input type='text' name='file2' id='file2' style='display: none;'>
+							<img width='100px' height='100px' src='../img/pluss.jpg' border='0' onclick='document.all.file1.click(); document.all.file2.value=document.all.file1.value'><br/>
+							<img id="blah" src="#" alt="your image" style="width:230px;height:230px;"/> -->
+							<input type="file" id="file1" name='file1'>
+							<input type="file" id="file2" name='file2'>
+							<input type="file" id="file3" name='file3'>
 						</div>
-					</div><hr/>
-					<div id="div2" style="float:left;height:35px;line-height:30px;">
-						<div id="d1" style="float:left;width:240px;height:35px;">
-							<label style="float:left;margin-right:10px;">부 위</label>
-							<input type="text" name="pt" id="pt" style="float:left;"/>
+						<div  class="modal-footer">
+							<input type="submit" value="등록" class="btn btn-block btn-success"/><br/>
+						<button type="button" class="btn btn-block btn-danger" data-dismiss="modal">닫기</button>
 						</div>
-						<div id="d2" style="width:240px;float:right;height:35px;">
-							<label style="float:left;margin-right:10px;">소요시간</label>
-							<input type="text" name="tm" id="tm" style="float:left;"/>
-						</div>
-					</div><hr/>
-					<div>
-						<textarea rows="10" cols="60" placeholder="내용을 입력하세요..!"></textarea>
 					</div>
-					<div class="file" style="border:1px solid red;">
-						<input type="file" id="file1" name='file1' style='display: none;'>
-						<input type='text' name='file2' id='file2' style='display: none;'>
-						<img width='100px' height='100px' src='../img/pluss.jpg' border='0' onclick='document.all.file1.click(); document.all.file2.value=document.all.file1.value'><br/>
-						<img id="blah" src="#" alt="your image" style="width:230px;height:230px;"/>
-					</div>
-				</div>
-				<div  class="modal-footer">
-					<button type="button" class="btn btn-block btn-success" data-dismiss="modal">등록</button><br/>
-					<button type="button" class="btn btn-block btn-danger" data-dismiss="modal">닫기</button>
-				</div>
+				</form>
 			</div>
 		</div>
 		

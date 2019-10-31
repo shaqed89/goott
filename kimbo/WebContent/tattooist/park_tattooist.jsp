@@ -15,7 +15,6 @@
 
 <style>
 	section{font-family: 'Gaegu', cursive;}
-	footer{clear:left;}
 	
 	#title {color: black; margin-top: 30px;	margin-left: 20px;}
 	#search {margin: 30px auto;	height: 40px; width: 450px;}
@@ -147,7 +146,7 @@ $(function(){
 		<div class="card" style="width:180px">
 	  		<img class="card-img-top" src="<%=request.getContextPath()%>/img/profile/${v.profile}" alt="Card image">
 	  		<div class="card-body">
-	    		<a href="<%=request.getContextPath()%>/tattooist/tattooistView.do?userId=${v.userId}" class="card-title">${v.userId}</a>
+	    		<a href="<%=request.getContextPath()%>/tattooist/tattooistView.do?userId=${v.userId}&num=${v.num}" class="card-title">${v.userId}</a>
 	    		<p class="card-text">${v.addr}</p>
 	  		</div>
 		</div>

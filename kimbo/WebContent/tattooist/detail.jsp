@@ -194,47 +194,20 @@
 	}
 	
 </script>
+<script>
+	function delChk() {
+		if(confirm("자료실 글을 삭제하시겠습니까?")) {
+			location.href="/WebMVC/data/delete.do?num=${vo.num}"
+		}
+	}
+</script>
 </head>
 <body>
 	<div class="container">
-		<!-- <div id="top">
-			<div id="box">
-				<div id="bxSlide">
-					<div><img src="../img/Orientalpainting10.jpg" title="이미쥐1"/></div>
-					<div><img src="../img/Orientalpainting18.jpg" title="이미쥐2"/></div>
-				</div>
-			</div>
-			
-			<div id="exp">
-				<div id="price">
-					<div style="border:1px solid gray;width:30px;height:30px;float:left;margin:30px 50px;"><img name="img2" style='width:30px;height:30px;' src='../img/transHeart2.jpg' onclick='ChangeImage()'/></div>
-					<div style="float:right;font-weight:500;font-size:3em;margin-right:50px;line-height:100px;">180,000<span style="font-size:0.5em">원</span></div>
-				</div>
-				
-				<div><img src="../img/tattooist/bubble1.png"/></div>
-				<div id="info">
-					장르<br/>
-					주제<br/>
-					부위<br/>
-					소요시간
-				</div>
-				<div id="info2">
-					일러스트<br/>
-					꽃<br/>
-					등<br/>
-					2시간 ~
-				</div>
-			</div>
-		</div> -->
+		
 		<div class="product_view" style="border:1px solid red;margin:10px auto;">
 			<h2>소니 스마트밴드 토크 SWR30 ( 안드로이드 4.42 킷캣 버전이상 호환가능)</h2>
 			<table>
-				<caption>
-					<details class="hide">
-						<summary>상품정보</summary>
-						판매가, 상품코드, 옵션 및 결제금액 안내
-					</details>
-				</caption>
 				<colgroup>
 				<col style="width:173px;">
 				<col>
@@ -242,41 +215,27 @@
 				<tbody>
 				<tr>
 					<th>판매가</th>
-					<td class="price">129,000</td>
+					<td class="price"><b>180,000</b></td>
 				</tr>
 				<tr>
-					<th>상품코드</th>
+					<th>장르</th>
 					<td>C004843</td>
 				</tr>
 				<tr>
-					<th>제조사/공급사</th>
-					<td>CONY / 자강정보통신</td>
+					<th>주제</th>
+					<td></td>
 				</tr>
 				<tr>
-					<th>구매수량</th>
-					<td>
-						<div class="length">
-							<input type="number" min="1" value="1">
-							<a href="#a">증가</a>
-							<a href="#a">감소</a>
-						</div>
-					</td>
+					<th>부위</th>
+					<td></td>
 				</tr>
 				<tr>
-					<th>사용가능쿠폰</th>
-					<td>0개</td>
+					<th>소요시간</th>
+					<td></td>
 				</tr>
 				<tr>
-					<th>옵션선택</th>
-					<td>
-						<select>
-						<option>기본(+0)</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<th>결제금액</th>
-					<td class="total"><b>180,000</b>원</td>
+					<th>상세내용</th>
+					<td></td>
 				</tr>
 				</tbody>
 			</table>
@@ -301,6 +260,14 @@
 			<div><img src="../img/Orientalpainting10.jpg" style="width:80%;margin-left:120px;"/></div>
 			<div><img src="../img/Orientalpainting18.jpg" style="width:80%;margin-left:120px;margin-top:40px;"/></div>
 		</div>
+		
+		<hr/>
+		<a href="<%=request.getContextPath()%>/index.do">홈</a>
+		<a href="<%=request.getContextPath()%>/tattooist/tattooistList.do">리스트</a>
+		<c:if test="${userId==vo.writer }">
+			<a href="<%=request.getContextPath()%>/tattooist/tattooistEdit.do?num=${vo.num}">수정</a>
+			<a href="javascript:delChk()">삭제</a>
+		</c:if>
 		
 		<div class="card my-4">
 			<h5 class="card-header">Leave a Comment:</h5>
@@ -330,7 +297,7 @@
 				<img class="d-flex mr-3 rounded-circle" src="/kimbo/img/tattooist/50x50.png"/>
 				<div class="media-body">
 					<h5 class="mt-0">${detailBoardVo.userId } <span style="float:right;">날짜 : ${detailBoardVo.writeDate }  별점 : 5</span></h5>
-					${detailBoardVo.coment }<br/>
+						${detailBoardVo.coment }<br/>
 					<c:if test="${userId==detailBoardVo.userId }">
 						<input type="button" value="수정" onclick="editComent(${detailBoardVo.no}, ${vo.num }, '${detailBoardVo.coment }')"/>
 						<input type="button" value="삭제" onclick="delComent(${detailBoardVo.no},${vo.num })"/><br/>
