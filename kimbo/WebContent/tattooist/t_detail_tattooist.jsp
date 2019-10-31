@@ -92,7 +92,10 @@
 				alert("첨부파일을 선택하세요!!");
 				return false;
 			}
-			alert(file1);
+			
+			//$('form').each(function(){
+			//	this.reset();
+			//});
 		});
 		
 		$("#date").datepicker();
@@ -210,9 +213,9 @@
 							<input type='text' name='file2' id='file2' style='display: none;'>
 							<img width='100px' height='100px' src='../img/pluss.jpg' border='0' onclick='document.all.file1.click(); document.all.file2.value=document.all.file1.value'><br/>
 							<img id="blah" src="#" alt="your image" style="width:230px;height:230px;"/> -->
-							<input type="file" id="file1" name='file1'>
-							<input type="file" id="file2" name='file2'>
-							<input type="file" id="file3" name='file3'>
+							<input type="file" id="file1" name='file1'/>
+							<input type="file" id="file2" name='file2'/>
+							<input type="file" id="file3" name='file3'/>
 						</div>
 						<div  class="modal-footer">
 							<input type="submit" value="등록" class="btn btn-block btn-success"/><br/>

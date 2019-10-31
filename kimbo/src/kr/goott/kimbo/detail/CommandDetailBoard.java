@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.goott.kimbo.controller.CommandService;
+import kr.goott.kimbo.tattooist.TattooistDAO;
+import kr.goott.kimbo.tattooist.TattooistVO;
 
 public class CommandDetailBoard implements CommandService {
 
@@ -29,6 +31,13 @@ public class CommandDetailBoard implements CommandService {
 		dao.detailBoardInsertSelect(detailVo);
 		
 		request.setAttribute("detailVo", detailVo);
+		
+		TattooistVO vo = new TattooistVO();
+		TattooistDAO tdao = new TattooistDAO();
+		vo.setNum(Integer.parseInt(request.getParameter("num")));
+		vo.setUserId(request.getParameter("userId"));
+		tdao.tattooDetail(vo);
+		request.setAttribute("vo", vo);
 		
 		//¥Ò±€º±≈√
 		List<DetailBoardVO> replyList = dao.detailBoardSelect(detailVo.getNum());
