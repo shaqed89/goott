@@ -1,55 +1,82 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:if test="${userId==null ||userId=='' }">
+   <script>
+      location.href="/register/signup.do";
+   </script>
+</c:if>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
-<script
-	src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+<script	src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
 <script src="//cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>
-<link
-	href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap"
-	rel="stylesheet">
+<script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"	crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
 </head>
 <style>
 * {width: 1200px;margin: 0 auto;}
-#reviewWrite{top:100px;position:relative;}
+#reviewWrite{top:100px;position:relative;height:800px;}
 .uk-select{width:500px;}
-#fileBtn input{width:200px;text-align:center;}
-#fileSend{width:100px;text-align:center;float:right;}
+#fileBtn input{width:200px;text-align:center;float:left}
+
+#fileSend{width:150px;text-align:center;float:right;position:relative;bottom:60px;}
 #title{text-align:center;padding-bottom:10px;font-family: 'Gaegu', cursive;font-weight:bold;font-size:1.5em}
 #content{height:500px;}
-#opt select{width:397px}
+#opt select{width:300px}
+#write_btn{left:755px;position:relative}
+#writers{width:150px;float:right;}
 </style>
+<script>
+$(function() {
+	$("#lst").click(function(){
+		alert("글이 등록되었습니다.")
+		location.href="<%=request.getContextPath()%>/review/reviewList.do";
+	});
+});
+
+</script>
 <body>
-	<form id="reviewWrite">	
+<div>
+	<form id="reviewWrite" method="post" action="<%=request.getContextPath()%>/review/reviewWriteOk.do" enctype="multipart/form-data">	
 		<fieldset class="uk-fieldset">
     			<div class="uk-width-1-3 uk-card uk-card-default uk-card-body uk-card-small" id="title">글쓰기</div>
 					<div class="uk-margin" id="opt">
-			            <select class="uk-select">
+			            <select id="subject" name="subject" class="uk-select">
 			            	<option>주제선택</option>
 			                <option>Option 01</option>
 			                <option>Option 02</option>
 			                <option>Option 03</option>
 			            </select>		     
-			            <select class="uk-select">
+			            <select id="genre" name="genre" class="uk-select">
 			            	<option>장르선택</option>
 			                <option>Option 01</option>
 			                <option>Option 02</option>
 			                <option>Option 03</option>
 			            </select> 
-			            <select class="uk-select">
+			            <select id="part" name="part" class="uk-select">
 			            	<option>부위선택</option>
 			                <option>Option 01</option>
 			                <option>Option 02</option>
 			                <option>Option 03</option>
 			            </select>
 		        	</div>
+		        	<div id="writers">
+			        	<div id="uid">
+				        	작성자 : ${userId}
+				        	<input type='hidden' id="r_userId" name="r_userId" value="${userId}"/>
+			        	</div>
+			        	<div id="tid">
+				        	작업자 : ${tattooistId}
+				        	<input type='hidden' id="r_ttId" name="r_ttId" value="${tattooistId}"/>
+		        		</div>
+		        	</div>
+		        
 			<div class="uk-margin">
 				<textarea name="content" id="content"></textarea>
 				<script>
@@ -58,13 +85,15 @@
 			</div>
 			<div class="uk-margin" uk-margin>
 				<div uk-form-custom="target: true" id="fileBtn">
-					<input type="file"> <input
-						class="uk-input uk-form-width-medium" type="text"
-						placeholder="파일선택" disabled>
-					<button class="uk-button uk-button-default" id="fileSend">등록</button>
+					<input type="file" id="fileName" name="fileName"><input class="uk-input uk-form-width-medium" type="text" placeholder="파일선택" disabled>
+					<div id="write_btn"></div>
 				</div>
 			</div>
 		</fieldset>
+		<div id="s1">
+			<input type="submit" class="uk-button uk-button-primary" id="fileSend" value="등록"></button>
+		</div>
 	</form>
+</div>
 </body>
 </html>

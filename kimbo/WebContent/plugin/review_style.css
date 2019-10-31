@@ -91,7 +91,9 @@ li{list-style-type:none;}
 					text-overflow:ellipsis;
 					font-size:2em;
 					margin-top:px;}
-.reply>ul>li>p{font-size:1.5em;padding-left:40px;display:none;}
+#reply>ul>li>p{font-size:1.5em;padding-left:40px;}
+
+
 
 .reviewRight{width: 190px;
     line-height: 50px;
@@ -111,5 +113,7 @@ ol, ul{padding-left:0;}
 .uk-pagination{position: relative;
                left: 35%;
 }
+
+#review_write{position:relative;bottom:60px;}
 
 

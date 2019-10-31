@@ -42,6 +42,34 @@ public class ReviewDAO extends DBConn implements Reviewinterface {
 		}
 		return lst;
 	}
+
+	@Override
+	public int insertReview(ReviewVO vo) {
+		//¸®ºä ¾²±â
+		int result = 0;
+		try {
+			dbConn();
+			String sql = "insert into review(no, subject, genre, bodypart, content, image, regdate, writer, tattooist) values(boardsq.nextVal,?,?,?,?,?,sysdate,?,?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getSubject());
+			pstmt.setString(2, vo.getGenre());
+			pstmt.setString(3, vo.getPart());
+			pstmt.setString(4, vo.getContent());
+			pstmt.setString(5, vo.getReview_img());
+			pstmt.setString(6, vo.getWriterId());
+			pstmt.setString(7, vo.getTattooistId());
+			
+			
+			
+			
+			result = pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
+		return result;
+	}
 	
 	
 }

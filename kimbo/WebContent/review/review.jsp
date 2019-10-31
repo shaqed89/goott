@@ -18,14 +18,9 @@
 
 <script>
 	$(function() {
-		$("#reply").click(function() {a
-			$("#coment").css("display", "block")
-		});
-		
-		$("#review_write").click(function(){
-			
+	 $("#review_write").click(function(){
 			location.href="<%=request.getContextPath()%>/review/reviewWrite.do";
-		});
+		}); 
 	});
 </script>
 </head>
@@ -95,7 +90,7 @@
 		    <li><a href="#">10</a></li>
 		    <li><a href="#"><span uk-pagination-next></span></a></li>
 		</ul>
-		<button class="uk-button uk-button-primary" style="border-radius:8px; float:right; margin-top:20px;">리뷰쓰기</button>
+		<input type="submit" class="uk-button uk-button-primary" id="review_write" name="review_write" value="글쓰기" style="border-radius:8px; float:right; margin-top:20px;"/>
 	</div>
 </body>
 </html>
