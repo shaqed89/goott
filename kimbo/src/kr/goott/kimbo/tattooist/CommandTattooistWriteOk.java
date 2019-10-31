@@ -39,7 +39,7 @@ public class CommandTattooistWriteOk implements CommandService {
 		vo.setPart(mr.getParameter("pt"));
 		vo.setSigan(mr.getParameter("tm"));
 		vo.setContent(mr.getParameter("content"));
-		vo.setFilename1(mr.getParameter("file1"));
+		vo.setPhoto1(mr.getParameter("file1"));
 		//if(mr.getParameter("photo2")!=null) vo.setPhoto1(mr.getParameter("photo2"));
 		//if(mr.getParameter("photo3")!=null) vo.setPhoto1(mr.getParameter("photo3"));
 		
@@ -66,8 +66,7 @@ public class CommandTattooistWriteOk implements CommandService {
 		//레코드 추가 실패시 업로드한 파일을 삭제해야함.
 		if(cnt<=0) { //실패
 			//파일삭제
-			System.out.println(vo.getFilename1());
-			File file = new File(path, vo.getFilename1());
+			File file = new File(path, vo.getPhoto1());
 			file.delete();
 		}
 		
