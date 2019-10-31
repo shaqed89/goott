@@ -1,13 +1,14 @@
 package kr.goott.kimbo.detail;
 
 public class DetailBoardVO {
-	private int no;
-	private int num;
+	private int no;//댓글번호
+	private int num;//원글번호
 	private String coment;
 	private String userId;
 	private String writeDate;
 	private int star;
 	private String ip;
+	private String board; //게시판분류
 	
 	public int getNo() {
 		return no;
@@ -50,6 +51,12 @@ public class DetailBoardVO {
 	}
 	public void setIp(String ip) {
 		this.ip = ip;
+	}
+	public String getBoard() {
+		return board;
+	}
+	public void setBoard(String board) {
+		this.board = board;
 	}
 	
 	

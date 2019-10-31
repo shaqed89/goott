@@ -159,7 +159,7 @@
 				<c:forEach var="l" items="${list }">
 					<div>
 						<img id='${l.num }' style='width:20px;height:20px;' src='../img/transHeart2.jpg' onclick='ChangeImage()'/>
-						<a href='<%=request.getContextPath()%>/tattooist/detail.jsp?userId=${l.userId}&num=${l.num}' target='_blank'>
+						<a href='<%=request.getContextPath()%>/tattooist/tattooistDetail.do?userId=${l.userId}&num=${l.num}' target='_blank'>
 						<img src='<%=request.getContextPath()%>/img/tattoo/${l.filename1}'/></a>#${l.genre} #${l.subject } #${l.part }<br/>
 						<p>조회수 : ${l.hit}</p>
 					</div>

@@ -186,7 +186,7 @@
 	<div class="container">
 		
 		<div class="product_view" style="border:1px solid red;margin:10px auto;">
-			<h2>소니 스마트밴드 토크 SWR30 ( 안드로이드 4.42 킷캣 버전이상 호환가능)</h2>
+			<h2>${vo.title }</h2>
 			<table>
 				<colgroup>
 				<col style="width:173px;">
@@ -195,35 +195,35 @@
 				<tbody>
 				<tr>
 					<th>판매가</th>
-					<td class="price"><b>180,000</b></td>
+					<td class="price"><b>${vo.price }</b></td>
 				</tr>
 				<tr>
 					<th>장르</th>
-					<td>C004843</td>
+					<td>${vo.genre }</td>
 				</tr>
 				<tr>
 					<th>주제</th>
-					<td></td>
+					<td>${vo.subject }</td>
 				</tr>
 				<tr>
 					<th>부위</th>
-					<td></td>
+					<td>${vo.part }</td>
 				</tr>
 				<tr>
 					<th>소요시간</th>
-					<td></td>
+					<td>${vo.sigan }</td>
 				</tr>
 				<tr>
 					<th>상세내용</th>
-					<td></td>
+					<td>${vo.content }</td>
 				</tr>
 				</tbody>
 			</table>
 			<div class="img">
-				<img src="../img/Orientalpainting10.jpg" alt="">
-				<ul>
-				<li class="on"><a href="#a"><img src="../img/Orientalpainting10.jpg" alt=""></a></li>
-				<li><a href="#a"><img src="../img/Orientalpainting18.jpg" alt=""></a></li>
+				<img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" alt="">
+				<ul><!-- 제일 처음에 작은이미지 두개 -->
+				<li class="on"><a href="#a"><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" alt=""></a></li>
+				<li><a href="#a"><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" alt=""></a></li>
 				</ul>
 			</div>
 			<div class="btns">
@@ -237,14 +237,14 @@
 		</div>
 		
 		<div>
-			<div><img src="../img/Orientalpainting10.jpg" style="width:80%;margin-left:120px;"/></div>
-			<div><img src="../img/Orientalpainting18.jpg" style="width:80%;margin-left:120px;margin-top:40px;"/></div>
+			<div><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" style="width:80%;margin-left:120px;"/></div>
+			<div><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" style="width:80%;margin-left:120px;margin-top:40px;"/></div>
 		</div>
 		
 		<hr/>
 		<a href="<%=request.getContextPath()%>/index.do">홈</a>
 		<a href="<%=request.getContextPath()%>/tattooist/tattooistList.do">리스트</a>
-		<c:if test="${userId==vo.writer }">
+		<c:if test="${userId==vo.userId }">
 			<a href="<%=request.getContextPath()%>/tattooist/tattooistEdit.do?num=${vo.num}">수정</a>
 			<a href="javascript:delChk()">삭제</a>
 		</c:if>
@@ -252,20 +252,21 @@
 		<div class="card my-4">
 			<h5 class="card-header">Leave a Comment:</h5>
 			<div class="card-body">
-				<form id="boardFrm" method="post" onsubmit="return false">
+				<form name="boardFrm" id="boardFrm" method="post" action="<%=request.getContextPath()%>/detail/detailWriteOk.do?userId=${vo.userId}&num=${vo.num}">
 					<div class="form-group">
 						<textarea id="coment" name="coment" class="form-control" rows="3"></textarea>
 					</div>
 					<select name="star" id="star">
 						<option value="not">==별점선택==</option>
-						<option value="s1">1</option>
-						<option value="s2">2</option>
-						<option value="s3">3</option>
-						<option value="s4">4</option>
-						<option value="s5">5</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
 					</select>
 					<button type="submit" class="btn btn-primary">댓글등록</button>
 					<input type="hidden" name="num" value="${vo.num }"/>
+					<input type="hidden" name="board" value="t"/>
 				</form>
 			</div>
 		</div>
@@ -276,7 +277,7 @@
 			<div class="media mb-4" id="board${detailBoardyVo.no }">
 				<img class="d-flex mr-3 rounded-circle" src="/kimbo/img/tattooist/50x50.png"/>
 				<div class="media-body">
-					<h5 class="mt-0">${detailBoardVo.userId } <span style="float:right;">날짜 : ${detailBoardVo.writeDate }  별점 : 5</span></h5>
+					<h5 class="mt-0">${detailBoardVo.userId } <span style="float:right;">날짜 : ${detailBoardVo.writeDate }  별점 : ${detailBoardVo.star }</span></h5>
 						${detailBoardVo.coment }<br/>
 					<c:if test="${userId==detailBoardVo.userId }">
 						<input type="button" value="수정" onclick="editComent(${detailBoardVo.no}, ${vo.num }, '${detailBoardVo.coment }')"/>

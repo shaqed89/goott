@@ -14,20 +14,28 @@ public class CommandDetailBoard implements CommandService {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		DetailBoardVO vo = new DetailBoardVO();
-		vo.setNum(Integer.parseInt(request.getParameter("num")));
-		vo.setPageNum(Integer.parseInt(request.getParameter("pageNum")));
+		request.setCharacterEncoding("UTF-8");
 		
+		DetailBoardVO detailVo = new DetailBoardVO();
+		detailVo.setNum(Integer.parseInt(request.getParameter("num")));
+		detailVo.setComent(request.getParameter("coment"));
+		detailVo.setUserId((String)request.getSession().getAttribute("userId"));
+		detailVo.setIp(request.getRemoteAddr());
+		detailVo.setBoard(request.getParameter("board"));
+		int star = Integer.parseInt(request.getParameter("star"));
+		System.out.println("star="+star);
+		detailVo.setStar(star);
 		DetailBoardDAO dao = new DetailBoardDAO();
-		dao.Select(vo);
+		dao.detailBoardInsertSelect(detailVo);
 		
-		request.setAttribute("vo", vo);
+		request.setAttribute("detailVo", detailVo);
 		
 		//¥Ò±€º±≈√
-		List<DetailBoardVO> replyList = dao.replySelect(vo.getNum());
+		List<DetailBoardVO> replyList = dao.detailBoardSelect(detailVo.getNum());
+		
 		request.setAttribute("list", replyList);
 		
-		return "detail.jsp";
+		return "/tattooist/detail.jsp";
 	}
 
 }

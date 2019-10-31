@@ -87,6 +87,28 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 		return list;
 	}
 
+	public void tattooDetail(TattooistVO vo) {
+		try {
+			dbConn();
+			String sql = "select title, price, genre, subject, part, sigan, content, filename1, num, userid from bro_tattoo where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, vo.getNum());
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo.setTitle(rs.getString(1));
+				vo.setPrice(rs.getString(2));
+				vo.setGenre(rs.getString(3));
+				vo.setSubject(rs.getString(4));
+				vo.setPart(rs.getString(5));
+				vo.setSigan(rs.getString(6));
+				vo.setContent(rs.getString(7));
+				vo.setFilename1(rs.getString(8));
+				vo.setUserId(rs.getString(9));
+			}
+		}catch(Exception e) {e.printStackTrace();}
+		finally {dbClose();}
+	}
 	@Override
 	public int insertData(TattooistVO vo) {
 		//자료실 글올리기
