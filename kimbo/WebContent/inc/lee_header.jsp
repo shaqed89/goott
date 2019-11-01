@@ -60,7 +60,7 @@ $(function(){
 	
 });
 </script>
-	<header class="container">
+	<div id="header" class="container">
 		<div id="header_left">
 			<a href="<%=request.getContextPath()%>/main/main.do">Good.D<br />TATTO
 			</a>
@@ -99,7 +99,7 @@ $(function(){
 				</c:if>				
 			</ul>
 		</div>
-	</header>
+	</div>
 
 	<!-- 로그인 다이얼로그 -->
 	<div class="container">

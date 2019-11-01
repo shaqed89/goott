@@ -28,7 +28,12 @@
 	 $("#review_write").click(function(){
 			location.href="<%=request.getContextPath()%>/review/reviewWrite.do";
 		}); 
+	$("#tgl").click(function(){
+		$("#toggle-usage").css("display","block");
+		});
 	});
+	
+
 </script>
 
 </head>
@@ -68,11 +73,11 @@
 				</div>
 				<div class="uk-animation-toggle" tabindex="0" id="reply">
 					<ul>
-						<li><button class="uk-button uk-button-default" type="button"
-							uk-toggle="target: #toggle-usage${r.num }" style="border: none; background: #fff; color: blue;">
+						<li><button class="uk-button uk-button-show" type="button"
+							uk-toggle="target: #toggle-usage${r.num}" id="tgl" style="border: none; background: #fff; color: blue;">
 							▼ 1개의 댓글이 있습니다.
 						</button></li>
-						<li><p id="toggle-usage${r.num }">➴ 안녕하세요. GOOT.TATTOO입니다. 방문해주셔서 감사합니다.</p></li>
+						<li><p id="toggle-usage${r.num }" class="" hidden>➴ 안녕하세요. GOOT.TATTOO입니다. 방문해주셔서 감사합니다.</p></li>
 					</ul>	
 				</div>
 			</div>
