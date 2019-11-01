@@ -4,7 +4,6 @@
 <c:if test="${userId==null ||userId=='' }">
    <script>
    	  alert("로그인이 필요합니다.");
-   	location.href="/register/signup.do";
    </script>
 </c:if>
 <!DOCTYPE html>
@@ -44,24 +43,20 @@
 <script>
 $(function(){
 	 $("#reviewWrite").submit(function(){
-         if($("#subject").val()=="주제선택"){
+         if($("#subject").val()==""){
             alert("작업 받으신 주제를 선택해주세요.");
             return false;
          }
-         if($("#genre").val()=="장르선택"){
+         if($("#genre").val()==""){
              alert("장르를 선택해주세요");
              return false;
           }
-         if($("#part").val()=="부위선택"){
+         if($("#part").val()==""){
              alert("작업 받으신 부위를 선택해주세요.");
              return false;
           }
          if($("#tattooistid").val()==""){
              alert("작업 받으신 작가의 아이디를 입력해주세요.");
-             return false;
-          }
-         if($("#content").val()==""){
-             alert("내용을 입력해주세요.")
              return false;
           }
          if($("#fileName").val()==""){
@@ -73,7 +68,7 @@ $(function(){
 </script>
 <body>
 <div>
-	<form id="reviewWrite" method="post" action="<%=request.getContextPath()%>/review/reviewWriteOk.do" enctype="multipart/form-data">	
+	<form id="reviewWrite" method="post" action="<%=request.getContextPath()%>/review/reviewEditOk.do" enctype="multipart/form-data">	
 		<fieldset class="uk-fieldset">
     			<div class="uk-width-1-3 uk-card uk-card-default uk-card-body uk-card-small" id="title">글쓰기</div>
 					<div class="uk-margin" id="opt">
@@ -81,36 +76,36 @@ $(function(){
 					    	<input type='hidden' id="r_userId" name="r_userId"/>
 					    </div>
 			            <select id="subject" name="subject" class="uk-select">
-			            	<option>주제선택</option>
-			                <option>Option 01</option>
-			                <option>Option 02</option>
-			                <option>Option 03</option>
+			            	<option value="주제선택" <c:if test="${vo.subject=='주제선택' }">selected</c:if>>주제선택</option>
+			                <option value="Option 01"<c:if test="${vo.subject=='Option 01' }">selected</c:if>>Option 01</option>
+			                <option value="Option 02"<c:if test="${vo.subject=='Option 02' }">selected</c:if>>Option 02</option>
+			                <option value="Option 03"<c:if test="${vo.subject=='Option 03' }">selected</c:if>>Option 03</option>
 			            </select>		     
-			            <select id="genre" name="genre" class="uk-select">
-			            	<option>장르선택</option>
-			                <option>Option 01</option>
-			                <option>Option 02</option>
-			                <option>Option 03</option>
+			            <select id="genre" name="genre" class="uk-select" >
+			            	<option value="장르선택" <c:if test="${vo.subject=='장르선택' }">selected</c:if>>장르선택</option>
+			                <option value="Option 01" <c:if test="${vo.subject=='Option 01' }">selected</c:if>>Option 01</option>
+			                <option value="Option 02" <c:if test="${vo.subject=='Option 02' }">selected</c:if>>Option 02</option>
+			                <option value="Option 03" <c:if test="${vo.subject=='Option 03' }">selected</c:if>>Option 03</option>
 			            </select> 
 			            <select id="part" name="part" class="uk-select">
-			            	<option>부위선택</option>
-			                <option>Option 01</option>
-			                <option>Option 02</option>
-			                <option>Option 03</option>
+			            	<option value="부위선택" <c:if test="${vo.subject=='부위선택' }">selected</c:if>>부위선택</option>
+			                <option value="Option 01" <c:if test="${vo.subject=='Option 01' }">selected</c:if>>Option 01</option>
+			                <option value="Option 02" <c:if test="${vo.subject=='Option 02' }">selected</c:if>>Option 02</option>
+			                <option value="Option 03" <c:if test="${vo.subject=='Option 03' }">selected</c:if>>Option 03</option>
 			            </select>			     
 			  			<div>
-							<input type="text" id="tattooistid" name="tattooistid" class="form-control" placeholder="작가 아이디입력">
+							<input type="text" id="tattooistid" name="tattooistid" class="form-control" placeholder="작가 아이디입력" value="${vo.tattooistId}">
 						</div>			         
 		        	</div>
 			<div class="uk-margin">
-				<textarea name="content" id="content"></textarea>
+				<textarea name="content" id="content">${vo.content }</textarea>
 				<script>
 					CKEDITOR.replace("content");
 				</script>
 			</div>
 			<div class="uk-margin" uk-margin>
 				<div uk-form-custom="target: true" id="fileBtn">
-					<input type="file" id="fileName" name="fileName"><input class="uk-input uk-form-width-medium" type="text" placeholder="파일선택" disabled>
+					<input type="file" id="fileName" name="fileName" ><input class="uk-input uk-form-width-medium" type="text" placeholder="${vo.review_img}" disabled>
 					<div id="write_btn"></div>
 				</div>
 			</div>

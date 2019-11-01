@@ -10,6 +10,13 @@ public class ReviewVO {
 	private String writerId;
 	private String tattooistId;
 	private String writeDate;
+	private String fileName;
+	////////////////////////
+	private String oldFileName;
+	private int cnt;
+	///////////////////////
+	
+	
 	
 	public int getNum() {
 		return num;
@@ -64,6 +71,24 @@ public class ReviewVO {
 	}
 	public void setWriteDate(String writeDate) {
 		this.writeDate = writeDate;
+	}
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	public String getOldFileName() {
+		return oldFileName;
+	}
+	public void setOldFileName(String oldFileName) {
+		this.oldFileName = oldFileName;
+	}
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
 	}
 
 	

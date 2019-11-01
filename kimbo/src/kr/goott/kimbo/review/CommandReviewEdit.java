@@ -13,8 +13,17 @@ public class CommandReviewEdit implements CommandService {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		ReviewDAO dao = new ReviewDAO();
+		ReviewVO vo = new ReviewVO();
+		
+		vo.setNum(Integer.parseInt(request.getParameter("num")));
+		
+		dao.selectReview(vo);
+		request.setAttribute("vo", vo);
+		
+		
+		return "reviewEdit.jsp";
 	}
 
 }
