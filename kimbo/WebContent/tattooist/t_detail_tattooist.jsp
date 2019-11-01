@@ -22,24 +22,24 @@
 	
 	#ttop {float:left;width:100%;z-index:1;margin-top:20px;}
 	#top {clear:left;width:1140px;height:400px;margin:50px auto;}
-	#prof {width:300px; height:400px; border:2px solid red; border-radius:50px;
+	#prof {width:300px; height:400px; border:2px solid gray; border-radius:50px;
 		   float:left;background-size:100%;
 	}
 	#prof>img{width:298px; height:398px;border-radius:50px;}
 	#explain {width:800px; height:400px; float:left;margin-left:30px;}
-	#text {height:270px;line-height:270%;text-align:center;font-size:1.5em;border:2px solid red;}
+	#text {height:270px;line-height:270%;text-align:center;font-size:1.5em;border:2px solid gray;font-weight:700;}
 	#bbottom {width:100%;margin-top:40px;}
 	#bottom {clear:left;width:780px;height:80px;margin:auto;}
 	#btn2, #btn3 {margin-left:15px;}
 	#btn1, #btn2, #btn3 {float:left;width:200px;height:80px;border:2px solid gray;
-				  border-radius:15px;font-size:2em;text-align:center;line-height:80px;font-size:20px;
+				  border-radius:15px;text-align:center;line-height:80px;font-size:20px;font-weight:500;
 	}
 	#btn3{width:350px;}
-	#btn1>a, #btn2>a, #btn3>a{color:pink;}
-	#btn1>a:hover, #btn2>a:hover, #btn3>a:hover {color:red;background-color:yellow;}
+	#btn1>a, #btn2>a, #btn3>a{color:black;}
+	#btn1>a:hover, #btn2>a:hover, #btn3>a:hover {color:red;background-color:yellow;font-weight:700;}
 	
 	#img{clear:left;width:1200px;margin:0px auto;}
-	#img>div{width:200px;margin:10px;height:250px;border-radius:10px;border:1px solid gray;overflow:hidden;font-size:20px;text-align:center;float:left;}
+	#img>div{width:200px;margin:10px;height:300px;border-radius:10px;border:1px solid gray;overflow:hidden;font-size:20px;text-align:center;float:left;}
 	#img>div>img{position:relative;z-index:10;width:150px; height:150px;}
 	#img>div>a>img{position:relative;z-index:5;}
 	#img>div>p{
@@ -49,14 +49,14 @@
 		text-align:center;
 	}
 	#img img {width: 200px;height: 170px;}
-	#img>div:nth-child(1) {border:none;}
+	#plus {border:none;}
 	
 	#title{margin:0 0 0 20%;font-weight:800;color:#000;}
 	#noticeDiv{width:400px;height:405px;color:#f00;background-color:pink;font-family:바탕체;font-weight:bold;}
 	#noticeDiv, #apply, #my_cal {margin:450px 0 100px 800px;}
 	#apply {width:400px;height:400px;background-color:white;overflow:hidden;padding: 20px 20px 0;}
 	#c1, #c2 {width:350px;height:60px;background-color:white;margin:10px auto;color:black;text-align:center;line-height:15px;padding-top:20px;}
-	hr {color:gray;}
+	
 	.modal-content{border:none;}
 	.modal-content>label{margin-bottom:0;margin-top:10px;}
 	#schedule_color {margin-bottom:20px;}
@@ -147,17 +147,18 @@
 				</div>
 			</div>
 		</div>
+		
 	</div>
 	
-	<hr width="100%"/>
+	
 	
 	<div class="container">
-		
+		<hr style="color:black;"/>
 		<div id="img">
 			         <!-- 세션에있는 id, 내가누른 작가id  -->
 				<c:if test="${userId==vo.userId }">
-					<div>
-						<img style='margin-top:39px;' width='230px' height='230px' src='../img/pluss.jpg' data-toggle='modal' data-target='#insert'/>
+					<div id="plus">
+						<img style='margin-top:75px;' width='230px' height='230px' src='../img/pluss.jpg' data-toggle='modal' data-target='#insert'/>
 					</div>
 				</c:if>
 				<c:forEach var="l" items="${list }">

@@ -80,6 +80,7 @@ $(function(){
 			   <div>${m.userId }</div></li>
 		</c:forEach>
 		</ul>
+		
 	</div>
 	<hr/>
 	<div id="top_tattoo">

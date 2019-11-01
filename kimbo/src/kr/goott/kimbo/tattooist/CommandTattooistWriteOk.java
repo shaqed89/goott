@@ -39,9 +39,9 @@ public class CommandTattooistWriteOk implements CommandService {
 		vo.setPart(mr.getParameter("pt"));
 		vo.setSigan(mr.getParameter("tm"));
 		vo.setContent(mr.getParameter("content"));
-		vo.setFilename1(mr.getParameter("file1"));
-		//if(mr.getParameter("photo2")!=null) vo.setPhoto1(mr.getParameter("photo2"));
-		//if(mr.getParameter("photo3")!=null) vo.setPhoto1(mr.getParameter("photo3"));
+		if(mr.getParameter("file1")!=null) vo.setFilename1(mr.getParameter("file1"));
+		if(mr.getParameter("file2")!=null) vo.setFilename1(mr.getParameter("file2"));
+		if(mr.getParameter("file3")!=null) vo.setFilename1(mr.getParameter("file3"));
 		
 		HttpSession sess = request.getSession();
 		vo.setUserId((String)sess.getAttribute("userId"));//userId?userid?
@@ -53,7 +53,15 @@ public class CommandTattooistWriteOk implements CommandService {
 		while(fileNames.hasMoreElements()) {
 			oldFile = (String)fileNames.nextElement();//원래파일명
 			System.out.println("oldFile="+oldFile);
-			if(oldFile.equals("file1")) {
+			if(oldFile.equals("file3")) {
+				newFile = mr.getFilesystemName(oldFile);//변경파일명
+				vo.setFilename3(newFile);
+			}
+			else if(oldFile.equals("file2")) {
+				newFile = mr.getFilesystemName(oldFile);//변경파일명
+				vo.setFilename2(newFile);
+			}
+			else if(oldFile.equals("file1")) {
 				newFile = mr.getFilesystemName(oldFile);//변경파일명
 				vo.setFilename1(newFile);
 			}
@@ -68,6 +76,12 @@ public class CommandTattooistWriteOk implements CommandService {
 			//파일삭제
 			File file = new File(path, vo.getFilename1());
 			file.delete();
+			file=new File(path, vo.getFilename2());
+			if(file!=null)
+				file.delete();
+			file=new File(path, vo.getFilename3());
+			if(file!=null)
+				file.delete();
 		}
 		
 		request.setAttribute("cnt", cnt);
