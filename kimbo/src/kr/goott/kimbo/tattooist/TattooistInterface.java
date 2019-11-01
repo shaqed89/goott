@@ -18,4 +18,12 @@ public interface TattooistInterface {
 	public void deleteData(TattooistVO vo);
 	//조회수 카운트
 	public void hitCount(int num);
+	//댓글 등록, 댓글 선택
+	public int replyInsertSelect(DetailBoardVO vo);
+	//댓글 선택
+	public List<DetailBoardVO> replySelect(int num);
+	//댓글 삭제
+	public void replyDelete(int no);
+	//댓글 수정
+	public int replyUpdate(DetailBoardVO vo);
 }

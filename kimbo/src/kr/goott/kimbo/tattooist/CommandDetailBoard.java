@@ -1,4 +1,4 @@
-package kr.goott.kimbo.detail;
+package kr.goott.kimbo.tattooist;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,20 +22,20 @@ public class CommandDetailBoard implements CommandService {
 		detailVo.setUserId((String)request.getSession().getAttribute("userId"));
 		detailVo.setIp(request.getRemoteAddr());
 		detailVo.setBoard(request.getParameter("board"));
-		int star = Integer.parseInt(request.getParameter("star"));
-		System.out.println("star="+star);
-		detailVo.setStar(star);
-		DetailBoardDAO dao = new DetailBoardDAO();
-		dao.detailBoardInsertSelect(detailVo);
+		int starr = Integer.parseInt(request.getParameter("starr"));
+		System.out.println("starr="+starr);
+		detailVo.setStarr(starr);
+		TattooistDAO dao = new TattooistDAO();
+		dao.replyInsertSelect(detailVo);
 		
 		request.setAttribute("detailVo", detailVo);
 		
 		//¥Ò±€º±≈√
-		List<DetailBoardVO> replyList = dao.detailBoardSelect(detailVo.getNum());
+		List<DetailBoardVO> replyList = dao.replySelect(detailVo.getNum());
 		
 		request.setAttribute("list", replyList);
 		
-		return "/tattooist/detail.jsp";
+		return "/tattooist/comentView.jsp";
 	}
 
 }
