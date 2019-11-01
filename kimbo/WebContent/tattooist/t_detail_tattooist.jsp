@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="../plugin/jquery.bxslider.css" type="text/css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../resource/header.css" type="text/css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../plugin/jquery.bxslider.js"></script>
@@ -122,6 +123,9 @@
 </script>
 </head>
 <body>
+<header>
+	<jsp:include page="../inc/lee_header.jsp"></jsp:include> 
+</header>
 	<div class="container" id="con1">
 
 		<div id="ttop">
@@ -621,5 +625,8 @@
 		
 		
 	</div>
+<footer style="clesr:left; background-color:#191919">
+	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
+</footer>
 </body>
 </html>

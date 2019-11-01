@@ -29,7 +29,7 @@
 			$("#img").css("height", $(window).height()-400);
 			$("#txt").css("margin-left", $(window).width()/2-250).css("margin-top", -$(window).height()/2+350);
 			$("#img").animate({opacity:"0.7"}, 1000);
-			$("#txt").delay(1000).animate({opacity:"1"}, 1000);
+			$("#txt").delay(1000).animate({opacity:"0.7"}, 1000);
 			$("#img").delay(2000).animate({opacity:"0"}, 800);
 			$("#txt").delay(1000).animate({opacity:"0"}, 800);
 			$(window).resize(function() {

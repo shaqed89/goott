@@ -237,7 +237,7 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 		try {
 			dbConn();
 			///답글 선택
-			String sql = "select no, num, coment, userId, writedate, starr from boardReply where num=? order by no desc";
+			String sql = "select no, num, coment, userId, writedate, starr from detailBoard where num=? order by no desc";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();

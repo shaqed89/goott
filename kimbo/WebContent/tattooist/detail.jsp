@@ -153,7 +153,7 @@
 	function editComent(no, num, coment) {
 		var tag = "<div class='card-body'><form id='boardFrm' method='post' id='replyEdit' onsubmit='return false'>";
 		tag += "<div class='form-group'><textarea name='coment' rows='3'>" + coment + "</textarea></div>";
-		tag += "<select name='star' id='star'>";
+		tag += "<select name='starr' id='starr'>";
 		tag += "<option value='not'>==별점선택==</option>";
 		tag += "<option value='s1'>1</option>";
 		tag += "<option value='s2'>2</option>";
