@@ -1,6 +1,7 @@
 package kr.goott.kimbo.tattooist;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,9 @@ public class CommandTattooistDetail implements CommandService {
 		dao.tattooDetail(vo);
 		dao.hitCount(vo.getHit());
 		request.setAttribute("vo", vo);
+		
+		List<DetailBoardVO> list = dao.replySelect(vo.getNum());
+		request.setAttribute("list", list);
 		
 		return "/tattooist/detail.jsp";
 	}

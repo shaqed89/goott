@@ -1,4 +1,4 @@
-package kr.goott.kimbo.detail;
+package kr.goott.kimbo.tattooist;
 
 public class DetailBoardVO {
 	private int no;//댓글번호
@@ -6,7 +6,7 @@ public class DetailBoardVO {
 	private String coment;
 	private String userId;
 	private String writeDate;
-	private int star;
+	private int starr;
 	private String ip;
 	private String board; //게시판분류
 	
@@ -40,11 +40,11 @@ public class DetailBoardVO {
 	public void setWriteDate(String writeDate) {
 		this.writeDate = writeDate;
 	}
-	public int getStar() {
-		return star;
+	public int getStarr() {
+		return starr;
 	}
-	public void setStar(int star) {
-		this.star = star;
+	public void setStarr(int starr) {
+		this.starr = starr;
 	}
 	public String getIp() {
 		return ip;

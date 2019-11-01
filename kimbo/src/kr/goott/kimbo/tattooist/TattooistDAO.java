@@ -205,4 +205,69 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 		finally {dbClose();}
 	}
 
+	@Override
+	public int replyInsertSelect(DetailBoardVO vo) {
+		int cnt=0;
+		//댓글 쓰기
+		try {
+			dbConn();
+			//답글 레코드 추가
+			String sql = "insert into detailBoard(no, coment, userid, num, starr, ip, board, writedate) values(dbsq.nextval, ?,?,?,?,?,?, sysdate)";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, vo.getComent());
+			pstmt.setString(2, vo.getUserId());
+			pstmt.setInt(3, vo.getNum());
+			pstmt.setInt(4, vo.getStarr());
+			pstmt.setString(5, vo.getIp());
+			pstmt.setString(6, vo.getBoard());
+			
+			cnt = pstmt.executeUpdate();
+			
+		}catch(Exception e) {e.printStackTrace();}
+		finally{dbClose();}
+		
+		return cnt;
+	}
+
+	@Override
+	public List<DetailBoardVO> replySelect(int num) {
+		List<DetailBoardVO> list = new ArrayList<DetailBoardVO>();
+		
+		try {
+			dbConn();
+			///답글 선택
+			String sql = "select no, num, coment, userId, writedate, starr from boardReply where num=? order by no desc";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				DetailBoardVO replyVo = new DetailBoardVO();
+				replyVo.setNo(rs.getInt(1));
+				replyVo.setNum(rs.getInt(2));
+				replyVo.setComent(rs.getString(3));
+				replyVo.setUserId(rs.getString(4));
+				replyVo.setWriteDate(rs.getString(5));
+				replyVo.setStarr(rs.getInt(6));
+				
+				list.add(replyVo);
+			}
+		}catch(Exception e) {e.printStackTrace();}
+		finally {dbClose();}
+		
+		return list;
+	}
+
+	@Override
+	public void replyDelete(int no) {
+		
+	}
+
+	@Override
+	public int replyUpdate(DetailBoardVO vo) {
+		
+		return 0;
+	}
+
 }

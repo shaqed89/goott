@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<!-- http-equiv="refresh"   -->
 	<meta charset="UTF-8" http-equiv="refresh" content="5; url='main/main.do'">
 	<link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -11,26 +10,33 @@
 	<style>
 		* {margin:0px; padding:0px;}
 		body{background:black;}
-		#gg {width:100%;height:1000px;background:white;margin-top:300px;
-			 position:absolute;
+		#gg {background:white;margin-top:200px;
 		}
 		#img {background:white url(img/index.jpg) no-repeat 50%;height:800px;
-			  padding-top:100px;
-			  background-size:700px 700px; opacity:0;
+			  position:relative;z-index:5;background-size:700px 700px; opacity:0;
 			 
 		}
 		#txt {font-size:5em; font-family: 'Indie Flower', cursive; font-weight:bold;
-			  position:relative;top:-10%; left:40%;opacity:0;margin:auto;
+			  position:relative;z-index:10;opacity:0;margin:auto;
 		}
 		
 		
 	</style>
 	<script>
 		$(function() {
+			$(document).css("width", $(window).width());
+			$("#gg").css("width", $(window).width()).css("height", $(window).height()-400);
+			$("#img").css("height", $(window).height()-400);
+			$("#txt").css("margin-left", $(window).width()/2-250).css("margin-top", -$(window).height()/2+350);
 			$("#img").animate({opacity:"0.7"}, 1000);
 			$("#txt").delay(1000).animate({opacity:"1"}, 1000);
 			$("#img").delay(2000).animate({opacity:"0"}, 800);
 			$("#txt").delay(1000).animate({opacity:"0"}, 800);
+			$(window).resize(function() {
+				$("#gg").css("width", $(window).width()).css("height", -$(window).height()-400);
+				$("#img").css("height", $(window).height()-400);
+				$("#txt").css("margin-left", $(window).width()/2-250).css("margin-top", -$(window).height()/2+350);
+			});
 		});
 	</script>
 	</head>

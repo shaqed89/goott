@@ -125,7 +125,7 @@
 			//                      form에 있는 데이터를 직렬화하는 기능이다.
 			var params = $("#boardFrm").serialize(); //?num=gjgj&coment=jfkdjfkd
 			$.ajax({
-				url : "/WebMVC/board/replyForm.do",
+				url : "/kimbo/tattooist/detailWriteOk.do",
 				data : params, 
 				success : function(result){
 					$("#replyList").html(result);
@@ -141,7 +141,7 @@
 	//        no : 댓글번호, num : 원글번호
 	function delComent(no, num) {
 		$.ajax({
-			url : "/kimbo/Tattooist/detailBoardDel.do",
+			url : "/kimbo/tattooist/detailBoardDel.do",
 			data : "no=" + no + "&num=" + num,
 			success : function(result) {
 				$("#replyList").html(result);
@@ -171,7 +171,7 @@
 		$("#replyEdit").submit(function() {
 			var params2 = $("#replyEdit").serialize();
 			$.ajax({
-				url : "/kimbo/Tattooist/detailBoardEdit.do",
+				url : "/kimbo/tattooist/detailBoardEdit.do",
 				data : params2,
 				success : function(result) {
 					$("#replyList").html(result);
@@ -252,11 +252,11 @@
 		<div class="card my-4">
 			<h5 class="card-header">Leave a Comment:</h5>
 			<div class="card-body">
-				<form name="boardFrm" id="boardFrm" method="post" action="<%=request.getContextPath()%>/detail/detailWriteOk.do?userId=${vo.userId}&num=${vo.num}">
+				<form name="boardFrm" id="boardFrm" method="post" onsubmit="return false">
 					<div class="form-group">
 						<textarea id="coment" name="coment" class="form-control" rows="3"></textarea>
 					</div>
-					<select name="star" id="star">
+					<select name="starr" id="starr">
 						<option value="not">==별점선택==</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -277,7 +277,7 @@
 			<div class="media mb-4" id="board${detailBoardyVo.no }">
 				<img class="d-flex mr-3 rounded-circle" src="/kimbo/img/tattooist/50x50.png"/>
 				<div class="media-body">
-					<h5 class="mt-0">${detailBoardVo.userId } <span style="float:right;">날짜 : ${detailBoardVo.writeDate }  별점 : ${detailBoardVo.star }</span></h5>
+					<h5 class="mt-0">${detailBoardVo.userId } <span style="float:right;">날짜 : ${detailBoardVo.writeDate }  별점 : ${detailBoardVo.starr }</span></h5>
 						${detailBoardVo.coment }<br/>
 					<c:if test="${userId==detailBoardVo.userId }">
 						<input type="button" value="수정" onclick="editComent(${detailBoardVo.no}, ${vo.num }, '${detailBoardVo.coment }')"/>
