@@ -49,7 +49,7 @@ public class ReviewDAO extends DBConn implements Reviewinterface {
 		int result = 0;
 		try {
 			dbConn();
-			String sql = "insert into review(no, subject, genre, bodypart, content, image, regdate, writer, tattooist) values(boardsq.nextVal,?,?,?,?,?,sysdate,?,?)";
+			String sql = "insert into review(no, subject, genre, bodypart, content, image, regdate, writer, tattooist) values(review_sq.nextVal,?,?,?,?,?,sysdate,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getSubject());
 			pstmt.setString(2, vo.getGenre());

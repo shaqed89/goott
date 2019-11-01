@@ -141,7 +141,7 @@ $(function(){
 	<div id="t_list">
 		<c:forEach var="v" items="${lst}">
 		<div class="card" style="width:180px">
-	  		<img class="card-img-top" src="<%=request.getContextPath()%>/img/profile/${v.profile}" alt="Card image">
+	  		<a href="<%=request.getContextPath()%>/tattooist/tattooistView.do?userId=${v.userId}&num=${v.num}"><img class="card-img-top" src="<%=request.getContextPath()%>/img/profile/${v.profile}" alt="Card image"></a>
 	  		<div class="card-body">
 	    		<a href="<%=request.getContextPath()%>/tattooist/tattooistView.do?userId=${v.userId}&num=${v.num}" class="card-title">${v.userId}</a>
 	    		<p class="card-text">${v.addr}</p>

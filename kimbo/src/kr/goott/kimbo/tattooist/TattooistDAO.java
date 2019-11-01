@@ -60,7 +60,7 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 		try {
 			dbConn();
 			
-			String sql = "select userid, genre, subject, part, filename1, hit, num from bro_tattoo where userid=?";
+			String sql = "select userid, genre, subject, part, filename1, filename2, filename3, hit, num from bro_tattoo where userid=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userId);
 			rs = pstmt.executeQuery();
@@ -74,8 +74,10 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 				vo.setSubject(rs.getString(3));
 				vo.setPart(rs.getString(4));
 				vo.setFilename1(rs.getString(5));
-				vo.setHit(rs.getInt(6));
-				vo.setNum(rs.getInt(7));
+				vo.setFilename2(rs.getString(6));
+				vo.setFilename3(rs.getString(7));
+				vo.setHit(rs.getInt(8));
+				vo.setNum(rs.getInt(9));
 				list.add(vo);
 				System.out.println("genre=" + gr);
 			}
@@ -90,7 +92,7 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 	public void tattooDetail(TattooistVO vo) {
 		try {
 			dbConn();
-			String sql = "select title, price, genre, subject, part, sigan, content, filename1, num, userid from bro_tattoo where num=?";
+			String sql = "select title, price, genre, subject, part, sigan, content, filename1, filename2, filename3, num, userid from bro_tattoo where num=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, vo.getNum());
 			
@@ -104,7 +106,9 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 				vo.setSigan(rs.getString(6));
 				vo.setContent(rs.getString(7));
 				vo.setFilename1(rs.getString(8));
-				vo.setUserId(rs.getString(9));
+				vo.setFilename2(rs.getString(9));
+				vo.setFilename3(rs.getString(10));
+				vo.setUserId(rs.getString(11));
 			}
 		}catch(Exception e) {e.printStackTrace();}
 		finally {dbClose();}
@@ -116,7 +120,7 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 		try {
 			dbConn();
 			String sql = "insert into bro_tattoo(num, userid, addr, content, genre, subject, part, price, sigan, "
-					+ " hit, writeDate, photo1, filename1, title) values(tattoosq.nextVal, ?,?,?,?,?,?,?,?,0,sysdate,?,?,?)";
+					+ " hit, writeDate, filename1,filename2, filename3, title) values(tattoosq.nextVal, ?,?,?,?,?,?,?,?,0,sysdate,?,?,?,?)";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getUserId());
 			pstmt.setString(2, vo.getAddr());
@@ -126,12 +130,15 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 			pstmt.setString(6, vo.getPart());
 			pstmt.setString(7, vo.getPrice());
 			pstmt.setString(8, vo.getSigan());
-			pstmt.setString(9, vo.getPhoto1());
-			pstmt.setString(10, vo.getFilename1());
-			pstmt.setString(11, vo.getTitle());
+			pstmt.setString(9, vo.getFilename1());
+			pstmt.setString(10, vo.getFilename2());
+			pstmt.setString(11, vo.getFilename3());
+			pstmt.setString(12, vo.getTitle());
 		
 			result=pstmt.executeUpdate();
 			System.out.println("filename1=" + vo.getFilename1());
+			System.out.println("filename2=" + vo.getFilename2());
+			System.out.println("filename3=" + vo.getFilename3());
 			System.out.println("insert result=" + result);
 		}
 		catch(Exception e) {e.printStackTrace();}
@@ -212,7 +219,7 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 		try {
 			dbConn();
 			//답글 레코드 추가
-			String sql = "insert into detailBoard(no, coment, userid, num, starr, ip, board, writedate) values(dbsq.nextval, ?,?,?,?,?,?, sysdate)";
+			String sql = "insert into bro_reply(no, coment, userid, num, starr, ip, board, writedate) values(dbsq.nextval, ?,?,?,?,?,?, sysdate)";
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, vo.getComent());
@@ -237,7 +244,7 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 		try {
 			dbConn();
 			///답글 선택
-			String sql = "select no, num, coment, userId, writedate, starr from detailBoard where num=? order by no desc";
+			String sql = "select no, num, coment, userId, to_char(writedate, 'YYYY-MM-DD hh24:mi'), starr from bro_reply where num=? and board='t' order by no desc";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
@@ -261,13 +268,31 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 
 	@Override
 	public void replyDelete(int no) {
-		
+		try {
+			dbConn();
+			String sql = "delete from bro_reply where no=? and board='t'";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			pstmt.executeUpdate();
+		}catch(Exception e) {e.printStackTrace();}
+		finally {dbClose();}
 	}
 
 	@Override
 	public int replyUpdate(DetailBoardVO vo) {
+		int cnt=0;
+		try {
+			dbConn();
+			String sql = "update bro_reply set coment=? where no=? and board='t'";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getComent());
+			pstmt.setInt(2, vo.getNo());
+			
+			cnt = pstmt.executeUpdate();
+		}catch(Exception e) {e.printStackTrace();}
+		finally {dbClose();}
 		
-		return 0;
+		return cnt;
 	}
 
 }

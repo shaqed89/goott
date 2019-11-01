@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="../plugin/jquery.bxslider.css" type="text/css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../resource/header.css" type="text/css">
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../plugin/jquery.bxslider.js"></script>
@@ -101,6 +103,11 @@
 	.product_view .btns > a.btn1 { background: #666;}
 	.product_view .btns > a.btn2 { background: #0a56a9;}
 	/**/
+	#title{margin:0 0 0 20%;font-weight:800;color:#000;}
+	#apply {width:400px;height:400px;background-color:white;overflow:hidden;padding: 20px 20px 0;margin:450px 0 100px 800px;}
+	#noticeDiv{width:400px;height:405px;color:#f00;background-color:pink;font-family:바탕체;font-weight:bold;margin:450px 0 100px 800px;}
+	#c1, #c2 {width:350px;height:60px;background-color:white;margin:10px auto;color:black;text-align:center;line-height:15px;padding-top:20px;}
+	.modal-content{border:none;}
 	
 	#info {position:relative;z-index:15;border:1px solid red;width:120px;height:280px;text-align:center;line-height:70px;margin-top:-280px;color:white;font-size:1.3em;color:pink;}
 	#info2 {position:relative;z-index:15;float:right;border:1px solid green;width:250px;height:280px;text-align:left;line-height:70px;margin-top:-280px;margin-left:30px;color:orange;font-size:1.3em;font-weight:800;}
@@ -116,6 +123,11 @@
 			document.img2.src="../img/transHeart2.jpg";
 			state=0;
 		}
+	}
+	
+	function showBig(val) {
+		var obj = document.getElementById("big");
+		obj.src="/kimbo/img/tattoo/" + val;
 	}
 
 	$(function(){
@@ -136,12 +148,35 @@
 				}
 			});
 		});
+		
+		$("#date").datepicker();
+		
+		//일정 시작 날짜 선택
+		$("#schedule_start_date").datepicker({
+			dateFormat : "yy년 mm월 dd일", //날짜 표시 형식
+			showButtonPanel: true
+		});
+		
+		//일정 종료 날짜 선택
+		$("#schedule_end_date").datepicker({
+			dateFormat : "yy년 mm월 dd일", //날짜 표시 형식
+			showButtonPanel: true
+		});
+		
+		//시간 설정
+		var time_str = "<option>--------</option>";
+		for(i=0; i<12; i++){
+			time_str += "<option>"+(i+1)+" : 00</option>"
+		}
+		
+		$("#schedule_start_time").append(time_str);
+		$("#schedule_end_time").append(time_str);
 	});
 	
 	//        no : 댓글번호, num : 원글번호
 	function delComent(no, num) {
 		$.ajax({
-			url : "/kimbo/tattooist/detailBoardDel.do",
+			url : "/kimbo/tattooist/comentDel.do",
 			data : "no=" + no + "&num=" + num,
 			success : function(result) {
 				$("#replyList").html(result);
@@ -150,28 +185,33 @@
 	}
 	
 	// 댓글 수정폼
-	function editComent(no, num, coment) {
-		var tag = "<div class='card-body'><form id='boardFrm' method='post' id='replyEdit' onsubmit='return false'>";
+	function editComent(no, num, coment, starr) {
+		var tag = "<div class='card-body'><form method='post' id='replyEdit' onsubmit='return false'>";
 		tag += "<div class='form-group'><textarea name='coment' rows='3'>" + coment + "</textarea></div>";
 		tag += "<select name='starr' id='starr'>";
 		tag += "<option value='not'>==별점선택==</option>";
-		tag += "<option value='s1'>1</option>";
-		tag += "<option value='s2'>2</option>";
-		tag += "<option value='s3'>3</option>";
-		tag += "<option value='s4'>4</option>";
-		tag += "<option value='s5'>5</option></select>";
+		tag += "<option value='1'>1</option>";
+		tag += "<option value='2'>2</option>";
+		tag += "<option value='3'>3</option>";
+		tag += "<option value='4'>4</option>";
+		tag += "<option value='5'>5</option></select>";
 		tag += "<input type='submit' class='btn btn-primary' value='댓글등록'/>";
 		tag += "<input type='hidden' name='no' value='" + no + "'/>";
 		tag += "<input type='hidden' name='num' value='" + num + "'/>";
+		tag += "<input type='hidden' name='starr' value='" + starr + "'/>";
 		tag += "</form></div>";
 		
-		document.getElementById("board" + no).innerHTML = tag;
+		var id = 'board' + no;
+		console.log(id)
+		console.log(coment);
+		document.getElementById(id).innerHTML = tag;
+		
 		
 		//댓글 수정
 		$("#replyEdit").submit(function() {
 			var params2 = $("#replyEdit").serialize();
 			$.ajax({
-				url : "/kimbo/tattooist/detailBoardEdit.do",
+				url : "/kimbo/tattooist/comentEdit.do",
 				data : params2,
 				success : function(result) {
 					$("#replyList").html(result);
@@ -183,6 +223,9 @@
 </script>
 </head>
 <body>
+<header>
+	<jsp:include page="../inc/lee_header.jsp"></jsp:include> 
+</header>
 	<div class="container">
 		
 		<div class="product_view" style="border:1px solid red;margin:10px auto;">
@@ -220,25 +263,75 @@
 				</tbody>
 			</table>
 			<div class="img">
-				<img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" alt="">
+				<img id="big" src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" alt="">
 				<ul><!-- 제일 처음에 작은이미지 두개 -->
-				<li class="on"><a href="#a"><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" alt=""></a></li>
-				<li><a href="#a"><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" alt=""></a></li>
+				<li class="on"><a href="#a"><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" onclick="showBig('${vo.filename1}')"/></a></li>
+				<c:if test="${!empty vo.filename2 }">
+					<li><a href="#a"><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename2}" onclick="showBig('${vo.filename2}')"/></a></li>
+				</c:if>
+				<c:if test="${!empty vo.filename3 }">
+					<li><a href="#a"><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename3}" onclick="showBig('${vo.filename3}')"/></a></li>
+				</c:if>
 				</ul>
 			</div>
 			<div class="btns">
-				<a href="#a" class="btn1">문의하기</a>
-				<a href="#a" class="btn2">신청하기</a>
+				<a href="#a" class="btn1" id="btn1" data-toggle="modal" data-target="#noticeDiv">문의하기</a>
+				<a href="#a" class="btn2" id="btn2" data-toggle="modal" data-target="#apply">신청하기</a>
+			</div>
+		</div>
+		
+		<div id="noticeDiv" class="modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="title">★ 상담 시작하기 ★</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div id="c1">① 작가 오픈카톡 링크 복사<br/>https://open.kakao.com/~</div><hr>
+						<div id="c2">② 카톡 대화창에 붙여넣고<br/>대화실행!!</div>
+					</div>
+					<div  class="modal-footer">
+						<button type="button" class="btn btn-block btn-danger" data-dismiss="modal">닫기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="apply" class="modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!--  -->
+					<h2>일정을 등록하세요.</h2>
+					<label for="schedule_name">일정이름</label> <input type="text" id="schedule_name"/>
+					<label for="schedule_start_date">시작날짜</label> <input type="text" id="schedule_start_date"/>
+					<label for="schedule_start_time">시작시간</label> 
+					<select id="schedule_start_AMPM">
+						<option>AM</option>
+						<option>PM</option>
+					</select>
+					<select id="schedule_start_time" style="width:147px">
+					</select>
+				</div>
+				<div  class="modal-footer">
+					<button type="button" class="btn btn-block btn-success" data-dismiss="modal">등록</button><br/>
+					<button type="button" class="btn btn-block btn-danger" data-dismiss="modal">닫기</button>
+				</div>
 			</div>
 		</div>
 		
 		<div id="eve">
-			<a href="event.jsp" target="_blank"><img src="../img/tattooist/kkkkk.jpg" style="width:100%;height:80px;"/></a>
-		</div>
+			<a href="event.jsp" target="_blank"><img src="../img/tattooist/kkkkk.jpg" style="width:100%; height:80px;"/></a>
+		</div> 
 		
 		<div>
-			<div><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" style="width:80%;margin-left:120px;"/></div>
-			<div><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" style="width:80%;margin-left:120px;margin-top:40px;"/></div>
+			<div><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename1}" style="width:80% ;margin-left:120px;"/></div>
+			<c:if test="${!empty vo.filename2 }">
+				<div><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename2}" style="width:80%;margin-left:120px;margin-top:40px;"/></div>
+			</c:if>
+			<c:if test="${!empty vo.filename3 }">
+				<div><img src="<%=request.getContextPath()%>/img/tattoo/${vo.filename3}" style="width:80%;margin-left:120px;margin-top:40px;"/></div>
+			</c:if>
 		</div>
 		
 		<hr/>
@@ -273,29 +366,40 @@
 		
 		<div id="replyList">
 			<c:forEach var="detailBoardVo" items="${list }">
-			<hr/>
-			<div class="media mb-4" id="board${detailBoardyVo.no }">
-				<img class="d-flex mr-3 rounded-circle" src="/kimbo/img/tattooist/50x50.png"/>
-				<div class="media-body">
-					<h5 class="mt-0">${detailBoardVo.userId } <span style="float:right;">날짜 : ${detailBoardVo.writeDate }  별점 : ${detailBoardVo.starr }</span></h5>
-						${detailBoardVo.coment }<br/>
-					<c:if test="${userId==detailBoardVo.userId }">
-						<input type="button" value="수정" onclick="editComent(${detailBoardVo.no}, ${vo.num }, '${detailBoardVo.coment }')"/>
-						<input type="button" value="삭제" onclick="delComent(${detailBoardVo.no},${vo.num })"/><br/>
-					</c:if>
+			
+				<div class="media mb-4" id="board${detailBoardVo.no }">
+					<img class="d-flex mr-3 rounded-circle" src="/kimbo/img/tattooist/50x50.png"/>
+					<div class="media-body">
+						<h5 class="mt-0">${detailBoardVo.userId } <span style="float:right;">날짜 : ${detailBoardVo.writeDate }  별점 : ${detailBoardVo.starr }
+						<c:set var="st" value="${detailBoardVo.starr }"/>
+						<%
+							int n = Integer.parseInt(String.valueOf(pageContext.getAttribute("st")));
+							for(int i=1;i<=5-n;i++) {
+								%>
+								<img src="/kimbo/img/nostar.png" style="width:30px;height:30px;"/>
+								<%
+							}
+							for(int i=1;i<=n;i++) {
+								%>
+								<img src="/kimbo/img/star.png" style="width:30px;height:30px;"/>
+								<%
+							}
+						%>
+						</span></h5>
+							${detailBoardVo.coment }<br/>
+						<c:if test="${userId==detailBoardVo.userId }">
+							<input type="button" value="수정" onclick="editComent(${detailBoardVo.no}, ${vo.num },'${detailBoardVo.coment }', ${detailBoardVo.starr} )"/>
+							<input type="button" value="삭제" onclick="delComent(${detailBoardVo.no},${vo.num })"/><br/>
+						</c:if>
+					</div>
 				</div>
-			</div>
+				<hr/>
 			</c:forEach>
 		</div>
 		
-		<!-- <div class="media mb-4">
-			<img class="d-flex mr-3 rounded-circle" src="../img/tattooist/50x50.png"/>
-			<div class="media-body">
-				<h5 class="mt-0">해영쨩 <span style="float:right;">날짜 : 2019-03-24 별점 : 3</span></h5>
-				따흐흑.....피곤해...
-			</div>
-		</div> -->
-		
 	</div>
+<footer style="clesr:left; background-color:#191919">
+	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
+</footer>
 </body>
 </html>
