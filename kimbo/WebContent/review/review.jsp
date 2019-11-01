@@ -23,7 +23,7 @@
 	$(function() {
 	 $("#review_write").click(function(){
 			location.href="<%=request.getContextPath()%>/review/reviewWrite.do";
-		}); 
+		});
 	$("#tgl").click(function(){
 		$("#toggle-usage").css("display","block");
 		});
@@ -55,13 +55,13 @@
 			<div class="reviewLeft" style="width:200px">
 				<div class="reviewImg" uk-lightbox>
 					<a class="uk-button uk-button-default" href="<%=request.getContextPath()%>/img/review/${r.review_img}" data-caption="Image">
-						<img src="<%=request.getContextPath()%>/img/review/${r.review_img}" alt="default thumb" class="thumb"/>	
+						<img src="<%=request.getContextPath()%>/img/review/${r.review_img}" alt="default thumb" class="thumb" uk-tooltip="사진을 클릭하면 크게 볼수있습니다."/>	
 					</a>
 				</div>
 			</div>
 			<div class="reviewCenter" style="width:800px">
 					<ul>
-						<li class=uk-alert>${r.num }</li>
+						<li class="uk-alert">${r.num }</li>
 						<li class="uk-alert-primary" uk-alert>${r.subject }</li>
 						<li class="uk-alert-primary" uk-alert>${r.genre }</li>
 						<li class="uk-alert-primary" uk-alert>${r.part }</li>
