@@ -185,7 +185,7 @@
 	}
 	
 	// 댓글 수정폼
-	function editComent(no, num, coment) {
+	function editComent(no, num, coment, starr) {
 		var tag = "<div class='card-body'><form method='post' id='replyEdit' onsubmit='return false'>";
 		tag += "<div class='form-group'><textarea name='coment' rows='3'>" + coment + "</textarea></div>";
 		tag += "<select name='starr' id='starr'>";
@@ -198,6 +198,7 @@
 		tag += "<input type='submit' class='btn btn-primary' value='댓글등록'/>";
 		tag += "<input type='hidden' name='no' value='" + no + "'/>";
 		tag += "<input type='hidden' name='num' value='" + num + "'/>";
+		tag += "<input type='hidden' name='starr' value='" + starr + "'/>";
 		tag += "</form></div>";
 		
 		var id = 'board' + no;
@@ -375,19 +376,19 @@
 							int n = Integer.parseInt(String.valueOf(pageContext.getAttribute("st")));
 							for(int i=1;i<=5-n;i++) {
 								%>
-								<img src="/kimbo/img/nostar.png"/>
+								<img src="/kimbo/img/nostar.png" style="width:30px;height:30px;"/>
 								<%
 							}
 							for(int i=1;i<=n;i++) {
 								%>
-								<img src="/kimbo/img/star.png"/>
+								<img src="/kimbo/img/star.png" style="width:30px;height:30px;"/>
 								<%
 							}
 						%>
 						</span></h5>
 							${detailBoardVo.coment }<br/>
 						<c:if test="${userId==detailBoardVo.userId }">
-							<input type="button" value="수정" onclick="editComent(${detailBoardVo.no}, ${vo.num },'${detailBoardVo.coment }')"/>
+							<input type="button" value="수정" onclick="editComent(${detailBoardVo.no}, ${vo.num },'${detailBoardVo.coment }', ${detailBoardVo.starr} )"/>
 							<input type="button" value="삭제" onclick="delComent(${detailBoardVo.no},${vo.num })"/><br/>
 						</c:if>
 					</div>
