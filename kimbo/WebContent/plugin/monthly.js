@@ -11,20 +11,20 @@ $(function () {
 			var defaults = {
 				dataType: "xml",
 				disablePast: false,
-				eventList: true,
+				eventList: false,
 				events: "",
 				jsonUrl: "",
-				linkCalendarToEventUrl: false,
+				linkCalendarToEventUrl: true,
 				maxWidth: false,
-				mode: "event",
+				mode: "",
 				setWidth: false,
 				showTrigger: "",
 				startHidden: false,
-				stylePast: false,
+				stylePast: true,
 				target: "",
 				useIsoDateFormat: false,
 				weekStart: 0,	// Sunday
-				xmlUrl: ""
+				xmlUrl: "kimbo_event.xml"
 			};
 
 			var	options = $.extend(defaults, customOptions),

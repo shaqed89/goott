@@ -3,8 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:if test="${userId==null ||userId=='' }">
    <script>
-   	  alert("로그인이 필요합니다.");
-   	location.href="/register/signup.do";
+   	  	alert("로그인이 필요합니다.");
+    	history.back();
    </script>
 </c:if>
 <!DOCTYPE html>
@@ -60,10 +60,10 @@ $(function(){
              alert("작업 받으신 작가의 아이디를 입력해주세요.");
              return false;
           }
-         if($("#content").val()==""){
+      /*    if($("#content").val()==""){
              alert("내용을 입력해주세요.")
              return false;
-          }
+          } */
          if($("#fileName").val()==""){
             alert("첨부파일을 추가하세요")
             return false;
