@@ -1,2 +1,0 @@
-# goott
-Team project
