@@ -8,15 +8,14 @@
 
 <link rel="stylesheet"	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"	crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../resource/main_lee.css" type="text/css">
-<link rel="stylesheet" href="../resource/header.css" type="text/css">
+<link rel="stylesheet" href="../resource/css/kimbo.css" type="text/css">
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <style>
-	section{font-family: 'Gaegu', cursive; clear:left;}
-	
+
 	#slide{width:100%; height:800px; background-color:lightgray; margin:10px 0;}
 	#top5{width:100%; height:400px;}
 	#top5>h1{text-align:center;}
@@ -31,7 +30,6 @@
 	#main_top_tattoo li{width:230px; height:230px; float:left;}
 	#main_top_tattoo li>a img{width:100%; height:100%;}
 
-	footer{border-Top:1px solid gray;}
 </style>
 <script>
 //top5

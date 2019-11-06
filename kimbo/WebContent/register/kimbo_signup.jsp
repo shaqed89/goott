@@ -9,15 +9,12 @@
 
 <link rel="stylesheet"	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"	crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../resource/main_lee.css" type="text/css">
-<link rel="stylesheet" href="../resource/header.css" type="text/css">
+<link rel="stylesheet" href="../resource/css/kimbo.css" type="text/css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <style>
-	.container{width:1200px; max-width:1200px; padding:0; position:realative; }
-	footer{clear:left;}
 
 	#title{	font-size: 50px; margin-top: 50px; text-align: center;}
 	#lbm{margin: 0 auto; width: 300px;	}
@@ -54,10 +51,11 @@ $(function(){
 </script>
 </head>
 <body>
-<header class="container">
+<header>
 	<jsp:include page="../inc/lee_header.jsp"></jsp:include>
 </header>
-	<div id="main" class="container">
+<section style="height:700px">
+	<div id="main">
 		<div id="title">회원가입</div>
 		<div id="lbm">
 			<hr/>
@@ -87,7 +85,8 @@ $(function(){
 		</div>
 		
 	</div>
-<footer>
+</section>
+<footer  style="clear:left; background-color:#191919">
 	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>
 </body>

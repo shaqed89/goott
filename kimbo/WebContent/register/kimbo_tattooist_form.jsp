@@ -9,8 +9,7 @@
 	<title>Good.D Tattoo</title>
 <link rel="stylesheet"	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"	crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../resource/main_lee.css" type="text/css">
-<link rel="stylesheet" href="../resource/header.css" type="text/css">
+<link rel="stylesheet" href="../resource/css/kimbo.css" type="text/css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -261,10 +260,10 @@
 </script>
 </head>
 <body>
-<header class="container">
+<header>
 	<jsp:include page="../inc/lee_header.jsp"></jsp:include>
 </header>
-<section class="container">
+<section style="height:800px">
 	<div style="text-align:center">
 	<h2>작가회원 가입</h2>
 	<form method="post" id="tattooist_frm" action="<%= request.getContextPath()%>/register/tattooist_Ok.do" onsubmit="return checks()" enctype="multipart/form-data">
@@ -373,7 +372,7 @@
 	</form>
 	</div>
 </section>
-<footer>
+<footer style="clear:left; background-color:#191919">
 	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>
 </body>

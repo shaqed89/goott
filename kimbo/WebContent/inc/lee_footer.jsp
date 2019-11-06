@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <style>
-#footer{font-size:small;background:#191919;margin:0 auto;
+/* #footer{font-size:small;background:#191919;margin:0 auto;
 		padding-right:10px;}
 #ftLeft>ul>li{list-style-type:none;color:gray;}
 #ftLeft>ul>li a{text-decoration:none;color:gray;}
@@ -36,7 +36,7 @@
 #ytube a:last-of-type {display: none;}
 #ytube:hover a:last-of-type {display: block;}
 #gtHome{float:right;left:600px;font-size:3em;bottom:55px;position:relative;border-top:1px solid gray;font-family: 'Indie Flower', cursive;}
-#gtHome a{color:#FFF;}
+#gtHome a{color:#FFF;} */
 </style>
 <script>
 	$(function(){

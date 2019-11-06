@@ -10,12 +10,11 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="../resource/main_lee.css" type="text/css">
-<link rel="stylesheet" href="../resource/header.css" type="text/css">
-<link rel="stylesheet" href="../resource/lee_notice.css" type="text/css">
 <link
 	href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap"
 	rel="stylesheet">
+<link rel="stylesheet" href="../resource/css/kimbo.css" type="text/css">
+<link rel="stylesheet" href="../resource/lee_notice.css" type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
@@ -70,10 +69,10 @@
 </script>
 </head>
 <body>
-<header class="container">
+<header>
 	<jsp:include page="../inc/lee_header.jsp"></jsp:include>
 </header>
-<section class="container">
+<section>
 <!-- F&Q -->
 	<div id="notice" class="container">
 		<h4>F&Q | 자주묻는질문</h4>
@@ -123,7 +122,7 @@
 		</div>
 	</div>
 	</section>
-<footer>
+<footer style="clear:left; background-color:#191919">
 	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>
 </body>
