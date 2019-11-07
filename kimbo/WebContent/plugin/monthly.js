@@ -10,8 +10,8 @@ $(function () {
 			// These are overridden by options declared in footer
 			var defaults = {
 				dataType: "xml",
-				disablePast: false,
-				eventList: false,
+				disablePast: true,
+				eventList: true,
 				events: "",
 				jsonUrl: "",
 				linkCalendarToEventUrl: true,
@@ -462,12 +462,14 @@ $(function () {
 				theList.show();
 				theList.css("transform");
 				theList.css("transform", "scale(1)");
-				$(parent + ' .monthly-list-item[data-number="' + whichDay + '"]').show();
+//				$(parent + ' .monthly-list-item[data-number="' + whichDay + '"]').show();
 				theList.scrollTop(topPos);
 				viewToggleButton();
 				if(!options.linkCalendarToEventUrl) {
 					event.preventDefault();
 				}
+				
+				
 			// If picker, pick date
 			} else if (options.mode === "picker") {
 				var	setMonth = $(parent).data("setMonth"),

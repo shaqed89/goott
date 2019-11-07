@@ -87,7 +87,7 @@ $(function(){
 	</div>
 </div>
 </section>
-<footer style="clesr:left; background-color:#191919">
+<footer style="clear:left; background-color:#191919">
 	<jsp:include page="../inc/lee_footer.jsp"></jsp:include>
 </footer>
 </body>

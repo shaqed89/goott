@@ -4,20 +4,20 @@ ul, li{list-style-type:none;}
 
 .container{width:1200px; max-width:1200px; padding:0; position:relative; }
 
-a:link{color:#000; text-decoration:none} /* 링크 걸어져 있을떄*/
-a:visited{color:#000; text-decoration:none} /* 방문했을때 */
-a:hover{color:gray;text-decoration:none;} /* 마우스 오버 했을떄 */
-a:active{color:gray} /* 마우스 눌렀을때 */
+header a:link, footer a:link{color: ghostwhite; text-decoration:none} /* 링크 걸어져 있을떄*/
+header a:visited, footer a:visited{color: ghostwhite; text-decoration:none} /* 방문했을때 */
+header a:hover, footer a:hover{color:gray;text-decoration:none;} /* 마우스 오버 했을떄 */
+header a:active, footer a:active{color:gray} /* 마우스 눌렀을때 */
 
-body{padding-top:150px;}
+body{padding-top:100px;}
 
 /* header */
-header{background-color: ghostwhite; position: fixed; top: 0; right: 0; left: 0;
+header{background-color: #191919; position: fixed; top: 0; right: 0; left: 0;
        border-bottom: 1px solid gray; z-index: 10000;}
-#header{font-family: 'Indie Flower', cursive; width:100%; height:150px;}
+#header{font-family: 'Indie Flower', cursive; width:100%; height:100px;}
 #header div{float:left;} 
-#header_left{width:200px;height:150px;font-size:40px; padding:20px 0;}
-#center{width:800px;height:130px;}
+#header_left{width:200px;height:100px;font-size:35px;}
+#center{width:800px;height:100px;}
 
 
 #header_center1{width:800px; height:50px;color:#fff;position:absolute; text-align:center;
@@ -25,20 +25,19 @@ header{background-color: ghostwhite; position: fixed; top: 0; right: 0; left: 0;
 				}
 				
 #header_center2{width:600px;height:50px;position:relative;color:black; display:block;
-				font-size:30px;left:100px;top:50px;margin:0 auto;text-align:center;}
+				font-size:28px; left:100px; top:40px; margin:0 auto; text-align:center;}
 
 #header_center2 a{margin:0px 10px;width:20%;transform:scale(3.0);}
 
-#header_right{width:200px;height:130px;position:relative;left:0;}
+#header_right{width:200px;height:100px; position:relative; left:0;}
 #header_right a{font-size:20px;}
 #header_right ul li{float:left;margin:50px 10px}
 
 /* section */
-section{font-family: 'Gaegu', cursive; clear: left; border-bottom: 1px solid gray;
-		margin: 10px 0; padding:20px 0;}
+section{font-family: 'Gaegu', cursive; clear: left;	margin: 10px 0; padding:20px 0;}
 		
 /* footer */
-footer{height:200px;}
+footer{height:150px;}
 #footer{font-size:small;background:#191919;margin:0 auto;
 		padding-right:10px;}
 #ftLeft>ul>li{list-style-type:none;color:gray;}

@@ -14,7 +14,6 @@
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <style>
-	section{font-family: 'Gaegu', cursive;}
 	
 	#title {color: black; margin-top: 30px;	margin-left: 20px;}
 	#search {margin: 30px auto;	height: 40px; width: 450px;}
@@ -34,7 +33,9 @@
 	
 	
 	select{height: 40px; width:150px; vertical-align: middle; border-radius: 3px;}
-	.card{float: left; margin: 5px 10px;}	
+	.card{float: left; margin: 5px 10px;}
+	.card-head{text-align:center;}
+	.card-head img{width:20px; height:auto;}	
 	.card-img-top{height: 200px;}
 	.card-body{padding: 0.25rem;}
 	
@@ -105,6 +106,14 @@ $(function(){
 	 }
 	});
 	
+	$(".card-head").click(function(){
+
+ 		if($(this).prop("src")!="/kimbo/img/heart.png"){
+			$(this).children("img").prop("src", "<%=request.getContextPath()%>/img/heart.png");
+		}else{
+			$(this).children("img").prop("src", "<%=request.getContextPath()%>/img/transHeart2.jpg");
+		}
+	});u
 
 });
 </script>
@@ -117,7 +126,7 @@ $(function(){
 </header>
 <section>
 	<form>
-		<div id="search">
+		<div id="search" class="container">
 			<input type="text" id="textse" placeholder="Search..." />
 			<input type="submit" id="btnse" name="btnse" value="검색" class="btn btn-primary"/>
 		</div>
@@ -138,9 +147,10 @@ $(function(){
 		</div>
 	</form>
 	<hr/>
-	<div id="t_list">
+	<div id="t_list" class="container">
 		<c:forEach var="v" items="${lst}">
 		<div class="card" style="width:180px">
+			<div class="card-head"><img src="<%=request.getContextPath()%>/img/transHeart2.jpg"/></div>
 	  		<a href="<%=request.getContextPath()%>/tattooist/tattooistView.do?userId=${v.userId}&num=${v.num}"><img class="card-img-top" src="<%=request.getContextPath()%>/img/profile/${v.profile}" alt="Card image"></a>
 	  		<div class="card-body">
 	    		<a href="<%=request.getContextPath()%>/tattooist/tattooistView.do?userId=${v.userId}&num=${v.num}" class="card-title">${v.userId}</a>

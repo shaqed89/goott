@@ -62,8 +62,7 @@ $(function(){
 </script>
 	<div id="header" class="container">
 		<div id="header_left">
-			<a href="<%=request.getContextPath()%>/main/main.do">Good.D<br />TATTO
-			</a>
+			<a href="<%=request.getContextPath()%>/main/main.do">Good.D TATTOO</a>
 		</div>
 		<div id="center">
 			<div id="header_center2">
