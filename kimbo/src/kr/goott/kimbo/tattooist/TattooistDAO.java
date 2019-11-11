@@ -219,7 +219,7 @@ public class TattooistDAO extends DBConn implements TattooistInterface {
 		try {
 			dbConn();
 			//답글 레코드 추가
-			String sql = "insert into bro_reply(no, coment, userid, num, starr, ip, board, writedate) values(dbsq.nextval, ?,?,?,?,?,?, sysdate)";
+			String sql = "insert into bro_reply(no, coment, userid, num, starr, ip, board, writedate) values(reply_sq.nextval, ?,?,?,?,?,?, sysdate)";
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, vo.getComent());
