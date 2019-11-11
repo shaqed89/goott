@@ -1,11 +1,10 @@
 @charset "UTF-8";
-.container{width:1200px; max-width:1200px; padding:0; position:realative; }
 
 section{width:100%; font-family: 'Gaegu', cursive;}
 section>div{float:left;}
 
 
-#my_page_side{width:200px; height:100%;}
+#my_page_side{width:200px; height:100%; float:left;}
 #my_title{width:200px; height:100px; font-family: 'Indie Flower', cursive; font-size:40px; padding:10px 30px;}
 #side_menu{color:white; font-family: 'Gaegu', cursive; font-size:20px;}
 #side_menu li{width:200px; float:left;}

@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="../plugin/jquery.bxslider.css" type="text/css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Gaegu|Indie+Flower&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../resource/header.css" type="text/css">
+<link rel="stylesheet" href="../resource/css/kimbo.css" type="text/css">
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -19,9 +19,9 @@
 <title>Good.D Tattoo_detail</title>
 <style>
 	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-	*{margin: 0px;padding: 0px;font-family:'Nanum Gothic', sans-serif; font-size:16px; color:#222;}
+	/* *{margin: 0px;padding: 0px;font-family:'Nanum Gothic', sans-serif; font-size:16px; color:#222;}
 	body{border:1px solid gray;}
-	
+	 */
 	/* #box {border:1px solid red;width:600px;height:400px;float:left;position:absolute;z-index:5;}
 	#box>img {position:absolute;z-index:10;top:365px;left:10px;}
 	#bxSlide img {width:600px;height:350px;}

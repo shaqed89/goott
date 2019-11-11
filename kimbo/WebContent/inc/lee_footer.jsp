@@ -1,50 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<style>
-/* #footer{font-size:small;background:#191919;margin:0 auto;
-		padding-right:10px;}
-#ftLeft>ul>li{list-style-type:none;color:gray;}
-#ftLeft>ul>li a{text-decoration:none;color:gray;}
-#footer>a{text-decoration:none;color:#fff;}
-#ft3, #ft4{border:1px solid lightgray;}
-#ftLeft{width:600px;height:130px;}
-#ftLeft>ul>li>a{margin:0 10px 0 0;line-height:70px}
-#footer>a:hover, #footer>a:link{color:#fff;}
-#ftLeft>ul>li{font-size:11.5px;float:left;position:relative;margin:0 5px 0 0;}
-#ftRight{width:600px;}
-
-#face{left:965px;bottom:105px;position:relative;}
-#face a{position:absolute;}
-
-#insta{left:1000px;bottom:105px;position:relative;}
-#insta a{position:absolute;}
-
-#ytube{left:930px;bottom:105px;position:relative;}
-#ytube a{position:absolute;}
-#ytube img{border-radius:10px;}
-
-#face:hover a:first-of-type {display: none;}
-#face a:last-of-type {display: none;}
-#face:hover a:last-of-type {display: block;}
-
-#insta:hover a:first-of-type {display: none;}
-#insta a:last-of-type {display: none;}
-#insta:hover a:last-of-type {display: block;}
-
-#ytube:hover a:first-of-type {display: none;}
-#ytube a:last-of-type {display: none;}
-#ytube:hover a:last-of-type {display: block;}
-#gtHome{float:right;left:600px;font-size:3em;bottom:55px;position:relative;border-top:1px solid gray;font-family: 'Indie Flower', cursive;}
-#gtHome a{color:#FFF;} */
-</style>
-<script>
-	$(function(){
-		$("#face1").on({mouseenter:function(){
-			$("#face2").hide("fast");	
-		}});
-	});
-</script>
 <div id="footer" class="container">
 	<div id="ftLeft">
 		<ul>

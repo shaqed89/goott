@@ -82,7 +82,7 @@ $(function(){
 				
 				<c:if test="${userName==null }">
 					<li data-toggle="modal" data-target="#myModal">
-						<a href="#" onclick="return false">Login</a> 
+						<a href="<%=request.getContextPath()%>/register/login.do">Login</a> 
 					</li>
 					<li>	
 						<a href="<%=request.getContextPath()%>/register/signup.do">Sign Up</a>
@@ -93,14 +93,14 @@ $(function(){
 						<a href="<%=request.getContextPath()%>/register/logoutOk.do">Logout</a>
 					</li>
 					<li>
-						<a href="<%=request.getContextPath()%>/myPage/myPage.do">MyPage</a>
+						<a href="<%=request.getContextPath()%>/myPage/myPage.do" id="login_id">${userName}님</a>
 					</li>
 				</c:if>				
 			</ul>
 		</div>
 	</div>
 
-	<!-- 로그인 다이얼로그 -->
+<%-- 	<!-- 로그인 다이얼로그 -->
 	<div class="container">
 		<!-- The Modal -->
 		<div class="modal" id="myModal">
@@ -142,7 +142,7 @@ $(function(){
 				</form>
 			</div>
 		</div>
-	</div>
+	</div> --%>
 <!-- 
 	<script src="../plugin/bootstrap-validate.js"></script>
 	<script>

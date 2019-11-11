@@ -20,9 +20,9 @@
 		
 		
 		#title {color: black; margin-top: 30px; margin-left: 20px;}
-		#search {border: 1px solid gray; margin: 30px auto; height: 40px; width: 402px; }
-		#textse {color: black; font-size: 16px; height: 40px; width: 350px; padding: 10px;
-				 border: 0; outline: none; float: left;}
+		#search {margin: 30px auto;	height: 40px; width: 450px;}
+		#textse {color: black; font-size: 16px;	height: 40px; width: 350px;	padding: 10px; margin-right: 5px;
+			border: 1px solid gray; border-radius: 3px; outline: none; float: left;}
 		#btnse {width: 50px; height: 100%; border: 0; outline: none; float: left;}
 		h2 {width: 150px; text-align: center; float: left; color: black;}
 		.form-group {float: left; color: aliceblue; width: 800px;}
@@ -163,8 +163,8 @@
 </header>
 <section>
 	<div id="search">
-		<input id="textse" type="text" placeholder="Search..." />
-		<button id="btnse" name="btnse">검색</button>
+		<input type="text" id="textse" placeholder="Search..." />
+		<input type="submit" id="btnse" name="btnse" value="검색" class="btn btn-primary"/>
 	</div>
 	<form>
 		<div class="container">

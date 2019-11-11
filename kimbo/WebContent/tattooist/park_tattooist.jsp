@@ -33,10 +33,10 @@
 	
 	
 	select{height: 40px; width:150px; vertical-align: middle; border-radius: 3px;}
-	.card{float: left; margin: 5px 10px;}
+	.card{float: left; margin: 5px 10px; width:220px;}
 	.card-head{text-align:center;}
 	.card-head img{width:20px; height:auto;}	
-	.card-img-top{height: 200px;}
+	.card-img-top{height: 350px;}
 	.card-body{padding: 0.25rem;}
 	
 	footer{border-Top:1px solid gray;}
@@ -104,16 +104,7 @@ $(function(){
 	   $gugun.append("<option value='"+this+"'>"+this+"</option>");
 	  });
 	 }
-	});
-	
-	$(".card-head").click(function(){
-
- 		if($(this).prop("src")!="/kimbo/img/heart.png"){
-			$(this).children("img").prop("src", "<%=request.getContextPath()%>/img/heart.png");
-		}else{
-			$(this).children("img").prop("src", "<%=request.getContextPath()%>/img/transHeart2.jpg");
-		}
-	});u
+	});	
 
 });
 </script>
@@ -149,12 +140,11 @@ $(function(){
 	<hr/>
 	<div id="t_list" class="container">
 		<c:forEach var="v" items="${lst}">
-		<div class="card" style="width:180px">
-			<div class="card-head"><img src="<%=request.getContextPath()%>/img/transHeart2.jpg"/></div>
+		<div class="card">
 	  		<a href="<%=request.getContextPath()%>/tattooist/tattooistView.do?userId=${v.userId}&num=${v.num}"><img class="card-img-top" src="<%=request.getContextPath()%>/img/profile/${v.profile}" alt="Card image"></a>
 	  		<div class="card-body">
-	    		<a href="<%=request.getContextPath()%>/tattooist/tattooistView.do?userId=${v.userId}&num=${v.num}" class="card-title">${v.userId}</a>
-	    		<p class="card-text">${v.addr}</p>
+	    	<a href="<%=request.getContextPath()%>/tattooist/tattooistView.do?userId=${v.userId}&num=${v.num}" class="card-title">${v.userId}</a>
+	    	<p class="card-text">${v.addr}</p>
 	  		</div>
 		</div>
 		</c:forEach>

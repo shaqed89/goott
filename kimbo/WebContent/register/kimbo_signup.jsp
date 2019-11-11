@@ -43,7 +43,7 @@ $(function(){
 	});
 	/* 작가회원가입 */
 	$("#sign_tattooist").click(function(){
-		if(confirm("타투이스트회원으로 가입하시겠습니까?")){
+		if(confirm("작가회원으로 가입하시겠습니까?")){
 			location.href="<%=request.getContextPath()%>/register/tattooist_form.do";
 		}
 	});
@@ -75,8 +75,8 @@ $(function(){
 			</div>
 			<div id="ch_tattooist">
 				<div id="tattooist_left">
-					<h4>타투이스트회원</h4>
-					<h6>타투이스트회원 가입을 원하시면 눌러주세요.</h6>
+					<h4>작가회원</h4>
+					<h6>작가회원 가입을 원하시면 눌러주세요.</h6>
 				</div>
 				<div id="tattooist_right">
 					<input type="button" id="sign_tattooist" name="sign_tattooist" value="회원가입"/>
