@@ -18,8 +18,8 @@
 <script src="../plugin/monthly.js"></script>
 
 <!-- Section-->
-<!-- <link rel="stylesheet" href="../resource/my_page.css" type="text/css" />
-<script src="../resource/my_page.js"></script> -->
+<link rel="stylesheet" href="../resource/my_page.css" type="text/css" />
+<script src="../resource/my_page.js"></script>
 
 </head>
 <body>
